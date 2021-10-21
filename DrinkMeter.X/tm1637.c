@@ -9,9 +9,9 @@
 #define COMM3 0x80
 
 /** DATA PIN NUMBER */
-#define DIO_PIN 0x01
+#define DIO_PIN 0x03
 /** CLOCK PIN NUNBER */
-#define CLK_PIN 0x02
+#define CLK_PIN 0x00
 
 uint8_t m_brightness;
 

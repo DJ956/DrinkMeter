@@ -1,9 +1,9 @@
 
 
-Microchip MPLAB XC8 Assembler V2.30 build 20200825195618 
-                                                                                               Thu Oct 21 22:08:50 2021
+Microchip MPLAB XC8 Assembler V2.32 build 20210201212658 
+                                                                                               Thu Oct 21 22:53:46 2021
 
-Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1 
+Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1 
      1                           	processor	16F1827
      2                           	pagewidth 120
      3                           	opt	flic
@@ -32,10 +32,10 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
     26                           	psect	config,global,abs,ovrld,class=CONFIG,space=4,delta=2,noexec
     27                           	dabs	1,0x7E,2
     28  0000                     
-    29                           ; Version 2.30
-    30                           ; Generated 26/08/2020 GMT
+    29                           ; Version 2.32
+    30                           ; Generated 02/02/2021 GMT
     31                           ; 
-    32                           ; Copyright © 2020, Microchip Technology Inc. and its subsidiaries ("Microchip")
+    32                           ; Copyright © 2021, Microchip Technology Inc. and its subsidiaries ("Microchip")
     33                           ; All rights reserved.
     34                           ; 
     35                           ; This software is developed by Microchip Technology Inc. and its subsidiaries ("Microch
@@ -1025,25 +1025,25 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   1011  0FEF                     	;# 
   1012                           
   1013                           	psect	idataBANK0
-  1014  0675                     __pidataBANK0:
+  1014  06A7                     __pidataBANK0:
   1015                           
   1016                           ;initializer for _segdata
-  1017  0675  343F               	retlw	63
-  1018  0676  3406               	retlw	6
-  1019  0677  345B               	retlw	91
-  1020  0678  344F               	retlw	79
-  1021  0679  3466               	retlw	102
-  1022  067A  346D               	retlw	109
-  1023  067B  347D               	retlw	125
-  1024  067C  3407               	retlw	7
-  1025  067D  347F               	retlw	127
-  1026  067E  346F               	retlw	111
+  1017  06A7  343F               	retlw	63
+  1018  06A8  3406               	retlw	6
+  1019  06A9  345B               	retlw	91
+  1020  06AA  344F               	retlw	79
+  1021  06AB  3466               	retlw	102
+  1022  06AC  346D               	retlw	109
+  1023  06AD  347D               	retlw	125
+  1024  06AE  3407               	retlw	7
+  1025  06AF  347F               	retlw	127
+  1026  06B0  346F               	retlw	111
   1027                           
   1028                           ;initializer for main@F2513
-  1029  067F  34FF               	retlw	255
-  1030  0680  34FF               	retlw	255
-  1031  0681  34FF               	retlw	255
-  1032  0682  34FF               	retlw	255
+  1029  06B1  34FF               	retlw	255
+  1030  06B2  34FF               	retlw	255
+  1031  06B3  34FF               	retlw	255
+  1032  06B4  34FF               	retlw	255
   1033  000C                     _PORTAbits	set	12
   1034  0097                     _WDTCON	set	151
   1035  0098                     _OSCTUNE	set	152
@@ -1058,14 +1058,14 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   1044  010C                     _LATA	set	268
   1045  018C                     _ANSELA	set	396
   1046  018D                     _ANSELB	set	397
-  1047  020C                     _WPUA	set	524
-  1048  020D                     _WPUB	set	525
-  1049  0215                     _SSPCON1bits	set	533
-  1050  0214                     _SSPSTATbits	set	532
-  1051  0211                     _SSPBUF	set	529
-  1052  0216                     _SSPCON2bits	set	534
-  1053  0214                     _SSPSTAT	set	532
-  1054  0216                     _SSPCON2	set	534
+  1047  0215                     _SSPCON1bits	set	533
+  1048  0214                     _SSPSTATbits	set	532
+  1049  0211                     _SSPBUF	set	529
+  1050  0216                     _SSPCON2bits	set	534
+  1051  0214                     _SSPSTAT	set	532
+  1052  0216                     _SSPCON2	set	534
+  1053  020C                     _WPUA	set	524
+  1054  020D                     _WPUB	set	525
   1055                           
   1056                           	psect	cinit
   1057  07EC                     start_initialization:	
@@ -1074,7 +1074,7 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   1060  07EC                     __initialization:
   1061                           
   1062                           ; Initialize objects allocated to BANK0
-  1063  07EC  3075               	movlw	low __pidataBANK0
+  1063  07EC  30A7               	movlw	low __pidataBANK0
   1064  07ED  0084               	movwf	4
   1065  07EE  3086               	movlw	(high __pidataBANK0)| (0+128)
   1066  07EF  0085               	movwf	5
@@ -1083,22 +1083,22 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   1069  07F2  3000               	movlw	high __pdataBANK0
   1070  07F3  0087               	movwf	7
   1071  07F4  300E               	movlw	14
-  1072  07F5  3186  2656  3187   	fcall	init_ram
+  1072  07F5  3186  2681  3187   	fcall	init_ram
   1073                           
   1074                           ; Clear objects allocated to COMMON
   1075  07F8  01FD               	clrf	__pbssCOMMON& (0+127)
   1076                           
   1077                           ; Clear objects allocated to BANK0
-  1078  07F9  01B8               	clrf	__pbssBANK0& (0+127)
-  1079  07FA  01B9               	clrf	(__pbssBANK0+1)& (0+127)
-  1080  07FB  01BA               	clrf	(__pbssBANK0+2)& (0+127)
-  1081  07FC  01BB               	clrf	(__pbssBANK0+3)& (0+127)
+  1078  07F9  01B6               	clrf	__pbssBANK0& (0+127)
+  1079  07FA  01B7               	clrf	(__pbssBANK0+1)& (0+127)
+  1080  07FB  01B8               	clrf	(__pbssBANK0+2)& (0+127)
+  1081  07FC  01B9               	clrf	(__pbssBANK0+3)& (0+127)
   1082  07FD                     end_of_initialization:	
   1083                           ;End of C runtime variable initialization code
   1084                           
   1085  07FD                     __end_of__initialization:
   1086  07FD  0020               	movlb	0
-  1087  07FE  3187  2F78         	ljmp	_main	;jump to C main() function
+  1087  07FE  3187  2F4F         	ljmp	_main	;jump to C main() function
   1088                           
   1089                           	psect	bssCOMMON
   1090  007D                     __pbssCOMMON:
@@ -1106,9 +1106,9 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   1092  007D                     	ds	1
   1093                           
   1094                           	psect	bssBANK0
-  1095  0038                     __pbssBANK0:
-  1096  0038                     clear_segment@F2506:
-  1097  0038                     	ds	4
+  1095  0036                     __pbssBANK0:
+  1096  0036                     clear_segment@F2506:
+  1097  0036                     	ds	4
   1098                           
   1099                           	psect	dataBANK0
   1100  0020                     __pdataBANK0:
@@ -1118,1395 +1118,1344 @@ Microchip MPLAB XC8 C Compiler v2.30 (Free license) build 20200825195618 Og1
   1104  002A                     	ds	4
   1105                           
   1106                           	psect	inittext
-  1107  0656                     init_ram:
-  1108  0656  00FE               	movwf	btemp
-  1109  0657                     initloop:
-  1110  0657  0012               	moviw fsr0++
-  1111  0658  001E               	movwi fsr1++
-  1112  0659  0BFE               	decfsz	btemp,f
-  1113  065A  2E57               	goto	initloop
-  1114  065B  3400               	retlw	0
+  1107  0681                     init_ram:
+  1108  0681  00FE               	movwf	btemp
+  1109  0682                     initloop:
+  1110  0682  0012               	moviw fsr0++
+  1111  0683  001E               	movwi fsr1++
+  1112  0684  0BFE               	decfsz	btemp,f
+  1113  0685  2E82               	goto	initloop
+  1114  0686  3400               	retlw	0
   1115                           
   1116                           	psect	cstackCOMMON
   1117  0070                     __pcstackCOMMON:
-  1118  0070                     ?_SYSTEM_Initialize:
-  1119  0070                     ??_SYSTEM_Initialize:	
+  1118  0070                     ?_OSCILLATOR_Initialize:
+  1119  0070                     ??_OSCILLATOR_Initialize:	
   1120                           ; 1 bytes @ 0x0
   1121                           
-  1122  0070                     ?_clear_segment:	
+  1122  0070                     ?_WDT_Initialize:	
   1123                           ; 1 bytes @ 0x0
   1124                           
-  1125  0070                     ?_encode_digit:	
+  1125  0070                     ??_WDT_Initialize:	
   1126                           ; 1 bytes @ 0x0
   1127                           
-  1128  0070                     ??_encode_digit:	
+  1128  0070                     ?_clear_segment:	
   1129                           ; 1 bytes @ 0x0
   1130                           
-  1131  0070                     ?_set_brigthness:	
+  1131  0070                     ?_encode_digit:	
   1132                           ; 1 bytes @ 0x0
   1133                           
-  1134  0070                     ?_OSCILLATOR_Initialize:	
+  1134  0070                     ??_encode_digit:	
   1135                           ; 1 bytes @ 0x0
   1136                           
-  1137  0070                     ??_OSCILLATOR_Initialize:	
+  1137  0070                     ?_set_brigthness:	
   1138                           ; 1 bytes @ 0x0
   1139                           
-  1140  0070                     ?_WDT_Initialize:	
+  1140  0070                     ?_PIN_MANAGER_Initialize:	
   1141                           ; 1 bytes @ 0x0
   1142                           
-  1143  0070                     ??_WDT_Initialize:	
+  1143  0070                     ??_PIN_MANAGER_Initialize:	
   1144                           ; 1 bytes @ 0x0
   1145                           
-  1146  0070                     ?_main:	
+  1146  0070                     ?_SYSTEM_Initialize:	
   1147                           ; 1 bytes @ 0x0
   1148                           
-  1149  0070                     ?_bit_delay:	
+  1149  0070                     ??_SYSTEM_Initialize:	
   1150                           ; 1 bytes @ 0x0
   1151                           
-  1152  0070                     ??_bit_delay:	
+  1152  0070                     ?_main:	
   1153                           ; 1 bytes @ 0x0
   1154                           
-  1155  0070                     ?_start_segment:	
+  1155  0070                     ?_bit_delay:	
   1156                           ; 1 bytes @ 0x0
   1157                           
-  1158  0070                     ??_start_segment:	
+  1158  0070                     ??_bit_delay:	
   1159                           ; 1 bytes @ 0x0
   1160                           
-  1161  0070                     ?_stop_segment:	
+  1161  0070                     ?_start_segment:	
   1162                           ; 1 bytes @ 0x0
   1163                           
-  1164  0070                     ??_stop_segment:	
+  1164  0070                     ??_start_segment:	
   1165                           ; 1 bytes @ 0x0
   1166                           
-  1167  0070                     ?_get_DIO_PIN_value:	
+  1167  0070                     ?_stop_segment:	
   1168                           ; 1 bytes @ 0x0
   1169                           
-  1170  0070                     ??_get_DIO_PIN_value:	
+  1170  0070                     ??_stop_segment:	
   1171                           ; 1 bytes @ 0x0
   1172                           
-  1173  0070                     ?_write_byte:	
+  1173  0070                     ?_get_DIO_PIN_value:	
   1174                           ; 1 bytes @ 0x0
   1175                           
-  1176  0070                     ??_write_byte:	
+  1176  0070                     ??_get_DIO_PIN_value:	
   1177                           ; 1 bytes @ 0x0
   1178                           
-  1179  0070                     ?_PIN_MANAGER_Initialize:	
+  1179  0070                     ?_write_byte:	
   1180                           ; 1 bytes @ 0x0
   1181                           
-  1182  0070                     ??_PIN_MANAGER_Initialize:	
+  1182  0070                     set_brigthness@on:	
   1183                           ; 1 bytes @ 0x0
   1184                           
-  1185  0070                     set_brigthness@on:	
+  1185  0070                     encode_digit@digit:	
   1186                           ; 1 bytes @ 0x0
   1187                           
-  1188  0070                     encode_digit@digit:	
+  1188                           
   1189                           ; 1 bytes @ 0x0
-  1190                           
-  1191                           
-  1192                           ; 1 bytes @ 0x0
-  1193  0070                     	ds	1
-  1194  0071                     ??_set_brigthness:
-  1195  0071                     write_byte@b:	
+  1190  0070                     	ds	1
+  1191  0071                     ??_set_brigthness:
+  1192  0071                     ??_write_byte:	
+  1193                           ; 1 bytes @ 0x1
+  1194                           
+  1195                           
   1196                           ; 1 bytes @ 0x1
-  1197                           
-  1198                           
-  1199                           ; 1 bytes @ 0x1
-  1200  0071                     	ds	1
-  1201  0072                     write_byte@ack:
-  1202  0072                     set_brigthness@brightness:	
+  1197  0071                     	ds	1
+  1198  0072                     write_byte@b:
+  1199  0072                     set_brigthness@brightness:	
+  1200                           ; 1 bytes @ 0x2
+  1201                           
+  1202                           
   1203                           ; 1 bytes @ 0x2
-  1204                           
-  1205                           
-  1206                           ; 1 bytes @ 0x2
-  1207  0072                     	ds	1
-  1208  0073                     write_byte@data:
-  1209                           
-  1210                           ; 1 bytes @ 0x3
-  1211  0073                     	ds	1
-  1212  0074                     write_byte@i:
-  1213                           
-  1214                           ; 1 bytes @ 0x4
-  1215  0074                     	ds	1
-  1216  0075                     ?_set_segments:
-  1217  0075                     set_segments@length:	
-  1218                           ; 1 bytes @ 0x5
-  1219                           
+  1204  0072                     	ds	1
+  1205  0073                     write_byte@ack:
+  1206                           
+  1207                           ; 1 bytes @ 0x3
+  1208  0073                     	ds	1
+  1209  0074                     write_byte@data:
+  1210                           
+  1211                           ; 1 bytes @ 0x4
+  1212  0074                     	ds	1
+  1213  0075                     write_byte@i:
+  1214                           
+  1215                           ; 1 bytes @ 0x5
+  1216  0075                     	ds	1
+  1217  0076                     ?_set_segments:
+  1218  0076                     set_segments@length:	
+  1219                           ; 1 bytes @ 0x6
   1220                           
-  1221                           ; 1 bytes @ 0x5
-  1222  0075                     	ds	1
-  1223  0076                     set_segments@pos:
-  1224                           
-  1225                           ; 1 bytes @ 0x6
-  1226  0076                     	ds	1
-  1227  0077                     ??_set_segments:
-  1228                           
-  1229                           ; 1 bytes @ 0x7
-  1230  0077                     	ds	1
-  1231  0078                     set_segments@segments:
-  1232                           
-  1233                           ; 1 bytes @ 0x8
-  1234  0078                     	ds	1
-  1235  0079                     set_segments@k:
-  1236                           
-  1237                           ; 1 bytes @ 0x9
-  1238  0079                     	ds	1
-  1239  007A                     ??_clear_segment:
-  1240                           
-  1241                           ; 1 bytes @ 0xA
-  1242  007A                     	ds	1
-  1243  007B                     ??_main:
-  1244                           
-  1245                           ; 1 bytes @ 0xB
-  1246  007B                     	ds	2
-  1247                           
-  1248                           	psect	cstackBANK0
-  1249  002E                     __pcstackBANK0:
-  1250  002E                     clear_segment@data:
-  1251                           
-  1252                           ; 4 bytes @ 0x0
-  1253  002E                     	ds	4
-  1254  0032                     main@k:
-  1255                           
-  1256                           ; 1 bytes @ 0x4
-  1257  0032                     	ds	1
-  1258  0033                     main@data:
+  1221                           
+  1222                           ; 1 bytes @ 0x6
+  1223  0076                     	ds	1
+  1224  0077                     set_segments@pos:
+  1225                           
+  1226                           ; 1 bytes @ 0x7
+  1227  0077                     	ds	1
+  1228  0078                     ??_set_segments:
+  1229                           
+  1230                           ; 1 bytes @ 0x8
+  1231  0078                     	ds	1
+  1232  0079                     set_segments@segments:
+  1233                           
+  1234                           ; 1 bytes @ 0x9
+  1235  0079                     	ds	1
+  1236  007A                     set_segments@k:
+  1237                           
+  1238                           ; 1 bytes @ 0xA
+  1239  007A                     	ds	1
+  1240  007B                     ??_clear_segment:
+  1241                           
+  1242                           ; 1 bytes @ 0xB
+  1243  007B                     	ds	1
+  1244  007C                     ??_main:
+  1245                           
+  1246                           ; 1 bytes @ 0xC
+  1247  007C                     	ds	1
+  1248                           
+  1249                           	psect	cstackBANK0
+  1250  002E                     __pcstackBANK0:
+  1251  002E                     clear_segment@data:
+  1252                           
+  1253                           ; 4 bytes @ 0x0
+  1254  002E                     	ds	4
+  1255  0032                     main@data:
+  1256                           
+  1257                           ; 4 bytes @ 0x4
+  1258  0032                     	ds	4
   1259                           
-  1260                           ; 4 bytes @ 0x5
-  1261  0033                     	ds	4
-  1262  0037                     main@i:
-  1263                           
-  1264                           ; 1 bytes @ 0x9
-  1265  0037                     	ds	1
-  1266                           
-  1267                           	psect	maintext
-  1268  0778                     __pmaintext:	
-  1269 ;;
-  1270 ;;Main: autosize = 0, tempsize = 2, incstack = 0, save=0
-  1271 ;;
-  1272 ;; *************** function _main *****************
-  1273 ;; Defined at:
-  1274 ;;		line 6 in file "main.c"
-  1275 ;; Parameters:    Size  Location     Type
-  1276 ;;		None
-  1277 ;; Auto vars:     Size  Location     Type
-  1278 ;;  i               1    9[BANK0 ] unsigned char 
-  1279 ;;  data            4    5[BANK0 ] unsigned char [4]
-  1280 ;;  k               1    4[BANK0 ] unsigned char 
-  1281 ;; Return value:  Size  Location     Type
-  1282 ;;                  1    wreg      void 
-  1283 ;; Registers used:
-  1284 ;;		wreg, fsr1l, fsr1h, status,2, status,0, pclath, cstack
-  1285 ;; Tracked objects:
-  1286 ;;		On entry : B1F/0
-  1287 ;;		On exit  : 0/0
-  1288 ;;		Unchanged: 0/0
-  1289 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4
-  1290 ;;      Params:         0       0       0       0       0       0
-  1291 ;;      Locals:         0       6       0       0       0       0
-  1292 ;;      Temps:          2       0       0       0       0       0
-  1293 ;;      Totals:         2       6       0       0       0       0
-  1294 ;;Total ram usage:        8 bytes
-  1295 ;; Hardware stack levels required when called:    4
-  1296 ;; This function calls:
-  1297 ;;		_SYSTEM_Initialize
-  1298 ;;		_clear_segment
-  1299 ;;		_encode_digit
-  1300 ;;		_set_brigthness
-  1301 ;;		_set_segments
-  1302 ;; This function is called by:
-  1303 ;;		Startup code after reset
-  1304 ;; This function uses a non-reentrant model
-  1305 ;;
+  1260                           	psect	maintext
+  1261  074F                     __pmaintext:	
+  1262 ;;
+  1263 ;;Main: autosize = 0, tempsize = 1, incstack = 0, save=0
+  1264 ;;
+  1265 ;; *************** function _main *****************
+  1266 ;; Defined at:
+  1267 ;;		line 6 in file "main.c"
+  1268 ;; Parameters:    Size  Location     Type
+  1269 ;;		None
+  1270 ;; Auto vars:     Size  Location     Type
+  1271 ;;  data            4    4[BANK0 ] unsigned char [4]
+  1272 ;;  k               1    0        unsigned char 
+  1273 ;; Return value:  Size  Location     Type
+  1274 ;;                  1    wreg      void 
+  1275 ;; Registers used:
+  1276 ;;		wreg, fsr1l, fsr1h, status,2, status,0, pclath, cstack
+  1277 ;; Tracked objects:
+  1278 ;;		On entry : B1F/0
+  1279 ;;		On exit  : 0/0
+  1280 ;;		Unchanged: 0/0
+  1281 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4
+  1282 ;;      Params:         0       0       0       0       0       0
+  1283 ;;      Locals:         0       4       0       0       0       0
+  1284 ;;      Temps:          1       0       0       0       0       0
+  1285 ;;      Totals:         1       4       0       0       0       0
+  1286 ;;Total ram usage:        5 bytes
+  1287 ;; Hardware stack levels required when called: 4
+  1288 ;; This function calls:
+  1289 ;;		_SYSTEM_Initialize
+  1290 ;;		_clear_segment
+  1291 ;;		_encode_digit
+  1292 ;;		_set_brigthness
+  1293 ;;		_set_segments
+  1294 ;; This function is called by:
+  1295 ;;		Startup code after reset
+  1296 ;; This function uses a non-reentrant model
+  1297 ;;
+  1298                           
+  1299                           
+  1300                           ;psect for function _main
+  1301  074F                     _main:
+  1302  074F                     l1153:	
+  1303                           ;incstack = 0
+  1304                           ; Regs used in _main: [wreg+fsr1l+fsr1h+status,2+status,0+pclath+cstack]
+  1305                           
   1306                           
-  1307                           
-  1308                           ;psect for function _main
-  1309  0778                     _main:
-  1310  0778                     l1135:	
-  1311                           ;incstack = 0
-  1312                           ; Regs used in _main: [wreg+fsr1l+fsr1h+status,2+status,0+pclath+cstack]
-  1313                           
-  1314                           
-  1315                           ;main.c: 9:     SYSTEM_Initialize();
-  1316  0778  3186  266B  3187   	fcall	_SYSTEM_Initialize
-  1317  077B                     l1137:
-  1318                           
-  1319                           ;main.c: 12:     uint8_t data[] = {0xff, 0xff, 0xff, 0xff};
-  1320  077B  0020               	movlb	0	; select bank0
-  1321  077C  082D               	movf	main@F2513+3,w
-  1322  077D  00B6               	movwf	main@data+3
-  1323  077E  082C               	movf	main@F2513+2,w
-  1324  077F  00B5               	movwf	main@data+2
-  1325  0780  082B               	movf	main@F2513+1,w
-  1326  0781  00B4               	movwf	main@data+1
-  1327  0782  082A               	movf	main@F2513,w
-  1328  0783  00B3               	movwf	main@data
-  1329  0784                     l1139:
-  1330                           
-  1331                           ;main.c: 14:     clear_segment();
-  1332  0784  3186  2683  3187   	fcall	_clear_segment
-  1333  0787                     l1141:
-  1334                           
-  1335                           ;main.c: 16:     data[0] = encode_digit(1);
-  1336  0787  3001               	movlw	1
-  1337  0788  3186  2663  3187   	fcall	_encode_digit
-  1338  078B  00FB               	movwf	??_main
-  1339  078C  087B               	movf	??_main,w
-  1340  078D  0020               	movlb	0	; select bank0
-  1341  078E  00B3               	movwf	main@data
-  1342  078F                     l1143:
-  1343                           
-  1344                           ;main.c: 17:     data[1] = encode_digit(9);
-  1345  078F  3009               	movlw	9
-  1346  0790  3186  2663  3187   	fcall	_encode_digit
-  1347  0793  00FB               	movwf	??_main
-  1348  0794  087B               	movf	??_main,w
-  1349  0795  0020               	movlb	0	; select bank0
-  1350  0796  00B4               	movwf	main@data+1
-  1351  0797                     l1145:
-  1352                           
-  1353                           ;main.c: 18:     data[2] = encode_digit(8);
-  1354  0797  3008               	movlw	8
-  1355  0798  3186  2663  3187   	fcall	_encode_digit
-  1356  079B  00FB               	movwf	??_main
-  1357  079C  087B               	movf	??_main,w
-  1358  079D  0020               	movlb	0	; select bank0
-  1359  079E  00B5               	movwf	main@data+2
-  1360  079F                     l1147:
-  1361                           
-  1362                           ;main.c: 19:     data[3] = encode_digit(4);
-  1363  079F  3004               	movlw	4
-  1364  07A0  3186  2663  3187   	fcall	_encode_digit
-  1365  07A3  00FB               	movwf	??_main
-  1366  07A4  087B               	movf	??_main,w
-  1367  07A5  0020               	movlb	0	; select bank0
-  1368  07A6  00B6               	movwf	main@data+3
-  1369  07A7                     l1149:
-  1370                           
-  1371                           ;main.c: 22:     set_brigthness(0x0f, 1);
-  1372  07A7  01F0               	clrf	set_brigthness@on
-  1373  07A8  0AF0               	incf	set_brigthness@on,f
-  1374  07A9  300F               	movlw	15
-  1375  07AA  3186  2696  3187   	fcall	_set_brigthness
-  1376  07AD                     l1151:
-  1377                           
-  1378                           ;main.c: 23:     set_segments(data, 4, 0);
-  1379  07AD  3004               	movlw	4
-  1380  07AE  00FB               	movwf	??_main
-  1381  07AF  087B               	movf	??_main,w
-  1382  07B0  00F5               	movwf	set_segments@length
-  1383  07B1  01F6               	clrf	set_segments@pos
-  1384  07B2  3033               	movlw	(low (main@data| 0))& (0+255)
-  1385  07B3  3186  26E9  3187   	fcall	_set_segments
-  1386  07B6                     l1153:
-  1387                           
-  1388                           ;main.c: 25:     uint8_t k = 0;
-  1389  07B6  0020               	movlb	0	; select bank0
-  1390  07B7  01B2               	clrf	main@k
-  1391  07B8                     l1155:
-  1392                           
-  1393                           ;main.c: 27:     {;main.c: 28:         for(uint8_t i = 0; i < 4; i++){
-  1394  07B8  01B7               	clrf	main@i
-  1395  07B9                     l1159:
-  1396                           
-  1397                           ;main.c: 29:             data[i] = encode_digit(i + k);
-  1398  07B9  0837               	movf	main@i,w
-  1399  07BA  0732               	addwf	main@k,w
-  1400  07BB  3186  2663  3187   	fcall	_encode_digit
-  1401  07BE  00FB               	movwf	??_main
-  1402  07BF  0020               	movlb	0	; select bank0
-  1403  07C0  0837               	movf	main@i,w
-  1404  07C1  3E33               	addlw	(low (main@data| 0))& (0+255)
-  1405  07C2  0086               	movwf	6
-  1406  07C3  0187               	clrf	7
-  1407  07C4  087B               	movf	??_main,w
-  1408  07C5  0081               	movwf	1
-  1409  07C6                     l1161:
-  1410                           
-  1411                           ;main.c: 30:         }
-  1412  07C6  3001               	movlw	1
-  1413  07C7  00FB               	movwf	??_main
-  1414  07C8  087B               	movf	??_main,w
-  1415  07C9  07B7               	addwf	main@i,f
-  1416  07CA                     l1163:
-  1417  07CA  3004               	movlw	4
-  1418  07CB  0237               	subwf	main@i,w
-  1419  07CC  1C03               	skipc
-  1420  07CD  2FCF               	goto	u201
-  1421  07CE  2FD0               	goto	u200
-  1422  07CF                     u201:
-  1423  07CF  2FB9               	goto	l1159
-  1424  07D0                     u200:
-  1425  07D0                     l1165:
-  1426                           
-  1427                           ;main.c: 32:         set_segments(data, 4, 0);
-  1428  07D0  3004               	movlw	4
-  1429  07D1  00FB               	movwf	??_main
-  1430  07D2  087B               	movf	??_main,w
-  1431  07D3  00F5               	movwf	set_segments@length
-  1432  07D4  01F6               	clrf	set_segments@pos
-  1433  07D5  3033               	movlw	(low (main@data| 0))& (0+255)
-  1434  07D6  3186  26E9  3187   	fcall	_set_segments
-  1435  07D9                     l1167:
-  1436                           
-  1437                           ;main.c: 33:         _delay((unsigned long)((1000)*(8000000/4000.0)));
-  1438  07D9  300B               	movlw	11
-  1439  07DA  00FC               	movwf	??_main+1
-  1440  07DB  3026               	movlw	38
-  1441  07DC  00FB               	movwf	??_main
-  1442  07DD  305E               	movlw	94
-  1443  07DE                     u217:
-  1444  07DE  0B89               	decfsz	9,f
-  1445  07DF  2FDE               	goto	u217
-  1446  07E0  0BFB               	decfsz	??_main,f
-  1447  07E1  2FDE               	goto	u217
-  1448  07E2  0BFC               	decfsz	??_main+1,f
-  1449  07E3  2FDE               	goto	u217
-  1450  07E4                     l1169:
-  1451                           
-  1452                           ;main.c: 34:         k++;
-  1453  07E4  3001               	movlw	1
-  1454  07E5  00FB               	movwf	??_main
-  1455  07E6  087B               	movf	??_main,w
-  1456  07E7  0020               	movlb	0	; select bank0
-  1457  07E8  07B2               	addwf	main@k,f
-  1458  07E9  2FB8               	goto	l1155
-  1459  07EA  3180  2802         	ljmp	start
-  1460  07EC                     __end_of_main:
-  1461                           
-  1462                           	psect	text1
-  1463  0696                     __ptext1:	
-  1464 ;; *************** function _set_brigthness *****************
-  1465 ;; Defined at:
-  1466 ;;		line 132 in file "tm1637.c"
-  1467 ;; Parameters:    Size  Location     Type
-  1468 ;;  brightness      1    wreg     unsigned char 
-  1469 ;;  on              1    0[COMMON] unsigned char 
-  1470 ;; Auto vars:     Size  Location     Type
-  1471 ;;  brightness      1    2[COMMON] unsigned char 
-  1472 ;; Return value:  Size  Location     Type
-  1473 ;;                  1    wreg      void 
-  1474 ;; Registers used:
-  1475 ;;		wreg, status,2, status,0
-  1476 ;; Tracked objects:
-  1477 ;;		On entry : 0/0
-  1478 ;;		On exit  : 0/0
-  1479 ;;		Unchanged: 0/0
-  1480 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4
-  1481 ;;      Params:         1       0       0       0       0       0
-  1482 ;;      Locals:         1       0       0       0       0       0
-  1483 ;;      Temps:          1       0       0       0       0       0
-  1484 ;;      Totals:         3       0       0       0       0       0
-  1485 ;;Total ram usage:        3 bytes
-  1486 ;; Hardware stack levels used:    1
-  1487 ;; This function calls:
-  1488 ;;		Nothing
-  1489 ;; This function is called by:
-  1490 ;;		_main
-  1491 ;; This function uses a non-reentrant model
-  1492 ;;
-  1493                           
-  1494                           
-  1495                           ;psect for function _set_brigthness
-  1496  0696                     _set_brigthness:
-  1497                           
-  1498                           ;incstack = 0
-  1499                           ; Regs used in _set_brigthness: [wreg+status,2+status,0]
-  1500                           ;set_brigthness@brightness stored from wreg
-  1501  0696  00F2               	movwf	set_brigthness@brightness
-  1502  0697                     l1129:
-  1503                           
-  1504                           ;tm1637.c: 133:     if(on == 1){
-  1505  0697  0370               	decf	set_brigthness@on,w
-  1506  0698  1D03               	btfss	3,2
-  1507  0699  2E9B               	goto	u191
-  1508  069A  2E9C               	goto	u190
-  1509  069B                     u191:
-  1510  069B  2EA3               	goto	l1133
-  1511  069C                     u190:
-  1512  069C                     l1131:
+  1307                           ;main.c: 9:     SYSTEM_Initialize();
+  1308  074F  3186  269D  3187   	fcall	_SYSTEM_Initialize
+  1309  0752                     l1155:
+  1310                           
+  1311                           ;main.c: 11:     ANSELA = 0x00;
+  1312  0752  0023               	movlb	3	; select bank3
+  1313  0753  018C               	clrf	12	;volatile
+  1314  0754                     l1157:
+  1315                           
+  1316                           ;main.c: 12:     TRISA = 0x00;
+  1317  0754  0021               	movlb	1	; select bank1
+  1318  0755  018C               	clrf	12	;volatile
+  1319  0756                     l1159:
+  1320                           
+  1321                           ;main.c: 13:     LATA = 0x00;
+  1322  0756  0022               	movlb	2	; select bank2
+  1323  0757  018C               	clrf	12	;volatile
+  1324  0758                     l1161:
+  1325                           
+  1326                           ;main.c: 16:     LATA |= 0x80;
+  1327  0758  178C               	bsf	12,7	;volatile
+  1328  0759                     l1163:
+  1329                           
+  1330                           ;main.c: 18:     uint8_t data[] = {0xff, 0xff, 0xff, 0xff};
+  1331  0759  0020               	movlb	0	; select bank0
+  1332  075A  082D               	movf	main@F2513+3,w
+  1333  075B  00B5               	movwf	main@data+3
+  1334  075C  082C               	movf	main@F2513+2,w
+  1335  075D  00B4               	movwf	main@data+2
+  1336  075E  082B               	movf	main@F2513+1,w
+  1337  075F  00B3               	movwf	main@data+1
+  1338  0760  082A               	movf	main@F2513,w
+  1339  0761  00B2               	movwf	main@data
+  1340  0762                     l1165:
+  1341                           
+  1342                           ;main.c: 20:     clear_segment();
+  1343  0762  3186  26D9  3187   	fcall	_clear_segment
+  1344  0765                     l1167:
+  1345                           
+  1346                           ;main.c: 22:     data[0] = encode_digit(1);
+  1347  0765  3001               	movlw	1
+  1348  0766  3186  2695  3187   	fcall	_encode_digit
+  1349  0769  00FC               	movwf	??_main
+  1350  076A  087C               	movf	??_main,w
+  1351  076B  0020               	movlb	0	; select bank0
+  1352  076C  00B2               	movwf	main@data
+  1353  076D                     l1169:
+  1354                           
+  1355                           ;main.c: 23:     data[1] = encode_digit(9);
+  1356  076D  3009               	movlw	9
+  1357  076E  3186  2695  3187   	fcall	_encode_digit
+  1358  0771  00FC               	movwf	??_main
+  1359  0772  087C               	movf	??_main,w
+  1360  0773  0020               	movlb	0	; select bank0
+  1361  0774  00B3               	movwf	main@data+1
+  1362  0775                     l1171:
+  1363                           
+  1364                           ;main.c: 24:     data[2] = encode_digit(8);
+  1365  0775  3008               	movlw	8
+  1366  0776  3186  2695  3187   	fcall	_encode_digit
+  1367  0779  00FC               	movwf	??_main
+  1368  077A  087C               	movf	??_main,w
+  1369  077B  0020               	movlb	0	; select bank0
+  1370  077C  00B4               	movwf	main@data+2
+  1371  077D                     l1173:
+  1372                           
+  1373                           ;main.c: 25:     data[3] = encode_digit(4);
+  1374  077D  3004               	movlw	4
+  1375  077E  3186  2695  3187   	fcall	_encode_digit
+  1376  0781  00FC               	movwf	??_main
+  1377  0782  087C               	movf	??_main,w
+  1378  0783  0020               	movlb	0	; select bank0
+  1379  0784  00B5               	movwf	main@data+3
+  1380  0785                     l1175:
+  1381                           
+  1382                           ;main.c: 28:     set_brigthness(0x0f, 1);
+  1383  0785  01F0               	clrf	set_brigthness@on
+  1384  0786  0AF0               	incf	set_brigthness@on,f
+  1385  0787  300F               	movlw	15
+  1386  0788  3186  26EC  3187   	fcall	_set_brigthness
+  1387  078B                     l1177:
+  1388                           
+  1389                           ;main.c: 29:     set_segments(data, 4, 0);
+  1390  078B  3004               	movlw	4
+  1391  078C  00FC               	movwf	??_main
+  1392  078D  087C               	movf	??_main,w
+  1393  078E  00F6               	movwf	set_segments@length
+  1394  078F  01F7               	clrf	set_segments@pos
+  1395  0790  3032               	movlw	(low (main@data| 0))& (0+255)
+  1396  0791  3187  2715  3187   	fcall	_set_segments
+  1397  0794                     l1179:
+  1398  0794                     l125:	
+  1399                           ;main.c: 34:     while (1)
+  1400                           
+  1401  0794                     l126:	
+  1402                           ;main.c: 35:     {;main.c: 43:     }
+  1403                           
+  1404  0794  2F94               	goto	l125
+  1405  0795  3180  2802         	ljmp	start
+  1406  0797                     __end_of_main:
+  1407                           
+  1408                           	psect	text1
+  1409  06EC                     __ptext1:	
+  1410 ;; *************** function _set_brigthness *****************
+  1411 ;; Defined at:
+  1412 ;;		line 132 in file "tm1637.c"
+  1413 ;; Parameters:    Size  Location     Type
+  1414 ;;  brightness      1    wreg     unsigned char 
+  1415 ;;  on              1    0[COMMON] unsigned char 
+  1416 ;; Auto vars:     Size  Location     Type
+  1417 ;;  brightness      1    2[COMMON] unsigned char 
+  1418 ;; Return value:  Size  Location     Type
+  1419 ;;                  1    wreg      void 
+  1420 ;; Registers used:
+  1421 ;;		wreg, status,2, status,0
+  1422 ;; Tracked objects:
+  1423 ;;		On entry : 0/0
+  1424 ;;		On exit  : 0/0
+  1425 ;;		Unchanged: 0/0
+  1426 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4
+  1427 ;;      Params:         1       0       0       0       0       0
+  1428 ;;      Locals:         1       0       0       0       0       0
+  1429 ;;      Temps:          1       0       0       0       0       0
+  1430 ;;      Totals:         3       0       0       0       0       0
+  1431 ;;Total ram usage:        3 bytes
+  1432 ;; Hardware stack levels used: 1
+  1433 ;; This function calls:
+  1434 ;;		Nothing
+  1435 ;; This function is called by:
+  1436 ;;		_main
+  1437 ;; This function uses a non-reentrant model
+  1438 ;;
+  1439                           
+  1440                           
+  1441                           ;psect for function _set_brigthness
+  1442  06EC                     _set_brigthness:
+  1443                           
+  1444                           ;incstack = 0
+  1445                           ; Regs used in _set_brigthness: [wreg+status,2+status,0]
+  1446                           ;set_brigthness@brightness stored from wreg
+  1447  06EC  00F2               	movwf	set_brigthness@brightness
+  1448  06ED                     l1147:
+  1449                           
+  1450                           ;tm1637.c: 133:     if(on == 1){
+  1451  06ED  0370               	decf	set_brigthness@on,w
+  1452  06EE  1D03               	btfss	3,2
+  1453  06EF  2EF1               	goto	u181
+  1454  06F0  2EF2               	goto	u180
+  1455  06F1                     u181:
+  1456  06F1  2EF9               	goto	l1151
+  1457  06F2                     u180:
+  1458  06F2                     l1149:
+  1459                           
+  1460                           ;tm1637.c: 134:         m_brightness = (brightness & 0x7 | 0x08);
+  1461  06F2  0872               	movf	set_brigthness@brightness,w
+  1462  06F3  3907               	andlw	7
+  1463  06F4  3808               	iorlw	8
+  1464  06F5  00F1               	movwf	??_set_brigthness
+  1465  06F6  0871               	movf	??_set_brigthness,w
+  1466  06F7  00FD               	movwf	_m_brightness
+  1467                           
+  1468                           ;tm1637.c: 135:     }else{
+  1469  06F8  2EFE               	goto	l171
+  1470  06F9                     l1151:
+  1471                           
+  1472                           ;tm1637.c: 136:         m_brightness = (brightness & 0x7 | 0x00);
+  1473  06F9  0872               	movf	set_brigthness@brightness,w
+  1474  06FA  3907               	andlw	7
+  1475  06FB  00F1               	movwf	??_set_brigthness
+  1476  06FC  0871               	movf	??_set_brigthness,w
+  1477  06FD  00FD               	movwf	_m_brightness
+  1478  06FE                     l171:
+  1479  06FE  0008               	return
+  1480  06FF                     __end_of_set_brigthness:
+  1481                           
+  1482                           	psect	text2
+  1483  0695                     __ptext2:	
+  1484 ;; *************** function _encode_digit *****************
+  1485 ;; Defined at:
+  1486 ;;		line 183 in file "tm1637.c"
+  1487 ;; Parameters:    Size  Location     Type
+  1488 ;;  digit           1    wreg     unsigned char 
+  1489 ;; Auto vars:     Size  Location     Type
+  1490 ;;  digit           1    0[COMMON] unsigned char 
+  1491 ;; Return value:  Size  Location     Type
+  1492 ;;                  1    wreg      unsigned char 
+  1493 ;; Registers used:
+  1494 ;;		wreg, fsr1l, fsr1h, status,2, status,0
+  1495 ;; Tracked objects:
+  1496 ;;		On entry : 0/0
+  1497 ;;		On exit  : 0/0
+  1498 ;;		Unchanged: 0/0
+  1499 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4
+  1500 ;;      Params:         0       0       0       0       0       0
+  1501 ;;      Locals:         1       0       0       0       0       0
+  1502 ;;      Temps:          0       0       0       0       0       0
+  1503 ;;      Totals:         1       0       0       0       0       0
+  1504 ;;Total ram usage:        1 bytes
+  1505 ;; Hardware stack levels used: 1
+  1506 ;; This function calls:
+  1507 ;;		Nothing
+  1508 ;; This function is called by:
+  1509 ;;		_main
+  1510 ;; This function uses a non-reentrant model
+  1511 ;;
+  1512                           
   1513                           
-  1514                           ;tm1637.c: 134:         m_brightness = (brightness & 0x7 | 0x08);
-  1515  069C  0872               	movf	set_brigthness@brightness,w
-  1516  069D  3907               	andlw	7
-  1517  069E  3808               	iorlw	8
-  1518  069F  00F1               	movwf	??_set_brigthness
-  1519  06A0  0871               	movf	??_set_brigthness,w
-  1520  06A1  00FD               	movwf	_m_brightness
-  1521                           
-  1522                           ;tm1637.c: 135:     }else{
-  1523  06A2  2EA8               	goto	l118
-  1524  06A3                     l1133:
-  1525                           
-  1526                           ;tm1637.c: 136:         m_brightness = (brightness & 0x7 | 0x00);
-  1527  06A3  0872               	movf	set_brigthness@brightness,w
-  1528  06A4  3907               	andlw	7
-  1529  06A5  00F1               	movwf	??_set_brigthness
-  1530  06A6  0871               	movf	??_set_brigthness,w
-  1531  06A7  00FD               	movwf	_m_brightness
-  1532  06A8                     l118:
-  1533  06A8  0008               	return
-  1534  06A9                     __end_of_set_brigthness:
-  1535                           
-  1536                           	psect	text2
-  1537  0663                     __ptext2:	
-  1538 ;; *************** function _encode_digit *****************
-  1539 ;; Defined at:
-  1540 ;;		line 183 in file "tm1637.c"
-  1541 ;; Parameters:    Size  Location     Type
-  1542 ;;  digit           1    wreg     unsigned char 
-  1543 ;; Auto vars:     Size  Location     Type
-  1544 ;;  digit           1    0[COMMON] unsigned char 
-  1545 ;; Return value:  Size  Location     Type
-  1546 ;;                  1    wreg      unsigned char 
-  1547 ;; Registers used:
-  1548 ;;		wreg, fsr1l, fsr1h, status,2, status,0
-  1549 ;; Tracked objects:
-  1550 ;;		On entry : 0/0
-  1551 ;;		On exit  : 0/0
-  1552 ;;		Unchanged: 0/0
-  1553 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4
-  1554 ;;      Params:         0       0       0       0       0       0
-  1555 ;;      Locals:         1       0       0       0       0       0
-  1556 ;;      Temps:          0       0       0       0       0       0
-  1557 ;;      Totals:         1       0       0       0       0       0
-  1558 ;;Total ram usage:        1 bytes
-  1559 ;; Hardware stack levels used:    1
-  1560 ;; This function calls:
-  1561 ;;		Nothing
-  1562 ;; This function is called by:
-  1563 ;;		_main
-  1564 ;; This function uses a non-reentrant model
-  1565 ;;
+  1514                           ;psect for function _encode_digit
+  1515  0695                     _encode_digit:
+  1516                           
+  1517                           ;incstack = 0
+  1518                           ; Regs used in _encode_digit: [wreg+fsr1l+fsr1h+status,2+status,0]
+  1519                           ;encode_digit@digit stored from wreg
+  1520  0695  00F0               	movwf	encode_digit@digit
+  1521  0696                     l1143:
+  1522                           
+  1523                           ;tm1637.c: 184:     return segdata[digit & 0x0f];
+  1524  0696  0870               	movf	encode_digit@digit,w
+  1525  0697  390F               	andlw	15
+  1526  0698  3E20               	addlw	(low (_segdata| 0))& (0+255)
+  1527  0699  0086               	movwf	6
+  1528  069A  0187               	clrf	7
+  1529  069B  0801               	movf	1,w
+  1530  069C                     l185:
+  1531  069C  0008               	return
+  1532  069D                     __end_of_encode_digit:
+  1533                           
+  1534                           	psect	text3
+  1535  06D9                     __ptext3:	
+  1536 ;; *************** function _clear_segment *****************
+  1537 ;; Defined at:
+  1538 ;;		line 173 in file "tm1637.c"
+  1539 ;; Parameters:    Size  Location     Type
+  1540 ;;		None
+  1541 ;; Auto vars:     Size  Location     Type
+  1542 ;;  data            4    0[BANK0 ] unsigned char [4]
+  1543 ;; Return value:  Size  Location     Type
+  1544 ;;                  1    wreg      void 
+  1545 ;; Registers used:
+  1546 ;;		wreg, fsr1l, fsr1h, status,2, status,0, pclath, cstack
+  1547 ;; Tracked objects:
+  1548 ;;		On entry : 0/0
+  1549 ;;		On exit  : 0/0
+  1550 ;;		Unchanged: 0/0
+  1551 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4
+  1552 ;;      Params:         0       0       0       0       0       0
+  1553 ;;      Locals:         0       4       0       0       0       0
+  1554 ;;      Temps:          1       0       0       0       0       0
+  1555 ;;      Totals:         1       4       0       0       0       0
+  1556 ;;Total ram usage:        5 bytes
+  1557 ;; Hardware stack levels used: 1
+  1558 ;; Hardware stack levels required when called: 3
+  1559 ;; This function calls:
+  1560 ;;		_set_segments
+  1561 ;; This function is called by:
+  1562 ;;		_main
+  1563 ;; This function uses a non-reentrant model
+  1564 ;;
+  1565                           
   1566                           
-  1567                           
-  1568                           ;psect for function _encode_digit
-  1569  0663                     _encode_digit:
-  1570                           
-  1571                           ;incstack = 0
-  1572                           ; Regs used in _encode_digit: [wreg+fsr1l+fsr1h+status,2+status,0]
-  1573                           ;encode_digit@digit stored from wreg
-  1574  0663  00F0               	movwf	encode_digit@digit
-  1575  0664                     l1125:
-  1576                           
-  1577                           ;tm1637.c: 184:     return segdata[digit & 0x0f];
-  1578  0664  0870               	movf	encode_digit@digit,w
-  1579  0665  390F               	andlw	15
-  1580  0666  3E20               	addlw	(low (_segdata| 0))& (0+255)
-  1581  0667  0086               	movwf	6
-  1582  0668  0187               	clrf	7
-  1583  0669  0801               	movf	1,w
-  1584  066A                     l132:
-  1585  066A  0008               	return
-  1586  066B                     __end_of_encode_digit:
-  1587                           
-  1588                           	psect	text3
-  1589  0683                     __ptext3:	
-  1590 ;; *************** function _clear_segment *****************
-  1591 ;; Defined at:
-  1592 ;;		line 173 in file "tm1637.c"
-  1593 ;; Parameters:    Size  Location     Type
-  1594 ;;		None
-  1595 ;; Auto vars:     Size  Location     Type
-  1596 ;;  data            4    0[BANK0 ] unsigned char [4]
-  1597 ;; Return value:  Size  Location     Type
-  1598 ;;                  1    wreg      void 
-  1599 ;; Registers used:
-  1600 ;;		wreg, fsr1l, fsr1h, status,2, status,0, pclath, cstack
-  1601 ;; Tracked objects:
-  1602 ;;		On entry : 0/0
-  1603 ;;		On exit  : 0/0
-  1604 ;;		Unchanged: 0/0
-  1605 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4
-  1606 ;;      Params:         0       0       0       0       0       0
-  1607 ;;      Locals:         0       4       0       0       0       0
-  1608 ;;      Temps:          1       0       0       0       0       0
-  1609 ;;      Totals:         1       4       0       0       0       0
-  1610 ;;Total ram usage:        5 bytes
-  1611 ;; Hardware stack levels used:    1
-  1612 ;; Hardware stack levels required when called:    3
-  1613 ;; This function calls:
-  1614 ;;		_set_segments
-  1615 ;; This function is called by:
-  1616 ;;		_main
-  1617 ;; This function uses a non-reentrant model
-  1618 ;;
-  1619                           
-  1620                           
-  1621                           ;psect for function _clear_segment
-  1622  0683                     _clear_segment:
-  1623  0683                     l1121:	
-  1624                           ;incstack = 0
-  1625                           ; Regs used in _clear_segment: [wreg+fsr1l+fsr1h+status,2+status,0+pclath+cstack]
-  1626                           
-  1627                           
-  1628                           ;tm1637.c: 174:     uint8_t data[] = { 0, 0, 0, 0 };
-  1629  0683  3000               	movlw	0
-  1630  0684  0020               	movlb	0	; select bank0
-  1631  0685  00B1               	movwf	clear_segment@data+3
-  1632  0686  3000               	movlw	0
-  1633  0687  00B0               	movwf	clear_segment@data+2
-  1634  0688  3000               	movlw	0
-  1635  0689  00AF               	movwf	clear_segment@data+1
-  1636  068A  3000               	movlw	0
-  1637  068B  00AE               	movwf	clear_segment@data
-  1638  068C                     l1123:
-  1639                           
-  1640                           ;tm1637.c: 175:  set_segments(data, 4, 0);
-  1641  068C  3004               	movlw	4
-  1642  068D  00FA               	movwf	??_clear_segment
-  1643  068E  087A               	movf	??_clear_segment,w
-  1644  068F  00F5               	movwf	set_segments@length
-  1645  0690  01F6               	clrf	set_segments@pos
-  1646  0691  302E               	movlw	(low (clear_segment@data| 0))& (0+255)
-  1647  0692  3186  26E9  3186   	fcall	_set_segments
-  1648  0695                     l129:
-  1649  0695  0008               	return
-  1650  0696                     __end_of_clear_segment:
-  1651                           
-  1652                           	psect	text4
-  1653  06E9                     __ptext4:	
-  1654 ;; *************** function _set_segments *****************
-  1655 ;; Defined at:
-  1656 ;;		line 146 in file "tm1637.c"
-  1657 ;; Parameters:    Size  Location     Type
-  1658 ;;  segments        1    wreg     PTR const unsigned char 
-  1659 ;;		 -> clear_segment@data(4), main@data(4), 
-  1660 ;;  length          1    5[COMMON] unsigned char 
-  1661 ;;  pos             1    6[COMMON] unsigned char 
-  1662 ;; Auto vars:     Size  Location     Type
-  1663 ;;  segments        1    8[COMMON] PTR const unsigned char 
-  1664 ;;		 -> clear_segment@data(4), main@data(4), 
-  1665 ;;  k               1    9[COMMON] unsigned char 
-  1666 ;; Return value:  Size  Location     Type
-  1667 ;;                  1    wreg      void 
-  1668 ;; Registers used:
-  1669 ;;		wreg, fsr1l, fsr1h, status,2, status,0, pclath, cstack
-  1670 ;; Tracked objects:
-  1671 ;;		On entry : 0/0
-  1672 ;;		On exit  : 0/0
-  1673 ;;		Unchanged: 0/0
-  1674 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4
-  1675 ;;      Params:         2       0       0       0       0       0
-  1676 ;;      Locals:         2       0       0       0       0       0
-  1677 ;;      Temps:          1       0       0       0       0       0
-  1678 ;;      Totals:         5       0       0       0       0       0
-  1679 ;;Total ram usage:        5 bytes
-  1680 ;; Hardware stack levels used:    1
-  1681 ;; Hardware stack levels required when called:    2
-  1682 ;; This function calls:
-  1683 ;;		_start_segment
-  1684 ;;		_stop_segment
-  1685 ;;		_write_byte
-  1686 ;; This function is called by:
-  1687 ;;		_main
-  1688 ;;		_clear_segment
-  1689 ;; This function uses a non-reentrant model
-  1690 ;;
-  1691                           
-  1692                           
-  1693                           ;psect for function _set_segments
-  1694  06E9                     _set_segments:
-  1695                           
-  1696                           ;incstack = 0
-  1697                           ; Regs used in _set_segments: [wreg+fsr1l+fsr1h+status,2+status,0+pclath+cstack]
-  1698                           ;set_segments@segments stored from wreg
-  1699  06E9  00F8               	movwf	set_segments@segments
-  1700  06EA                     l1087:
-  1701                           
-  1702                           ;tm1637.c: 149:     start_segment();
-  1703  06EA  3186  26A9  3186   	fcall	_start_segment
-  1704                           
-  1705                           ;tm1637.c: 150:     write_byte(0x40);
-  1706  06ED  3040               	movlw	64
-  1707  06EE  3187  2723  3186   	fcall	_write_byte
-  1708                           
-  1709                           ;tm1637.c: 151:     stop_segment();
-  1710  06F1  3186  26BE  3186   	fcall	_stop_segment
+  1567                           ;psect for function _clear_segment
+  1568  06D9                     _clear_segment:
+  1569  06D9                     l1139:	
+  1570                           ;incstack = 0
+  1571                           ; Regs used in _clear_segment: [wreg+fsr1l+fsr1h+status,2+status,0+pclath+cstack]
+  1572                           
+  1573                           
+  1574                           ;tm1637.c: 174:     uint8_t data[] = { 0, 0, 0, 0 };
+  1575  06D9  3000               	movlw	0
+  1576  06DA  0020               	movlb	0	; select bank0
+  1577  06DB  00B1               	movwf	clear_segment@data+3
+  1578  06DC  3000               	movlw	0
+  1579  06DD  00B0               	movwf	clear_segment@data+2
+  1580  06DE  3000               	movlw	0
+  1581  06DF  00AF               	movwf	clear_segment@data+1
+  1582  06E0  3000               	movlw	0
+  1583  06E1  00AE               	movwf	clear_segment@data
+  1584  06E2                     l1141:
+  1585                           
+  1586                           ;tm1637.c: 175:  set_segments(data, 4, 0);
+  1587  06E2  3004               	movlw	4
+  1588  06E3  00FB               	movwf	??_clear_segment
+  1589  06E4  087B               	movf	??_clear_segment,w
+  1590  06E5  00F6               	movwf	set_segments@length
+  1591  06E6  01F7               	clrf	set_segments@pos
+  1592  06E7  302E               	movlw	(low (clear_segment@data| 0))& (0+255)
+  1593  06E8  3187  2715  3186   	fcall	_set_segments
+  1594  06EB                     l182:
+  1595  06EB  0008               	return
+  1596  06EC                     __end_of_clear_segment:
+  1597                           
+  1598                           	psect	text4
+  1599  0715                     __ptext4:	
+  1600 ;; *************** function _set_segments *****************
+  1601 ;; Defined at:
+  1602 ;;		line 146 in file "tm1637.c"
+  1603 ;; Parameters:    Size  Location     Type
+  1604 ;;  segments        1    wreg     PTR const unsigned char 
+  1605 ;;		 -> clear_segment@data(4), main@data(4), 
+  1606 ;;  length          1    6[COMMON] unsigned char 
+  1607 ;;  pos             1    7[COMMON] unsigned char 
+  1608 ;; Auto vars:     Size  Location     Type
+  1609 ;;  segments        1    9[COMMON] PTR const unsigned char 
+  1610 ;;		 -> clear_segment@data(4), main@data(4), 
+  1611 ;;  k               1   10[COMMON] unsigned char 
+  1612 ;; Return value:  Size  Location     Type
+  1613 ;;                  1    wreg      void 
+  1614 ;; Registers used:
+  1615 ;;		wreg, fsr1l, fsr1h, status,2, status,0, pclath, cstack
+  1616 ;; Tracked objects:
+  1617 ;;		On entry : 0/0
+  1618 ;;		On exit  : 0/0
+  1619 ;;		Unchanged: 0/0
+  1620 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4
+  1621 ;;      Params:         2       0       0       0       0       0
+  1622 ;;      Locals:         2       0       0       0       0       0
+  1623 ;;      Temps:          1       0       0       0       0       0
+  1624 ;;      Totals:         5       0       0       0       0       0
+  1625 ;;Total ram usage:        5 bytes
+  1626 ;; Hardware stack levels used: 1
+  1627 ;; Hardware stack levels required when called: 2
+  1628 ;; This function calls:
+  1629 ;;		_start_segment
+  1630 ;;		_stop_segment
+  1631 ;;		_write_byte
+  1632 ;; This function is called by:
+  1633 ;;		_main
+  1634 ;;		_clear_segment
+  1635 ;; This function uses a non-reentrant model
+  1636 ;;
+  1637                           
+  1638                           
+  1639                           ;psect for function _set_segments
+  1640  0715                     _set_segments:
+  1641                           
+  1642                           ;incstack = 0
+  1643                           ; Regs used in _set_segments: [wreg+fsr1l+fsr1h+status,2+status,0+pclath+cstack]
+  1644                           ;set_segments@segments stored from wreg
+  1645  0715  00F9               	movwf	set_segments@segments
+  1646  0716                     l1125:
+  1647                           
+  1648                           ;tm1637.c: 149:     start_segment();
+  1649  0716  3186  26B5  3187   	fcall	_start_segment
+  1650                           
+  1651                           ;tm1637.c: 150:     write_byte(0x40);
+  1652  0719  3040               	movlw	64
+  1653  071A  3187  2797  3187   	fcall	_write_byte
+  1654                           
+  1655                           ;tm1637.c: 151:     stop_segment();
+  1656  071D  3186  26C7  3187   	fcall	_stop_segment
+  1657                           
+  1658                           ;tm1637.c: 154:     start_segment();
+  1659  0720  3186  26B5  3187   	fcall	_start_segment
+  1660                           
+  1661                           ;tm1637.c: 155:     write_byte(0xC0 + (pos & 0x03));
+  1662  0723  0877               	movf	set_segments@pos,w
+  1663  0724  3903               	andlw	3
+  1664  0725  3EC0               	addlw	192
+  1665  0726  3187  2797  3187   	fcall	_write_byte
+  1666  0729                     l1127:
+  1667                           
+  1668                           ;tm1637.c: 158:     for(uint8_t k = 0; k < length; k++){
+  1669  0729  01FA               	clrf	set_segments@k
+  1670  072A  2F39               	goto	l1133
+  1671  072B                     l1129:
+  1672                           
+  1673                           ;tm1637.c: 159:         write_byte(segments[k]);
+  1674  072B  087A               	movf	set_segments@k,w
+  1675  072C  0779               	addwf	set_segments@segments,w
+  1676  072D  00F8               	movwf	??_set_segments
+  1677  072E  0878               	movf	??_set_segments,w
+  1678  072F  0086               	movwf	6
+  1679  0730  0187               	clrf	7
+  1680  0731  0801               	movf	1,w
+  1681  0732  3187  2797  3187   	fcall	_write_byte
+  1682  0735                     l1131:
+  1683                           
+  1684                           ;tm1637.c: 160:     }
+  1685  0735  3001               	movlw	1
+  1686  0736  00F8               	movwf	??_set_segments
+  1687  0737  0878               	movf	??_set_segments,w
+  1688  0738  07FA               	addwf	set_segments@k,f
+  1689  0739                     l1133:
+  1690  0739  0876               	movf	set_segments@length,w
+  1691  073A  027A               	subwf	set_segments@k,w
+  1692  073B  1C03               	skipc
+  1693  073C  2F3E               	goto	u171
+  1694  073D  2F3F               	goto	u170
+  1695  073E                     u171:
+  1696  073E  2F2B               	goto	l1129
+  1697  073F                     u170:
+  1698  073F                     l1135:
+  1699                           
+  1700                           ;tm1637.c: 162:     stop_segment();
+  1701  073F  3186  26C7  3187   	fcall	_stop_segment
+  1702                           
+  1703                           ;tm1637.c: 165:     start_segment();
+  1704  0742  3186  26B5  3187   	fcall	_start_segment
+  1705                           
+  1706                           ;tm1637.c: 166:     write_byte(0x80 + (m_brightness & 0x0f));
+  1707  0745  087D               	movf	_m_brightness,w
+  1708  0746  390F               	andlw	15
+  1709  0747  3E80               	addlw	128
+  1710  0748  3187  2797  3187   	fcall	_write_byte
   1711                           
-  1712                           ;tm1637.c: 154:     start_segment();
-  1713  06F4  3186  26A9  3186   	fcall	_start_segment
-  1714                           
-  1715                           ;tm1637.c: 155:     write_byte(0xC0 + (pos & 0x03));
-  1716  06F7  0876               	movf	set_segments@pos,w
-  1717  06F8  3903               	andlw	3
-  1718  06F9  3EC0               	addlw	192
-  1719  06FA  3187  2723  3186   	fcall	_write_byte
-  1720  06FD                     l1089:
-  1721                           
-  1722                           ;tm1637.c: 158:     for(uint8_t k = 0; k < length; k++){
-  1723  06FD  01F9               	clrf	set_segments@k
-  1724  06FE  2F0D               	goto	l1095
-  1725  06FF                     l1091:
-  1726                           
-  1727                           ;tm1637.c: 159:         write_byte(segments[k]);
-  1728  06FF  0879               	movf	set_segments@k,w
-  1729  0700  0778               	addwf	set_segments@segments,w
-  1730  0701  00F7               	movwf	??_set_segments
-  1731  0702  0877               	movf	??_set_segments,w
-  1732  0703  0086               	movwf	6
-  1733  0704  0187               	clrf	7
-  1734  0705  0801               	movf	1,w
-  1735  0706  3187  2723  3186   	fcall	_write_byte
-  1736  0709                     l1093:
-  1737                           
-  1738                           ;tm1637.c: 160:     }
-  1739  0709  3001               	movlw	1
-  1740  070A  00F7               	movwf	??_set_segments
-  1741  070B  0877               	movf	??_set_segments,w
-  1742  070C  07F9               	addwf	set_segments@k,f
-  1743  070D                     l1095:
-  1744  070D  0875               	movf	set_segments@length,w
-  1745  070E  0279               	subwf	set_segments@k,w
-  1746  070F  1C03               	skipc
-  1747  0710  2F12               	goto	u181
-  1748  0711  2F13               	goto	u180
-  1749  0712                     u181:
-  1750  0712  2EFF               	goto	l1091
-  1751  0713                     u180:
-  1752  0713                     l1097:
+  1712                           ;tm1637.c: 167:     stop_segment();
+  1713  074B  3186  26C7  3187   	fcall	_stop_segment
+  1714  074E                     l177:
+  1715  074E  0008               	return
+  1716  074F                     __end_of_set_segments:
+  1717                           
+  1718                           	psect	text5
+  1719  0797                     __ptext5:	
+  1720 ;; *************** function _write_byte *****************
+  1721 ;; Defined at:
+  1722 ;;		line 74 in file "tm1637.c"
+  1723 ;; Parameters:    Size  Location     Type
+  1724 ;;  b               1    wreg     unsigned char 
+  1725 ;; Auto vars:     Size  Location     Type
+  1726 ;;  b               1    2[COMMON] unsigned char 
+  1727 ;;  i               1    5[COMMON] unsigned char 
+  1728 ;;  data            1    4[COMMON] unsigned char 
+  1729 ;;  ack             1    3[COMMON] unsigned char 
+  1730 ;; Return value:  Size  Location     Type
+  1731 ;;                  1    wreg      unsigned char 
+  1732 ;; Registers used:
+  1733 ;;		wreg, status,2, status,0, pclath, cstack
+  1734 ;; Tracked objects:
+  1735 ;;		On entry : 0/0
+  1736 ;;		On exit  : 0/0
+  1737 ;;		Unchanged: 0/0
+  1738 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4
+  1739 ;;      Params:         0       0       0       0       0       0
+  1740 ;;      Locals:         4       0       0       0       0       0
+  1741 ;;      Temps:          1       0       0       0       0       0
+  1742 ;;      Totals:         5       0       0       0       0       0
+  1743 ;;Total ram usage:        5 bytes
+  1744 ;; Hardware stack levels used: 1
+  1745 ;; Hardware stack levels required when called: 1
+  1746 ;; This function calls:
+  1747 ;;		_bit_delay
+  1748 ;;		_get_DIO_PIN_value
+  1749 ;; This function is called by:
+  1750 ;;		_set_segments
+  1751 ;; This function uses a non-reentrant model
+  1752 ;;
   1753                           
-  1754                           ;tm1637.c: 162:     stop_segment();
-  1755  0713  3186  26BE  3186   	fcall	_stop_segment
-  1756                           
-  1757                           ;tm1637.c: 165:     start_segment();
-  1758  0716  3186  26A9  3186   	fcall	_start_segment
-  1759                           
-  1760                           ;tm1637.c: 166:     write_byte(0x80 + (m_brightness & 0x0f));
-  1761  0719  087D               	movf	_m_brightness,w
-  1762  071A  390F               	andlw	15
-  1763  071B  3E80               	addlw	128
-  1764  071C  3187  2723  3186   	fcall	_write_byte
-  1765                           
-  1766                           ;tm1637.c: 167:     stop_segment();
-  1767  071F  3186  26BE  3186   	fcall	_stop_segment
-  1768  0722                     l124:
-  1769  0722  0008               	return
-  1770  0723                     __end_of_set_segments:
-  1771                           
-  1772                           	psect	text5
-  1773  0723                     __ptext5:	
-  1774 ;; *************** function _write_byte *****************
-  1775 ;; Defined at:
-  1776 ;;		line 74 in file "tm1637.c"
-  1777 ;; Parameters:    Size  Location     Type
-  1778 ;;  b               1    wreg     unsigned char 
-  1779 ;; Auto vars:     Size  Location     Type
-  1780 ;;  b               1    1[COMMON] unsigned char 
-  1781 ;;  i               1    4[COMMON] unsigned char 
-  1782 ;;  data            1    3[COMMON] unsigned char 
-  1783 ;;  ack             1    2[COMMON] unsigned char 
-  1784 ;; Return value:  Size  Location     Type
-  1785 ;;                  1    wreg      unsigned char 
-  1786 ;; Registers used:
-  1787 ;;		wreg, status,2, status,0, pclath, cstack
-  1788 ;; Tracked objects:
-  1789 ;;		On entry : 0/0
-  1790 ;;		On exit  : 0/0
-  1791 ;;		Unchanged: 0/0
-  1792 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4
-  1793 ;;      Params:         0       0       0       0       0       0
-  1794 ;;      Locals:         4       0       0       0       0       0
-  1795 ;;      Temps:          1       0       0       0       0       0
-  1796 ;;      Totals:         5       0       0       0       0       0
-  1797 ;;Total ram usage:        5 bytes
-  1798 ;; Hardware stack levels used:    1
-  1799 ;; Hardware stack levels required when called:    1
-  1800 ;; This function calls:
-  1801 ;;		_bit_delay
-  1802 ;;		_get_DIO_PIN_value
-  1803 ;; This function is called by:
-  1804 ;;		_set_segments
-  1805 ;; This function uses a non-reentrant model
-  1806 ;;
-  1807                           
-  1808                           
-  1809                           ;psect for function _write_byte
-  1810  0723                     _write_byte:
-  1811                           
-  1812                           ;incstack = 0
-  1813                           ; Regs used in _write_byte: [wreg+status,2+status,0+pclath+cstack]
-  1814                           ;write_byte@b stored from wreg
-  1815  0723  00F1               	movwf	write_byte@b
-  1816  0724                     l1043:
-  1817                           
-  1818                           ;tm1637.c: 75:     uint8_t data = b;
-  1819  0724  0871               	movf	write_byte@b,w
-  1820  0725  00F0               	movwf	??_write_byte
-  1821  0726  0870               	movf	??_write_byte,w
-  1822  0727  00F3               	movwf	write_byte@data
-  1823  0728                     l1045:
-  1824                           
-  1825                           ;tm1637.c: 78:     TRISA &= ~0x02;
-  1826  0728  30FD               	movlw	253
-  1827  0729  00F0               	movwf	??_write_byte
-  1828  072A  0870               	movf	??_write_byte,w
-  1829  072B  0021               	movlb	1	; select bank1
-  1830  072C  058C               	andwf	12,f	;volatile
-  1831  072D                     l1047:
-  1832                           
-  1833                           ;tm1637.c: 79:     for(uint8_t i = 0; i < 8; i++){
-  1834  072D  01F4               	clrf	write_byte@i
-  1835  072E                     l1053:
-  1836                           
-  1837                           ;tm1637.c: 81:         LATA &= ~0x02;
-  1838  072E  30FD               	movlw	253
-  1839  072F  00F0               	movwf	??_write_byte
-  1840  0730  0870               	movf	??_write_byte,w
-  1841  0731  0022               	movlb	2	; select bank2
-  1842  0732  058C               	andwf	12,f	;volatile
-  1843  0733                     l1055:
-  1844                           
-  1845                           ;tm1637.c: 83:         if(data & 0x01){
-  1846  0733  1C73               	btfss	write_byte@data,0
-  1847  0734  2F36               	goto	u151
-  1848  0735  2F37               	goto	u150
-  1849  0736                     u151:
-  1850  0736  2F39               	goto	l1059
-  1851  0737                     u150:
-  1852  0737                     l1057:
-  1853                           
-  1854                           ;tm1637.c: 85:             LATA |= 0x01;
-  1855  0737  140C               	bsf	12,0	;volatile
-  1856                           
-  1857                           ;tm1637.c: 86:         }else{
-  1858  0738  2F3D               	goto	l1061
-  1859  0739                     l1059:
+  1754                           
+  1755                           ;psect for function _write_byte
+  1756  0797                     _write_byte:
+  1757                           
+  1758                           ;incstack = 0
+  1759                           ; Regs used in _write_byte: [wreg+status,2+status,0+pclath+cstack]
+  1760                           ;write_byte@b stored from wreg
+  1761  0797  00F2               	movwf	write_byte@b
+  1762  0798                     l1057:
+  1763                           
+  1764                           ;tm1637.c: 75:     uint8_t data = b;
+  1765  0798  0872               	movf	write_byte@b,w
+  1766  0799  00F1               	movwf	??_write_byte
+  1767  079A  0871               	movf	??_write_byte,w
+  1768  079B  00F4               	movwf	write_byte@data
+  1769  079C                     l1059:
+  1770                           
+  1771                           ;tm1637.c: 78:     TRISA &= ~0x00;
+  1772  079C  0021               	movlb	1	; select bank1
+  1773  079D  080C               	movf	12,w	;volatile
+  1774  079E                     l1061:
+  1775                           
+  1776                           ;tm1637.c: 79:     for(uint8_t i = 0; i < 8; i++){
+  1777  079E  01F5               	clrf	write_byte@i
+  1778  079F                     l1067:
+  1779                           
+  1780                           ;tm1637.c: 81:         LATA &= ~0x00;
+  1781  079F  0022               	movlb	2	; select bank2
+  1782  07A0  080C               	movf	12,w	;volatile
+  1783  07A1                     l1069:
+  1784                           
+  1785                           ;tm1637.c: 83:         if(data & 0x01){
+  1786  07A1  1C74               	btfss	write_byte@data,0
+  1787  07A2  2FA4               	goto	u141
+  1788  07A3  2FA5               	goto	u140
+  1789  07A4                     u141:
+  1790  07A4  2FAA               	goto	l1073
+  1791  07A5                     u140:
+  1792  07A5                     l1071:
+  1793                           
+  1794                           ;tm1637.c: 85:             LATA |= 0x03;
+  1795  07A5  3003               	movlw	3
+  1796  07A6  00F1               	movwf	??_write_byte
+  1797  07A7  0871               	movf	??_write_byte,w
+  1798  07A8  048C               	iorwf	12,f	;volatile
+  1799                           
+  1800                           ;tm1637.c: 86:         }else{
+  1801  07A9  2FAE               	goto	l1075
+  1802  07AA                     l1073:
+  1803                           
+  1804                           ;tm1637.c: 88:             LATA &= ~0x03;
+  1805  07AA  30FC               	movlw	252
+  1806  07AB  00F1               	movwf	??_write_byte
+  1807  07AC  0871               	movf	??_write_byte,w
+  1808  07AD  058C               	andwf	12,f	;volatile
+  1809  07AE                     l1075:
+  1810                           
+  1811                           ;tm1637.c: 92:         LATA |= 0x00;
+  1812  07AE  080C               	movf	12,w	;volatile
+  1813  07AF                     l1077:
+  1814                           
+  1815                           ;tm1637.c: 94:         data = data >> 1;
+  1816  07AF  3674               	lsrf	write_byte@data,w
+  1817  07B0  00F1               	movwf	??_write_byte
+  1818  07B1  0871               	movf	??_write_byte,w
+  1819  07B2  00F4               	movwf	write_byte@data
+  1820  07B3                     l1079:
+  1821                           
+  1822                           ;tm1637.c: 95:     }
+  1823  07B3  3001               	movlw	1
+  1824  07B4  00F1               	movwf	??_write_byte
+  1825  07B5  0871               	movf	??_write_byte,w
+  1826  07B6  07F5               	addwf	write_byte@i,f
+  1827  07B7                     l1081:
+  1828  07B7  3008               	movlw	8
+  1829  07B8  0275               	subwf	write_byte@i,w
+  1830  07B9  1C03               	skipc
+  1831  07BA  2FBC               	goto	u151
+  1832  07BB  2FBD               	goto	u150
+  1833  07BC                     u151:
+  1834  07BC  2F9F               	goto	l1067
+  1835  07BD                     u150:
+  1836  07BD                     l1083:
+  1837                           
+  1838                           ;tm1637.c: 100:     LATA &= 0x00;
+  1839  07BD  018C               	clrf	12	;volatile
+  1840  07BE                     l1085:
+  1841                           
+  1842                           ;tm1637.c: 101:     LATA |= 0x03;
+  1843  07BE  3003               	movlw	3
+  1844  07BF  00F1               	movwf	??_write_byte
+  1845  07C0  0871               	movf	??_write_byte,w
+  1846  07C1  048C               	iorwf	12,f	;volatile
+  1847  07C2                     l1087:
+  1848                           
+  1849                           ;tm1637.c: 104:     LATA |= 0x00;
+  1850  07C2  080C               	movf	12,w	;volatile
+  1851  07C3                     l1089:
+  1852                           
+  1853                           ;tm1637.c: 107:     TRISA |= 0x03;
+  1854  07C3  3003               	movlw	3
+  1855  07C4  00F1               	movwf	??_write_byte
+  1856  07C5  0871               	movf	??_write_byte,w
+  1857  07C6  0021               	movlb	1	; select bank1
+  1858  07C7  048C               	iorwf	12,f	;volatile
+  1859  07C8                     l1091:
   1860                           
-  1861                           ;tm1637.c: 88:             LATA &= ~0x01;
-  1862  0739  30FE               	movlw	254
-  1863  073A  00F0               	movwf	??_write_byte
-  1864  073B  0870               	movf	??_write_byte,w
-  1865  073C  058C               	andwf	12,f	;volatile
-  1866  073D                     l1061:
-  1867                           
-  1868                           ;tm1637.c: 92:         LATA |= 0x02;
-  1869  073D  148C               	bsf	12,1	;volatile
-  1870                           
-  1871                           ;tm1637.c: 94:         data = data >> 1;
-  1872  073E  3673               	lsrf	write_byte@data,w
-  1873  073F  00F0               	movwf	??_write_byte
-  1874  0740  0870               	movf	??_write_byte,w
-  1875  0741  00F3               	movwf	write_byte@data
-  1876                           
-  1877                           ;tm1637.c: 95:     }
-  1878  0742  3001               	movlw	1
-  1879  0743  00F0               	movwf	??_write_byte
-  1880  0744  0870               	movf	??_write_byte,w
-  1881  0745  07F4               	addwf	write_byte@i,f
-  1882  0746                     l1063:
-  1883  0746  3008               	movlw	8
-  1884  0747  0274               	subwf	write_byte@i,w
-  1885  0748  1C03               	skipc
-  1886  0749  2F4B               	goto	u161
-  1887  074A  2F4C               	goto	u160
-  1888  074B                     u161:
-  1889  074B  2F2E               	goto	l1053
-  1890  074C                     u160:
-  1891  074C                     l1065:
-  1892                           
-  1893                           ;tm1637.c: 100:     LATA &= 0x02;
-  1894  074C  3002               	movlw	2
-  1895  074D  00F0               	movwf	??_write_byte
-  1896  074E  0870               	movf	??_write_byte,w
-  1897  074F  058C               	andwf	12,f	;volatile
-  1898  0750                     l1067:
-  1899                           
-  1900                           ;tm1637.c: 101:     LATA |= 0x01;
-  1901  0750  140C               	bsf	12,0	;volatile
-  1902  0751                     l1069:
-  1903                           
-  1904                           ;tm1637.c: 104:     LATA |= 0x02;
-  1905  0751  148C               	bsf	12,1	;volatile
-  1906  0752                     l1071:
+  1861                           ;tm1637.c: 108:     bit_delay();
+  1862  07C8  3186  267C  3187   	fcall	_bit_delay
+  1863  07CB                     l1093:
+  1864                           
+  1865                           ;tm1637.c: 110:     uint8_t ack = get_DIO_PIN_value();
+  1866  07CB  3186  268E  3187   	fcall	_get_DIO_PIN_value
+  1867  07CE  00F1               	movwf	??_write_byte
+  1868  07CF  0871               	movf	??_write_byte,w
+  1869  07D0  00F3               	movwf	write_byte@ack
+  1870  07D1                     l1095:
+  1871                           
+  1872                           ;tm1637.c: 111:     if(ack == 0){
+  1873  07D1  0873               	movf	write_byte@ack,w
+  1874  07D2  1D03               	btfss	3,2
+  1875  07D3  2FD5               	goto	u161
+  1876  07D4  2FD6               	goto	u160
+  1877  07D5                     u161:
+  1878  07D5  2FE0               	goto	l1099
+  1879  07D6                     u160:
+  1880  07D6                     l1097:
+  1881                           
+  1882                           ;tm1637.c: 113:         TRISA &= ~0x03;
+  1883  07D6  30FC               	movlw	252
+  1884  07D7  00F1               	movwf	??_write_byte
+  1885  07D8  0871               	movf	??_write_byte,w
+  1886  07D9  0021               	movlb	1	; select bank1
+  1887  07DA  058C               	andwf	12,f	;volatile
+  1888                           
+  1889                           ;tm1637.c: 116:         LATA &= ~0x03;
+  1890  07DB  30FC               	movlw	252
+  1891  07DC  00F1               	movwf	??_write_byte
+  1892  07DD  0871               	movf	??_write_byte,w
+  1893  07DE  0022               	movlb	2	; select bank2
+  1894  07DF  058C               	andwf	12,f	;volatile
+  1895  07E0                     l1099:
+  1896                           
+  1897                           ;tm1637.c: 119:     bit_delay();
+  1898  07E0  3186  267C  3187   	fcall	_bit_delay
+  1899  07E3                     l1101:
+  1900                           
+  1901                           ;tm1637.c: 121:     TRISA &= ~0x03;
+  1902  07E3  30FC               	movlw	252
+  1903  07E4  00F1               	movwf	??_write_byte
+  1904  07E5  0871               	movf	??_write_byte,w
+  1905  07E6  0021               	movlb	1	; select bank1
+  1906  07E7  058C               	andwf	12,f	;volatile
   1907                           
-  1908                           ;tm1637.c: 107:     TRISA |= 0x01;
-  1909  0752  0021               	movlb	1	; select bank1
-  1910  0753  140C               	bsf	12,0	;volatile
-  1911  0754                     l1073:
-  1912                           
-  1913                           ;tm1637.c: 108:     bit_delay();
-  1914  0754  3186  264D  3187   	fcall	_bit_delay
-  1915  0757                     l1075:
-  1916                           
-  1917                           ;tm1637.c: 110:     uint8_t ack = get_DIO_PIN_value();
-  1918  0757  3186  2652  3187   	fcall	_get_DIO_PIN_value
-  1919  075A  00F0               	movwf	??_write_byte
-  1920  075B  0870               	movf	??_write_byte,w
-  1921  075C  00F2               	movwf	write_byte@ack
-  1922  075D                     l1077:
-  1923                           
-  1924                           ;tm1637.c: 111:     if(ack == 0){
-  1925  075D  0872               	movf	write_byte@ack,w
-  1926  075E  1D03               	btfss	3,2
-  1927  075F  2F61               	goto	u171
-  1928  0760  2F62               	goto	u170
-  1929  0761                     u171:
-  1930  0761  2F6C               	goto	l1081
-  1931  0762                     u170:
-  1932  0762                     l1079:
-  1933                           
-  1934                           ;tm1637.c: 113:         TRISA &= ~0x01;
-  1935  0762  30FE               	movlw	254
-  1936  0763  00F0               	movwf	??_write_byte
-  1937  0764  0870               	movf	??_write_byte,w
-  1938  0765  0021               	movlb	1	; select bank1
-  1939  0766  058C               	andwf	12,f	;volatile
-  1940                           
-  1941                           ;tm1637.c: 116:         LATA &= ~0x01;
-  1942  0767  30FE               	movlw	254
-  1943  0768  00F0               	movwf	??_write_byte
-  1944  0769  0870               	movf	??_write_byte,w
-  1945  076A  0022               	movlb	2	; select bank2
-  1946  076B  058C               	andwf	12,f	;volatile
-  1947  076C                     l1081:
-  1948                           
-  1949                           ;tm1637.c: 119:     bit_delay();
-  1950  076C  3186  264D  3187   	fcall	_bit_delay
-  1951  076F                     l1083:
-  1952                           
-  1953                           ;tm1637.c: 121:     TRISA &= ~0x01;
-  1954  076F  30FE               	movlw	254
-  1955  0770  00F0               	movwf	??_write_byte
-  1956  0771  0870               	movf	??_write_byte,w
-  1957  0772  0021               	movlb	1	; select bank1
-  1958  0773  058C               	andwf	12,f	;volatile
-  1959                           
-  1960                           ;tm1637.c: 122:     bit_delay();
-  1961  0774  3186  264D  3187   	fcall	_bit_delay
-  1962  0777                     l113:
-  1963  0777  0008               	return
-  1964  0778                     __end_of_write_byte:
-  1965                           
-  1966                           	psect	text6
-  1967  0652                     __ptext6:	
-  1968 ;; *************** function _get_DIO_PIN_value *****************
-  1969 ;; Defined at:
-  1970 ;;		line 63 in file "tm1637.c"
-  1971 ;; Parameters:    Size  Location     Type
-  1972 ;;		None
-  1973 ;; Auto vars:     Size  Location     Type
-  1974 ;;		None
-  1975 ;; Return value:  Size  Location     Type
-  1976 ;;                  1    wreg      unsigned char 
-  1977 ;; Registers used:
-  1978 ;;		wreg, status,2, status,0
-  1979 ;; Tracked objects:
-  1980 ;;		On entry : 0/0
-  1981 ;;		On exit  : 0/0
-  1982 ;;		Unchanged: 0/0
-  1983 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4
-  1984 ;;      Params:         0       0       0       0       0       0
-  1985 ;;      Locals:         0       0       0       0       0       0
-  1986 ;;      Temps:          0       0       0       0       0       0
-  1987 ;;      Totals:         0       0       0       0       0       0
-  1988 ;;Total ram usage:        0 bytes
-  1989 ;; Hardware stack levels used:    1
-  1990 ;; This function calls:
-  1991 ;;		Nothing
-  1992 ;; This function is called by:
-  1993 ;;		_write_byte
-  1994 ;; This function uses a non-reentrant model
-  1995 ;;
+  1908                           ;tm1637.c: 122:     bit_delay();
+  1909  07E8  3186  267C  3187   	fcall	_bit_delay
+  1910  07EB                     l166:
+  1911  07EB  0008               	return
+  1912  07EC                     __end_of_write_byte:
+  1913                           
+  1914                           	psect	text6
+  1915  068E                     __ptext6:	
+  1916 ;; *************** function _get_DIO_PIN_value *****************
+  1917 ;; Defined at:
+  1918 ;;		line 63 in file "tm1637.c"
+  1919 ;; Parameters:    Size  Location     Type
+  1920 ;;		None
+  1921 ;; Auto vars:     Size  Location     Type
+  1922 ;;		None
+  1923 ;; Return value:  Size  Location     Type
+  1924 ;;                  1    wreg      unsigned char 
+  1925 ;; Registers used:
+  1926 ;;		wreg, status,2, status,0
+  1927 ;; Tracked objects:
+  1928 ;;		On entry : 0/0
+  1929 ;;		On exit  : 0/0
+  1930 ;;		Unchanged: 0/0
+  1931 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4
+  1932 ;;      Params:         0       0       0       0       0       0
+  1933 ;;      Locals:         0       0       0       0       0       0
+  1934 ;;      Temps:          1       0       0       0       0       0
+  1935 ;;      Totals:         1       0       0       0       0       0
+  1936 ;;Total ram usage:        1 bytes
+  1937 ;; Hardware stack levels used: 1
+  1938 ;; This function calls:
+  1939 ;;		Nothing
+  1940 ;; This function is called by:
+  1941 ;;		_write_byte
+  1942 ;; This function uses a non-reentrant model
+  1943 ;;
+  1944                           
+  1945                           
+  1946                           ;psect for function _get_DIO_PIN_value
+  1947  068E                     _get_DIO_PIN_value:
+  1948  068E                     l1003:	
+  1949                           ;incstack = 0
+  1950                           ; Regs used in _get_DIO_PIN_value: [wreg+status,2+status,0]
+  1951                           
+  1952  068E                     l1017:	
+  1953                           ;tm1637.c: 64:     if(0x03 == 0x00){ return PORTAbits.RA0; }
+  1954                           
+  1955  068E  0020               	movlb	0	; select bank0
+  1956  068F  0C0C               	rrf	12,w	;volatile
+  1957  0690  00F0               	movwf	??_get_DIO_PIN_value
+  1958  0691  0CF0               	rrf	??_get_DIO_PIN_value,f
+  1959  0692  0C70               	rrf	??_get_DIO_PIN_value,w
+  1960  0693  3901               	andlw	1
+  1961  0694                     l151:
+  1962  0694  0008               	return
+  1963  0695                     __end_of_get_DIO_PIN_value:
+  1964                           
+  1965                           	psect	text7
+  1966  067C                     __ptext7:	
+  1967 ;; *************** function _bit_delay *****************
+  1968 ;; Defined at:
+  1969 ;;		line 31 in file "tm1637.c"
+  1970 ;; Parameters:    Size  Location     Type
+  1971 ;;		None
+  1972 ;; Auto vars:     Size  Location     Type
+  1973 ;;		None
+  1974 ;; Return value:  Size  Location     Type
+  1975 ;;                  1    wreg      void 
+  1976 ;; Registers used:
+  1977 ;;		None
+  1978 ;; Tracked objects:
+  1979 ;;		On entry : 0/0
+  1980 ;;		On exit  : 0/0
+  1981 ;;		Unchanged: 0/0
+  1982 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4
+  1983 ;;      Params:         0       0       0       0       0       0
+  1984 ;;      Locals:         0       0       0       0       0       0
+  1985 ;;      Temps:          0       0       0       0       0       0
+  1986 ;;      Totals:         0       0       0       0       0       0
+  1987 ;;Total ram usage:        0 bytes
+  1988 ;; Hardware stack levels used: 1
+  1989 ;; This function calls:
+  1990 ;;		Nothing
+  1991 ;; This function is called by:
+  1992 ;;		_write_byte
+  1993 ;; This function uses a non-reentrant model
+  1994 ;;
+  1995                           
   1996                           
-  1997                           
-  1998                           ;psect for function _get_DIO_PIN_value
-  1999  0652                     _get_DIO_PIN_value:
-  2000  0652                     l997:	
-  2001                           ;incstack = 0
-  2002                           ; Regs used in _get_DIO_PIN_value: [wreg+status,2+status,0]
-  2003                           
-  2004  0652                     l1003:	
-  2005                           ;tm1637.c: 64:     if(0x01 == 0x00){ return PORTAbits.RA0; }
-  2006                           
-  2007  0652  0020               	movlb	0	; select bank0
-  2008  0653  0C0C               	rrf	12,w	;volatile
-  2009  0654  3901               	andlw	1
-  2010  0655                     l98:
-  2011  0655  0008               	return
-  2012  0656                     __end_of_get_DIO_PIN_value:
-  2013                           
-  2014                           	psect	text7
-  2015  064D                     __ptext7:	
-  2016 ;; *************** function _bit_delay *****************
-  2017 ;; Defined at:
-  2018 ;;		line 31 in file "tm1637.c"
-  2019 ;; Parameters:    Size  Location     Type
-  2020 ;;		None
-  2021 ;; Auto vars:     Size  Location     Type
-  2022 ;;		None
-  2023 ;; Return value:  Size  Location     Type
-  2024 ;;                  1    wreg      void 
-  2025 ;; Registers used:
-  2026 ;;		None
-  2027 ;; Tracked objects:
-  2028 ;;		On entry : 0/0
-  2029 ;;		On exit  : 0/0
-  2030 ;;		Unchanged: 0/0
-  2031 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4
-  2032 ;;      Params:         0       0       0       0       0       0
-  2033 ;;      Locals:         0       0       0       0       0       0
-  2034 ;;      Temps:          0       0       0       0       0       0
-  2035 ;;      Totals:         0       0       0       0       0       0
-  2036 ;;Total ram usage:        0 bytes
-  2037 ;; Hardware stack levels used:    1
-  2038 ;; This function calls:
-  2039 ;;		Nothing
-  2040 ;; This function is called by:
-  2041 ;;		_write_byte
-  2042 ;; This function uses a non-reentrant model
-  2043 ;;
+  1997                           ;psect for function _bit_delay
+  1998  067C                     _bit_delay:
+  1999  067C                     l141:	
+  2000                           ;incstack = 0
+  2001                           ; Regs used in _bit_delay: []
+  2002                           
+  2003  067C  0008               	return
+  2004  067D                     __end_of_bit_delay:
+  2005                           
+  2006                           	psect	text8
+  2007  06C7                     __ptext8:	
+  2008 ;; *************** function _stop_segment *****************
+  2009 ;; Defined at:
+  2010 ;;		line 49 in file "tm1637.c"
+  2011 ;; Parameters:    Size  Location     Type
+  2012 ;;		None
+  2013 ;; Auto vars:     Size  Location     Type
+  2014 ;;		None
+  2015 ;; Return value:  Size  Location     Type
+  2016 ;;                  1    wreg      void 
+  2017 ;; Registers used:
+  2018 ;;		wreg, status,2, status,0
+  2019 ;; Tracked objects:
+  2020 ;;		On entry : 0/0
+  2021 ;;		On exit  : 0/0
+  2022 ;;		Unchanged: 0/0
+  2023 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4
+  2024 ;;      Params:         0       0       0       0       0       0
+  2025 ;;      Locals:         0       0       0       0       0       0
+  2026 ;;      Temps:          1       0       0       0       0       0
+  2027 ;;      Totals:         1       0       0       0       0       0
+  2028 ;;Total ram usage:        1 bytes
+  2029 ;; Hardware stack levels used: 1
+  2030 ;; This function calls:
+  2031 ;;		Nothing
+  2032 ;; This function is called by:
+  2033 ;;		_set_segments
+  2034 ;; This function uses a non-reentrant model
+  2035 ;;
+  2036                           
+  2037                           
+  2038                           ;psect for function _stop_segment
+  2039  06C7                     _stop_segment:
+  2040  06C7                     l1047:	
+  2041                           ;incstack = 0
+  2042                           ; Regs used in _stop_segment: [wreg+status,2+status,0]
+  2043                           
   2044                           
-  2045                           
-  2046                           ;psect for function _bit_delay
-  2047  064D                     _bit_delay:
-  2048  064D                     l88:	
-  2049                           ;incstack = 0
-  2050                           ; Regs used in _bit_delay: []
-  2051                           
-  2052  064D  0008               	return
-  2053  064E                     __end_of_bit_delay:
-  2054                           
-  2055                           	psect	text8
-  2056  06BE                     __ptext8:	
-  2057 ;; *************** function _stop_segment *****************
-  2058 ;; Defined at:
-  2059 ;;		line 49 in file "tm1637.c"
-  2060 ;; Parameters:    Size  Location     Type
-  2061 ;;		None
-  2062 ;; Auto vars:     Size  Location     Type
-  2063 ;;		None
-  2064 ;; Return value:  Size  Location     Type
-  2065 ;;                  1    wreg      void 
-  2066 ;; Registers used:
-  2067 ;;		wreg, status,2, status,0
-  2068 ;; Tracked objects:
-  2069 ;;		On entry : 0/0
-  2070 ;;		On exit  : 0/0
-  2071 ;;		Unchanged: 0/0
-  2072 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4
-  2073 ;;      Params:         0       0       0       0       0       0
-  2074 ;;      Locals:         0       0       0       0       0       0
-  2075 ;;      Temps:          1       0       0       0       0       0
-  2076 ;;      Totals:         1       0       0       0       0       0
-  2077 ;;Total ram usage:        1 bytes
-  2078 ;; Hardware stack levels used:    1
-  2079 ;; This function calls:
-  2080 ;;		Nothing
-  2081 ;; This function is called by:
-  2082 ;;		_set_segments
-  2083 ;; This function uses a non-reentrant model
-  2084 ;;
-  2085                           
-  2086                           
-  2087                           ;psect for function _stop_segment
-  2088  06BE                     _stop_segment:
-  2089  06BE                     l1037:	
-  2090                           ;incstack = 0
-  2091                           ; Regs used in _stop_segment: [wreg+status,2+status,0]
-  2092                           
-  2093                           
-  2094                           ;tm1637.c: 51:     TRISA &= ~0x01;
-  2095  06BE  30FE               	movlw	254
-  2096  06BF  00F0               	movwf	??_stop_segment
-  2097  06C0  0870               	movf	??_stop_segment,w
-  2098  06C1  0021               	movlb	1	; select bank1
-  2099  06C2  058C               	andwf	12,f	;volatile
-  2100                           
-  2101                           ;tm1637.c: 52:     TRISA &= ~0x02;
-  2102  06C3  30FD               	movlw	253
-  2103  06C4  00F0               	movwf	??_stop_segment
-  2104  06C5  0870               	movf	??_stop_segment,w
-  2105  06C6  058C               	andwf	12,f	;volatile
-  2106                           
-  2107                           ;tm1637.c: 55:     LATA &= ~0x01;
-  2108  06C7  30FE               	movlw	254
-  2109  06C8  00F0               	movwf	??_stop_segment
-  2110  06C9  0870               	movf	??_stop_segment,w
-  2111  06CA  0022               	movlb	2	; select bank2
-  2112  06CB  058C               	andwf	12,f	;volatile
-  2113                           
-  2114                           ;tm1637.c: 56:     LATA &= ~0x02;
-  2115  06CC  30FD               	movlw	253
-  2116  06CD  00F0               	movwf	??_stop_segment
-  2117  06CE  0870               	movf	??_stop_segment,w
-  2118  06CF  058C               	andwf	12,f	;volatile
-  2119  06D0                     l1039:
-  2120                           
-  2121                           ;tm1637.c: 59:     LATA |= 0x01;
-  2122  06D0  140C               	bsf	12,0	;volatile
-  2123  06D1                     l1041:
-  2124                           
-  2125                           ;tm1637.c: 60:     LATA |= 0x02;
-  2126  06D1  148C               	bsf	12,1	;volatile
-  2127  06D2                     l94:
-  2128  06D2  0008               	return
-  2129  06D3                     __end_of_stop_segment:
-  2130                           
-  2131                           	psect	text9
-  2132  06A9                     __ptext9:	
-  2133 ;; *************** function _start_segment *****************
-  2134 ;; Defined at:
-  2135 ;;		line 35 in file "tm1637.c"
-  2136 ;; Parameters:    Size  Location     Type
-  2137 ;;		None
-  2138 ;; Auto vars:     Size  Location     Type
-  2139 ;;		None
-  2140 ;; Return value:  Size  Location     Type
-  2141 ;;                  1    wreg      void 
-  2142 ;; Registers used:
-  2143 ;;		wreg, status,2, status,0
-  2144 ;; Tracked objects:
-  2145 ;;		On entry : 0/0
-  2146 ;;		On exit  : 0/0
-  2147 ;;		Unchanged: 0/0
-  2148 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4
-  2149 ;;      Params:         0       0       0       0       0       0
-  2150 ;;      Locals:         0       0       0       0       0       0
-  2151 ;;      Temps:          1       0       0       0       0       0
-  2152 ;;      Totals:         1       0       0       0       0       0
-  2153 ;;Total ram usage:        1 bytes
-  2154 ;; Hardware stack levels used:    1
-  2155 ;; This function calls:
-  2156 ;;		Nothing
-  2157 ;; This function is called by:
-  2158 ;;		_set_segments
-  2159 ;; This function uses a non-reentrant model
-  2160 ;;
-  2161                           
-  2162                           
-  2163                           ;psect for function _start_segment
-  2164  06A9                     _start_segment:
-  2165  06A9                     l1031:	
-  2166                           ;incstack = 0
-  2167                           ; Regs used in _start_segment: [wreg+status,2+status,0]
-  2168                           
-  2169                           
-  2170                           ;tm1637.c: 37:     TRISA &= ~0x01;
-  2171  06A9  30FE               	movlw	254
-  2172  06AA  00F0               	movwf	??_start_segment
-  2173  06AB  0870               	movf	??_start_segment,w
-  2174  06AC  0021               	movlb	1	; select bank1
-  2175  06AD  058C               	andwf	12,f	;volatile
-  2176                           
-  2177                           ;tm1637.c: 38:     TRISA &= ~0x02;
-  2178  06AE  30FD               	movlw	253
-  2179  06AF  00F0               	movwf	??_start_segment
-  2180  06B0  0870               	movf	??_start_segment,w
-  2181  06B1  058C               	andwf	12,f	;volatile
-  2182  06B2                     l1033:
-  2183                           
-  2184                           ;tm1637.c: 41:     LATA |= 0x01;
-  2185  06B2  0022               	movlb	2	; select bank2
-  2186  06B3  140C               	bsf	12,0	;volatile
-  2187  06B4                     l1035:
-  2188                           
-  2189                           ;tm1637.c: 42:     LATA |= 0x02;
-  2190  06B4  148C               	bsf	12,1	;volatile
-  2191                           
-  2192                           ;tm1637.c: 45:     LATA &= ~0x01;
-  2193  06B5  30FE               	movlw	254
-  2194  06B6  00F0               	movwf	??_start_segment
-  2195  06B7  0870               	movf	??_start_segment,w
-  2196  06B8  058C               	andwf	12,f	;volatile
+  2045                           ;tm1637.c: 51:     TRISA &= ~0x03;
+  2046  06C7  30FC               	movlw	252
+  2047  06C8  00F0               	movwf	??_stop_segment
+  2048  06C9  0870               	movf	??_stop_segment,w
+  2049  06CA  0021               	movlb	1	; select bank1
+  2050  06CB  058C               	andwf	12,f	;volatile
+  2051  06CC                     l1049:
+  2052                           
+  2053                           ;tm1637.c: 52:     TRISA &= ~0x00;
+  2054  06CC  080C               	movf	12,w	;volatile
+  2055  06CD                     l1051:
+  2056                           
+  2057                           ;tm1637.c: 55:     LATA &= ~0x03;
+  2058  06CD  30FC               	movlw	252
+  2059  06CE  00F0               	movwf	??_stop_segment
+  2060  06CF  0870               	movf	??_stop_segment,w
+  2061  06D0  0022               	movlb	2	; select bank2
+  2062  06D1  058C               	andwf	12,f	;volatile
+  2063                           
+  2064                           ;tm1637.c: 56:     LATA &= ~0x00;
+  2065  06D2  080C               	movf	12,w	;volatile
+  2066  06D3                     l1053:
+  2067                           
+  2068                           ;tm1637.c: 59:     LATA |= 0x03;
+  2069  06D3  3003               	movlw	3
+  2070  06D4  00F0               	movwf	??_stop_segment
+  2071  06D5  0870               	movf	??_stop_segment,w
+  2072  06D6  048C               	iorwf	12,f	;volatile
+  2073  06D7                     l1055:
+  2074                           
+  2075                           ;tm1637.c: 60:     LATA |= 0x00;
+  2076  06D7  080C               	movf	12,w	;volatile
+  2077  06D8                     l147:
+  2078  06D8  0008               	return
+  2079  06D9                     __end_of_stop_segment:
+  2080                           
+  2081                           	psect	text9
+  2082  06B5                     __ptext9:	
+  2083 ;; *************** function _start_segment *****************
+  2084 ;; Defined at:
+  2085 ;;		line 35 in file "tm1637.c"
+  2086 ;; Parameters:    Size  Location     Type
+  2087 ;;		None
+  2088 ;; Auto vars:     Size  Location     Type
+  2089 ;;		None
+  2090 ;; Return value:  Size  Location     Type
+  2091 ;;                  1    wreg      void 
+  2092 ;; Registers used:
+  2093 ;;		wreg, status,2, status,0
+  2094 ;; Tracked objects:
+  2095 ;;		On entry : 0/0
+  2096 ;;		On exit  : 0/0
+  2097 ;;		Unchanged: 0/0
+  2098 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4
+  2099 ;;      Params:         0       0       0       0       0       0
+  2100 ;;      Locals:         0       0       0       0       0       0
+  2101 ;;      Temps:          1       0       0       0       0       0
+  2102 ;;      Totals:         1       0       0       0       0       0
+  2103 ;;Total ram usage:        1 bytes
+  2104 ;; Hardware stack levels used: 1
+  2105 ;; This function calls:
+  2106 ;;		Nothing
+  2107 ;; This function is called by:
+  2108 ;;		_set_segments
+  2109 ;; This function uses a non-reentrant model
+  2110 ;;
+  2111                           
+  2112                           
+  2113                           ;psect for function _start_segment
+  2114  06B5                     _start_segment:
+  2115  06B5                     l1037:	
+  2116                           ;incstack = 0
+  2117                           ; Regs used in _start_segment: [wreg+status,2+status,0]
+  2118                           
+  2119                           
+  2120                           ;tm1637.c: 37:     TRISA &= ~0x03;
+  2121  06B5  30FC               	movlw	252
+  2122  06B6  00F0               	movwf	??_start_segment
+  2123  06B7  0870               	movf	??_start_segment,w
+  2124  06B8  0021               	movlb	1	; select bank1
+  2125  06B9  058C               	andwf	12,f	;volatile
+  2126  06BA                     l1039:
+  2127                           
+  2128                           ;tm1637.c: 38:     TRISA &= ~0x00;
+  2129  06BA  080C               	movf	12,w	;volatile
+  2130  06BB                     l1041:
+  2131                           
+  2132                           ;tm1637.c: 41:     LATA |= 0x03;
+  2133  06BB  3003               	movlw	3
+  2134  06BC  00F0               	movwf	??_start_segment
+  2135  06BD  0870               	movf	??_start_segment,w
+  2136  06BE  0022               	movlb	2	; select bank2
+  2137  06BF  048C               	iorwf	12,f	;volatile
+  2138                           
+  2139                           ;tm1637.c: 42:     LATA |= 0x00;
+  2140  06C0  080C               	movf	12,w	;volatile
+  2141  06C1                     l1043:
+  2142                           
+  2143                           ;tm1637.c: 45:     LATA &= ~0x03;
+  2144  06C1  30FC               	movlw	252
+  2145  06C2  00F0               	movwf	??_start_segment
+  2146  06C3  0870               	movf	??_start_segment,w
+  2147  06C4  058C               	andwf	12,f	;volatile
+  2148  06C5                     l1045:
+  2149                           
+  2150                           ;tm1637.c: 46:     LATA &= ~0x00;
+  2151  06C5  080C               	movf	12,w	;volatile
+  2152  06C6                     l144:
+  2153  06C6  0008               	return
+  2154  06C7                     __end_of_start_segment:
+  2155                           
+  2156                           	psect	text10
+  2157  069D                     __ptext10:	
+  2158 ;; *************** function _SYSTEM_Initialize *****************
+  2159 ;; Defined at:
+  2160 ;;		line 50 in file "mcc_generated_files/mcc.c"
+  2161 ;; Parameters:    Size  Location     Type
+  2162 ;;		None
+  2163 ;; Auto vars:     Size  Location     Type
+  2164 ;;		None
+  2165 ;; Return value:  Size  Location     Type
+  2166 ;;                  1    wreg      void 
+  2167 ;; Registers used:
+  2168 ;;		wreg, status,2, status,0, pclath, cstack
+  2169 ;; Tracked objects:
+  2170 ;;		On entry : 0/0
+  2171 ;;		On exit  : 0/0
+  2172 ;;		Unchanged: 0/0
+  2173 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4
+  2174 ;;      Params:         0       0       0       0       0       0
+  2175 ;;      Locals:         0       0       0       0       0       0
+  2176 ;;      Temps:          0       0       0       0       0       0
+  2177 ;;      Totals:         0       0       0       0       0       0
+  2178 ;;Total ram usage:        0 bytes
+  2179 ;; Hardware stack levels used: 1
+  2180 ;; Hardware stack levels required when called: 1
+  2181 ;; This function calls:
+  2182 ;;		_OSCILLATOR_Initialize
+  2183 ;;		_PIN_MANAGER_Initialize
+  2184 ;;		_WDT_Initialize
+  2185 ;; This function is called by:
+  2186 ;;		_main
+  2187 ;; This function uses a non-reentrant model
+  2188 ;;
+  2189                           
+  2190                           
+  2191                           ;psect for function _SYSTEM_Initialize
+  2192  069D                     _SYSTEM_Initialize:
+  2193  069D                     l1137:	
+  2194                           ;incstack = 0
+  2195                           ; Regs used in _SYSTEM_Initialize: [wreg+status,2+status,0+pclath+cstack]
+  2196                           
   2197                           
-  2198                           ;tm1637.c: 46:     LATA &= ~0x02;
-  2199  06B9  30FD               	movlw	253
-  2200  06BA  00F0               	movwf	??_start_segment
-  2201  06BB  0870               	movf	??_start_segment,w
-  2202  06BC  058C               	andwf	12,f	;volatile
-  2203  06BD                     l91:
-  2204  06BD  0008               	return
-  2205  06BE                     __end_of_start_segment:
-  2206                           
-  2207                           	psect	text10
-  2208  066B                     __ptext10:	
-  2209 ;; *************** function _SYSTEM_Initialize *****************
-  2210 ;; Defined at:
-  2211 ;;		line 50 in file "mcc_generated_files/mcc.c"
-  2212 ;; Parameters:    Size  Location     Type
-  2213 ;;		None
-  2214 ;; Auto vars:     Size  Location     Type
-  2215 ;;		None
-  2216 ;; Return value:  Size  Location     Type
-  2217 ;;                  1    wreg      void 
-  2218 ;; Registers used:
-  2219 ;;		wreg, status,2, status,0, pclath, cstack
-  2220 ;; Tracked objects:
-  2221 ;;		On entry : 0/0
-  2222 ;;		On exit  : 0/0
-  2223 ;;		Unchanged: 0/0
-  2224 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4
-  2225 ;;      Params:         0       0       0       0       0       0
-  2226 ;;      Locals:         0       0       0       0       0       0
-  2227 ;;      Temps:          0       0       0       0       0       0
-  2228 ;;      Totals:         0       0       0       0       0       0
-  2229 ;;Total ram usage:        0 bytes
-  2230 ;; Hardware stack levels used:    1
-  2231 ;; Hardware stack levels required when called:    1
-  2232 ;; This function calls:
-  2233 ;;		_OSCILLATOR_Initialize
-  2234 ;;		_PIN_MANAGER_Initialize
-  2235 ;;		_WDT_Initialize
+  2198                           ;mcc_generated_files/mcc.c: 53:     PIN_MANAGER_Initialize();
+  2199  069D  3186  26FF  3186   	fcall	_PIN_MANAGER_Initialize
+  2200                           
+  2201                           ;mcc_generated_files/mcc.c: 54:     OSCILLATOR_Initialize();
+  2202  06A0  3186  2687  3186   	fcall	_OSCILLATOR_Initialize
+  2203                           
+  2204                           ;mcc_generated_files/mcc.c: 55:     WDT_Initialize();
+  2205  06A3  3186  267D  3186   	fcall	_WDT_Initialize
+  2206  06A6                     l45:
+  2207  06A6  0008               	return
+  2208  06A7                     __end_of_SYSTEM_Initialize:
+  2209                           
+  2210                           	psect	text11
+  2211  067D                     __ptext11:	
+  2212 ;; *************** function _WDT_Initialize *****************
+  2213 ;; Defined at:
+  2214 ;;		line 68 in file "mcc_generated_files/mcc.c"
+  2215 ;; Parameters:    Size  Location     Type
+  2216 ;;		None
+  2217 ;; Auto vars:     Size  Location     Type
+  2218 ;;		None
+  2219 ;; Return value:  Size  Location     Type
+  2220 ;;                  1    wreg      void 
+  2221 ;; Registers used:
+  2222 ;;		wreg
+  2223 ;; Tracked objects:
+  2224 ;;		On entry : 0/0
+  2225 ;;		On exit  : 0/0
+  2226 ;;		Unchanged: 0/0
+  2227 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4
+  2228 ;;      Params:         0       0       0       0       0       0
+  2229 ;;      Locals:         0       0       0       0       0       0
+  2230 ;;      Temps:          0       0       0       0       0       0
+  2231 ;;      Totals:         0       0       0       0       0       0
+  2232 ;;Total ram usage:        0 bytes
+  2233 ;; Hardware stack levels used: 1
+  2234 ;; This function calls:
+  2235 ;;		Nothing
   2236 ;; This function is called by:
-  2237 ;;		_main
+  2237 ;;		_SYSTEM_Initialize
   2238 ;; This function uses a non-reentrant model
   2239 ;;
   2240                           
   2241                           
-  2242                           ;psect for function _SYSTEM_Initialize
-  2243  066B                     _SYSTEM_Initialize:
-  2244  066B                     l1119:	
+  2242                           ;psect for function _WDT_Initialize
+  2243  067D                     _WDT_Initialize:
+  2244  067D                     l1123:	
   2245                           ;incstack = 0
-  2246                           ; Regs used in _SYSTEM_Initialize: [wreg+status,2+status,0+pclath+cstack]
+  2246                           ; Regs used in _WDT_Initialize: [wreg]
   2247                           
   2248                           
-  2249                           ;mcc_generated_files/mcc.c: 53:     PIN_MANAGER_Initialize();
-  2250  066B  3186  26D3  3186   	fcall	_PIN_MANAGER_Initialize
-  2251                           
-  2252                           ;mcc_generated_files/mcc.c: 54:     OSCILLATOR_Initialize();
-  2253  066E  3186  265C  3186   	fcall	_OSCILLATOR_Initialize
-  2254                           
-  2255                           ;mcc_generated_files/mcc.c: 55:     WDT_Initialize();
-  2256  0671  3186  264E  3186   	fcall	_WDT_Initialize
-  2257  0674                     l177:
-  2258  0674  0008               	return
-  2259  0675                     __end_of_SYSTEM_Initialize:
-  2260                           
-  2261                           	psect	text11
-  2262  064E                     __ptext11:	
-  2263 ;; *************** function _WDT_Initialize *****************
-  2264 ;; Defined at:
-  2265 ;;		line 68 in file "mcc_generated_files/mcc.c"
-  2266 ;; Parameters:    Size  Location     Type
-  2267 ;;		None
-  2268 ;; Auto vars:     Size  Location     Type
-  2269 ;;		None
-  2270 ;; Return value:  Size  Location     Type
-  2271 ;;                  1    wreg      void 
-  2272 ;; Registers used:
-  2273 ;;		wreg
-  2274 ;; Tracked objects:
-  2275 ;;		On entry : 0/0
-  2276 ;;		On exit  : 0/0
-  2277 ;;		Unchanged: 0/0
-  2278 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4
-  2279 ;;      Params:         0       0       0       0       0       0
-  2280 ;;      Locals:         0       0       0       0       0       0
-  2281 ;;      Temps:          0       0       0       0       0       0
-  2282 ;;      Totals:         0       0       0       0       0       0
-  2283 ;;Total ram usage:        0 bytes
-  2284 ;; Hardware stack levels used:    1
-  2285 ;; This function calls:
-  2286 ;;		Nothing
-  2287 ;; This function is called by:
-  2288 ;;		_SYSTEM_Initialize
-  2289 ;; This function uses a non-reentrant model
-  2290 ;;
-  2291                           
-  2292                           
-  2293                           ;psect for function _WDT_Initialize
-  2294  064E                     _WDT_Initialize:
-  2295  064E                     l1117:	
-  2296                           ;incstack = 0
-  2297                           ; Regs used in _WDT_Initialize: [wreg]
-  2298                           
+  2249                           ;mcc_generated_files/mcc.c: 71:     WDTCON = 0x16;
+  2250  067D  3016               	movlw	22
+  2251  067E  0021               	movlb	1	; select bank1
+  2252  067F  0097               	movwf	23	;volatile
+  2253  0680                     l51:
+  2254  0680  0008               	return
+  2255  0681                     __end_of_WDT_Initialize:
+  2256                           
+  2257                           	psect	text12
+  2258  06FF                     __ptext12:	
+  2259 ;; *************** function _PIN_MANAGER_Initialize *****************
+  2260 ;; Defined at:
+  2261 ;;		line 55 in file "mcc_generated_files/pin_manager.c"
+  2262 ;; Parameters:    Size  Location     Type
+  2263 ;;		None
+  2264 ;; Auto vars:     Size  Location     Type
+  2265 ;;		None
+  2266 ;; Return value:  Size  Location     Type
+  2267 ;;                  1    wreg      void 
+  2268 ;; Registers used:
+  2269 ;;		wreg, status,2
+  2270 ;; Tracked objects:
+  2271 ;;		On entry : 0/0
+  2272 ;;		On exit  : 0/0
+  2273 ;;		Unchanged: 0/0
+  2274 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4
+  2275 ;;      Params:         0       0       0       0       0       0
+  2276 ;;      Locals:         0       0       0       0       0       0
+  2277 ;;      Temps:          0       0       0       0       0       0
+  2278 ;;      Totals:         0       0       0       0       0       0
+  2279 ;;Total ram usage:        0 bytes
+  2280 ;; Hardware stack levels used: 1
+  2281 ;; This function calls:
+  2282 ;;		Nothing
+  2283 ;; This function is called by:
+  2284 ;;		_SYSTEM_Initialize
+  2285 ;; This function uses a non-reentrant model
+  2286 ;;
+  2287                           
+  2288                           
+  2289                           ;psect for function _PIN_MANAGER_Initialize
+  2290  06FF                     _PIN_MANAGER_Initialize:
+  2291  06FF                     l1105:	
+  2292                           ;incstack = 0
+  2293                           ; Regs used in _PIN_MANAGER_Initialize: [wreg+status,2]
+  2294                           
+  2295                           
+  2296                           ;mcc_generated_files/pin_manager.c: 60:     LATA = 0x00;
+  2297  06FF  0022               	movlb	2	; select bank2
+  2298  0700  018C               	clrf	12	;volatile
   2299                           
-  2300                           ;mcc_generated_files/mcc.c: 71:     WDTCON = 0x16;
-  2301  064E  3016               	movlw	22
-  2302  064F  0021               	movlb	1	; select bank1
-  2303  0650  0097               	movwf	23	;volatile
-  2304  0651                     l183:
-  2305  0651  0008               	return
-  2306  0652                     __end_of_WDT_Initialize:
-  2307                           
-  2308                           	psect	text12
-  2309  06D3                     __ptext12:	
-  2310 ;; *************** function _PIN_MANAGER_Initialize *****************
-  2311 ;; Defined at:
-  2312 ;;		line 55 in file "mcc_generated_files/pin_manager.c"
-  2313 ;; Parameters:    Size  Location     Type
-  2314 ;;		None
-  2315 ;; Auto vars:     Size  Location     Type
-  2316 ;;		None
-  2317 ;; Return value:  Size  Location     Type
-  2318 ;;                  1    wreg      void 
-  2319 ;; Registers used:
-  2320 ;;		wreg, status,2
-  2321 ;; Tracked objects:
-  2322 ;;		On entry : 0/0
-  2323 ;;		On exit  : 0/0
-  2324 ;;		Unchanged: 0/0
-  2325 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4
-  2326 ;;      Params:         0       0       0       0       0       0
-  2327 ;;      Locals:         0       0       0       0       0       0
-  2328 ;;      Temps:          0       0       0       0       0       0
-  2329 ;;      Totals:         0       0       0       0       0       0
-  2330 ;;Total ram usage:        0 bytes
-  2331 ;; Hardware stack levels used:    1
-  2332 ;; This function calls:
-  2333 ;;		Nothing
-  2334 ;; This function is called by:
-  2335 ;;		_SYSTEM_Initialize
-  2336 ;; This function uses a non-reentrant model
-  2337 ;;
-  2338                           
-  2339                           
-  2340                           ;psect for function _PIN_MANAGER_Initialize
-  2341  06D3                     _PIN_MANAGER_Initialize:
-  2342  06D3                     l1099:	
-  2343                           ;incstack = 0
-  2344                           ; Regs used in _PIN_MANAGER_Initialize: [wreg+status,2]
-  2345                           
+  2300                           ;mcc_generated_files/pin_manager.c: 61:     LATB = 0x00;
+  2301  0701  018D               	clrf	13	;volatile
+  2302  0702                     l1107:
+  2303                           
+  2304                           ;mcc_generated_files/pin_manager.c: 66:     TRISA = 0xFF;
+  2305  0702  30FF               	movlw	255
+  2306  0703  0021               	movlb	1	; select bank1
+  2307  0704  008C               	movwf	12	;volatile
+  2308  0705                     l1109:
+  2309                           
+  2310                           ;mcc_generated_files/pin_manager.c: 67:     TRISB = 0xFF;
+  2311  0705  30FF               	movlw	255
+  2312  0706  008D               	movwf	13	;volatile
+  2313  0707                     l1111:
+  2314                           
+  2315                           ;mcc_generated_files/pin_manager.c: 72:     ANSELB = 0xFE;
+  2316  0707  30FE               	movlw	254
+  2317  0708  0023               	movlb	3	; select bank3
+  2318  0709  008D               	movwf	13	;volatile
+  2319  070A                     l1113:
+  2320                           
+  2321                           ;mcc_generated_files/pin_manager.c: 73:     ANSELA = 0x1F;
+  2322  070A  301F               	movlw	31
+  2323  070B  008C               	movwf	12	;volatile
+  2324                           
+  2325                           ;mcc_generated_files/pin_manager.c: 78:     WPUB = 0x00;
+  2326  070C  0024               	movlb	4	; select bank4
+  2327  070D  018D               	clrf	13	;volatile
+  2328                           
+  2329                           ;mcc_generated_files/pin_manager.c: 79:     WPUA = 0x00;
+  2330  070E  018C               	clrf	12	;volatile
+  2331  070F                     l1115:
+  2332                           
+  2333                           ;mcc_generated_files/pin_manager.c: 80:     OPTION_REGbits.nWPUEN = 1;
+  2334  070F  0021               	movlb	1	; select bank1
+  2335  0710  1795               	bsf	21,7	;volatile
+  2336                           
+  2337                           ;mcc_generated_files/pin_manager.c: 86:     APFCON0 = 0x00;
+  2338  0711  0022               	movlb	2	; select bank2
+  2339  0712  019D               	clrf	29	;volatile
+  2340                           
+  2341                           ;mcc_generated_files/pin_manager.c: 87:     APFCON1 = 0x00;
+  2342  0713  019E               	clrf	30	;volatile
+  2343  0714                     l25:
+  2344  0714  0008               	return
+  2345  0715                     __end_of_PIN_MANAGER_Initialize:
   2346                           
-  2347                           ;mcc_generated_files/pin_manager.c: 60:     LATA = 0x00;
-  2348  06D3  0022               	movlb	2	; select bank2
-  2349  06D4  018C               	clrf	12	;volatile
-  2350                           
-  2351                           ;mcc_generated_files/pin_manager.c: 61:     LATB = 0x00;
-  2352  06D5  018D               	clrf	13	;volatile
-  2353  06D6                     l1101:
-  2354                           
-  2355                           ;mcc_generated_files/pin_manager.c: 66:     TRISA = 0xFF;
-  2356  06D6  30FF               	movlw	255
-  2357  06D7  0021               	movlb	1	; select bank1
-  2358  06D8  008C               	movwf	12	;volatile
-  2359  06D9                     l1103:
-  2360                           
-  2361                           ;mcc_generated_files/pin_manager.c: 67:     TRISB = 0xFF;
-  2362  06D9  30FF               	movlw	255
-  2363  06DA  008D               	movwf	13	;volatile
-  2364  06DB                     l1105:
-  2365                           
-  2366                           ;mcc_generated_files/pin_manager.c: 72:     ANSELB = 0xFE;
-  2367  06DB  30FE               	movlw	254
-  2368  06DC  0023               	movlb	3	; select bank3
-  2369  06DD  008D               	movwf	13	;volatile
-  2370  06DE                     l1107:
-  2371                           
-  2372                           ;mcc_generated_files/pin_manager.c: 73:     ANSELA = 0x1F;
-  2373  06DE  301F               	movlw	31
-  2374  06DF  008C               	movwf	12	;volatile
-  2375                           
-  2376                           ;mcc_generated_files/pin_manager.c: 78:     WPUB = 0x00;
-  2377  06E0  0024               	movlb	4	; select bank4
-  2378  06E1  018D               	clrf	13	;volatile
-  2379                           
-  2380                           ;mcc_generated_files/pin_manager.c: 79:     WPUA = 0x00;
-  2381  06E2  018C               	clrf	12	;volatile
-  2382  06E3                     l1109:
-  2383                           
-  2384                           ;mcc_generated_files/pin_manager.c: 80:     OPTION_REGbits.nWPUEN = 1;
-  2385  06E3  0021               	movlb	1	; select bank1
-  2386  06E4  1795               	bsf	21,7	;volatile
-  2387                           
-  2388                           ;mcc_generated_files/pin_manager.c: 86:     APFCON0 = 0x00;
-  2389  06E5  0022               	movlb	2	; select bank2
-  2390  06E6  019D               	clrf	29	;volatile
+  2347                           	psect	text13
+  2348  0687                     __ptext13:	
+  2349 ;; *************** function _OSCILLATOR_Initialize *****************
+  2350 ;; Defined at:
+  2351 ;;		line 58 in file "mcc_generated_files/mcc.c"
+  2352 ;; Parameters:    Size  Location     Type
+  2353 ;;		None
+  2354 ;; Auto vars:     Size  Location     Type
+  2355 ;;		None
+  2356 ;; Return value:  Size  Location     Type
+  2357 ;;                  1    wreg      void 
+  2358 ;; Registers used:
+  2359 ;;		wreg, status,2
+  2360 ;; Tracked objects:
+  2361 ;;		On entry : 0/0
+  2362 ;;		On exit  : 0/0
+  2363 ;;		Unchanged: 0/0
+  2364 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4
+  2365 ;;      Params:         0       0       0       0       0       0
+  2366 ;;      Locals:         0       0       0       0       0       0
+  2367 ;;      Temps:          0       0       0       0       0       0
+  2368 ;;      Totals:         0       0       0       0       0       0
+  2369 ;;Total ram usage:        0 bytes
+  2370 ;; Hardware stack levels used: 1
+  2371 ;; This function calls:
+  2372 ;;		Nothing
+  2373 ;; This function is called by:
+  2374 ;;		_SYSTEM_Initialize
+  2375 ;; This function uses a non-reentrant model
+  2376 ;;
+  2377                           
+  2378                           
+  2379                           ;psect for function _OSCILLATOR_Initialize
+  2380  0687                     _OSCILLATOR_Initialize:
+  2381  0687                     l1117:	
+  2382                           ;incstack = 0
+  2383                           ; Regs used in _OSCILLATOR_Initialize: [wreg+status,2]
+  2384                           
+  2385                           
+  2386                           ;mcc_generated_files/mcc.c: 61:     OSCCON = 0x70;
+  2387  0687  3070               	movlw	112
+  2388  0688  0021               	movlb	1	; select bank1
+  2389  0689  0099               	movwf	25	;volatile
+  2390  068A                     l1119:
   2391                           
-  2392                           ;mcc_generated_files/pin_manager.c: 87:     APFCON1 = 0x00;
-  2393  06E7  019E               	clrf	30	;volatile
-  2394  06E8                     l157:
-  2395  06E8  0008               	return
-  2396  06E9                     __end_of_PIN_MANAGER_Initialize:
-  2397                           
-  2398                           	psect	text13
-  2399  065C                     __ptext13:	
-  2400 ;; *************** function _OSCILLATOR_Initialize *****************
-  2401 ;; Defined at:
-  2402 ;;		line 58 in file "mcc_generated_files/mcc.c"
-  2403 ;; Parameters:    Size  Location     Type
-  2404 ;;		None
-  2405 ;; Auto vars:     Size  Location     Type
-  2406 ;;		None
-  2407 ;; Return value:  Size  Location     Type
-  2408 ;;                  1    wreg      void 
-  2409 ;; Registers used:
-  2410 ;;		wreg, status,2
-  2411 ;; Tracked objects:
-  2412 ;;		On entry : 0/0
-  2413 ;;		On exit  : 0/0
-  2414 ;;		Unchanged: 0/0
-  2415 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2   BANK3   BANK4
-  2416 ;;      Params:         0       0       0       0       0       0
-  2417 ;;      Locals:         0       0       0       0       0       0
-  2418 ;;      Temps:          0       0       0       0       0       0
-  2419 ;;      Totals:         0       0       0       0       0       0
-  2420 ;;Total ram usage:        0 bytes
-  2421 ;; Hardware stack levels used:    1
-  2422 ;; This function calls:
-  2423 ;;		Nothing
-  2424 ;; This function is called by:
-  2425 ;;		_SYSTEM_Initialize
-  2426 ;; This function uses a non-reentrant model
-  2427 ;;
-  2428                           
-  2429                           
-  2430                           ;psect for function _OSCILLATOR_Initialize
-  2431  065C                     _OSCILLATOR_Initialize:
-  2432  065C                     l1111:	
-  2433                           ;incstack = 0
-  2434                           ; Regs used in _OSCILLATOR_Initialize: [wreg+status,2]
-  2435                           
-  2436                           
-  2437                           ;mcc_generated_files/mcc.c: 61:     OSCCON = 0x70;
-  2438  065C  3070               	movlw	112
-  2439  065D  0021               	movlb	1	; select bank1
-  2440  065E  0099               	movwf	25	;volatile
-  2441  065F                     l1113:
-  2442                           
-  2443                           ;mcc_generated_files/mcc.c: 63:     OSCTUNE = 0x00;
-  2444  065F  0198               	clrf	24	;volatile
-  2445  0660                     l1115:
-  2446                           
-  2447                           ;mcc_generated_files/mcc.c: 65:     BORCON = 0x00;
-  2448  0660  0022               	movlb	2	; select bank2
-  2449  0661  0196               	clrf	22	;volatile
-  2450  0662                     l180:
-  2451  0662  0008               	return
-  2452  0663                     __end_of_OSCILLATOR_Initialize:
-  2453  007E                     btemp	set	126	;btemp
-  2454  007E                     wtemp0	set	126
-  2455                           
-  2456                           	psect	config
-  2457                           
-  2458                           ;Config register CONFIG1 @ 0x8007
-  2459                           ;	Oscillator Selection
-  2460                           ;	FOSC = INTOSC, INTOSC oscillator: I/O function on CLKIN pin
-  2461                           ;	Watchdog Timer Enable
-  2462                           ;	WDTE = OFF, WDT disabled
-  2463                           ;	Power-up Timer Enable
-  2464                           ;	PWRTE = OFF, PWRT disabled
-  2465                           ;	MCLR Pin Function Select
-  2466                           ;	MCLRE = ON, MCLR/VPP pin function is MCLR
-  2467                           ;	Flash Program Memory Code Protection
-  2468                           ;	CP = OFF, Program memory code protection is disabled
-  2469                           ;	Data Memory Code Protection
-  2470                           ;	CPD = OFF, Data memory code protection is disabled
-  2471                           ;	Brown-out Reset Enable
-  2472                           ;	BOREN = ON, Brown-out Reset enabled
-  2473                           ;	Clock Out Enable
-  2474                           ;	CLKOUTEN = OFF, CLKOUT function is disabled. I/O or oscillator function on the CLKOUT 
+  2392                           ;mcc_generated_files/mcc.c: 63:     OSCTUNE = 0x00;
+  2393  068A  0198               	clrf	24	;volatile
+  2394  068B                     l1121:
+  2395                           
+  2396                           ;mcc_generated_files/mcc.c: 65:     BORCON = 0x00;
+  2397  068B  0022               	movlb	2	; select bank2
+  2398  068C  0196               	clrf	22	;volatile
+  2399  068D                     l48:
+  2400  068D  0008               	return
+  2401  068E                     __end_of_OSCILLATOR_Initialize:
+  2402  007E                     btemp	set	126	;btemp
+  2403  007E                     wtemp0	set	126
+  2404                           
+  2405                           	psect	config
+  2406                           
+  2407                           ;Config register CONFIG1 @ 0x8007
+  2408                           ;	Oscillator Selection
+  2409                           ;	FOSC = INTOSC, INTOSC oscillator: I/O function on CLKIN pin
+  2410                           ;	Watchdog Timer Enable
+  2411                           ;	WDTE = OFF, WDT disabled
+  2412                           ;	Power-up Timer Enable
+  2413                           ;	PWRTE = OFF, PWRT disabled
+  2414                           ;	MCLR Pin Function Select
+  2415                           ;	MCLRE = ON, MCLR/VPP pin function is MCLR
+  2416                           ;	Flash Program Memory Code Protection
+  2417                           ;	CP = OFF, Program memory code protection is disabled
+  2418                           ;	Data Memory Code Protection
+  2419                           ;	CPD = OFF, Data memory code protection is disabled
+  2420                           ;	Brown-out Reset Enable
+  2421                           ;	BOREN = ON, Brown-out Reset enabled
+  2422                           ;	Clock Out Enable
+  2423                           ;	CLKOUTEN = OFF, CLKOUT function is disabled. I/O or oscillator function on the CLKOUT 
       +                          pin
-  2475                           ;	Internal/External Switchover
-  2476                           ;	IESO = ON, Internal/External Switchover mode is enabled
-  2477                           ;	Fail-Safe Clock Monitor Enable
-  2478                           ;	FCMEN = ON, Fail-Safe Clock Monitor is enabled
-  2479  8007                     	org	32775
-  2480  8007  3FE4               	dw	16356
-  2481                           
-  2482                           ;Config register CONFIG2 @ 0x8008
-  2483                           ;	Flash Memory Self-Write Protection
-  2484                           ;	WRT = OFF, Write protection off
-  2485                           ;	PLL Enable
-  2486                           ;	PLLEN = OFF, 4x PLL disabled
-  2487                           ;	Stack Overflow/Underflow Reset Enable
-  2488                           ;	STVREN = ON, Stack Overflow or Underflow will cause a Reset
-  2489                           ;	Brown-out Reset Voltage Selection
-  2490                           ;	BORV = LO, Brown-out Reset Voltage (Vbor), low trip point selected.
-  2491                           ;	Low-Voltage Programming Enable
-  2492                           ;	LVP = OFF, High-voltage on MCLR/VPP must be used for programming
-  2493  8008                     	org	32776
-  2494  8008  1EFF               	dw	7935
+  2424                           ;	Internal/External Switchover
+  2425                           ;	IESO = ON, Internal/External Switchover mode is enabled
+  2426                           ;	Fail-Safe Clock Monitor Enable
+  2427                           ;	FCMEN = ON, Fail-Safe Clock Monitor is enabled
+  2428  8007                     	org	32775
+  2429  8007  3FE4               	dw	16356
+  2430                           
+  2431                           ;Config register CONFIG2 @ 0x8008
+  2432                           ;	Flash Memory Self-Write Protection
+  2433                           ;	WRT = OFF, Write protection off
+  2434                           ;	PLL Enable
+  2435                           ;	PLLEN = OFF, 4x PLL disabled
+  2436                           ;	Stack Overflow/Underflow Reset Enable
+  2437                           ;	STVREN = ON, Stack Overflow or Underflow will cause a Reset
+  2438                           ;	Brown-out Reset Voltage Selection
+  2439                           ;	BORV = LO, Brown-out Reset Voltage (Vbor), low trip point selected.
+  2440                           ;	Low-Voltage Programming Enable
+  2441                           ;	LVP = OFF, High-voltage on MCLR/VPP must be used for programming
+  2442  8008                     	org	32776
+  2443  8008  1EFF               	dw	7935
 
 Data Sizes:
     Strings     0
@@ -2519,7 +2468,7 @@ Data Sizes:
 Auto Spaces:
     Space          Size  Autos    Used
     COMMON           14     13      14
-    BANK0            80     10      28
+    BANK0            80      8      26
     BANK1            80      0       0
     BANK2            80      0       0
     BANK3            80      0       0
@@ -2536,6 +2485,7 @@ Critical Paths under _main in COMMON
     _main->_clear_segment
     _clear_segment->_set_segments
     _set_segments->_write_byte
+    _write_byte->_get_DIO_PIN_value
 
 Critical Paths under _main in BANK0
 
@@ -2562,9 +2512,9 @@ Call Graph Tables:
  ---------------------------------------------------------------------------------
  (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
  ---------------------------------------------------------------------------------
- (0) _main                                                 8     8      0    2065
-                                             11 COMMON     2     2      0
-                                              4 BANK0      6     6      0
+ (0) _main                                                 6     6      0    1536
+                                             12 COMMON     1     1      0
+                                              4 BANK0      4     4      0
                   _SYSTEM_Initialize
                       _clear_segment
                        _encode_digit
@@ -2577,23 +2527,24 @@ Call Graph Tables:
  (1) _encode_digit                                         1     1      0      22
                                               0 COMMON     1     1      0
  ---------------------------------------------------------------------------------
- (1) _clear_segment                                        5     5      0     834
-                                             10 COMMON     1     1      0
+ (1) _clear_segment                                        5     5      0     649
+                                             11 COMMON     1     1      0
                                               0 BANK0      4     4      0
                        _set_segments
  ---------------------------------------------------------------------------------
- (1) _set_segments                                         5     3      2     810
-                                              5 COMMON     5     3      2
+ (1) _set_segments                                         5     3      2     625
+                                              6 COMMON     5     3      2
                       _start_segment
                        _stop_segment
                          _write_byte
  ---------------------------------------------------------------------------------
  (2) _write_byte                                           5     5      0     143
-                                              0 COMMON     5     5      0
+                                              1 COMMON     5     5      0
                           _bit_delay
                   _get_DIO_PIN_value
  ---------------------------------------------------------------------------------
- (3) _get_DIO_PIN_value                                    0     0      0       0
+ (3) _get_DIO_PIN_value                                    1     1      0       0
+                                              0 COMMON     1     1      0
  ---------------------------------------------------------------------------------
  (3) _bit_delay                                            0     0      0       0
  ---------------------------------------------------------------------------------
@@ -2634,11 +2585,6 @@ Call Graph Tables:
    _encode_digit
    _set_brigthness
    _set_segments
-     _start_segment
-     _stop_segment
-     _write_byte
-       _bit_delay
-       _get_DIO_PIN_value
 
  Address spaces:
 Name               Size   Autos  Total    Cost      Usage
@@ -2657,11 +2603,11 @@ SFR2                 0      0       0       3        0.0%
 STACK                0      0       0       3        0.0%
 BITSFR3              0      0       0       4        0.0%
 SFR3                 0      0       0       4        0.0%
-ABS                  0      0      2A       4        0.0%
+ABS                  0      0      28       4        0.0%
 BITBANK0            50      0       0       5        0.0%
 BITSFR4              0      0       0       5        0.0%
 SFR4                 0      0       0       5        0.0%
-BANK0               50      A      1C       6       35.0%
+BANK0               50      8      1A       6       32.5%
 BITSFR5              0      0       0       6        0.0%
 SFR5                 0      0       0       6        0.0%
 BITBANK1            50      0       0       7        0.0%
@@ -2690,7 +2636,7 @@ BITSFR13             0      0       0      14        0.0%
 SFR13                0      0       0      14        0.0%
 BITSFR14             0      0       0      15        0.0%
 SFR14                0      0       0      15        0.0%
-DATA                 0      0      2A      15        0.0%
+DATA                 0      0      28      15        0.0%
 BITSFR15             0      0       0      16        0.0%
 SFR15                0      0       0      16        0.0%
 BITSFR16             0      0       0      17        0.0%
@@ -2727,87 +2673,86 @@ BITSFR31             0      0       0      32        0.0%
 SFR31                0      0       0      32        0.0%
 
 
-Microchip Technology PIC Macro Assembler V2.30 build 20200825195618 
-Symbol Table                                                                                   Thu Oct 21 22:08:50 2021
+Microchip Technology PIC Macro Assembler V2.32 build 20210201212658 
+Symbol Table                                                                                   Thu Oct 21 22:53:46 2021
 
-         __size_of_start_segment 0015                      _SSPSTATbits 0214                               l91 06BD  
-                             l94 06D2                               l88 064D                               l98 0655  
-                            l113 0777                              l124 0722                              l132 066A  
-                            l118 06A8                              l129 0695                              l180 0662  
-                            l157 06E8                              l183 0651                              l177 0674  
-                            l997 0652                              u200 07D0                              u201 07CF  
-                            u150 0737                              u151 0736                              u160 074C  
-                            u161 074B                              u217 07DE                              u170 0762  
-                            u171 0761                              u180 0713                              u181 0712  
-                            u190 069C                              u191 069B                              wreg 0009  
-                 ??_encode_digit 0070                             l1003 0652                             l1101 06D6  
-                           l1111 065C                             l1103 06D9                             l1031 06A9  
-                           l1113 065F                             l1105 06DB                             l1033 06B2  
-                           l1041 06D1                             l1121 0683                             l1115 0660  
-                           l1107 06DE                             l1035 06B4                             l1043 0724  
-                           l1123 068C                             l1131 069C                             l1109 06E3  
-                           l1117 064E                             l1037 06BE                             l1061 073D  
-                           l1053 072E                             l1045 0728                             l1125 0664  
-                           l1133 06A3                             l1141 0787                             l1119 066B  
-                           l1039 06D0                             l1071 0752                             l1063 0746  
-                           l1055 0733                             l1047 072D                             l1151 07AD  
-                           l1143 078F                             l1135 0778                             l1081 076C  
-                           l1073 0754                             l1065 074C                             l1057 0737  
-                           l1129 0697                             l1161 07C6                             l1153 07B6  
-                           l1145 0797                             l1137 077B                             l1083 076F  
-                           l1075 0757                             l1067 0750                             l1059 0739  
-                           l1091 06FF                             l1163 07CA                             l1155 07B8  
-                           l1147 079F                             l1139 0784                             l1077 075D  
-                           l1069 0751                             l1093 0709                             l1165 07D0  
-                           l1149 07A7                             l1079 0762                             l1095 070D  
-                           l1087 06EA                             l1167 07D9                             l1159 07B9  
-                           l1097 0713                             l1089 06FD                             l1169 07E4  
-                           l1099 06D3                             _LATA 010C                             _LATB 010D  
-                           _WPUA 020C                             _WPUB 020D                             _main 0778  
-                  write_byte@ack 0072                             fsr0h 0005                             fsr1h 0007  
-                           fsr0l 0004                             indf1 0001                             fsr1l 0006  
-                           btemp 007E                             start 0002   __size_of_OSCILLATOR_Initialize 0007  
-  __end_of_OSCILLATOR_Initialize 0663            __size_of_stop_segment 0015                            ?_main 0070  
-                          _TRISA 008C                            _TRISB 008D                   _WDT_Initialize 064E  
-                  _start_segment 06A9                   write_byte@data 0073                            main@i 0037  
-                          main@k 0032                            status 0003                            wtemp0 007E  
-                __initialization 07EC                     _stop_segment 06BE                     __end_of_main 07EC  
-                         ??_main 007B           __end_of_WDT_Initialize 0652                  set_segments@pos 0076  
-                 ?_start_segment 0070                           _ANSELA 018C                           _ANSELB 018D  
-                         _BORCON 0116                           _OSCCON 0099                           _WDTCON 0097  
-                         _SSPBUF 0211            __end_of_clear_segment 0696             __end_of_encode_digit 066B  
-                ?_WDT_Initialize 0070          __size_of_set_brigthness 0013                _SYSTEM_Initialize 066B  
-        __end_of__initialization 07FD               ?_SYSTEM_Initialize 0070         set_brigthness@brightness 0072  
-                 __pcstackCOMMON 0070                     __pidataBANK0 0675              ??_SYSTEM_Initialize 0070  
-             __size_of_bit_delay 0001                   _OPTION_REGbits 0095                  ??_start_segment 0070  
-      __end_of_SYSTEM_Initialize 0675                       __pbssBANK0 0038                _get_DIO_PIN_value 0652  
-             ?_get_DIO_PIN_value 0070                       __pmaintext 0778              ??_get_DIO_PIN_value 0070  
-                        _APFCON0 011D                          _APFCON1 011E               set_segments@length 0075  
-                        _OSCTUNE 0098                          _SSPCON2 0216                          _SSPSTAT 0214  
-      __end_of_get_DIO_PIN_value 0656                __end_of_bit_delay 064E            __size_of_encode_digit 0008  
-                  ?_set_segments 0075                          __ptext1 0696                          __ptext2 0663  
-                        __ptext3 0683                          __ptext4 06E9                          __ptext5 0723  
-                        __ptext6 0652                          __ptext7 064D                          __ptext8 06BE  
-                        __ptext9 06A9            _OSCILLATOR_Initialize 065C                          _segdata 0020  
-       ??_PIN_MANAGER_Initialize 0070                   _set_brigthness 0696       __size_of_SYSTEM_Initialize 000A  
-           end_of_initialization 07FD                     _encode_digit 0663               clear_segment@F2506 0038  
-                        init_ram 0656                          initloop 0657             set_segments@segments 0078  
-                 ??_set_segments 0077                 ??_WDT_Initialize 0070                        _PORTAbits 000C  
-                   _m_brightness 007D           __end_of_set_brigthness 06A9       __size_of_get_DIO_PIN_value 0004  
-                     _write_byte 0723           ?_OSCILLATOR_Initialize 0070              start_initialization 07EC  
-                ?_set_brigthness 0070  __size_of_PIN_MANAGER_Initialize 0016           __size_of_clear_segment 0013  
-                    __pdataBANK0 0020                      __pbssCOMMON 007D                        ___latbits 0001  
-                  __pcstackBANK0 002E            __end_of_start_segment 06BE             __end_of_set_segments 0723  
-               set_brigthness@on 0070           _PIN_MANAGER_Initialize 06D3                    ?_stop_segment 0070  
-                      _bit_delay 064D                    _clear_segment 0683                      ?_write_byte 0070  
-                 ??_stop_segment 0070                   ?_clear_segment 0070                clear_segment@data 002E  
-                     ?_bit_delay 0070                        main@F2513 002A                encode_digit@digit 0070  
-                    write_byte@b 0071                      write_byte@i 0074              __size_of_write_byte 0055  
-                  set_segments@k 0079          ??_OSCILLATOR_Initialize 0070                 ??_set_brigthness 0071  
-          __size_of_set_segments 003A                         __ptext10 066B                         __ptext11 064E  
-                       __ptext12 06D3                         __ptext13 065C                    __size_of_main 0074  
-                ??_clear_segment 007A                      ??_bit_delay 0070                         main@data 0033  
-                   _set_segments 06E9             __end_of_stop_segment 06D3          __size_of_WDT_Initialize 0004  
-        ?_PIN_MANAGER_Initialize 0070                     ??_write_byte 0070                      _SSPCON1bits 0215  
-                    _SSPCON2bits 0216                    ?_encode_digit 0070   __end_of_PIN_MANAGER_Initialize 06E9  
-             __end_of_write_byte 0778  
+         __size_of_start_segment 0012                      _SSPSTATbits 0214                               l25 0714  
+                             l51 0680                               l45 06A6                               l48 068D  
+                            l141 067C                              l125 0794                              l126 0794  
+                            l151 0694                              l144 06C6                              l147 06D8  
+                            l171 06FE                              l166 07EB                              l182 06EB  
+                            l177 074E                              l185 069C                              u140 07A5  
+                            u141 07A4                              u150 07BD                              u151 07BC  
+                            u160 07D6                              u161 07D5                              u170 073F  
+                            u171 073E                              u180 06F2                              u181 06F1  
+                 ??_encode_digit 0070                             l1003 068E                             l1101 07E3  
+                           l1111 0707                             l1121 068B                             l1113 070A  
+                           l1105 06FF                             l1041 06BB                             l1017 068E  
+                           l1115 070F                             l1107 0702                             l1123 067D  
+                           l1043 06C1                             l1051 06CD                             l1131 0735  
+                           l1117 0687                             l1109 0705                             l1045 06C5  
+                           l1037 06B5                             l1053 06D3                             l1061 079E  
+                           l1133 0739                             l1125 0716                             l1141 06E2  
+                           l1119 068A                             l1039 06BA                             l1055 06D7  
+                           l1047 06C7                             l1071 07A5                             l1135 073F  
+                           l1127 0729                             l1143 0696                             l1151 06F9  
+                           l1137 069D                             l1049 06CC                             l1081 07B7  
+                           l1073 07AA                             l1057 0798                             l1129 072B  
+                           l1161 0758                             l1153 074F                             l1091 07C8  
+                           l1083 07BD                             l1075 07AE                             l1067 079F  
+                           l1059 079C                             l1139 06D9                             l1147 06ED  
+                           l1171 0775                             l1163 0759                             l1155 0752  
+                           l1093 07CB                             l1085 07BE                             l1077 07AF  
+                           l1069 07A1                             l1149 06F2                             l1173 077D  
+                           l1165 0762                             l1157 0754                             l1095 07D1  
+                           l1087 07C2                             l1079 07B3                             l1175 0785  
+                           l1167 0765                             l1159 0756                             l1097 07D6  
+                           l1089 07C3                             l1177 078B                             l1169 076D  
+                           l1099 07E0                             l1179 0794                             _LATA 010C  
+                           _LATB 010D                             _WPUA 020C                             _WPUB 020D  
+                           _main 074F                    write_byte@ack 0073                             fsr0h 0005  
+                           fsr1h 0007                             fsr0l 0004                             indf1 0001  
+                           fsr1l 0006                             btemp 007E                             start 0002  
+ __size_of_OSCILLATOR_Initialize 0007    __end_of_OSCILLATOR_Initialize 068E            __size_of_stop_segment 0012  
+                          ?_main 0070                            _TRISA 008C                            _TRISB 008D  
+                 _WDT_Initialize 067D                    _start_segment 06B5                   write_byte@data 0074  
+                          status 0003                            wtemp0 007E                  __initialization 07EC  
+                   _stop_segment 06C7                     __end_of_main 0797                           ??_main 007C  
+         __end_of_WDT_Initialize 0681                  set_segments@pos 0077                   ?_start_segment 0070  
+                         _ANSELA 018C                           _ANSELB 018D                           _BORCON 0116  
+                         _OSCCON 0099                           _WDTCON 0097                           _SSPBUF 0211  
+          __end_of_clear_segment 06EC             __end_of_encode_digit 069D                  ?_WDT_Initialize 0070  
+        __size_of_set_brigthness 0013                _SYSTEM_Initialize 069D          __end_of__initialization 07FD  
+             ?_SYSTEM_Initialize 0070         set_brigthness@brightness 0072                   __pcstackCOMMON 0070  
+                   __pidataBANK0 06A7              ??_SYSTEM_Initialize 0070               __size_of_bit_delay 0001  
+                 _OPTION_REGbits 0095                  ??_start_segment 0070        __end_of_SYSTEM_Initialize 06A7  
+                     __pbssBANK0 0036                _get_DIO_PIN_value 068E               ?_get_DIO_PIN_value 0070  
+                     __pmaintext 074F              ??_get_DIO_PIN_value 0070                          _APFCON0 011D  
+                        _APFCON1 011E               set_segments@length 0076                          _OSCTUNE 0098  
+                        _SSPCON2 0216                          _SSPSTAT 0214        __end_of_get_DIO_PIN_value 0695  
+              __end_of_bit_delay 067D            __size_of_encode_digit 0008                    ?_set_segments 0076  
+                        __ptext1 06EC                          __ptext2 0695                          __ptext3 06D9  
+                        __ptext4 0715                          __ptext5 0797                          __ptext6 068E  
+                        __ptext7 067C                          __ptext8 06C7                          __ptext9 06B5  
+          _OSCILLATOR_Initialize 0687                          _segdata 0020         ??_PIN_MANAGER_Initialize 0070  
+                 _set_brigthness 06EC       __size_of_SYSTEM_Initialize 000A             end_of_initialization 07FD  
+                   _encode_digit 0695               clear_segment@F2506 0036                          init_ram 0681  
+                        initloop 0682             set_segments@segments 0079                   ??_set_segments 0078  
+               ??_WDT_Initialize 0070                        _PORTAbits 000C                     _m_brightness 007D  
+         __end_of_set_brigthness 06FF       __size_of_get_DIO_PIN_value 0007                       _write_byte 0797  
+         ?_OSCILLATOR_Initialize 0070              start_initialization 07EC                  ?_set_brigthness 0070  
+__size_of_PIN_MANAGER_Initialize 0016           __size_of_clear_segment 0013                      __pdataBANK0 0020  
+                    __pbssCOMMON 007D                        ___latbits 0001                    __pcstackBANK0 002E  
+          __end_of_start_segment 06C7             __end_of_set_segments 074F                 set_brigthness@on 0070  
+         _PIN_MANAGER_Initialize 06FF                    ?_stop_segment 0070                        _bit_delay 067C  
+                  _clear_segment 06D9                      ?_write_byte 0070                   ??_stop_segment 0070  
+                 ?_clear_segment 0070                clear_segment@data 002E                       ?_bit_delay 0070  
+                      main@F2513 002A                encode_digit@digit 0070                      write_byte@b 0072  
+                    write_byte@i 0075              __size_of_write_byte 0055                    set_segments@k 007A  
+        ??_OSCILLATOR_Initialize 0070                 ??_set_brigthness 0071            __size_of_set_segments 003A  
+                       __ptext10 069D                         __ptext11 067D                         __ptext12 06FF  
+                       __ptext13 0687                    __size_of_main 0048                  ??_clear_segment 007B  
+                    ??_bit_delay 0070                         main@data 0032                     _set_segments 0715  
+           __end_of_stop_segment 06D9          __size_of_WDT_Initialize 0004          ?_PIN_MANAGER_Initialize 0070  
+                   ??_write_byte 0071                      _SSPCON1bits 0215                      _SSPCON2bits 0216  
+                  ?_encode_digit 0070   __end_of_PIN_MANAGER_Initialize 0715               __end_of_write_byte 07EC  
