@@ -24,6 +24,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "10
 [; ;./tm1637.h: 10: void set_segments(const uint8_t segments[], uint8_t length, uint8_t pos);
 [v _set_segments `(v ~T0 @X0 0 ef3`*Cuc`uc`uc ]
+[v F183 `(v ~T0 @X0 1 tf1`ul ]
+"12 C:\Program Files\Microchip\xc8\v2.32\pic\include\builtins.h
+[v __delay `JF183 ~T0 @X0 0 e ]
+[p i __delay ]
 "55 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1827.h
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1827.h: 55: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -519,14 +523,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13
 [; ;main.c: 13:     LATA = 0x00;
 [e = _LATA -> -> 0 `i `uc ]
-"16
-[; ;main.c: 16:     LATA |= 0x80;
+"15
+[; ;main.c: 15:     LATA |= 0x80;
 [e =| _LATA -> -> 128 `i `Vuc ]
 [v F2513 `uc ~T0 @X0 -> 4 `i s ]
 [i F2513
 :U ..
-"18
-[; ;main.c: 18:     uint8_t data[] = {0xff, 0xff, 0xff, 0xff};
+"17
+[; ;main.c: 17:     uint8_t data[] = {0xff, 0xff, 0xff, 0xff};
 -> -> 255 `i `uc
 -> -> 255 `i `uc
 -> -> 255 `i `uc
@@ -535,44 +539,78 @@ Version 4.0 HI-TECH Software Intermediate Code
 ]
 [v _data `uc ~T0 @X0 -> 4 `i a ]
 [e = _data F2513 ]
-"20
-[; ;main.c: 20:     clear_segment();
+"19
+[; ;main.c: 19:     clear_segment();
 [e ( _clear_segment ..  ]
-"22
-[; ;main.c: 22:     data[0] = encode_digit(1);
+"21
+[; ;main.c: 21:     data[0] = encode_digit(1);
 [e = *U + &U _data * -> -> -> 0 `i `ui `ux -> -> # *U &U _data `ui `ux ( _encode_digit (1 -> -> 1 `i `uc ]
-"23
-[; ;main.c: 23:     data[1] = encode_digit(9);
+"22
+[; ;main.c: 22:     data[1] = encode_digit(9);
 [e = *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux ( _encode_digit (1 -> -> 9 `i `uc ]
-"24
-[; ;main.c: 24:     data[2] = encode_digit(8);
+"23
+[; ;main.c: 23:     data[2] = encode_digit(8);
 [e = *U + &U _data * -> -> -> 2 `i `ui `ux -> -> # *U &U _data `ui `ux ( _encode_digit (1 -> -> 8 `i `uc ]
-"25
-[; ;main.c: 25:     data[3] = encode_digit(4);
+"24
+[; ;main.c: 24:     data[3] = encode_digit(4);
 [e = *U + &U _data * -> -> -> 3 `i `ui `ux -> -> # *U &U _data `ui `ux ( _encode_digit (1 -> -> 4 `i `uc ]
-"28
-[; ;main.c: 28:     set_brigthness(0x0f, 1);
+"27
+[; ;main.c: 27:     set_brigthness(0x0f, 1);
 [e ( _set_brigthness (2 , -> -> 15 `i `uc -> -> 1 `i `uc ]
-"29
-[; ;main.c: 29:     set_segments(data, 4, 0);
+"28
+[; ;main.c: 28:     set_segments(data, 4, 0);
 [e ( _set_segments (3 , , -> &U _data `*Cuc -> -> 4 `i `uc -> -> 0 `i `uc ]
-"31
-[; ;main.c: 31:     uint8_t k = 0;
+"30
+[; ;main.c: 30:     uint8_t k = 0;
 [v _k `uc ~T0 @X0 1 a ]
 [e = _k -> -> 0 `i `uc ]
-"34
-[; ;main.c: 34:     while (1)
+"33
+[; ;main.c: 33:     while (1)
 [e :U 356 ]
-"35
-[; ;main.c: 35:     {
+"34
+[; ;main.c: 34:     {
 {
+"35
+[; ;main.c: 35:         LATA |= 0x80;
+[e =| _LATA -> -> 128 `i `Vuc ]
+"37
+[; ;main.c: 37:         for(uint8_t i = 0; i < 4; i++){
+{
+[v _i `uc ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 4 `i 358  ]
+[e $U 359  ]
+[e :U 358 ]
+{
+"38
+[; ;main.c: 38:             data[i] = encode_digit(i + k);
+[e = *U + &U _data * -> _i `ux -> -> # *U &U _data `ui `ux ( _encode_digit (1 -> + -> _i `i -> _k `i `uc ]
+"39
+[; ;main.c: 39:         }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 4 `i 358  ]
+[e :U 359 ]
+}
+"41
+[; ;main.c: 41:         set_segments(data, 4, 0);
+[e ( _set_segments (3 , , -> &U _data `*Cuc -> -> 4 `i `uc -> -> 0 `i `uc ]
+"42
+[; ;main.c: 42:         _delay((unsigned long)((1000)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "43
-[; ;main.c: 43:     }
+[; ;main.c: 43:         k++;
+[e ++ _k -> -> 1 `i `uc ]
+"45
+[; ;main.c: 45:         LATA &= ~ 0x80;
+[e =& _LATA -> ~ -> 128 `i `Vuc ]
+"46
+[; ;main.c: 46:     }
 }
 [e :U 355 ]
 [e $U 356  ]
 [e :U 357 ]
-"44
-[; ;main.c: 44: }
+"47
+[; ;main.c: 47: }
 [e :UE 354 ]
 }

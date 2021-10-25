@@ -4344,7 +4344,64 @@ void set_segments(const uint8_t segments[], uint8_t length, uint8_t pos);
 void clear_segment();
 uint8_t encode_digit(uint8_t digit);
 # 2 "tm1637.c" 2
-# 16 "tm1637.c"
+
+
+# 1 "./mcc_generated_files/mcc.h" 1
+# 50 "./mcc_generated_files/mcc.h"
+# 1 "./mcc_generated_files/device_config.h" 1
+# 50 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/pin_manager.h" 1
+# 78 "./mcc_generated_files/pin_manager.h"
+void PIN_MANAGER_Initialize (void);
+# 90 "./mcc_generated_files/pin_manager.h"
+void PIN_MANAGER_IOC(void);
+# 51 "./mcc_generated_files/mcc.h" 2
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdbool.h" 1 3
+# 53 "./mcc_generated_files/mcc.h" 2
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\conio.h" 1 3
+
+
+
+
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\errno.h" 1 3
+# 12 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\errno.h" 3
+extern int errno;
+# 8 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\conio.h" 2 3
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\__null.h" 1 3
+# 9 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\conio.h" 2 3
+
+
+
+extern void init_uart(void);
+
+extern char getch(void);
+extern char getche(void);
+extern void putch(char);
+extern void ungetch(char);
+
+extern __bit kbhit(void);
+
+
+
+extern char * cgets(char *);
+extern void cputs(const char *);
+# 54 "./mcc_generated_files/mcc.h" 2
+# 69 "./mcc_generated_files/mcc.h"
+void SYSTEM_Initialize(void);
+# 82 "./mcc_generated_files/mcc.h"
+void OSCILLATOR_Initialize(void);
+# 94 "./mcc_generated_files/mcc.h"
+void WDT_Initialize(void);
+# 4 "tm1637.c" 2
+# 17 "tm1637.c"
 uint8_t m_brightness;
 
 uint8_t segdata[] = {
@@ -4364,64 +4421,100 @@ void bit_delay(void){
 
 }
 
+
+void CLK_SET_OUTPUT(){
+    bit_delay();
+    TRISA &= ~0x02;
+    bit_delay();
+}
+
+
+void CLK_SET_INPUT(){
+    bit_delay();
+    TRISA |= 0x02;
+    bit_delay();
+}
+
+
+void CLK_SET_HIGH(){ LATA |= 0x02; }
+
+void CLK_SET_LOW() { LATA &= ~0x02; }
+
+
+void DIO_SET_OUTPUT(){
+    bit_delay();
+    TRISA &= ~0x04;
+    bit_delay();
+}
+
+void DIO_SET_INPUT(){
+    bit_delay();
+    TRISA |= 0x04;
+    bit_delay();
+}
+
+void DIO_SET_HIGH(){ LATA |= 0x04; }
+
+void DIO_SET_LOW(){ LATA &= ~0x04; }
+
 void start_segment(void){
 
-    TRISA &= ~0x03;
-    TRISA &= ~0x00;
+    DIO_SET_OUTPUT();
+    CLK_SET_OUTPUT();
 
 
-    LATA |= 0x03;
-    LATA |= 0x00;
+    DIO_SET_HIGH();
+    CLK_SET_HIGH();
 
 
-    LATA &= ~0x03;
-    LATA &= ~0x00;
+    DIO_SET_LOW();
+    CLK_SET_LOW();
 }
 
 void stop_segment(void){
 
-    TRISA &= ~0x03;
-    TRISA &= ~0x00;
+    DIO_SET_OUTPUT();
+    CLK_SET_OUTPUT();
 
 
-    LATA &= ~0x03;
-    LATA &= ~0x00;
+    CLK_SET_LOW();
+    DIO_SET_LOW();
 
 
-    LATA |= 0x03;
-    LATA |= 0x00;
+    CLK_SET_HIGH();
+    DIO_SET_HIGH();
 }
 
 uint8_t get_DIO_PIN_value(){
-    if(0x03 == 0x00){ return PORTAbits.RA0; }
-    if(0x03 == 0x01){ return PORTAbits.RA1; }
-    if(0x03 == 0x02){ return PORTAbits.RA2; }
-    if(0x03 == 0x03){ return PORTAbits.RA3; }
-    if(0x03 == 0x04){ return PORTAbits.RA4; }
-    if(0x03 == 0x05){ return PORTAbits.RA5; }
-    if(0x03 == 0x06){ return PORTAbits.RA6; }
-    if(0x03 == 0x07){ return PORTAbits.RA7; }
+    if(0x04 == 0x01){ return PORTAbits.RA0; }
+    if(0x04 == 0x02){ return PORTAbits.RA1; }
+    if(0x04 == 0x04){ return PORTAbits.RA2; }
+    if(0x04 == 0x08){ return PORTAbits.RA3; }
+    if(0x04 == 0x10){ return PORTAbits.RA4; }
+    if(0x04 == 0x20){ return PORTAbits.RA5; }
+    if(0x04 == 0x40){ return PORTAbits.RA6; }
+    if(0x04 == 0x80){ return PORTAbits.RA7; }
 }
 
 uint8_t write_byte(uint8_t b){
     uint8_t data = b;
 
 
-    TRISA &= ~0x00;
+    CLK_SET_OUTPUT();
     for(uint8_t i = 0; i < 8; i++){
 
-        LATA &= ~0x00;
+        CLK_SET_LOW();
 
         if(data & 0x01){
 
-            LATA |= 0x03;
+            DIO_SET_HIGH();
         }else{
 
-            LATA &= ~0x03;
+            DIO_SET_LOW();
         }
 
 
-        LATA |= 0x00;
+        CLK_SET_HIGH();
 
         data = data >> 1;
     }
@@ -4429,29 +4522,26 @@ uint8_t write_byte(uint8_t b){
 
 
 
-    LATA &= 0x00;
-    LATA |= 0x03;
+    CLK_SET_LOW();
+    DIO_SET_HIGH();
 
 
-    LATA |= 0x00;
+    CLK_SET_HIGH();
 
 
-    TRISA |= 0x03;
-    bit_delay();
+    DIO_SET_INPUT();
 
     uint8_t ack = get_DIO_PIN_value();
     if(ack == 0){
 
-        TRISA &= ~0x03;
+        DIO_SET_OUTPUT();
 
 
-        LATA &= ~0x03;
+        DIO_SET_LOW();
     }
 
-    bit_delay();
 
-    TRISA &= ~0x03;
-    bit_delay();
+    DIO_SET_OUTPUT();
 
     return ack;
 }

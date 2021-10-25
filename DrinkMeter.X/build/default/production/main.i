@@ -4422,7 +4422,6 @@ void main(void)
     TRISA = 0x00;
     LATA = 0x00;
 
-
     LATA |= 0x80;
 
     uint8_t data[] = {0xff, 0xff, 0xff, 0xff};
@@ -4443,12 +4442,16 @@ void main(void)
 
     while (1)
     {
+        LATA |= 0x80;
 
+        for(uint8_t i = 0; i < 4; i++){
+            data[i] = encode_digit(i + k);
+        }
 
+        set_segments(data, 4, 0);
+        _delay((unsigned long)((1000)*(8000000/4000.0)));
+        k++;
 
-
-
-
-
+        LATA &= ~ 0x80;
     }
 }
