@@ -23,37 +23,35 @@
 [v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
 "55 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
-"32 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\tm1637.c
-[v _bit_delay bit_delay `(v  1 e 1 0 ]
-"37
+"31 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\tm1637.c
 [v _CLK_SET_OUTPUT CLK_SET_OUTPUT `(v  1 e 1 0 ]
-"51
+"34
 [v _CLK_SET_HIGH CLK_SET_HIGH `(v  1 e 1 0 ]
-"53
+"36
 [v _CLK_SET_LOW CLK_SET_LOW `(v  1 e 1 0 ]
-"56
+"39
 [v _DIO_SET_OUTPUT DIO_SET_OUTPUT `(v  1 e 1 0 ]
-"62
+"41
 [v _DIO_SET_INPUT DIO_SET_INPUT `(v  1 e 1 0 ]
-"68
+"43
 [v _DIO_SET_HIGH DIO_SET_HIGH `(v  1 e 1 0 ]
-"70
+"45
 [v _DIO_SET_LOW DIO_SET_LOW `(v  1 e 1 0 ]
-"72
+"47
 [v _start_segment start_segment `(v  1 e 1 0 ]
-"86
+"61
 [v _stop_segment stop_segment `(v  1 e 1 0 ]
-"100
+"75
 [v _get_DIO_PIN_value get_DIO_PIN_value `(uc  1 e 1 0 ]
-"111
+"86
 [v _write_byte write_byte `(uc  1 e 1 0 ]
-"166
+"141
 [v _set_brigthness set_brigthness `(v  1 e 1 0 ]
-"180
+"155
 [v _set_segments set_segments `(v  1 e 1 0 ]
-"207
+"181
 [v _clear_segment clear_segment `(v  1 e 1 0 ]
-"217
+"191
 [v _encode_digit encode_digit `(uc  1 e 1 0 ]
 [s S240 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
@@ -156,9 +154,9 @@
 "4104
 [u S102 . 1 `S93 1 . 1 0 ]
 [v _SSPCON2bits SSPCON2bits `VES102  1 e 1 @534 ]
-"17 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\tm1637.c
+"15 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\tm1637.c
 [v _m_brightness m_brightness `uc  1 e 1 0 ]
-"19
+"17
 [v _segdata segdata `[10]uc  1 e 10 0 ]
 "6 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\main.c
 [v _main main `(v  1 e 1 0 ]
@@ -173,107 +171,99 @@
 [v main@F2513 F2513 `[4]uc  1 s 4 F2513 ]
 "47
 } 0
-"166 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\tm1637.c
+"141 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\tm1637.c
 [v _set_brigthness set_brigthness `(v  1 e 1 0 ]
 {
 [v set_brigthness@brightness brightness `uc  1 a 1 wreg ]
 [v set_brigthness@brightness brightness `uc  1 a 1 wreg ]
 [v set_brigthness@on on `uc  1 p 1 0 ]
 [v set_brigthness@brightness brightness `uc  1 a 1 2 ]
-"172
+"147
 } 0
-"217
+"191
 [v _encode_digit encode_digit `(uc  1 e 1 0 ]
 {
 [v encode_digit@digit digit `uc  1 a 1 wreg ]
 [v encode_digit@digit digit `uc  1 a 1 wreg ]
 [v encode_digit@digit digit `uc  1 a 1 0 ]
-"219
+"193
 } 0
-"207
+"181
 [v _clear_segment clear_segment `(v  1 e 1 0 ]
 {
-"208
+"182
 [v clear_segment@data data `[4]uc  1 a 4 0 ]
-"210
+"184
 } 0
-"180
+"155
 [v _set_segments set_segments `(v  1 e 1 0 ]
 {
 [v set_segments@segments segments `*.4DCuc  1 a 1 wreg ]
-"192
+"166
 [v set_segments@k k `uc  1 a 1 10 ]
-"180
+"155
 [v set_segments@segments segments `*.4DCuc  1 a 1 wreg ]
 [v set_segments@length length `uc  1 p 1 6 ]
 [v set_segments@pos pos `uc  1 p 1 7 ]
-"183
+"157
 [v set_segments@segments segments `*.4DCuc  1 a 1 9 ]
-"202
+"176
 } 0
-"111
+"86
 [v _write_byte write_byte `(uc  1 e 1 0 ]
 {
 [v write_byte@b b `uc  1 a 1 wreg ]
-"116
+"91
 [v write_byte@i i `uc  1 a 1 5 ]
-"112
+"87
 [v write_byte@data data `uc  1 a 1 4 ]
-"146
+"121
 [v write_byte@ack ack `uc  1 a 1 3 ]
-"111
+"86
 [v write_byte@b b `uc  1 a 1 wreg ]
 [v write_byte@b b `uc  1 a 1 2 ]
-"159
+"134
 } 0
-"100
+"75
 [v _get_DIO_PIN_value get_DIO_PIN_value `(uc  1 e 1 0 ]
-{
-"109
-} 0
-"62
-[v _DIO_SET_INPUT DIO_SET_INPUT `(v  1 e 1 0 ]
-{
-"66
-} 0
-"86
-[v _stop_segment stop_segment `(v  1 e 1 0 ]
-{
-"98
-} 0
-"72
-[v _start_segment start_segment `(v  1 e 1 0 ]
 {
 "84
 } 0
-"56
+"41
+[v _DIO_SET_INPUT DIO_SET_INPUT `(v  1 e 1 0 ]
+{
+} 0
+"61
+[v _stop_segment stop_segment `(v  1 e 1 0 ]
+{
+"73
+} 0
+"47
+[v _start_segment start_segment `(v  1 e 1 0 ]
+{
+"59
+} 0
+"39
 [v _DIO_SET_OUTPUT DIO_SET_OUTPUT `(v  1 e 1 0 ]
 {
-"60
 } 0
-"70
+"45
 [v _DIO_SET_LOW DIO_SET_LOW `(v  1 e 1 0 ]
 {
 } 0
-"68
+"43
 [v _DIO_SET_HIGH DIO_SET_HIGH `(v  1 e 1 0 ]
 {
 } 0
-"37
+"31
 [v _CLK_SET_OUTPUT CLK_SET_OUTPUT `(v  1 e 1 0 ]
 {
-"41
 } 0
-"32
-[v _bit_delay bit_delay `(v  1 e 1 0 ]
-{
-"34
-} 0
-"53
+"36
 [v _CLK_SET_LOW CLK_SET_LOW `(v  1 e 1 0 ]
 {
 } 0
-"51
+"34
 [v _CLK_SET_HIGH CLK_SET_HIGH `(v  1 e 1 0 ]
 {
 } 0

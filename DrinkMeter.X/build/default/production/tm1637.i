@@ -4401,7 +4401,7 @@ void OSCILLATOR_Initialize(void);
 # 94 "./mcc_generated_files/mcc.h"
 void WDT_Initialize(void);
 # 4 "tm1637.c" 2
-# 17 "tm1637.c"
+# 15 "tm1637.c"
 uint8_t m_brightness;
 
 uint8_t segdata[] = {
@@ -4417,23 +4417,8 @@ uint8_t segdata[] = {
    0x6F
 };
 
-void bit_delay(void){
 
-}
-
-
-void CLK_SET_OUTPUT(){
-    bit_delay();
-    TRISA &= ~0x02;
-    bit_delay();
-}
-
-
-void CLK_SET_INPUT(){
-    bit_delay();
-    TRISA |= 0x02;
-    bit_delay();
-}
+void CLK_SET_OUTPUT(){ TRISA &= ~0x02; }
 
 
 void CLK_SET_HIGH(){ LATA |= 0x02; }
@@ -4441,17 +4426,9 @@ void CLK_SET_HIGH(){ LATA |= 0x02; }
 void CLK_SET_LOW() { LATA &= ~0x02; }
 
 
-void DIO_SET_OUTPUT(){
-    bit_delay();
-    TRISA &= ~0x04;
-    bit_delay();
-}
+void DIO_SET_OUTPUT(){ TRISA &= ~0x04; }
 
-void DIO_SET_INPUT(){
-    bit_delay();
-    TRISA |= 0x04;
-    bit_delay();
-}
+void DIO_SET_INPUT(){ TRISA |= 0x04; }
 
 void DIO_SET_HIGH(){ LATA |= 0x04; }
 
@@ -4566,7 +4543,6 @@ void set_brigthness(uint8_t brightness, uint8_t on){
 
 
 void set_segments(const uint8_t segments[], uint8_t length, uint8_t pos){
-
 
     start_segment();
     write_byte(0x40);

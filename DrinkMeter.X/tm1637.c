@@ -3,8 +3,6 @@
 #include <xc.h>
 #include "mcc_generated_files/mcc.h"
 
-//#define _XTAL_FREQ 16000000
-
 #define COMM1 0x40 
 #define COMM2 0xC0
 #define COMM3 0x80
@@ -29,23 +27,8 @@ uint8_t segdata[] = {
    0x6F  // 9 
 };
 
-void bit_delay(void){
-    //__delay_ms(10);
-}
-
 /** CLK_PIN set output mode*/
-void CLK_SET_OUTPUT(){ 
-    bit_delay();
-    TRISA &= ~CLK_PIN;
-    bit_delay();
-}
-
-/** CLK_PIN set input mode*/
-void CLK_SET_INPUT(){
-    bit_delay();
-    TRISA |= CLK_PIN;
-    bit_delay();
-}
+void CLK_SET_OUTPUT(){ TRISA &= ~CLK_PIN; }
 
 /** CLK_PIN set high */
 void CLK_SET_HIGH(){ LATA |= CLK_PIN; }
@@ -53,17 +36,9 @@ void CLK_SET_HIGH(){ LATA |= CLK_PIN; }
 void CLK_SET_LOW() { LATA &= ~CLK_PIN; }
 
 /** DIO_PIN set output mode */
-void DIO_SET_OUTPUT(){
-    bit_delay();
-    TRISA &= ~DIO_PIN;
-    bit_delay();
-}
+void DIO_SET_OUTPUT(){ TRISA &= ~DIO_PIN; }
 /** DIO_PIN set input mode */
-void DIO_SET_INPUT(){
-    bit_delay();
-    TRISA |= DIO_PIN;
-    bit_delay();
-}
+void DIO_SET_INPUT(){ TRISA |= DIO_PIN; }
 /** DIO_PIN set high */
 void DIO_SET_HIGH(){ LATA |= DIO_PIN; }
 /** DIO_PIN set low*/
@@ -178,7 +153,6 @@ void set_brigthness(uint8_t brightness, uint8_t on){
  * @param pos 
  */
 void set_segments(const uint8_t segments[], uint8_t length, uint8_t pos){
-    
     //write COMM1
     start_segment();
     write_byte(COMM1);
