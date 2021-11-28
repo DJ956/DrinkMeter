@@ -1,5 +1,7 @@
 #include "tm1637.h"
 #include "i2c.h"
+#include "loadcell.h"
+#include "lcd_lib.h"
 #include "mcc_generated_files/mcc.h"
 
 
@@ -7,6 +9,9 @@ void main(void)
 {
     
     SYSTEM_Initialize();
+    
+    LoadCell loadcell = {0,0,0,0};
+    Lcd lcd = {0x27, 16, 2};
     
     ANSELA = 0x00;
     TRISA = 0x00;

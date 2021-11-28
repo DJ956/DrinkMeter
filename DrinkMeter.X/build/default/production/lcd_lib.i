@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "lcd_lib.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,9 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-# 1 "./tm1637.h" 1
+# 1 "lcd_lib.c" 2
+# 1 "././mcc_generated_files/mcc.h" 1
+# 49 "././mcc_generated_files/mcc.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4329,20 +4330,62 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\xc.h" 2 3
-# 1 "./tm1637.h" 2
+# 49 "././mcc_generated_files/mcc.h" 2
+
+# 1 "././mcc_generated_files/device_config.h" 1
+# 50 "././mcc_generated_files/mcc.h" 2
+
+# 1 "././mcc_generated_files/pin_manager.h" 1
+# 78 "././mcc_generated_files/pin_manager.h"
+void PIN_MANAGER_Initialize (void);
+# 90 "././mcc_generated_files/pin_manager.h"
+void PIN_MANAGER_IOC(void);
+# 51 "././mcc_generated_files/mcc.h" 2
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdbool.h" 1 3
+# 53 "././mcc_generated_files/mcc.h" 2
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\conio.h" 1 3
 
 
 
 
-void bit_delay();
-void start_segment();
-void stop_segment();
-void set_brigthness(uint8_t brightness, uint8_t on);
-uint8_t write_byte(uint8_t b);
-void set_segments(const uint8_t segments[], uint8_t length, uint8_t pos);
-void clear_segment();
-uint8_t encode_digit(uint8_t digit);
-# 1 "main.c" 2
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\errno.h" 1 3
+# 12 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\errno.h" 3
+extern int errno;
+# 8 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\conio.h" 2 3
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\__null.h" 1 3
+# 9 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\conio.h" 2 3
+
+
+
+extern void init_uart(void);
+
+extern char getch(void);
+extern char getche(void);
+extern void putch(char);
+extern void ungetch(char);
+
+extern __bit kbhit(void);
+
+
+
+extern char * cgets(char *);
+extern void cputs(const char *);
+# 54 "././mcc_generated_files/mcc.h" 2
+# 69 "././mcc_generated_files/mcc.h"
+void SYSTEM_Initialize(void);
+# 82 "././mcc_generated_files/mcc.h"
+void OSCILLATOR_Initialize(void);
+# 94 "././mcc_generated_files/mcc.h"
+void WDT_Initialize(void);
+# 1 "lcd_lib.c" 2
+
 
 # 1 "./i2c.h" 1
 
@@ -4353,58 +4396,7 @@ void i2c_stop();
 void i2c_repeated_start();
 void i2c_write(uint8_t data);
 uint8_t i2c_read(uint8_t ack);
-# 2 "main.c" 2
-
-# 1 "./loadcell.h" 1
-# 10 "./loadcell.h"
-typedef struct {
-
-
-
-    uint8_t cell_clk;
-
-
-
-    uint8_t cell_dat;
-
-
-
-    unsigned long weight_zero;
-
-
-
-    unsigned long weight_dat;
-
-
-
-    uint16_t gram;
-} LoadCell;
-
-
-
-
-
-static void set_CELL_CLK_LOW(LoadCell *p);
-
-
-
-
-static void set_CELL_CLK_HIGH(LoadCell *p);
-
-
-static int get_CELL_DAT_VAL(LoadCell *p);
-
-
-
-
-
-unsigned long get_scale_val(LoadCell *p, uint8_t scale_avg_count);
-
-
-
-
-void scale_convert_gram(LoadCell *p);
-# 3 "main.c" 2
+# 3 "lcd_lib.c" 2
 
 # 1 "./lcd_lib.h" 1
 # 10 "./lcd_lib.h"
@@ -4438,108 +4430,153 @@ void lcd_print_with(Lcd *p, char *str, uint8_t col, uint8_t row);
 static void write4bits(Lcd *p, uint8_t val);
 
 static void command(Lcd *p, uint8_t val, uint8_t mode);
-# 4 "main.c" 2
-
-# 1 "./mcc_generated_files/mcc.h" 1
-# 50 "./mcc_generated_files/mcc.h"
-# 1 "./mcc_generated_files/device_config.h" 1
-# 50 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/pin_manager.h" 1
-# 78 "./mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
-# 90 "./mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_IOC(void);
-# 51 "./mcc_generated_files/mcc.h" 2
+# 4 "lcd_lib.c" 2
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdbool.h" 1 3
-# 53 "./mcc_generated_files/mcc.h" 2
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\conio.h" 1 3
+static void lcd_cmd(Lcd *p, uint8_t cmd){
+    i2c_start();
+    i2c_write(p->lcd_address << 1);
+    i2c_write(cmd);
+    i2c_stop();
+    _delay((unsigned long)((10)*(8000000/4000000.0)));
+}
 
 
 
 
 
+void lcd_init(Lcd *p){
+    _delay((unsigned long)((400)*(8000000/4000.0)));
+
+    write4bits(p, 0x30);
+    _delay((unsigned long)((5)*(8000000/4000.0)));
+
+    write4bits(p, 0x30);
+    _delay((unsigned long)((5)*(8000000/4000.0)));
+
+    write4bits(p, 0x30);
+    _delay((unsigned long)((300)*(8000000/4000000.0)));
+
+    write4bits(p, 0x20);
+    _delay((unsigned long)((10)*(8000000/4000000.0)));
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\errno.h" 1 3
-# 12 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\errno.h" 3
-extern int errno;
-# 8 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\conio.h" 2 3
+    write4bits(p, 0x20);
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\__null.h" 1 3
-# 9 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\conio.h" 2 3
+    _delay((unsigned long)((100)*(8000000/4000000.0)));
 
-
-
-extern void init_uart(void);
-
-extern char getch(void);
-extern char getche(void);
-extern void putch(char);
-extern void ungetch(char);
-
-extern __bit kbhit(void);
-
-
-
-extern char * cgets(char *);
-extern void cputs(const char *);
-# 54 "./mcc_generated_files/mcc.h" 2
-# 69 "./mcc_generated_files/mcc.h"
-void SYSTEM_Initialize(void);
-# 82 "./mcc_generated_files/mcc.h"
-void OSCILLATOR_Initialize(void);
-# 94 "./mcc_generated_files/mcc.h"
-void WDT_Initialize(void);
-# 5 "main.c" 2
+    write4bits(p, 0x80);
 
 
 
-void main(void)
-{
 
-    SYSTEM_Initialize();
+    write4bits(p, 0x00);
 
-    LoadCell loadcell = {0,0};
-    Lcd lcd = {0x27, 16, 2};
+    _delay((unsigned long)((100)*(8000000/4000000.0)));
 
-    ANSELA = 0x00;
-    TRISA = 0x00;
-    LATA = 0x00;
-
-    LATA |= 0x80;
-
-    uint8_t data[] = {0xff, 0xff, 0xff, 0xff};
-
-    clear_segment();
-
-    data[0] = encode_digit(1);
-    data[1] = encode_digit(9);
-    data[2] = encode_digit(8);
-    data[3] = encode_digit(4);
+    write4bits(p, 0xC0);
 
 
-    set_brigthness(0x0f, 1);
-    set_segments(data, 4, 0);
 
-    uint8_t k = 0;
+    write4bits(p, 0x00);
+
+    _delay((unsigned long)((100)*(8000000/4000000.0)));
+
+    write4bits(p, 0x10);
+
+    _delay((unsigned long)((5)*(8000000/4000.0)));
 
 
-    while (1)
-    {
-        LATA |= 0x80;
+    write4bits(p, 0x00);
 
-        for(uint8_t i = 0; i < 4; i++){
-            data[i] = encode_digit(i + k);
+    _delay((unsigned long)((100)*(8000000/4000000.0)));
+
+    write4bits(p, 0x60);
+
+
+
+    write4bits(p, 0x00);
+
+    _delay((unsigned long)((100)*(8000000/4000000.0)));
+
+    write4bits(p, 0x20);
+
+    _delay((unsigned long)((3)*(8000000/4000.0)));
+}
+
+
+
+
+
+void lcd_backlight(Lcd *p){
+    lcd_cmd(p, 0x08);
+    p->_backlightval = 0x08;
+    _delay((unsigned long)((10)*(8000000/4000000.0)));
+}
+
+
+
+
+
+void lcd_clear(Lcd *p){
+    for(uint8_t row = 0; row < (p->ROW); row++){
+        for(uint8_t col = 0; col < (p->COL); col++){
+            lcd_set_cursor(p, col, row);
+            lcd_print(p, " ");
         }
-
-        set_segments(data, 4, 0);
-        _delay((unsigned long)((1000)*(8000000/4000.0)));
-        k++;
-
-        LATA &= ~ 0x80;
     }
+
+    lcd_set_cursor(p, 0, 0);
+}
+
+
+
+
+
+
+void lcd_set_cursor(Lcd *p, uint8_t col, uint8_t row){
+    uint8_t row_offsets[] = {0x00, 0x40, 0x14, 0x54};
+    if(row > p->ROW){
+        row = p->ROW - 1;
+    }
+    uint8_t cmd = 0x80 | (col + row_offsets[row]);
+    command(p, cmd, 0);
+}
+
+
+
+
+
+
+void lcd_print(Lcd *p, char *str) {
+    while (*str) {
+        uint8_t cmd = *str++;
+        command(p, cmd, 0b00000001);
+    }
+}
+# 135 "lcd_lib.c"
+void lcd_print_with(Lcd *p, char *str, uint8_t col, uint8_t row){
+    lcd_set_cursor(p, col, row);
+    lcd_print(p, str);
+}
+
+static void command(Lcd *p, uint8_t val, uint8_t mode){
+    uint8_t highnib = (val & 0xf0) | p->_backlightval | mode;
+ uint8_t lownib = ((val << 4) & 0xf0) | p->_backlightval | mode;
+
+ lcd_cmd(p, highnib);
+    lcd_cmd(p, highnib | 0b00000100);
+    lcd_cmd(p, highnib & ~0b00000100);
+
+    _delay((unsigned long)((100)*(8000000/4000000.0)));
+
+ lcd_cmd(p, lownib);
+    lcd_cmd(p, lownib | 0b00000100);
+    lcd_cmd(p, lownib & ~0b00000100);
+}
+
+static void write4bits(Lcd *p, uint8_t val){
+    lcd_cmd(p, val);
+    lcd_cmd(p, val | 0b00000100);
+    lcd_cmd(p, val);
 }

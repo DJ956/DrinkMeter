@@ -3,17 +3,47 @@
 [d edition pro ]
 [d chip 16F1827 ]
 [d frameptr 6 ]
+"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"43 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
 "6 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\pic\__eeprom.c
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
 "4 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\i2c.c
 [v _i2c_wait i2c_wait `(v  1 e 1 0 ]
-"6 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\main.c
+"8
+[v _i2c_start i2c_start `(v  1 e 1 0 ]
+"14
+[v _i2c_stop i2c_stop `(v  1 e 1 0 ]
+"25
+[v _i2c_write i2c_write `(v  1 e 1 0 ]
+"6 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\lcd_lib.c
+[v _lcd_cmd lcd_cmd `(v  1 s 1 lcd_cmd ]
+"107
+[v _lcd_set_cursor lcd_set_cursor `(v  1 e 1 0 ]
+"121
+[v _lcd_print lcd_print `(v  1 e 1 0 ]
+"140
+[v _command command `(v  1 s 1 command ]
+"155
+[v _write4bits write4bits `(v  1 s 1 write4bits ]
+"7 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\loadcell.c
+[v _set_CELL_CLK_LOW set_CELL_CLK_LOW `(v  1 s 1 set_CELL_CLK_LOW ]
+"12
+[v _set_CELL_CLK_HIGH set_CELL_CLK_HIGH `(v  1 s 1 set_CELL_CLK_HIGH ]
+"15
+[v _get_CELL_DAT_VAL get_CELL_DAT_VAL `(i  1 s 2 get_CELL_DAT_VAL ]
+"8 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\main.c
 [v _main main `(v  1 e 1 0 ]
 "50 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -53,7 +83,7 @@
 [v _clear_segment clear_segment `(v  1 e 1 0 ]
 "191
 [v _encode_digit encode_digit `(uc  1 e 1 0 ]
-[s S240 . 1 `uc 1 RA0 1 0 :1:0 
+[s S273 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -63,8 +93,8 @@
 `uc 1 RA7 1 0 :1:7 
 ]
 "447 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1827.h
-[u S249 . 1 `S240 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES249  1 e 1 @12 ]
+[u S282 . 1 `S273 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES282  1 e 1 @12 ]
 "1153
 [v _TRISA TRISA `VEuc  1 e 1 @140 ]
 "1215
@@ -158,18 +188,24 @@
 [v _m_brightness m_brightness `uc  1 e 1 0 ]
 "17
 [v _segdata segdata `[10]uc  1 e 10 0 ]
-"6 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\main.c
+"8 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"37
+"42
 [v main@i i `uc  1 a 1 9 ]
-"17
+"22
 [v main@data data `[4]uc  1 a 4 5 ]
-"30
+"35
 [v main@k k `uc  1 a 1 4 ]
-"15
-[v main@F2513 F2513 `[4]uc  1 s 4 F2513 ]
-"47
+[s S197 . 12 `uc 1 cell_clk 1 0 `uc 1 cell_dat 1 1 `ul 1 weight_zero 4 2 `ul 1 weight_dat 4 6 `us 1 gram 2 10 ]
+"11
+[v main@F2565 F2565 `S197  1 s 12 F2565 ]
+[s S203 . 4 `uc 1 lcd_address 1 0 `uc 1 COL 1 1 `uc 1 ROW 1 2 `uc 1 _backlightval 1 3 ]
+"13
+[v main@F2567 F2567 `S203  1 s 4 F2567 ]
+"20
+[v main@F2569 F2569 `[4]uc  1 s 4 F2569 ]
+"52
 } 0
 "141 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\tm1637.c
 [v _set_brigthness set_brigthness `(v  1 e 1 0 ]

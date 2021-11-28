@@ -13,6 +13,9 @@
       </logicalFolder>
       <itemPath>i2c.h</itemPath>
       <itemPath>tm1637.h</itemPath>
+      <itemPath>loadcell.h</itemPath>
+      <itemPath>lcd_lib.h</itemPath>
+      <itemPath>drink_meter.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -31,6 +34,8 @@
       <itemPath>i2c.c</itemPath>
       <itemPath>main.c</itemPath>
       <itemPath>tm1637.c</itemPath>
+      <itemPath>loadcell.c</itemPath>
+      <itemPath>lcd_lib.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

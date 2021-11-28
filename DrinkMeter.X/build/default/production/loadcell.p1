@@ -1,37 +1,22 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[p mainexit ]
-"69 ./mcc_generated_files/mcc.h
-[; ;./mcc_generated_files/mcc.h: 69: void SYSTEM_Initialize(void);
-[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
 "10 ./loadcell.h
 [; ;./loadcell.h: 10: typedef struct {
 [s S354 `uc 1 `uc 1 `ul 1 `ul 1 `us 1 ]
 [n S354 . cell_clk cell_dat weight_zero weight_dat gram ]
-"10 ./lcd_lib.h
-[; ;./lcd_lib.h: 10: typedef struct{
-[s S355 `uc 1 `uc 1 `uc 1 `uc 1 ]
-[n S355 . lcd_address COL ROW _backlightval ]
-"2862 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1827.h
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1827.h: 2862: extern volatile unsigned char ANSELA __attribute__((address(0x18C)));
-[v _ANSELA `Vuc ~T0 @X0 0 e@396 ]
-"1153
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1827.h: 1153: extern volatile unsigned char TRISA __attribute__((address(0x08C)));
-[v _TRISA `Vuc ~T0 @X0 0 e@140 ]
-"2040
+"2040 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1827.h
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1827.h: 2040: extern volatile unsigned char LATA __attribute__((address(0x10C)));
 [v _LATA `Vuc ~T0 @X0 0 e@268 ]
-"11 ./tm1637.h
-[; ;./tm1637.h: 11: void clear_segment();
-[v _clear_segment `(v ~T0 @X0 0 e? ]
-"12
-[; ;./tm1637.h: 12: uint8_t encode_digit(uint8_t digit);
-[v _encode_digit `(uc ~T0 @X0 0 ef1`uc ]
-"8
-[; ;./tm1637.h: 8: void set_brigthness(uint8_t brightness, uint8_t on);
-[v _set_brigthness `(v ~T0 @X0 0 ef2`uc`uc ]
-"10
-[; ;./tm1637.h: 10: void set_segments(const uint8_t segments[], uint8_t length, uint8_t pos);
-[v _set_segments `(v ~T0 @X0 0 ef3`*Cuc`uc`uc ]
+"436
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1827.h: 436:     struct {
+[s S34 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S34 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
+"435
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1827.h: 435: typedef union {
+[u S33 `S34 1 ]
+[n S33 . . ]
+"447
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1827.h: 447: extern volatile PORTAbits_t PORTAbits __attribute__((address(0x00C)));
+[v _PORTAbits `VS33 ~T0 @X0 0 e@12 ]
 [v F183 `(v ~T0 @X0 1 tf1`ul ]
 "12 C:\Program Files\Microchip\xc8\v2.32\pic\include\builtins.h
 [v __delay `JF183 ~T0 @X0 0 e ]
@@ -510,142 +495,274 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6749
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1827.h: 6749: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-[v $root$_main `(v ~T0 @X0 0 e ]
-"8 main.c
-[; ;main.c: 8: void main(void)
-[v _main `(v ~T0 @X0 1 ef ]
-"9
-[; ;main.c: 9: {
+"7 loadcell.c
+[; ;loadcell.c: 7: static void set_CELL_CLK_LOW(LoadCell *p){ LATA &= ~p->cell_clk; }
+[v _set_CELL_CLK_LOW `(v ~T0 @X0 1 sf1`*S354 ]
 {
-[e :U _main ]
+[e :U _set_CELL_CLK_LOW ]
+[v _p `*S354 ~T0 @X0 1 r1 ]
 [f ]
-"11
-[; ;main.c: 11:     SYSTEM_Initialize();
-[e ( _SYSTEM_Initialize ..  ]
-[v F2565 `S354 ~T0 @X0 1 s ]
-[i F2565
-:U ..
-:U ..
-"13
-[; ;main.c: 13:     LoadCell loadcell = {0,0};
--> -> 0 `i `uc
--> -> 0 `i `uc
-..
-..
-]
-[v _loadcell `S354 ~T0 @X0 1 a ]
-[e = _loadcell F2565 ]
-[v F2567 `S355 ~T0 @X0 1 s ]
-[i F2567
-:U ..
-:U ..
-"14
-[; ;main.c: 14:     Lcd lcd = {0x27, 16, 2};
--> -> 39 `i `uc
--> -> 16 `i `uc
--> -> 2 `i `uc
-..
-..
-]
-[v _lcd `S355 ~T0 @X0 1 a ]
-[e = _lcd F2567 ]
+[e =& _LATA -> ~ -> . *U _p 0 `i `Vuc ]
+[e :UE 355 ]
+}
+"12
+[; ;loadcell.c: 12: static void set_CELL_CLK_HIGH(LoadCell *p){ LATA |= p->cell_clk; }
+[v _set_CELL_CLK_HIGH `(v ~T0 @X0 1 sf1`*S354 ]
+{
+[e :U _set_CELL_CLK_HIGH ]
+[v _p `*S354 ~T0 @X0 1 r1 ]
+[f ]
+[e =| _LATA -> . *U _p 0 `Vuc ]
+[e :UE 356 ]
+}
+"15
+[; ;loadcell.c: 15: static int get_CELL_DAT_VAL(LoadCell *p){
+[v _get_CELL_DAT_VAL `(i ~T0 @X0 1 sf1`*S354 ]
+{
+[e :U _get_CELL_DAT_VAL ]
+[v _p `*S354 ~T0 @X0 1 r1 ]
+[f ]
 "16
-[; ;main.c: 16:     ANSELA = 0x00;
-[e = _ANSELA -> -> 0 `i `uc ]
-"17
-[; ;main.c: 17:     TRISA = 0x00;
-[e = _TRISA -> -> 0 `i `uc ]
-"18
-[; ;main.c: 18:     LATA = 0x00;
-[e = _LATA -> -> 0 `i `uc ]
-"20
-[; ;main.c: 20:     LATA |= 0x80;
-[e =| _LATA -> -> 128 `i `Vuc ]
-[v F2569 `uc ~T0 @X0 -> 4 `i s ]
-[i F2569
-:U ..
-"22
-[; ;main.c: 22:     uint8_t data[] = {0xff, 0xff, 0xff, 0xff};
--> -> 255 `i `uc
--> -> 255 `i `uc
--> -> 255 `i `uc
--> -> 255 `i `uc
-..
-]
-[v _data `uc ~T0 @X0 -> 4 `i a ]
-[e = _data F2569 ]
-"24
-[; ;main.c: 24:     clear_segment();
-[e ( _clear_segment ..  ]
-"26
-[; ;main.c: 26:     data[0] = encode_digit(1);
-[e = *U + &U _data * -> -> -> 0 `i `ui `ux -> -> # *U &U _data `ui `ux ( _encode_digit (1 -> -> 1 `i `uc ]
-"27
-[; ;main.c: 27:     data[1] = encode_digit(9);
-[e = *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux ( _encode_digit (1 -> -> 9 `i `uc ]
-"28
-[; ;main.c: 28:     data[2] = encode_digit(8);
-[e = *U + &U _data * -> -> -> 2 `i `ui `ux -> -> # *U &U _data `ui `ux ( _encode_digit (1 -> -> 8 `i `uc ]
-"29
-[; ;main.c: 29:     data[3] = encode_digit(4);
-[e = *U + &U _data * -> -> -> 3 `i `ui `ux -> -> # *U &U _data `ui `ux ( _encode_digit (1 -> -> 4 `i `uc ]
-"32
-[; ;main.c: 32:     set_brigthness(0x0f, 1);
-[e ( _set_brigthness (2 , -> -> 15 `i `uc -> -> 1 `i `uc ]
-"33
-[; ;main.c: 33:     set_segments(data, 4, 0);
-[e ( _set_segments (3 , , -> &U _data `*Cuc -> -> 4 `i `uc -> -> 0 `i `uc ]
-"35
-[; ;main.c: 35:     uint8_t k = 0;
-[v _k `uc ~T0 @X0 1 a ]
-[e = _k -> -> 0 `i `uc ]
-"38
-[; ;main.c: 38:     while (1)
+[; ;loadcell.c: 16:     if(p->cell_dat == 0x01){ return PORTAbits.RA0; }
+[e $ ! == -> . *U _p 1 `i -> 1 `i 358  ]
+{
+[e ) -> . . _PORTAbits 0 0 `i ]
+[e $UE 357  ]
+}
 [e :U 358 ]
+"17
+[; ;loadcell.c: 17:     if(p->cell_dat == 0x02){ return PORTAbits.RA1; }
+[e $ ! == -> . *U _p 1 `i -> 2 `i 359  ]
+{
+[e ) -> . . _PORTAbits 0 1 `i ]
+[e $UE 357  ]
+}
+[e :U 359 ]
+"18
+[; ;loadcell.c: 18:     if(p->cell_dat == 0x04){ return PORTAbits.RA2; }
+[e $ ! == -> . *U _p 1 `i -> 4 `i 360  ]
+{
+[e ) -> . . _PORTAbits 0 2 `i ]
+[e $UE 357  ]
+}
+[e :U 360 ]
+"19
+[; ;loadcell.c: 19:     if(p->cell_dat == 0x08){ return PORTAbits.RA3; }
+[e $ ! == -> . *U _p 1 `i -> 8 `i 361  ]
+{
+[e ) -> . . _PORTAbits 0 3 `i ]
+[e $UE 357  ]
+}
+[e :U 361 ]
+"20
+[; ;loadcell.c: 20:     if(p->cell_dat == 0x10){ return PORTAbits.RA4; }
+[e $ ! == -> . *U _p 1 `i -> 16 `i 362  ]
+{
+[e ) -> . . _PORTAbits 0 4 `i ]
+[e $UE 357  ]
+}
+[e :U 362 ]
+"21
+[; ;loadcell.c: 21:     if(p->cell_dat == 0x20){ return PORTAbits.RA5; }
+[e $ ! == -> . *U _p 1 `i -> 32 `i 363  ]
+{
+[e ) -> . . _PORTAbits 0 5 `i ]
+[e $UE 357  ]
+}
+[e :U 363 ]
+"22
+[; ;loadcell.c: 22:     if(p->cell_dat == 0x40){ return PORTAbits.RA6; }
+[e $ ! == -> . *U _p 1 `i -> 64 `i 364  ]
+{
+[e ) -> . . _PORTAbits 0 6 `i ]
+[e $UE 357  ]
+}
+[e :U 364 ]
+"23
+[; ;loadcell.c: 23:     if(p->cell_dat == 0x80){ return PORTAbits.RA7; }
+[e $ ! == -> . *U _p 1 `i -> 128 `i 365  ]
+{
+[e ) -> . . _PORTAbits 0 7 `i ]
+[e $UE 357  ]
+}
+[e :U 365 ]
+"25
+[; ;loadcell.c: 25:     return 0;
+[e ) -> 0 `i ]
+[e $UE 357  ]
+"26
+[; ;loadcell.c: 26: }
+[e :UE 357 ]
+}
+"34
+[; ;loadcell.c: 34: unsigned long get_scale_val(LoadCell *p, uint8_t scale_avg_count){
+[v _get_scale_val `(ul ~T0 @X0 1 ef2`*S354`uc ]
+{
+[e :U _get_scale_val ]
+[v _p `*S354 ~T0 @X0 1 r1 ]
+[v _scale_avg_count `uc ~T0 @X0 1 r2 ]
+[f ]
+"35
+[; ;loadcell.c: 35:     set_CELL_CLK_LOW(p);
+[e ( _set_CELL_CLK_LOW (1 _p ]
+"36
+[; ;loadcell.c: 36:     unsigned long weight_count = 0;
+[v _weight_count `ul ~T0 @X0 1 a ]
+[e = _weight_count -> -> -> 0 `i `l `ul ]
+"37
+[; ;loadcell.c: 37:     unsigned long weight_add = 0;
+[v _weight_add `ul ~T0 @X0 1 a ]
+[e = _weight_add -> -> -> 0 `i `l `ul ]
+"38
+[; ;loadcell.c: 38:     for (uint8_t j = 0; j < scale_avg_count; j++)
+{
+[v _j `uc ~T0 @X0 1 a ]
+[e = _j -> -> 0 `i `uc ]
+[e $U 370  ]
+[e :U 367 ]
 "39
-[; ;main.c: 39:     {
+[; ;loadcell.c: 39:     {
 {
 "40
-[; ;main.c: 40:         LATA |= 0x80;
-[e =| _LATA -> -> 128 `i `Vuc ]
+[; ;loadcell.c: 40:         while (get_CELL_DAT_VAL(p) == 0);
+[e $U 371  ]
+[e :U 372 ]
+[e :U 371 ]
+[e $ == ( _get_CELL_DAT_VAL (1 _p -> 0 `i 372  ]
+[e :U 373 ]
+"41
+[; ;loadcell.c: 41:         while (get_CELL_DAT_VAL(p) == 1);
+[e $U 374  ]
+[e :U 375 ]
+[e :U 374 ]
+[e $ == ( _get_CELL_DAT_VAL (1 _p -> 1 `i 375  ]
+[e :U 376 ]
 "42
-[; ;main.c: 42:         for(uint8_t i = 0; i < 4; i++){
-{
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 4 `i 360  ]
-[e $U 361  ]
-[e :U 360 ]
-{
-"43
-[; ;main.c: 43:             data[i] = encode_digit(i + k);
-[e = *U + &U _data * -> _i `ux -> -> # *U &U _data `ui `ux ( _encode_digit (1 -> + -> _i `i -> _k `i `uc ]
+[; ;loadcell.c: 42:         _delay((unsigned long)((10)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
 "44
-[; ;main.c: 44:         }
+[; ;loadcell.c: 44:         uint8_t i;
+[v _i `uc ~T0 @X0 1 a ]
+"45
+[; ;loadcell.c: 45:         for (i = 0; i < 24; i++){
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 24 `i 377  ]
+[e $U 378  ]
+[e :U 377 ]
+{
+"46
+[; ;loadcell.c: 46:             weight_count <<= 1;
+[e =<< _weight_count -> -> 1 `i `ul ]
+"47
+[; ;loadcell.c: 47:             set_CELL_CLK_HIGH(p);
+[e ( _set_CELL_CLK_HIGH (1 _p ]
+"48
+[; ;loadcell.c: 48:             _delay((unsigned long)((10)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+"49
+[; ;loadcell.c: 49:             set_CELL_CLK_LOW(p);
+[e ( _set_CELL_CLK_LOW (1 _p ]
+"50
+[; ;loadcell.c: 50:             weight_count += get_CELL_DAT_VAL(p);
+[e =+ _weight_count -> -> ( _get_CELL_DAT_VAL (1 _p `l `ul ]
+"51
+[; ;loadcell.c: 51:             _delay((unsigned long)((10)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+"52
+[; ;loadcell.c: 52:         }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 4 `i 360  ]
-[e :U 361 ]
+[e $ < -> _i `i -> 24 `i 377  ]
+[e :U 378 ]
 }
-"46
-[; ;main.c: 46:         set_segments(data, 4, 0);
-[e ( _set_segments (3 , , -> &U _data `*Cuc -> -> 4 `i `uc -> -> 0 `i `uc ]
-"47
-[; ;main.c: 47:         _delay((unsigned long)((1000)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"48
-[; ;main.c: 48:         k++;
-[e ++ _k -> -> 1 `i `uc ]
-"50
-[; ;main.c: 50:         LATA &= ~ 0x80;
-[e =& _LATA -> ~ -> 128 `i `Vuc ]
-"51
-[; ;main.c: 51:     }
+"54
+[; ;loadcell.c: 54:         for (i = 0; i < 1; i++){
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 1 `i 380  ]
+[e $U 381  ]
+[e :U 380 ]
+{
+"55
+[; ;loadcell.c: 55:             set_CELL_CLK_HIGH(p);
+[e ( _set_CELL_CLK_HIGH (1 _p ]
+"56
+[; ;loadcell.c: 56:             _delay((unsigned long)((10)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+"57
+[; ;loadcell.c: 57:             set_CELL_CLK_LOW(p);
+[e ( _set_CELL_CLK_LOW (1 _p ]
+"58
+[; ;loadcell.c: 58:             _delay((unsigned long)((10)*(8000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
+"59
+[; ;loadcell.c: 59:         };
 }
-[e :U 357 ]
-[e $U 358  ]
-[e :U 359 ]
-"52
-[; ;main.c: 52: }
-[e :UE 356 ]
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 1 `i 380  ]
+[e :U 381 ]
+}
+"60
+[; ;loadcell.c: 60:         weight_add += weight_count;
+[e =+ _weight_add _weight_count ]
+"61
+[; ;loadcell.c: 61:         weight_count = 0;
+[e = _weight_count -> -> -> 0 `i `l `ul ]
+"62
+[; ;loadcell.c: 62:     }
+}
+[e ++ _j -> -> 1 `i `uc ]
+[e :U 370 ]
+[e $ < -> _j `i -> _scale_avg_count `i 367  ]
+[e :U 368 ]
+}
+"63
+[; ;loadcell.c: 63:     weight_count = weight_add / scale_avg_count;
+[e = _weight_count / _weight_add -> _scale_avg_count `ul ]
+"66
+[; ;loadcell.c: 66:     weight_count = weight_count ^ 0x800000;
+[e = _weight_count ^ _weight_count -> -> 8388608 `l `ul ]
+"67
+[; ;loadcell.c: 67:     return weight_count;
+[e ) _weight_count ]
+[e $UE 366  ]
+"68
+[; ;loadcell.c: 68: }
+[e :UE 366 ]
+}
+"75
+[; ;loadcell.c: 75: void scale_convert_gram(LoadCell *p){
+[v _scale_convert_gram `(v ~T0 @X0 1 ef1`*S354 ]
+{
+[e :U _scale_convert_gram ]
+[v _p `*S354 ~T0 @X0 1 r1 ]
+[f ]
+"77
+[; ;loadcell.c: 77:     if(p->weight_dat < p->weight_zero){
+[e $ ! < . *U _p 3 . *U _p 2 384  ]
+{
+"78
+[; ;loadcell.c: 78:         p->gram = 0;
+[e = . *U _p 4 -> -> 0 `i `us ]
+"79
+[; ;loadcell.c: 79:         return;
+[e $UE 383  ]
+"80
+[; ;loadcell.c: 80:     }
+}
+[e :U 384 ]
+"82
+[; ;loadcell.c: 82:     float temp = p->weight_dat - p->weight_zero;
+[v _temp `f ~T0 @X0 1 a ]
+[e = _temp -> - . *U _p 3 . *U _p 2 `f ]
+"83
+[; ;loadcell.c: 83:     temp = temp / 493;
+[e = _temp / _temp -> -> 493 `i `f ]
+"84
+[; ;loadcell.c: 84:     p->gram = (uint16_t)temp;
+[e = . *U _p 4 -> _temp `us ]
+"85
+[; ;loadcell.c: 85: }
+[e :UE 383 ]
 }
