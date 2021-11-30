@@ -1,6 +1,6 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"10 ./lcd_lib.h
-[; ;./lcd_lib.h: 10: typedef struct{
+"12 ./lcd_lib.h
+[; ;./lcd_lib.h: 12: typedef struct{
 [s S354 `uc 1 `uc 1 `uc 1 `uc 1 ]
 [n S354 . lcd_address COL ROW _backlightval ]
 "4 ./i2c.h
@@ -16,17 +16,17 @@ Version 4.0 HI-TECH Software Intermediate Code
 "12 C:\Program Files\Microchip\xc8\v2.32\pic\include\builtins.h
 [v __delay `JF183 ~T0 @X0 0 e ]
 [p i __delay ]
-"37 ./lcd_lib.h
-[; ;./lcd_lib.h: 37: static void write4bits(Lcd *p, uint8_t val);
+"39 ./lcd_lib.h
+[; ;./lcd_lib.h: 39: static void write4bits(Lcd *p, uint8_t val);
 [v _write4bits `(v ~T0 @X0 0 sf2`*S354`uc ]
-"33
-[; ;./lcd_lib.h: 33: void lcd_set_cursor(Lcd *p, uint8_t col, uint8_t row);
+"35
+[; ;./lcd_lib.h: 35: void lcd_set_cursor(Lcd *p, uint8_t col, uint8_t row);
 [v _lcd_set_cursor `(v ~T0 @X0 0 ef3`*S354`uc`uc ]
-"34
-[; ;./lcd_lib.h: 34: void lcd_print(Lcd *p, char *str);
+"36
+[; ;./lcd_lib.h: 36: void lcd_print(Lcd *p, char *str);
 [v _lcd_print `(v ~T0 @X0 0 ef2`*S354`*uc ]
-"39
-[; ;./lcd_lib.h: 39: static void command(Lcd *p, uint8_t val, uint8_t mode);
+"41
+[; ;./lcd_lib.h: 41: static void command(Lcd *p, uint8_t val, uint8_t mode);
 [v _command `(v ~T0 @X0 0 sf3`*S354`uc`uc ]
 "55 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1827.h
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1827.h: 55: __asm("INDF0 equ 00h");

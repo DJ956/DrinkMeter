@@ -3,24 +3,37 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./loadcell.h: 12: typedef struct {
 [s S354 `uc 1 `uc 1 `ul 1 `ul 1 `us 1 ]
 [n S354 . cell_clk cell_dat weight_zero weight_dat gram ]
-"2040 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1827.h
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1827.h: 2040: extern volatile unsigned char LATA __attribute__((address(0x10C)));
-[v _LATA `Vuc ~T0 @X0 0 e@268 ]
-"436
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1827.h: 436:     struct {
-[s S34 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S34 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
-"435
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1827.h: 435: typedef union {
-[u S33 `S34 1 ]
-[n S33 . . ]
-"447
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1827.h: 447: extern volatile PORTAbits_t PORTAbits __attribute__((address(0x00C)));
-[v _PORTAbits `VS33 ~T0 @X0 0 e@12 ]
-[v F183 `(v ~T0 @X0 1 tf1`ul ]
-"12 C:\Program Files\Microchip\xc8\v2.32\pic\include\builtins.h
-[v __delay `JF183 ~T0 @X0 0 e ]
-[p i __delay ]
+"12 ./lcd_lib.h
+[; ;./lcd_lib.h: 12: typedef struct{
+[s S355 `uc 1 `uc 1 `uc 1 `uc 1 ]
+[n S355 . lcd_address COL ROW _backlightval ]
+"6 ./drink_meter.h
+[; ;./drink_meter.h: 6: typedef struct{
+[s S356 `*S354 1 `*S355 1 `us 1 `uc 1 ]
+[n S356 . loadcell lcd max_gram percentage ]
+"31 ./lcd_lib.h
+[; ;./lcd_lib.h: 31: void lcd_init(Lcd *p);
+[v _lcd_init `(v ~T0 @X0 0 ef1`*S355 ]
+"32
+[; ;./lcd_lib.h: 32: static void lcd_backlight(Lcd *p);
+[v _lcd_backlight `(v ~T0 @X0 0 sf1`*S355 ]
+"37
+[; ;./lcd_lib.h: 37: void lcd_print_with(Lcd *p, char *str, uint8_t col, uint8_t row);
+[v _lcd_print_with `(v ~T0 @X0 0 ef4`*S355`*uc`uc`uc ]
+"53 ./loadcell.h
+[; ;./loadcell.h: 53: unsigned long get_scale_val(LoadCell *p, uint8_t scale_avg_count);
+[v _get_scale_val `(ul ~T0 @X0 0 ef2`*S354`uc ]
+"113 C:\Program Files\Microchip\xc8\v2.32\pic\include\c99\stdio.h
+[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+"34 ./lcd_lib.h
+[; ;./lcd_lib.h: 34: void lcd_clear(Lcd *p);
+[v _lcd_clear `(v ~T0 @X0 0 ef1`*S355 ]
+"36
+[; ;./lcd_lib.h: 36: void lcd_print(Lcd *p, char *str);
+[v _lcd_print `(v ~T0 @X0 0 ef2`*S355`*uc ]
+"58 ./loadcell.h
+[; ;./loadcell.h: 58: void scale_convert_gram(LoadCell *p);
+[v _scale_convert_gram `(v ~T0 @X0 0 ef1`*S354 ]
 "55 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1827.h
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1827.h: 55: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -495,274 +508,134 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6749
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1827.h: 6749: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"7 loadcell.c
-[; ;loadcell.c: 7: static void set_CELL_CLK_LOW(LoadCell *p){ LATA &= ~p->cell_clk; }
-[v _set_CELL_CLK_LOW `(v ~T0 @X0 1 sf1`*S354 ]
+"5 drink_meter.c
+[; ;drink_meter.c: 5: void initialize(DrinkMeter *p){
+[v _initialize `(v ~T0 @X0 1 ef1`*S356 ]
 {
-[e :U _set_CELL_CLK_LOW ]
-[v _p `*S354 ~T0 @X0 1 r1 ]
+[e :U _initialize ]
+[v _p `*S356 ~T0 @X0 1 r1 ]
 [f ]
-[e =& _LATA -> ~ -> . *U _p 0 `i `Vuc ]
-[e :UE 355 ]
-}
-"12
-[; ;loadcell.c: 12: static void set_CELL_CLK_HIGH(LoadCell *p){ LATA |= p->cell_clk; }
-[v _set_CELL_CLK_HIGH `(v ~T0 @X0 1 sf1`*S354 ]
-{
-[e :U _set_CELL_CLK_HIGH ]
-[v _p `*S354 ~T0 @X0 1 r1 ]
-[f ]
-[e =| _LATA -> . *U _p 0 `Vuc ]
-[e :UE 356 ]
-}
+"6
+[; ;drink_meter.c: 6:     lcd_init(p->lcd);
+[e ( _lcd_init (1 . *U _p 1 ]
+"7
+[; ;drink_meter.c: 7:     lcd_backlight(p->lcd);
+[e ( _lcd_backlight (1 . *U _p 1 ]
+"9
+[; ;drink_meter.c: 9:     lcd_print_with(p->lcd, "Initialize", 0, 0);
+[e ( _lcd_print_with (4 , , , . *U _p 1 :s 1C -> -> 0 `i `uc -> -> 0 `i `uc ]
+"10
+[; ;drink_meter.c: 10:     lcd_print_with(p->lcd, "Load cell Unit", 0, 1);
+[e ( _lcd_print_with (4 , , , . *U _p 1 :s 2C -> -> 0 `i `uc -> -> 1 `i `uc ]
+"13
+[; ;drink_meter.c: 13:     p->loadcell->weight_zero = get_scale_val(p->loadcell, 50);
+[e = . *U . *U _p 0 2 ( _get_scale_val (2 , . *U _p 0 -> -> 50 `i `uc ]
 "15
-[; ;loadcell.c: 15: static int get_CELL_DAT_VAL(LoadCell *p){
-[v _get_CELL_DAT_VAL `(i ~T0 @X0 1 sf1`*S354 ]
-{
-[e :U _get_CELL_DAT_VAL ]
-[v _p `*S354 ~T0 @X0 1 r1 ]
-[f ]
+[; ;drink_meter.c: 15:     char valstr[16];
+[v _valstr `uc ~T0 @X0 -> 16 `i a ]
 "16
-[; ;loadcell.c: 16:     if(p->cell_dat == 0x01){ return PORTAbits.RA0; }
-[e $ ! == -> . *U _p 1 `i -> 1 `i 358  ]
-{
-[e ) -> . . _PORTAbits 0 0 `i ]
-[e $UE 357  ]
-}
-[e :U 358 ]
-"17
-[; ;loadcell.c: 17:     if(p->cell_dat == 0x02){ return PORTAbits.RA1; }
-[e $ ! == -> . *U _p 1 `i -> 2 `i 359  ]
-{
-[e ) -> . . _PORTAbits 0 1 `i ]
-[e $UE 357  ]
-}
-[e :U 359 ]
+[; ;drink_meter.c: 16:     sprintf(valstr, "%lu val", p->loadcell->weight_dat);
+[e ( _sprintf (1 , (. , &U _valstr :s 3C . *U . *U _p 0 3 ]
 "18
-[; ;loadcell.c: 18:     if(p->cell_dat == 0x04){ return PORTAbits.RA2; }
-[e $ ! == -> . *U _p 1 `i -> 4 `i 360  ]
-{
-[e ) -> . . _PORTAbits 0 2 `i ]
-[e $UE 357  ]
-}
-[e :U 360 ]
+[; ;drink_meter.c: 18:     lcd_clear(p->lcd);
+[e ( _lcd_clear (1 . *U _p 1 ]
 "19
-[; ;loadcell.c: 19:     if(p->cell_dat == 0x08){ return PORTAbits.RA3; }
-[e $ ! == -> . *U _p 1 `i -> 8 `i 361  ]
-{
-[e ) -> . . _PORTAbits 0 3 `i ]
-[e $UE 357  ]
-}
-[e :U 361 ]
+[; ;drink_meter.c: 19:     lcd_print(p->lcd, valstr);
+[e ( _lcd_print (2 , . *U _p 1 &U _valstr ]
 "20
-[; ;loadcell.c: 20:     if(p->cell_dat == 0x10){ return PORTAbits.RA4; }
-[e $ ! == -> . *U _p 1 `i -> 16 `i 362  ]
+[; ;drink_meter.c: 20: }
+[e :UE 359 ]
+}
+"22
+[; ;drink_meter.c: 22: void calc_percentage(DrinkMeter *p){
+[v _calc_percentage `(v ~T0 @X0 1 ef1`*S356 ]
 {
-[e ) -> . . _PORTAbits 0 4 `i ]
-[e $UE 357  ]
+[e :U _calc_percentage ]
+[v _p `*S356 ~T0 @X0 1 r1 ]
+[f ]
+"24
+[; ;drink_meter.c: 24:     p->loadcell->weight_dat = get_scale_val(p->loadcell, 8);
+[e = . *U . *U _p 0 3 ( _get_scale_val (2 , . *U _p 0 -> -> 8 `i `uc ]
+"25
+[; ;drink_meter.c: 25:     scale_convert_gram(p->loadcell);
+[e ( _scale_convert_gram (1 . *U _p 0 ]
+"28
+[; ;drink_meter.c: 28:     if(p->loadcell->gram == 0){
+[e $ ! == -> . *U . *U _p 0 4 `ui -> -> 0 `i `ui 361  ]
+{
+"29
+[; ;drink_meter.c: 29:         p->percentage = 0;
+[e = . *U _p 3 -> -> 0 `i `uc ]
+"30
+[; ;drink_meter.c: 30:     }else{
+}
+[e $U 362  ]
+[e :U 361 ]
+{
+"32
+[; ;drink_meter.c: 32:         p->percentage = (p->loadcell->gram / p->max_gram) * 100;
+[e = . *U _p 3 -> * / -> . *U . *U _p 0 4 `ui -> . *U _p 2 `ui -> -> 100 `i `ui `uc ]
+"33
+[; ;drink_meter.c: 33:     }
 }
 [e :U 362 ]
-"21
-[; ;loadcell.c: 21:     if(p->cell_dat == 0x20){ return PORTAbits.RA5; }
-[e $ ! == -> . *U _p 1 `i -> 32 `i 363  ]
-{
-[e ) -> . . _PORTAbits 0 5 `i ]
-[e $UE 357  ]
-}
-[e :U 363 ]
-"22
-[; ;loadcell.c: 22:     if(p->cell_dat == 0x40){ return PORTAbits.RA6; }
-[e $ ! == -> . *U _p 1 `i -> 64 `i 364  ]
-{
-[e ) -> . . _PORTAbits 0 6 `i ]
-[e $UE 357  ]
-}
-[e :U 364 ]
-"23
-[; ;loadcell.c: 23:     if(p->cell_dat == 0x80){ return PORTAbits.RA7; }
-[e $ ! == -> . *U _p 1 `i -> 128 `i 365  ]
-{
-[e ) -> . . _PORTAbits 0 7 `i ]
-[e $UE 357  ]
-}
-[e :U 365 ]
-"25
-[; ;loadcell.c: 25:     return 0;
-[e ) -> 0 `i ]
-[e $UE 357  ]
-"26
-[; ;loadcell.c: 26: }
-[e :UE 357 ]
-}
 "34
-[; ;loadcell.c: 34: unsigned long get_scale_val(LoadCell *p, uint8_t scale_avg_count){
-[v _get_scale_val `(ul ~T0 @X0 1 ef2`*S354`uc ]
-{
-[e :U _get_scale_val ]
-[v _p `*S354 ~T0 @X0 1 r1 ]
-[v _scale_avg_count `uc ~T0 @X0 1 r2 ]
-[f ]
-"35
-[; ;loadcell.c: 35:     set_CELL_CLK_LOW(p);
-[e ( _set_CELL_CLK_LOW (1 _p ]
+[; ;drink_meter.c: 34: }
+[e :UE 360 ]
+}
 "36
-[; ;loadcell.c: 36:     unsigned long weight_count = 0;
-[v _weight_count `ul ~T0 @X0 1 a ]
-[e = _weight_count -> -> -> 0 `i `l `ul ]
-"37
-[; ;loadcell.c: 37:     unsigned long weight_add = 0;
-[v _weight_add `ul ~T0 @X0 1 a ]
-[e = _weight_add -> -> -> 0 `i `l `ul ]
-"38
-[; ;loadcell.c: 38:     for (uint8_t j = 0; j < scale_avg_count; j++)
+[; ;drink_meter.c: 36: void print_gram(DrinkMeter *p){
+[v _print_gram `(v ~T0 @X0 1 ef1`*S356 ]
 {
-[v _j `uc ~T0 @X0 1 a ]
-[e = _j -> -> 0 `i `uc ]
-[e $U 370  ]
-[e :U 367 ]
-"39
-[; ;loadcell.c: 39:     {
-{
-"40
-[; ;loadcell.c: 40:         while (get_CELL_DAT_VAL(p) == 0);
-[e $U 371  ]
-[e :U 372 ]
-[e :U 371 ]
-[e $ == ( _get_CELL_DAT_VAL (1 _p -> 0 `i 372  ]
-[e :U 373 ]
-"41
-[; ;loadcell.c: 41:         while (get_CELL_DAT_VAL(p) == 1);
-[e $U 374  ]
-[e :U 375 ]
-[e :U 374 ]
-[e $ == ( _get_CELL_DAT_VAL (1 _p -> 1 `i 375  ]
-[e :U 376 ]
-"42
-[; ;loadcell.c: 42:         _delay((unsigned long)((10)*(8000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
-"44
-[; ;loadcell.c: 44:         uint8_t i;
-[v _i `uc ~T0 @X0 1 a ]
-"45
-[; ;loadcell.c: 45:         for (i = 0; i < 24; i++){
-{
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 24 `i 377  ]
-[e $U 378  ]
-[e :U 377 ]
-{
-"46
-[; ;loadcell.c: 46:             weight_count <<= 1;
-[e =<< _weight_count -> -> 1 `i `ul ]
-"47
-[; ;loadcell.c: 47:             set_CELL_CLK_HIGH(p);
-[e ( _set_CELL_CLK_HIGH (1 _p ]
-"48
-[; ;loadcell.c: 48:             _delay((unsigned long)((10)*(8000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
-"49
-[; ;loadcell.c: 49:             set_CELL_CLK_LOW(p);
-[e ( _set_CELL_CLK_LOW (1 _p ]
-"50
-[; ;loadcell.c: 50:             weight_count += get_CELL_DAT_VAL(p);
-[e =+ _weight_count -> -> ( _get_CELL_DAT_VAL (1 _p `l `ul ]
-"51
-[; ;loadcell.c: 51:             _delay((unsigned long)((10)*(8000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
-"52
-[; ;loadcell.c: 52:         }
-}
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 24 `i 377  ]
-[e :U 378 ]
-}
-"54
-[; ;loadcell.c: 54:         for (i = 0; i < 1; i++){
-{
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 1 `i 380  ]
-[e $U 381  ]
-[e :U 380 ]
-{
-"55
-[; ;loadcell.c: 55:             set_CELL_CLK_HIGH(p);
-[e ( _set_CELL_CLK_HIGH (1 _p ]
-"56
-[; ;loadcell.c: 56:             _delay((unsigned long)((10)*(8000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
-"57
-[; ;loadcell.c: 57:             set_CELL_CLK_LOW(p);
-[e ( _set_CELL_CLK_LOW (1 _p ]
-"58
-[; ;loadcell.c: 58:             _delay((unsigned long)((10)*(8000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 8000000 `l `d .4000000.0 `ul ]
-"59
-[; ;loadcell.c: 59:         };
-}
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 1 `i 380  ]
-[e :U 381 ]
-}
-"60
-[; ;loadcell.c: 60:         weight_add += weight_count;
-[e =+ _weight_add _weight_count ]
-"61
-[; ;loadcell.c: 61:         weight_count = 0;
-[e = _weight_count -> -> -> 0 `i `l `ul ]
-"62
-[; ;loadcell.c: 62:     }
-}
-[e ++ _j -> -> 1 `i `uc ]
-[e :U 370 ]
-[e $ < -> _j `i -> _scale_avg_count `i 367  ]
-[e :U 368 ]
-}
-"63
-[; ;loadcell.c: 63:     weight_count = weight_add / scale_avg_count;
-[e = _weight_count / _weight_add -> _scale_avg_count `ul ]
-"66
-[; ;loadcell.c: 66:     weight_count = weight_count ^ 0x800000;
-[e = _weight_count ^ _weight_count -> -> 8388608 `l `ul ]
-"67
-[; ;loadcell.c: 67:     return weight_count;
-[e ) _weight_count ]
-[e $UE 366  ]
-"68
-[; ;loadcell.c: 68: }
-[e :UE 366 ]
-}
-"75
-[; ;loadcell.c: 75: void scale_convert_gram(LoadCell *p){
-[v _scale_convert_gram `(v ~T0 @X0 1 ef1`*S354 ]
-{
-[e :U _scale_convert_gram ]
-[v _p `*S354 ~T0 @X0 1 r1 ]
+[e :U _print_gram ]
+[v _p `*S356 ~T0 @X0 1 r1 ]
 [f ]
-"77
-[; ;loadcell.c: 77:     if(p->weight_dat < p->weight_zero){
-[e $ ! < . *U _p 3 . *U _p 2 384  ]
+"37
+[; ;drink_meter.c: 37:     char row1[16];
+[v _row1 `uc ~T0 @X0 -> 16 `i a ]
+"38
+[; ;drink_meter.c: 38:     char row2[16];
+[v _row2 `uc ~T0 @X0 -> 16 `i a ]
+"40
+[; ;drink_meter.c: 40:     sprintf(row1, "%dg / %dg", p->loadcell->gram, p->max_gram);
+[e ( _sprintf (1 , , (. , &U _row1 :s 4C -> . *U . *U _p 0 4 `ui -> . *U _p 2 `ui ]
+"41
+[; ;drink_meter.c: 41:     sprintf(row2, "%d %", p->percentage);
+[e ( _sprintf (1 , (. , &U _row2 :s 5C -> . *U _p 3 `i ]
+"43
+[; ;drink_meter.c: 43:     lcd_clear(p->lcd);
+[e ( _lcd_clear (1 . *U _p 1 ]
+"45
+[; ;drink_meter.c: 45:     lcd_print_with(p->lcd, row1, 0, 0);
+[e ( _lcd_print_with (4 , , , . *U _p 1 &U _row1 -> -> 0 `i `uc -> -> 0 `i `uc ]
+"46
+[; ;drink_meter.c: 46:     lcd_print_with(p->lcd, row2, 0, 1);
+[e ( _lcd_print_with (4 , , , . *U _p 1 &U _row2 -> -> 0 `i `uc -> -> 1 `i `uc ]
+"47
+[; ;drink_meter.c: 47: }
+[e :UE 363 ]
+}
+"49
+[; ;drink_meter.c: 49: void set_max_gram(DrinkMeter *p, uint16_t max_gram){
+[v _set_max_gram `(v ~T0 @X0 1 ef2`*S356`us ]
 {
-"78
-[; ;loadcell.c: 78:         p->gram = 0;
-[e = . *U _p 4 -> -> 0 `i `us ]
-"79
-[; ;loadcell.c: 79:         return;
-[e $UE 383  ]
-"80
-[; ;loadcell.c: 80:     }
+[e :U _set_max_gram ]
+[v _p `*S356 ~T0 @X0 1 r1 ]
+[v _max_gram `us ~T0 @X0 1 r2 ]
+[f ]
+"50
+[; ;drink_meter.c: 50:     p->max_gram = max_gram;
+[e = . *U _p 2 _max_gram ]
+"51
+[; ;drink_meter.c: 51:     calc_percentage(p);
+[e ( _calc_percentage (1 _p ]
+"52
+[; ;drink_meter.c: 52: }
+[e :UE 364 ]
 }
-[e :U 384 ]
-"82
-[; ;loadcell.c: 82:     float temp = p->weight_dat - p->weight_zero;
-[v _temp `f ~T0 @X0 1 a ]
-[e = _temp -> - . *U _p 3 . *U _p 2 `f ]
-"83
-[; ;loadcell.c: 83:     temp = temp / 493;
-[e = _temp / _temp -> -> 493 `i `f ]
-"84
-[; ;loadcell.c: 84:     p->gram = (uint16_t)temp;
-[e = . *U _p 4 -> _temp `us ]
-"85
-[; ;loadcell.c: 85: }
-[e :UE 383 ]
-}
+[p f _sprintf 8389776 ]
+[a 2C 76 111 97 100 32 99 101 108 108 32 85 110 105 116 0 ]
+[a 3C 37 108 117 32 118 97 108 0 ]
+[a 4C 37 100 103 32 47 32 37 100 103 0 ]
+[a 1C 73 110 105 116 105 97 108 105 122 101 0 ]
+[a 5C 37 100 32 37 0 ]

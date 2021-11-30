@@ -7,10 +7,16 @@
 [v ___lldiv __lldiv `(ul  1 e 4 0 ]
 "43 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\fltol.c
 [v ___fltol __fltol `(l  1 e 4 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"9 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_sprintf.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "8 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcdiv.c
 [v ___fldiv __fldiv `(d  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul8.c
+[v ___bmul __bmul `(uc  1 e 1 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\xxtofl.c
@@ -19,6 +25,8 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
+"22 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\drink_meter.c
+[v _calc_percentage calc_percentage `(v  1 e 1 0 ]
 "4 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\i2c.c
 [v _i2c_wait i2c_wait `(v  1 e 1 0 ]
 "8
@@ -29,10 +37,16 @@
 [v _i2c_write i2c_write `(v  1 e 1 0 ]
 "6 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\lcd_lib.c
 [v _lcd_cmd lcd_cmd `(v  1 s 1 lcd_cmd ]
+"18
+[v _lcd_init lcd_init `(v  1 e 1 0 ]
+"91
+[v _lcd_clear lcd_clear `(v  1 e 1 0 ]
 "107
 [v _lcd_set_cursor lcd_set_cursor `(v  1 e 1 0 ]
 "121
 [v _lcd_print lcd_print `(v  1 e 1 0 ]
+"135
+[v _lcd_print_with lcd_print_with `(v  1 e 1 0 ]
 "140
 [v _command command `(v  1 s 1 command ]
 "155
@@ -43,6 +57,10 @@
 [v _set_CELL_CLK_HIGH set_CELL_CLK_HIGH `(v  1 s 1 set_CELL_CLK_HIGH ]
 "15
 [v _get_CELL_DAT_VAL get_CELL_DAT_VAL `(i  1 s 2 get_CELL_DAT_VAL ]
+"34
+[v _get_scale_val get_scale_val `(ul  1 e 4 0 ]
+"75
+[v _scale_convert_gram scale_convert_gram `(v  1 e 1 0 ]
 "8 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\main.c
 [v _main main `(v  1 e 1 0 ]
 "50 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\mcc_generated_files/mcc.c
@@ -75,15 +93,9 @@
 [v _get_DIO_PIN_value get_DIO_PIN_value `(uc  1 e 1 0 ]
 "86
 [v _write_byte write_byte `(uc  1 e 1 0 ]
-"141
-[v _set_brigthness set_brigthness `(v  1 e 1 0 ]
 "155
 [v _set_segments set_segments `(v  1 e 1 0 ]
-"181
-[v _clear_segment clear_segment `(v  1 e 1 0 ]
-"191
-[v _encode_digit encode_digit `(uc  1 e 1 0 ]
-[s S273 . 1 `uc 1 RA0 1 0 :1:0 
+[s S214 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -93,8 +105,8 @@
 `uc 1 RA7 1 0 :1:7 
 ]
 "447 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1827.h
-[u S282 . 1 `S273 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES282  1 e 1 @12 ]
+[u S223 . 1 `S214 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES223  1 e 1 @12 ]
 "1153
 [v _TRISA TRISA `VEuc  1 e 1 @140 ]
 "1215
@@ -142,6 +154,8 @@
 [v _WPUB WPUB `VEuc  1 e 1 @525 ]
 "3592
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @529 ]
+"3630
+[v _SSPADD SSPADD `VEuc  1 e 1 @530 ]
 "3706
 [v _SSPSTAT SSPSTAT `VEuc  1 e 1 @532 ]
 [s S115 . 1 `uc 1 BF 1 0 :1:0 
@@ -156,6 +170,8 @@
 "3778
 [u S124 . 1 `S115 1 . 1 0 ]
 [v _SSPSTATbits SSPSTATbits `VES124  1 e 1 @532 ]
+"3828
+[v _SSPCON1 SSPCON1 `VEuc  1 e 1 @533 ]
 [s S136 . 1 `uc 1 SSPM0 1 0 :1:0 
 `uc 1 SSPM1 1 0 :1:1 
 `uc 1 SSPM2 1 0 :1:2 
@@ -186,122 +202,10 @@
 [v _SSPCON2bits SSPCON2bits `VES102  1 e 1 @534 ]
 "15 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\tm1637.c
 [v _m_brightness m_brightness `uc  1 e 1 0 ]
-"17
-[v _segdata segdata `[10]uc  1 e 10 0 ]
 "8 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"42
-[v main@i i `uc  1 a 1 9 ]
-"22
-[v main@data data `[4]uc  1 a 4 5 ]
-"35
-[v main@k k `uc  1 a 1 4 ]
-[s S197 . 12 `uc 1 cell_clk 1 0 `uc 1 cell_dat 1 1 `ul 1 weight_zero 4 2 `ul 1 weight_dat 4 6 `us 1 gram 2 10 ]
-"11
-[v main@F2565 F2565 `S197  1 s 12 F2565 ]
-[s S203 . 4 `uc 1 lcd_address 1 0 `uc 1 COL 1 1 `uc 1 ROW 1 2 `uc 1 _backlightval 1 3 ]
-"13
-[v main@F2567 F2567 `S203  1 s 4 F2567 ]
-"20
-[v main@F2569 F2569 `[4]uc  1 s 4 F2569 ]
-"52
-} 0
-"141 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\tm1637.c
-[v _set_brigthness set_brigthness `(v  1 e 1 0 ]
-{
-[v set_brigthness@brightness brightness `uc  1 a 1 wreg ]
-[v set_brigthness@brightness brightness `uc  1 a 1 wreg ]
-[v set_brigthness@on on `uc  1 p 1 0 ]
-[v set_brigthness@brightness brightness `uc  1 a 1 2 ]
-"147
-} 0
-"191
-[v _encode_digit encode_digit `(uc  1 e 1 0 ]
-{
-[v encode_digit@digit digit `uc  1 a 1 wreg ]
-[v encode_digit@digit digit `uc  1 a 1 wreg ]
-[v encode_digit@digit digit `uc  1 a 1 0 ]
-"193
-} 0
-"181
-[v _clear_segment clear_segment `(v  1 e 1 0 ]
-{
-"182
-[v clear_segment@data data `[4]uc  1 a 4 0 ]
-"184
-} 0
-"155
-[v _set_segments set_segments `(v  1 e 1 0 ]
-{
-[v set_segments@segments segments `*.4DCuc  1 a 1 wreg ]
-"166
-[v set_segments@k k `uc  1 a 1 10 ]
-"155
-[v set_segments@segments segments `*.4DCuc  1 a 1 wreg ]
-[v set_segments@length length `uc  1 p 1 6 ]
-[v set_segments@pos pos `uc  1 p 1 7 ]
-"157
-[v set_segments@segments segments `*.4DCuc  1 a 1 9 ]
-"176
-} 0
-"86
-[v _write_byte write_byte `(uc  1 e 1 0 ]
-{
-[v write_byte@b b `uc  1 a 1 wreg ]
-"91
-[v write_byte@i i `uc  1 a 1 5 ]
-"87
-[v write_byte@data data `uc  1 a 1 4 ]
-"121
-[v write_byte@ack ack `uc  1 a 1 3 ]
-"86
-[v write_byte@b b `uc  1 a 1 wreg ]
-[v write_byte@b b `uc  1 a 1 2 ]
-"134
-} 0
-"75
-[v _get_DIO_PIN_value get_DIO_PIN_value `(uc  1 e 1 0 ]
-{
-"84
-} 0
-"41
-[v _DIO_SET_INPUT DIO_SET_INPUT `(v  1 e 1 0 ]
-{
-} 0
-"61
-[v _stop_segment stop_segment `(v  1 e 1 0 ]
-{
-"73
-} 0
-"47
-[v _start_segment start_segment `(v  1 e 1 0 ]
-{
-"59
-} 0
-"39
-[v _DIO_SET_OUTPUT DIO_SET_OUTPUT `(v  1 e 1 0 ]
-{
-} 0
 "45
-[v _DIO_SET_LOW DIO_SET_LOW `(v  1 e 1 0 ]
-{
-} 0
-"43
-[v _DIO_SET_HIGH DIO_SET_HIGH `(v  1 e 1 0 ]
-{
-} 0
-"31
-[v _CLK_SET_OUTPUT CLK_SET_OUTPUT `(v  1 e 1 0 ]
-{
-} 0
-"36
-[v _CLK_SET_LOW CLK_SET_LOW `(v  1 e 1 0 ]
-{
-} 0
-"34
-[v _CLK_SET_HIGH CLK_SET_HIGH `(v  1 e 1 0 ]
-{
 } 0
 "50 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]

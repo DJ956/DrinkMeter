@@ -1,3 +1,5 @@
+#pragma once
+
 #include <xc.h>
 #include <stdint.h>
     

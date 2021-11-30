@@ -1,7 +1,7 @@
-#include "tm1637.h"
 #include "i2c.h"
 #include "loadcell.h"
 #include "lcd_lib.h"
+#include "drink_meter.h"
 #include "mcc_generated_files/mcc.h"
 
 
@@ -10,15 +10,25 @@ void main(void)
     
     SYSTEM_Initialize();
     
-    LoadCell loadcell = {0,0,0,0};
-    Lcd lcd = {0x27, 16, 2};
     
+   //set digital mode
     ANSELA = 0x00;
-    TRISA = 0x00;
+    ANSELB = 0x00;
+    
+    //RA0 cell clock is output
+    //RA1 cell data is input
+    TRISA = 0x02;
+    //init LATA
     LATA = 0x00;
+    LATB = 0x00;
     
-    LATA |= 0x80;
+    //init i2c
+    SSPADD = 0x13;    
+    SSPCON1 = 0x28;
+    SSPCON2 = 0x0;
+    SSPSTAT = 0;
     
+    /*
     uint8_t data[] = {0xff, 0xff, 0xff, 0xff};
     
     clear_segment();
@@ -31,22 +41,5 @@ void main(void)
     
     set_brigthness(0x0f, 1);
     set_segments(data, 4, 0);
-    
-    uint8_t k = 0;
-    
-    
-    while (1)
-    {       
-        LATA |= 0x80;
-        
-        for(uint8_t i = 0; i < 4; i++){
-            data[i] = encode_digit(i + k);
-        }
-        
-        set_segments(data, 4, 0);
-        __delay_ms(1000);
-        k++;
-        
-        LATA &= ~ 0x80;
-    }
+     */
 }

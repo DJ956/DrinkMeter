@@ -3,39 +3,33 @@ Version 4.0 HI-TECH Software Intermediate Code
 "69 ./mcc_generated_files/mcc.h
 [; ;./mcc_generated_files/mcc.h: 69: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"10 ./loadcell.h
-[; ;./loadcell.h: 10: typedef struct {
-[s S354 `uc 1 `uc 1 `ul 1 `ul 1 `us 1 ]
-[n S354 . cell_clk cell_dat weight_zero weight_dat gram ]
-"10 ./lcd_lib.h
-[; ;./lcd_lib.h: 10: typedef struct{
-[s S355 `uc 1 `uc 1 `uc 1 `uc 1 ]
-[n S355 . lcd_address COL ROW _backlightval ]
 "2862 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1827.h
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1827.h: 2862: extern volatile unsigned char ANSELA __attribute__((address(0x18C)));
 [v _ANSELA `Vuc ~T0 @X0 0 e@396 ]
+"2914
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1827.h: 2914: extern volatile unsigned char ANSELB __attribute__((address(0x18D)));
+[v _ANSELB `Vuc ~T0 @X0 0 e@397 ]
 "1153
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1827.h: 1153: extern volatile unsigned char TRISA __attribute__((address(0x08C)));
 [v _TRISA `Vuc ~T0 @X0 0 e@140 ]
 "2040
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1827.h: 2040: extern volatile unsigned char LATA __attribute__((address(0x10C)));
 [v _LATA `Vuc ~T0 @X0 0 e@268 ]
-"11 ./tm1637.h
-[; ;./tm1637.h: 11: void clear_segment();
-[v _clear_segment `(v ~T0 @X0 0 e? ]
-"12
-[; ;./tm1637.h: 12: uint8_t encode_digit(uint8_t digit);
-[v _encode_digit `(uc ~T0 @X0 0 ef1`uc ]
-"8
-[; ;./tm1637.h: 8: void set_brigthness(uint8_t brightness, uint8_t on);
-[v _set_brigthness `(v ~T0 @X0 0 ef2`uc`uc ]
-"10
-[; ;./tm1637.h: 10: void set_segments(const uint8_t segments[], uint8_t length, uint8_t pos);
-[v _set_segments `(v ~T0 @X0 0 ef3`*Cuc`uc`uc ]
-[v F183 `(v ~T0 @X0 1 tf1`ul ]
-"12 C:\Program Files\Microchip\xc8\v2.32\pic\include\builtins.h
-[v __delay `JF183 ~T0 @X0 0 e ]
-[p i __delay ]
+"2097
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1827.h: 2097: extern volatile unsigned char LATB __attribute__((address(0x10D)));
+[v _LATB `Vuc ~T0 @X0 0 e@269 ]
+"3630
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1827.h: 3630: extern volatile unsigned char SSPADD __attribute__((address(0x212)));
+[v _SSPADD `Vuc ~T0 @X0 0 e@530 ]
+"3828
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1827.h: 3828: extern volatile unsigned char SSPCON1 __attribute__((address(0x215)));
+[v _SSPCON1 `Vuc ~T0 @X0 0 e@533 ]
+"4032
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1827.h: 4032: extern volatile unsigned char SSPCON2 __attribute__((address(0x216)));
+[v _SSPCON2 `Vuc ~T0 @X0 0 e@534 ]
+"3706
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1827.h: 3706: extern volatile unsigned char SSPSTAT __attribute__((address(0x214)));
+[v _SSPSTAT `Vuc ~T0 @X0 0 e@532 ]
 "55 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1827.h
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1827.h: 55: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -522,130 +516,34 @@ Version 4.0 HI-TECH Software Intermediate Code
 "11
 [; ;main.c: 11:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-[v F2565 `S354 ~T0 @X0 1 s ]
-[i F2565
-:U ..
-:U ..
-"13
-[; ;main.c: 13:     LoadCell loadcell = {0,0};
--> -> 0 `i `uc
--> -> 0 `i `uc
-..
-..
-]
-[v _loadcell `S354 ~T0 @X0 1 a ]
-[e = _loadcell F2565 ]
-[v F2567 `S355 ~T0 @X0 1 s ]
-[i F2567
-:U ..
-:U ..
-"14
-[; ;main.c: 14:     Lcd lcd = {0x27, 16, 2};
--> -> 39 `i `uc
--> -> 16 `i `uc
--> -> 2 `i `uc
-..
-..
-]
-[v _lcd `S355 ~T0 @X0 1 a ]
-[e = _lcd F2567 ]
-"16
-[; ;main.c: 16:     ANSELA = 0x00;
+"15
+[; ;main.c: 15:     ANSELA = 0x00;
 [e = _ANSELA -> -> 0 `i `uc ]
-"17
-[; ;main.c: 17:     TRISA = 0x00;
-[e = _TRISA -> -> 0 `i `uc ]
-"18
-[; ;main.c: 18:     LATA = 0x00;
-[e = _LATA -> -> 0 `i `uc ]
+"16
+[; ;main.c: 16:     ANSELB = 0x00;
+[e = _ANSELB -> -> 0 `i `uc ]
 "20
-[; ;main.c: 20:     LATA |= 0x80;
-[e =| _LATA -> -> 128 `i `Vuc ]
-[v F2569 `uc ~T0 @X0 -> 4 `i s ]
-[i F2569
-:U ..
+[; ;main.c: 20:     TRISA = 0x02;
+[e = _TRISA -> -> 2 `i `uc ]
 "22
-[; ;main.c: 22:     uint8_t data[] = {0xff, 0xff, 0xff, 0xff};
--> -> 255 `i `uc
--> -> 255 `i `uc
--> -> 255 `i `uc
--> -> 255 `i `uc
-..
-]
-[v _data `uc ~T0 @X0 -> 4 `i a ]
-[e = _data F2569 ]
-"24
-[; ;main.c: 24:     clear_segment();
-[e ( _clear_segment ..  ]
+[; ;main.c: 22:     LATA = 0x00;
+[e = _LATA -> -> 0 `i `uc ]
+"23
+[; ;main.c: 23:     LATB = 0x00;
+[e = _LATB -> -> 0 `i `uc ]
 "26
-[; ;main.c: 26:     data[0] = encode_digit(1);
-[e = *U + &U _data * -> -> -> 0 `i `ui `ux -> -> # *U &U _data `ui `ux ( _encode_digit (1 -> -> 1 `i `uc ]
+[; ;main.c: 26:     SSPADD = 0x13;
+[e = _SSPADD -> -> 19 `i `uc ]
 "27
-[; ;main.c: 27:     data[1] = encode_digit(9);
-[e = *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux ( _encode_digit (1 -> -> 9 `i `uc ]
+[; ;main.c: 27:     SSPCON1 = 0x28;
+[e = _SSPCON1 -> -> 40 `i `uc ]
 "28
-[; ;main.c: 28:     data[2] = encode_digit(8);
-[e = *U + &U _data * -> -> -> 2 `i `ui `ux -> -> # *U &U _data `ui `ux ( _encode_digit (1 -> -> 8 `i `uc ]
+[; ;main.c: 28:     SSPCON2 = 0x0;
+[e = _SSPCON2 -> -> 0 `i `uc ]
 "29
-[; ;main.c: 29:     data[3] = encode_digit(4);
-[e = *U + &U _data * -> -> -> 3 `i `ui `ux -> -> # *U &U _data `ui `ux ( _encode_digit (1 -> -> 4 `i `uc ]
-"32
-[; ;main.c: 32:     set_brigthness(0x0f, 1);
-[e ( _set_brigthness (2 , -> -> 15 `i `uc -> -> 1 `i `uc ]
-"33
-[; ;main.c: 33:     set_segments(data, 4, 0);
-[e ( _set_segments (3 , , -> &U _data `*Cuc -> -> 4 `i `uc -> -> 0 `i `uc ]
-"35
-[; ;main.c: 35:     uint8_t k = 0;
-[v _k `uc ~T0 @X0 1 a ]
-[e = _k -> -> 0 `i `uc ]
-"38
-[; ;main.c: 38:     while (1)
-[e :U 358 ]
-"39
-[; ;main.c: 39:     {
-{
-"40
-[; ;main.c: 40:         LATA |= 0x80;
-[e =| _LATA -> -> 128 `i `Vuc ]
-"42
-[; ;main.c: 42:         for(uint8_t i = 0; i < 4; i++){
-{
-[v _i `uc ~T0 @X0 1 a ]
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 4 `i 360  ]
-[e $U 361  ]
-[e :U 360 ]
-{
-"43
-[; ;main.c: 43:             data[i] = encode_digit(i + k);
-[e = *U + &U _data * -> _i `ux -> -> # *U &U _data `ui `ux ( _encode_digit (1 -> + -> _i `i -> _k `i `uc ]
-"44
-[; ;main.c: 44:         }
-}
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 4 `i 360  ]
-[e :U 361 ]
-}
-"46
-[; ;main.c: 46:         set_segments(data, 4, 0);
-[e ( _set_segments (3 , , -> &U _data `*Cuc -> -> 4 `i `uc -> -> 0 `i `uc ]
-"47
-[; ;main.c: 47:         _delay((unsigned long)((1000)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"48
-[; ;main.c: 48:         k++;
-[e ++ _k -> -> 1 `i `uc ]
-"50
-[; ;main.c: 50:         LATA &= ~ 0x80;
-[e =& _LATA -> ~ -> 128 `i `Vuc ]
-"51
-[; ;main.c: 51:     }
-}
-[e :U 357 ]
-[e $U 358  ]
-[e :U 359 ]
-"52
-[; ;main.c: 52: }
-[e :UE 356 ]
+[; ;main.c: 29:     SSPSTAT = 0;
+[e = _SSPSTAT -> -> 0 `i `uc ]
+"45
+[; ;main.c: 45: }
+[e :UE 357 ]
 }

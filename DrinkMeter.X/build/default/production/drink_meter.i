@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "drink_meter.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,13 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
-# 1 "./i2c.h" 1
+# 1 "drink_meter.c" 2
+# 1 "./drink_meter.h" 1
+
+
+# 1 "./loadcell.h" 1
+
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4329,18 +4334,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\xc.h" 2 3
-# 1 "./i2c.h" 2
-
-
-void i2c_wait();
-void i2c_start();
-void i2c_stop();
-void i2c_repeated_start();
-void i2c_write(uint8_t data);
-uint8_t i2c_read(uint8_t ack);
-# 1 "main.c" 2
-
-# 1 "./loadcell.h" 1
+# 3 "./loadcell.h" 2
 # 12 "./loadcell.h"
 typedef struct {
 
@@ -4389,7 +4383,7 @@ unsigned long get_scale_val(LoadCell *p, uint8_t scale_avg_count);
 
 
 void scale_convert_gram(LoadCell *p);
-# 2 "main.c" 2
+# 3 "./drink_meter.h" 2
 
 # 1 "./lcd_lib.h" 1
 # 12 "./lcd_lib.h"
@@ -4423,12 +4417,7 @@ void lcd_print_with(Lcd *p, char *str, uint8_t col, uint8_t row);
 static void write4bits(Lcd *p, uint8_t val);
 
 static void command(Lcd *p, uint8_t val, uint8_t mode);
-# 3 "main.c" 2
-
-# 1 "./drink_meter.h" 1
-
-
-
+# 4 "./drink_meter.h" 2
 
 
 typedef struct{
@@ -4474,87 +4463,195 @@ void print_gram(DrinkMeter *p);
 
 
 void set_max_gram(DrinkMeter *p, uint16_t max_gram);
-# 4 "main.c" 2
-
-# 1 "./mcc_generated_files/mcc.h" 1
-# 50 "./mcc_generated_files/mcc.h"
-# 1 "./mcc_generated_files/device_config.h" 1
-# 50 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/pin_manager.h" 1
-# 78 "./mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
-# 90 "./mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_IOC(void);
-# 51 "./mcc_generated_files/mcc.h" 2
+# 1 "drink_meter.c" 2
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdbool.h" 1 3
-# 53 "./mcc_generated_files/mcc.h" 2
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\conio.h" 1 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 1 3
+# 24 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 1 3
 
 
 
 
 
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\errno.h" 1 3
-# 12 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\errno.h" 3
-extern int errno;
-# 8 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\conio.h" 2 3
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\__null.h" 1 3
-# 9 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\conio.h" 2 3
+typedef void * va_list[1];
 
 
 
-extern void init_uart(void);
 
-extern char getch(void);
-extern char getche(void);
-extern void putch(char);
-extern void ungetch(char);
+typedef void * __isoc_va_list[1];
+# 137 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long ssize_t;
+# 246 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long off_t;
+# 399 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct _IO_FILE FILE;
+# 24 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 2 3
+# 52 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\c99\\stdio.h" 3
+typedef union _G_fpos64_t {
+ char __opaque[16];
+ double __align;
+} fpos_t;
 
-extern __bit kbhit(void);
-
-
-
-extern char * cgets(char *);
-extern void cputs(const char *);
-# 54 "./mcc_generated_files/mcc.h" 2
-# 69 "./mcc_generated_files/mcc.h"
-void SYSTEM_Initialize(void);
-# 82 "./mcc_generated_files/mcc.h"
-void OSCILLATOR_Initialize(void);
-# 94 "./mcc_generated_files/mcc.h"
-void WDT_Initialize(void);
-# 5 "main.c" 2
+extern FILE *const stdin;
+extern FILE *const stdout;
+extern FILE *const stderr;
 
 
 
-void main(void)
-{
-
-    SYSTEM_Initialize();
 
 
+FILE *fopen(const char *restrict, const char *restrict);
+FILE *freopen(const char *restrict, const char *restrict, FILE *restrict);
+int fclose(FILE *);
 
-    ANSELA = 0x00;
-    ANSELB = 0x00;
+int remove(const char *);
+int rename(const char *, const char *);
+
+int feof(FILE *);
+int ferror(FILE *);
+int fflush(FILE *);
+void clearerr(FILE *);
+
+int fseek(FILE *, long, int);
+long ftell(FILE *);
+void rewind(FILE *);
+
+int fgetpos(FILE *restrict, fpos_t *restrict);
+int fsetpos(FILE *, const fpos_t *);
+
+size_t fread(void *restrict, size_t, size_t, FILE *restrict);
+size_t fwrite(const void *restrict, size_t, size_t, FILE *restrict);
+
+int fgetc(FILE *);
+int getc(FILE *);
+int getchar(void);
+int ungetc(int, FILE *);
+
+int fputc(int, FILE *);
+int putc(int, FILE *);
+int putchar(int);
+
+char *fgets(char *restrict, int, FILE *restrict);
+
+char *gets(char *);
+
+
+int fputs(const char *restrict, FILE *restrict);
+int puts(const char *);
+
+#pragma printf_check(printf) const
+#pragma printf_check(vprintf) const
+#pragma printf_check(sprintf) const
+#pragma printf_check(snprintf) const
+#pragma printf_check(vsprintf) const
+#pragma printf_check(vsnprintf) const
+
+int printf(const char *restrict, ...);
+int fprintf(FILE *restrict, const char *restrict, ...);
+int sprintf(char *restrict, const char *restrict, ...);
+int snprintf(char *restrict, size_t, const char *restrict, ...);
+
+int vprintf(const char *restrict, __isoc_va_list);
+int vfprintf(FILE *restrict, const char *restrict, __isoc_va_list);
+int vsprintf(char *restrict, const char *restrict, __isoc_va_list);
+int vsnprintf(char *restrict, size_t, const char *restrict, __isoc_va_list);
+
+int scanf(const char *restrict, ...);
+int fscanf(FILE *restrict, const char *restrict, ...);
+int sscanf(const char *restrict, const char *restrict, ...);
+int vscanf(const char *restrict, __isoc_va_list);
+int vfscanf(FILE *restrict, const char *restrict, __isoc_va_list);
+int vsscanf(const char *restrict, const char *restrict, __isoc_va_list);
+
+void perror(const char *);
+
+int setvbuf(FILE *restrict, char *restrict, int, size_t);
+void setbuf(FILE *restrict, char *restrict);
+
+char *tmpnam(char *);
+FILE *tmpfile(void);
 
 
 
-    TRISA = 0x02;
 
-    LATA = 0x00;
-    LATB = 0x00;
+FILE *fmemopen(void *restrict, size_t, const char *restrict);
+FILE *open_memstream(char **, size_t *);
+FILE *fdopen(int, const char *);
+FILE *popen(const char *, const char *);
+int pclose(FILE *);
+int fileno(FILE *);
+int fseeko(FILE *, off_t, int);
+off_t ftello(FILE *);
+int dprintf(int, const char *restrict, ...);
+int vdprintf(int, const char *restrict, __isoc_va_list);
+void flockfile(FILE *);
+int ftrylockfile(FILE *);
+void funlockfile(FILE *);
+int getc_unlocked(FILE *);
+int getchar_unlocked(void);
+int putc_unlocked(int, FILE *);
+int putchar_unlocked(int);
+ssize_t getdelim(char **restrict, size_t *restrict, int, FILE *restrict);
+ssize_t getline(char **restrict, size_t *restrict, FILE *restrict);
+int renameat(int, const char *, int, const char *);
+char *ctermid(char *);
 
 
-    SSPADD = 0x13;
-    SSPCON1 = 0x28;
-    SSPCON2 = 0x0;
-    SSPSTAT = 0;
-# 45 "main.c"
+
+
+
+
+
+char *tempnam(const char *, const char *);
+# 3 "drink_meter.c" 2
+
+
+void initialize(DrinkMeter *p){
+    lcd_init(p->lcd);
+    lcd_backlight(p->lcd);
+
+    lcd_print_with(p->lcd, "Initialize", 0, 0);
+    lcd_print_with(p->lcd, "Load cell Unit", 0, 1);
+
+
+    p->loadcell->weight_zero = get_scale_val(p->loadcell, 50);
+
+    char valstr[16];
+    sprintf(valstr, "%lu val", p->loadcell->weight_dat);
+
+    lcd_clear(p->lcd);
+    lcd_print(p->lcd, valstr);
+}
+
+void calc_percentage(DrinkMeter *p){
+
+    p->loadcell->weight_dat = get_scale_val(p->loadcell, 8);
+    scale_convert_gram(p->loadcell);
+
+
+    if(p->loadcell->gram == 0){
+        p->percentage = 0;
+    }else{
+
+        p->percentage = (p->loadcell->gram / p->max_gram) * 100;
+    }
+}
+
+void print_gram(DrinkMeter *p){
+    char row1[16];
+    char row2[16];
+
+    sprintf(row1, "%dg / %dg", p->loadcell->gram, p->max_gram);
+    sprintf(row2, "%d %", p->percentage);
+
+    lcd_clear(p->lcd);
+
+    lcd_print_with(p->lcd, row1, 0, 0);
+    lcd_print_with(p->lcd, row2, 0, 1);
+}
+
+void set_max_gram(DrinkMeter *p, uint16_t max_gram){
+    p->max_gram = max_gram;
+    calc_percentage(p);
 }
