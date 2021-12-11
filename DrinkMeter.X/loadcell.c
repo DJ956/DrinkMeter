@@ -4,23 +4,23 @@
 /**
  * LoadCell clock pin set low
  */
-static void set_CELL_CLK_LOW(LoadCell *p){ LATA &= ~p->cell_clk; }
+static void set_CELL_CLK_LOW(LoadCell *p){ LATB &= ~p->cell_clk; }
 
 /**
  * LoadCell clock pin set high
  */
-static void set_CELL_CLK_HIGH(LoadCell *p){ LATA |= p->cell_clk; }
+static void set_CELL_CLK_HIGH(LoadCell *p){ LATB |= p->cell_clk; }
 
 
 static int get_CELL_DAT_VAL(LoadCell *p){
-    if(p->cell_dat == 0x01){ return PORTAbits.RA0; }
-    if(p->cell_dat == 0x02){ return PORTAbits.RA1; }
-    if(p->cell_dat == 0x04){ return PORTAbits.RA2; }
-    if(p->cell_dat == 0x08){ return PORTAbits.RA3; }
-    if(p->cell_dat == 0x10){ return PORTAbits.RA4; }
-    if(p->cell_dat == 0x20){ return PORTAbits.RA5; }
-    if(p->cell_dat == 0x40){ return PORTAbits.RA6; }
-    if(p->cell_dat == 0x80){ return PORTAbits.RA7; }
+    if(p->cell_dat == 0x01){ return PORTBbits.RB0; }
+    if(p->cell_dat == 0x02){ return PORTBbits.RB1; }
+    if(p->cell_dat == 0x04){ return PORTBbits.RB2; }
+    if(p->cell_dat == 0x08){ return PORTBbits.RB3; }
+    if(p->cell_dat == 0x10){ return PORTBbits.RB4; }
+    if(p->cell_dat == 0x20){ return PORTBbits.RB5; }
+    if(p->cell_dat == 0x40){ return PORTBbits.RB6; }
+    if(p->cell_dat == 0x80){ return PORTBbits.RB7; }
     
     return 0;
 }

@@ -29,7 +29,7 @@ typedef struct{
 } Lcd;
 
 void lcd_init(Lcd *p);
-static void lcd_backlight(Lcd *p);    
+void lcd_backlight(Lcd *p);    
 static void lcd_cmd(Lcd *p, uint8_t cmd);
 void lcd_clear(Lcd *p);
 void lcd_set_cursor(Lcd *p, uint8_t col, uint8_t row);
