@@ -3,15 +3,15 @@
   <executable name="dist/default/production\DrinkMeter.X.production.hex">
     <memory name="program">
       <units>words</units>
-      <length>4096</length>
-      <used>171</used>
-      <free>3925</free>
+      <length>16384</length>
+      <used>4911</used>
+      <free>11473</free>
     </memory>
     <memory name="data">
       <units>bytes</units>
-      <length>384</length>
-      <used>21</used>
-      <free>363</free>
+      <length>1024</length>
+      <used>253</used>
+      <free>771</free>
     </memory>
   </executable>
 </project>

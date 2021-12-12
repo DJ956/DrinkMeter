@@ -14,7 +14,7 @@
     This header file provides implementations for driver APIs for all modules selected in the GUI.
     Generation Information :
         Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.81.7
-        Device            :  PIC16F1827
+        Device            :  PIC16F1938
         Driver Version    :  2.00
     The generated drivers are tested against the following:
         Compiler          :  XC8 2.31 and above or later
@@ -60,6 +60,7 @@
 
 // CONFIG2
 #pragma config WRT = OFF    // Flash Memory Self-Write Protection->Write protection off
+#pragma config VCAPEN = OFF    // Voltage Regulator Capacitor Enable->All VCAP pin functionality is disabled
 #pragma config PLLEN = OFF    // PLL Enable->4x PLL disabled
 #pragma config STVREN = ON    // Stack Overflow/Underflow Reset Enable->Stack Overflow or Underflow will cause a Reset
 #pragma config BORV = LO    // Brown-out Reset Voltage Selection->Brown-out Reset Voltage (Vbor), low trip point selected.

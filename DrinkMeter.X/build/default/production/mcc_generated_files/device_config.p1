@@ -22,11 +22,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 "62
 [p x WRT  =  OFF     ]
 "63
-[p x PLLEN  =  OFF     ]
+[p x VCAPEN  =  OFF     ]
 "64
-[p x STVREN  =  ON     ]
+[p x PLLEN  =  OFF     ]
 "65
-[p x BORV  =  LO     ]
+[p x STVREN  =  ON     ]
 "66
-[; ;mcc_generated_files/device_config.c: 66: 
+[p x BORV  =  LO     ]
+"67
+[; ;mcc_generated_files/device_config.c: 67: 
 [p x LVP  =  OFF     ]

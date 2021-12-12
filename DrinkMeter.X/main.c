@@ -7,9 +7,7 @@
 
 void main(void)
 {
-    
     SYSTEM_Initialize();
-    
     
    //set digital mode
     ANSELA = 0x00;
@@ -36,6 +34,9 @@ void main(void)
     initialize(&drink);
     
     while(1){
+        calc_percentage(&drink);
+        print_gram(&drink);
         
+        __delay_ms(500);
     }
 }
