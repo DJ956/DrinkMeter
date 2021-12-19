@@ -5214,7 +5214,7 @@ void initialize(DrinkMeter *p){
 
 void calc_percentage(DrinkMeter *p){
 
-    p->loadcell->weight_dat = get_scale_val(p->loadcell, 8);
+    p->loadcell->weight_dat = get_scale_val(p->loadcell, 16);
     scale_convert_gram(p->loadcell);
 
 
@@ -5222,7 +5222,7 @@ void calc_percentage(DrinkMeter *p){
         p->percentage = 0;
     }else{
 
-        p->percentage = (p->loadcell->gram / p->max_gram) * 100;
+        p->percentage = ((float)p->loadcell->gram / (float)p->max_gram) * 100;
     }
 }
 
@@ -5231,7 +5231,7 @@ void print_gram(DrinkMeter *p){
     char row2[16];
 
     sprintf(row1, "%dg / %dg", p->loadcell->gram, p->max_gram);
-    sprintf(row2, "%d %", p->percentage);
+    sprintf(row2, "%d %%", p->percentage);
 
     lcd_clear(p->lcd);
 

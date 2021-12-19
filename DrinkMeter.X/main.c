@@ -33,18 +33,7 @@ void main(void)
     DrinkMeter drink = {&loadcell, &lcd, 500, 0};
     
     initialize(&drink);
-    /*
-    lcd_init(&lcd);
-    lcd_backlight(&lcd);
-    
-    get_scale_val(&loadcell, 10);
-     
-    char valstr[16];
-    sprintf(valstr, "%lu val", 0);
-    
-    lcd_clear(&lcd);
-    lcd_print(&lcd, valstr); 
-    */
+
     while(1){
         calc_percentage(&drink);
         print_gram(&drink);
