@@ -268,21 +268,21 @@
 [v _main main `(v  1 e 1 0 ]
 {
 [s S209 . 12 `uc 1 cell_clk 1 0 `uc 1 cell_dat 1 1 `ul 1 weight_zero 4 2 `ul 1 weight_dat 4 6 `us 1 gram 2 10 ]
-"31
+"30
 [v main@loadcell loadcell `S209  1 a 12 60 ]
-"34
+"33
 [s S215 . 4 `uc 1 lcd_address 1 0 `uc 1 COL 1 1 `uc 1 ROW 1 2 `uc 1 _backlightval 1 3 ]
 [s S220 . 5 `*.4S209 1 loadcell 1 0 `*.4S215 1 lcd 1 1 `us 1 max_gram 2 2 `uc 1 percentage 1 4 ]
 [v main@drink drink `S220  1 a 5 72 ]
-"32
-[v main@lcd lcd `S215  1 a 4 56 ]
-"29
-[v main@F2800 F2800 `S209  1 s 12 F2800 ]
 "31
+[v main@lcd lcd `S215  1 a 4 56 ]
+"27
+[v main@F2800 F2800 `S209  1 s 12 F2800 ]
+"30
 [v main@F2802 F2802 `S215  1 s 4 F2802 ]
-"32
+"31
 [v main@F2804 F2804 `S220  1 s 5 F2804 ]
-"44
+"54
 } 0
 "36 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\drink_meter.c
 [v _print_gram print_gram `(v  1 e 1 0 ]

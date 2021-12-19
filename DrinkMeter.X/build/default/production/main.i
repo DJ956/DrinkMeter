@@ -5124,9 +5124,7 @@ void WDT_Initialize(void);
 
 void main(void)
 {
-
     SYSTEM_Initialize();
-
 
 
     ANSELA = 0x00;
@@ -5134,7 +5132,7 @@ void main(void)
 
 
 
-    TRISB = 0x01;
+    TRISB = 0x04;
 
     LATA = 0x00;
     LATB = 0x00;
@@ -5145,13 +5143,14 @@ void main(void)
     SSPCON2 = 0x0;
     SSPSTAT = 0;
 
-    LoadCell loadcell = {0x01, 0x00,0, 0, 500};
+
+    LoadCell loadcell = {0x02, 0x04, 0, 0, 500};
     Lcd lcd = {0x27, 16, 2, 0};
 
     DrinkMeter drink = {&loadcell, &lcd, 500, 0};
 
     initialize(&drink);
-
+# 48 "main.c"
     while(1){
         calc_percentage(&drink);
         print_gram(&drink);

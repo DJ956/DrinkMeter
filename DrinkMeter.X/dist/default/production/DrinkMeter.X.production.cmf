@@ -80,7 +80,7 @@ idataBANK2 CODE 0 7 7 1E 2
 dataBANK2 BANK2 1 14F 14F 1E 1
 clrtext CODE 0 150C 150C 6 2
 config CONFIG 4 8007 8007 2 2
-$C:\Users\dexte\AppData\Local\Temp\xcAsc7o.o
+$C:\Users\dexte\AppData\Local\Temp\xcAs9i4.o
 reset_vec CODE 0 0 0 2 2
 end_init CODE 0 2 2 2 2
 config CONFIG 4 8007 8007 2 2
@@ -182,31 +182,31 @@ STRING 183C-3FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\DrinkMeter.X.production.o
-7E5 cinit CODE >3390:C:\Users\dexte\AppData\Local\Temp\xcAsc7o.s
-7E5 cinit CODE >3393:C:\Users\dexte\AppData\Local\Temp\xcAsc7o.s
-7E5 cinit CODE >3465:C:\Users\dexte\AppData\Local\Temp\xcAsc7o.s
-7E6 cinit CODE >3466:C:\Users\dexte\AppData\Local\Temp\xcAsc7o.s
-7E7 cinit CODE >3467:C:\Users\dexte\AppData\Local\Temp\xcAsc7o.s
-7E8 cinit CODE >3468:C:\Users\dexte\AppData\Local\Temp\xcAsc7o.s
-7E9 cinit CODE >3469:C:\Users\dexte\AppData\Local\Temp\xcAsc7o.s
-7EA cinit CODE >3470:C:\Users\dexte\AppData\Local\Temp\xcAsc7o.s
-7EB cinit CODE >3471:C:\Users\dexte\AppData\Local\Temp\xcAsc7o.s
-7EC cinit CODE >3472:C:\Users\dexte\AppData\Local\Temp\xcAsc7o.s
-7ED cinit CODE >3473:C:\Users\dexte\AppData\Local\Temp\xcAsc7o.s
-7EE cinit CODE >3474:C:\Users\dexte\AppData\Local\Temp\xcAsc7o.s
-7F1 cinit CODE >3491:C:\Users\dexte\AppData\Local\Temp\xcAsc7o.s
-7F2 cinit CODE >3492:C:\Users\dexte\AppData\Local\Temp\xcAsc7o.s
-7F3 cinit CODE >3493:C:\Users\dexte\AppData\Local\Temp\xcAsc7o.s
-7F4 cinit CODE >3494:C:\Users\dexte\AppData\Local\Temp\xcAsc7o.s
-7F5 cinit CODE >3498:C:\Users\dexte\AppData\Local\Temp\xcAsc7o.s
-7F6 cinit CODE >3499:C:\Users\dexte\AppData\Local\Temp\xcAsc7o.s
-7F7 cinit CODE >3500:C:\Users\dexte\AppData\Local\Temp\xcAsc7o.s
-7F8 cinit CODE >3501:C:\Users\dexte\AppData\Local\Temp\xcAsc7o.s
-7F9 cinit CODE >3502:C:\Users\dexte\AppData\Local\Temp\xcAsc7o.s
-7FA cinit CODE >3503:C:\Users\dexte\AppData\Local\Temp\xcAsc7o.s
-7FD cinit CODE >3509:C:\Users\dexte\AppData\Local\Temp\xcAsc7o.s
-7FD cinit CODE >3511:C:\Users\dexte\AppData\Local\Temp\xcAsc7o.s
-7FE cinit CODE >3512:C:\Users\dexte\AppData\Local\Temp\xcAsc7o.s
+7E5 cinit CODE >3390:C:\Users\dexte\AppData\Local\Temp\xcAs9i4.s
+7E5 cinit CODE >3393:C:\Users\dexte\AppData\Local\Temp\xcAs9i4.s
+7E5 cinit CODE >3465:C:\Users\dexte\AppData\Local\Temp\xcAs9i4.s
+7E6 cinit CODE >3466:C:\Users\dexte\AppData\Local\Temp\xcAs9i4.s
+7E7 cinit CODE >3467:C:\Users\dexte\AppData\Local\Temp\xcAs9i4.s
+7E8 cinit CODE >3468:C:\Users\dexte\AppData\Local\Temp\xcAs9i4.s
+7E9 cinit CODE >3469:C:\Users\dexte\AppData\Local\Temp\xcAs9i4.s
+7EA cinit CODE >3470:C:\Users\dexte\AppData\Local\Temp\xcAs9i4.s
+7EB cinit CODE >3471:C:\Users\dexte\AppData\Local\Temp\xcAs9i4.s
+7EC cinit CODE >3472:C:\Users\dexte\AppData\Local\Temp\xcAs9i4.s
+7ED cinit CODE >3473:C:\Users\dexte\AppData\Local\Temp\xcAs9i4.s
+7EE cinit CODE >3474:C:\Users\dexte\AppData\Local\Temp\xcAs9i4.s
+7F1 cinit CODE >3491:C:\Users\dexte\AppData\Local\Temp\xcAs9i4.s
+7F2 cinit CODE >3492:C:\Users\dexte\AppData\Local\Temp\xcAs9i4.s
+7F3 cinit CODE >3493:C:\Users\dexte\AppData\Local\Temp\xcAs9i4.s
+7F4 cinit CODE >3494:C:\Users\dexte\AppData\Local\Temp\xcAs9i4.s
+7F5 cinit CODE >3498:C:\Users\dexte\AppData\Local\Temp\xcAs9i4.s
+7F6 cinit CODE >3499:C:\Users\dexte\AppData\Local\Temp\xcAs9i4.s
+7F7 cinit CODE >3500:C:\Users\dexte\AppData\Local\Temp\xcAs9i4.s
+7F8 cinit CODE >3501:C:\Users\dexte\AppData\Local\Temp\xcAs9i4.s
+7F9 cinit CODE >3502:C:\Users\dexte\AppData\Local\Temp\xcAs9i4.s
+7FA cinit CODE >3503:C:\Users\dexte\AppData\Local\Temp\xcAs9i4.s
+7FD cinit CODE >3509:C:\Users\dexte\AppData\Local\Temp\xcAs9i4.s
+7FD cinit CODE >3511:C:\Users\dexte\AppData\Local\Temp\xcAs9i4.s
+7FE cinit CODE >3512:C:\Users\dexte\AppData\Local\Temp\xcAs9i4.s
 1518 text47 CODE >58:C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\mcc_generated_files/mcc.c
 1518 text47 CODE >61:C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\mcc_generated_files/mcc.c
 151B text47 CODE >63:C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\mcc_generated_files/mcc.c
@@ -963,39 +963,39 @@ BC8 text2 CODE >20:C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\drink
 8D9 text1 CODE >46:C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\drink_meter.c
 8E9 text1 CODE >47:C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\drink_meter.c
 9FF maintext CODE >8:C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\main.c
-9FF maintext CODE >11:C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\main.c
-A02 maintext CODE >15:C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\main.c
-A04 maintext CODE >16:C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\main.c
-A05 maintext CODE >20:C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\main.c
-A08 maintext CODE >22:C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\main.c
-A0A maintext CODE >23:C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\main.c
-A0B maintext CODE >26:C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\main.c
-A0E maintext CODE >27:C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\main.c
-A10 maintext CODE >28:C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\main.c
-A11 maintext CODE >29:C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\main.c
-A12 maintext CODE >31:C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\main.c
-A21 maintext CODE >32:C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\main.c
-A31 maintext CODE >34:C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\main.c
-A4C maintext CODE >36:C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\main.c
-A50 maintext CODE >39:C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\main.c
-A54 maintext CODE >40:C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\main.c
-A58 maintext CODE >42:C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\main.c
-150C clrtext CODE >3480:C:\Users\dexte\AppData\Local\Temp\xcAsc7o.s
-150C clrtext CODE >3481:C:\Users\dexte\AppData\Local\Temp\xcAsc7o.s
-150D clrtext CODE >3482:C:\Users\dexte\AppData\Local\Temp\xcAsc7o.s
-150D clrtext CODE >3483:C:\Users\dexte\AppData\Local\Temp\xcAsc7o.s
-150E clrtext CODE >3484:C:\Users\dexte\AppData\Local\Temp\xcAsc7o.s
-150F clrtext CODE >3485:C:\Users\dexte\AppData\Local\Temp\xcAsc7o.s
-1510 clrtext CODE >3486:C:\Users\dexte\AppData\Local\Temp\xcAsc7o.s
-1511 clrtext CODE >3487:C:\Users\dexte\AppData\Local\Temp\xcAsc7o.s
-1512 inittext CODE >3454:C:\Users\dexte\AppData\Local\Temp\xcAsc7o.s
-1512 inittext CODE >3455:C:\Users\dexte\AppData\Local\Temp\xcAsc7o.s
-1513 inittext CODE >3456:C:\Users\dexte\AppData\Local\Temp\xcAsc7o.s
-1513 inittext CODE >3457:C:\Users\dexte\AppData\Local\Temp\xcAsc7o.s
-1514 inittext CODE >3458:C:\Users\dexte\AppData\Local\Temp\xcAsc7o.s
-1515 inittext CODE >3459:C:\Users\dexte\AppData\Local\Temp\xcAsc7o.s
-1516 inittext CODE >3460:C:\Users\dexte\AppData\Local\Temp\xcAsc7o.s
-1517 inittext CODE >3461:C:\Users\dexte\AppData\Local\Temp\xcAsc7o.s
+9FF maintext CODE >10:C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\main.c
+A02 maintext CODE >13:C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\main.c
+A04 maintext CODE >14:C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\main.c
+A05 maintext CODE >18:C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\main.c
+A08 maintext CODE >20:C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\main.c
+A0A maintext CODE >21:C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\main.c
+A0B maintext CODE >24:C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\main.c
+A0E maintext CODE >25:C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\main.c
+A10 maintext CODE >26:C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\main.c
+A11 maintext CODE >27:C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\main.c
+A12 maintext CODE >30:C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\main.c
+A21 maintext CODE >31:C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\main.c
+A31 maintext CODE >33:C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\main.c
+A4C maintext CODE >35:C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\main.c
+A50 maintext CODE >49:C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\main.c
+A54 maintext CODE >50:C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\main.c
+A58 maintext CODE >52:C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\main.c
+150C clrtext CODE >3480:C:\Users\dexte\AppData\Local\Temp\xcAs9i4.s
+150C clrtext CODE >3481:C:\Users\dexte\AppData\Local\Temp\xcAs9i4.s
+150D clrtext CODE >3482:C:\Users\dexte\AppData\Local\Temp\xcAs9i4.s
+150D clrtext CODE >3483:C:\Users\dexte\AppData\Local\Temp\xcAs9i4.s
+150E clrtext CODE >3484:C:\Users\dexte\AppData\Local\Temp\xcAs9i4.s
+150F clrtext CODE >3485:C:\Users\dexte\AppData\Local\Temp\xcAs9i4.s
+1510 clrtext CODE >3486:C:\Users\dexte\AppData\Local\Temp\xcAs9i4.s
+1511 clrtext CODE >3487:C:\Users\dexte\AppData\Local\Temp\xcAs9i4.s
+1512 inittext CODE >3454:C:\Users\dexte\AppData\Local\Temp\xcAs9i4.s
+1512 inittext CODE >3455:C:\Users\dexte\AppData\Local\Temp\xcAs9i4.s
+1513 inittext CODE >3456:C:\Users\dexte\AppData\Local\Temp\xcAs9i4.s
+1513 inittext CODE >3457:C:\Users\dexte\AppData\Local\Temp\xcAs9i4.s
+1514 inittext CODE >3458:C:\Users\dexte\AppData\Local\Temp\xcAs9i4.s
+1515 inittext CODE >3459:C:\Users\dexte\AppData\Local\Temp\xcAs9i4.s
+1516 inittext CODE >3460:C:\Users\dexte\AppData\Local\Temp\xcAs9i4.s
+1517 inittext CODE >3461:C:\Users\dexte\AppData\Local\Temp\xcAs9i4.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -1039,7 +1039,7 @@ _LATC 10E 0 ABS 0 - dist/default/production\DrinkMeter.X.production.o
 _LATE 110 0 ABS 0 - dist/default/production\DrinkMeter.X.production.o
 _WPUB 20D 0 ABS 0 - dist/default/production\DrinkMeter.X.production.o
 _WPUE 210 0 ABS 0 - dist/default/production\DrinkMeter.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\dexte\AppData\Local\Temp\xcAsc7o.o
+___sp 0 0 STACK 2 stack C:\Users\dexte\AppData\Local\Temp\xcAs9i4.o
 _dbuf 12F 0 BANK2 1 bssBANK2 dist/default/production\DrinkMeter.X.production.o
 _dtoa 582 0 CODE 0 text10 dist/default/production\DrinkMeter.X.production.o
 _main 13FE 0 CODE 0 maintext dist/default/production\DrinkMeter.X.production.o
@@ -1051,7 +1051,7 @@ btemp 7E 0 ABS 0 - dist/default/production\DrinkMeter.X.production.o
 pad@i 27 0 BANK0 1 cstackBANK0 dist/default/production\DrinkMeter.X.production.o
 pad@p 25 0 BANK0 1 cstackBANK0 dist/default/production\DrinkMeter.X.production.o
 pad@w 29 0 BANK0 1 cstackBANK0 dist/default/production\DrinkMeter.X.production.o
-start 4 0 CODE 0 init C:\Users\dexte\AppData\Local\Temp\xcAsc7o.o
+start 4 0 CODE 0 init C:\Users\dexte\AppData\Local\Temp\xcAs9i4.o
 ___aomod@counter 71 0 COMMON 1 cstackCOMMON dist/default/production\DrinkMeter.X.production.o
 __size_of___aodiv 0 0 ABS 0 - dist/default/production\DrinkMeter.X.production.o
 __size_of___aomod 0 0 ABS 0 - dist/default/production\DrinkMeter.X.production.o
@@ -1087,12 +1087,12 @@ utoa@n 3D 0 BANK0 1 cstackBANK0 dist/default/production\DrinkMeter.X.production.
 utoa@p 38 0 BANK0 1 cstackBANK0 dist/default/production\DrinkMeter.X.production.o
 utoa@w 3B 0 BANK0 1 cstackBANK0 dist/default/production\DrinkMeter.X.production.o
 __size_of_lcd_clear 0 0 ABS 0 - dist/default/production\DrinkMeter.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\dexte\AppData\Local\Temp\xcAsc7o.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\dexte\AppData\Local\Temp\xcAsc7o.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\dexte\AppData\Local\Temp\xcAsc7o.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\dexte\AppData\Local\Temp\xcAsc7o.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\dexte\AppData\Local\Temp\xcAsc7o.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\dexte\AppData\Local\Temp\xcAsc7o.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\dexte\AppData\Local\Temp\xcAs9i4.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\dexte\AppData\Local\Temp\xcAs9i4.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\dexte\AppData\Local\Temp\xcAs9i4.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\dexte\AppData\Local\Temp\xcAs9i4.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\dexte\AppData\Local\Temp\xcAs9i4.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\dexte\AppData\Local\Temp\xcAs9i4.o
 command@lownib 78 0 COMMON 1 cstackCOMMON dist/default/production\DrinkMeter.X.production.o
 __size_of_lcd_print 0 0 ABS 0 - dist/default/production\DrinkMeter.X.production.o
 ___bmul@multiplicand 78 0 COMMON 1 cstackCOMMON dist/default/production\DrinkMeter.X.production.o
@@ -1150,8 +1150,8 @@ __end_of___lwdiv 2E38 0 CODE 0 text42 dist/default/production\DrinkMeter.X.produ
 ___aodiv@quotient 73 0 COMMON 1 cstackCOMMON dist/default/production\DrinkMeter.X.production.o
 ___lodiv@dividend 28 0 BANK0 1 cstackBANK0 dist/default/production\DrinkMeter.X.production.o
 ?_strlen 70 0 COMMON 1 cstackCOMMON dist/default/production\DrinkMeter.X.production.o
-___stackhi 23EF 0 ABS 0 - C:\Users\dexte\AppData\Local\Temp\xcAsc7o.o
-___stacklo 20ED 0 ABS 0 - C:\Users\dexte\AppData\Local\Temp\xcAsc7o.o
+___stackhi 23EF 0 ABS 0 - C:\Users\dexte\AppData\Local\Temp\xcAs9i4.o
+___stacklo 20ED 0 ABS 0 - C:\Users\dexte\AppData\Local\Temp\xcAs9i4.o
 __size_of_strncmp 0 0 ABS 0 - dist/default/production\DrinkMeter.X.production.o
 ___aomod@dividend 28 0 BANK0 1 cstackBANK0 dist/default/production\DrinkMeter.X.production.o
 __size_of_get_scale_val 0 0 ABS 0 - dist/default/production\DrinkMeter.X.production.o
@@ -1194,7 +1194,7 @@ calc_percentage@p 3C 0 BANK0 1 cstackBANK0 dist/default/production\DrinkMeter.X.
 _WDTCON 97 0 ABS 0 - dist/default/production\DrinkMeter.X.production.o
 fputc@fp 72 0 COMMON 1 cstackCOMMON dist/default/production\DrinkMeter.X.production.o
 fputs@fp 78 0 COMMON 1 cstackCOMMON dist/default/production\DrinkMeter.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\dexte\AppData\Local\Temp\xcAsc7o.o
+___int_sp 0 0 STACK 2 stack C:\Users\dexte\AppData\Local\Temp\xcAs9i4.o
 lcd_backlight@p 74 0 COMMON 1 cstackCOMMON dist/default/production\DrinkMeter.X.production.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
@@ -1379,7 +1379,7 @@ __Lintentry 4 0 CODE 0 intentry -
 ___lldiv@divisor 70 0 COMMON 1 cstackCOMMON dist/default/production\DrinkMeter.X.production.o
 __size_of_print_gram 0 0 ABS 0 - dist/default/production\DrinkMeter.X.production.o
 _lcd_cmd 2B12 0 CODE 0 text27 dist/default/production\DrinkMeter.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\dexte\AppData\Local\Temp\xcAsc7o.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\dexte\AppData\Local\Temp\xcAs9i4.o
 strlen@a 73 0 COMMON 1 cstackCOMMON dist/default/production\DrinkMeter.X.production.o
 strlen@s 74 0 COMMON 1 cstackCOMMON dist/default/production\DrinkMeter.X.production.o
 __end_of___xxtofl 1A2 0 CODE 0 text34 dist/default/production\DrinkMeter.X.production.o

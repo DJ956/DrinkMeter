@@ -14,8 +14,8 @@ void main(void)
     ANSELB = 0x00;
     
     //RB1 cell clock is output
-    //RB0 cell data is input
-    TRISB = 0x01;
+    //RB2 cell data is input
+    TRISB = 0x04;
     //init LATA
     LATA = 0x00;
     LATB = 0x00;
@@ -26,13 +26,25 @@ void main(void)
     SSPCON2 = 0x0;
     SSPSTAT = 0;
     
-    LoadCell loadcell = {0x01, 0x00,0, 0, 500};
+    //clk, data
+    LoadCell loadcell = {0x02, 0x04, 0, 0, 500};
     Lcd lcd = {0x27, 16, 2, 0};
     
     DrinkMeter drink = {&loadcell, &lcd, 500, 0};
     
     initialize(&drink);
+    /*
+    lcd_init(&lcd);
+    lcd_backlight(&lcd);
     
+    get_scale_val(&loadcell, 10);
+     
+    char valstr[16];
+    sprintf(valstr, "%lu val", 0);
+    
+    lcd_clear(&lcd);
+    lcd_print(&lcd, valstr); 
+    */
     while(1){
         calc_percentage(&drink);
         print_gram(&drink);

@@ -559,44 +559,44 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _main ]
 [f ]
-"11
-[; ;main.c: 11:     SYSTEM_Initialize();
+"10
+[; ;main.c: 10:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"15
-[; ;main.c: 15:     ANSELA = 0x00;
+"13
+[; ;main.c: 13:     ANSELA = 0x00;
 [e = _ANSELA -> -> 0 `i `uc ]
-"16
-[; ;main.c: 16:     ANSELB = 0x00;
+"14
+[; ;main.c: 14:     ANSELB = 0x00;
 [e = _ANSELB -> -> 0 `i `uc ]
+"18
+[; ;main.c: 18:     TRISB = 0x04;
+[e = _TRISB -> -> 4 `i `uc ]
 "20
-[; ;main.c: 20:     TRISB = 0x01;
-[e = _TRISB -> -> 1 `i `uc ]
-"22
-[; ;main.c: 22:     LATA = 0x00;
+[; ;main.c: 20:     LATA = 0x00;
 [e = _LATA -> -> 0 `i `uc ]
-"23
-[; ;main.c: 23:     LATB = 0x00;
+"21
+[; ;main.c: 21:     LATB = 0x00;
 [e = _LATB -> -> 0 `i `uc ]
-"26
-[; ;main.c: 26:     SSPADD = 0x13;
+"24
+[; ;main.c: 24:     SSPADD = 0x13;
 [e = _SSPADD -> -> 19 `i `uc ]
-"27
-[; ;main.c: 27:     SSPCON1 = 0x28;
+"25
+[; ;main.c: 25:     SSPCON1 = 0x28;
 [e = _SSPCON1 -> -> 40 `i `uc ]
-"28
-[; ;main.c: 28:     SSPCON2 = 0x0;
+"26
+[; ;main.c: 26:     SSPCON2 = 0x0;
 [e = _SSPCON2 -> -> 0 `i `uc ]
-"29
-[; ;main.c: 29:     SSPSTAT = 0;
+"27
+[; ;main.c: 27:     SSPSTAT = 0;
 [e = _SSPSTAT -> -> 0 `i `uc ]
 [v F2800 `S356 ~T0 @X0 1 s ]
 [i F2800
 :U ..
 :U ..
-"31
-[; ;main.c: 31:     LoadCell loadcell = {0x01, 0x00,0, 0, 500};
--> -> 1 `i `uc
--> -> 0 `i `uc
+"30
+[; ;main.c: 30:     LoadCell loadcell = {0x02, 0x04, 0, 0, 500};
+-> -> 2 `i `uc
+-> -> 4 `i `uc
 -> -> -> 0 `i `l `ul
 -> -> -> 0 `i `l `ul
 -> -> 500 `i `us
@@ -609,8 +609,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i F2802
 :U ..
 :U ..
-"32
-[; ;main.c: 32:     Lcd lcd = {0x27, 16, 2, 0};
+"31
+[; ;main.c: 31:     Lcd lcd = {0x27, 16, 2, 0};
 -> -> 39 `i `uc
 -> -> 16 `i `uc
 -> -> 2 `i `uc
@@ -624,8 +624,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i F2804
 :U ..
 :U ..
-"34
-[; ;main.c: 34:     DrinkMeter drink = {&loadcell, &lcd, 500, 0};
+"33
+[; ;main.c: 33:     DrinkMeter drink = {&loadcell, &lcd, 500, 0};
 -> -> 0 `i `*S356
 -> -> 0 `i `*S357
 -> -> 0 `i `us
@@ -636,29 +636,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _drink `S358 ~T0 @X0 1 a ]
 [e = _drink F2804 ]
 [e ; = . _drink 0 &U _loadcell ; = . _drink 1 &U _lcd ; = . _drink 2 -> -> 500 `i `us = . _drink 3 -> -> 0 `i `uc ]
-"36
-[; ;main.c: 36:     initialize(&drink);
+"35
+[; ;main.c: 35:     initialize(&drink);
 [e ( _initialize (1 &U _drink ]
-"38
-[; ;main.c: 38:     while(1){
+"48
+[; ;main.c: 48:     while(1){
 [e :U 361 ]
 {
-"39
-[; ;main.c: 39:         calc_percentage(&drink);
+"49
+[; ;main.c: 49:         calc_percentage(&drink);
 [e ( _calc_percentage (1 &U _drink ]
-"40
-[; ;main.c: 40:         print_gram(&drink);
+"50
+[; ;main.c: 50:         print_gram(&drink);
 [e ( _print_gram (1 &U _drink ]
-"42
-[; ;main.c: 42:         _delay((unsigned long)((500)*(8000000/4000.0)));
+"52
+[; ;main.c: 52:         _delay((unsigned long)((500)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"43
-[; ;main.c: 43:     }
+"53
+[; ;main.c: 53:     }
 }
 [e :U 360 ]
 [e $U 361  ]
 [e :U 362 ]
-"44
-[; ;main.c: 44: }
+"54
+[; ;main.c: 54: }
 [e :UE 359 ]
 }

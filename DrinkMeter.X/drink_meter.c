@@ -9,7 +9,7 @@ void initialize(DrinkMeter *p){
     lcd_print_with(p->lcd, "Initialize", 0, 0);     
     lcd_print_with(p->lcd, "Load cell Unit", 0, 1);
     
-    /** 0グラムを計測 */
+    /** 0グラムを計測 */                                           
     p->loadcell->weight_zero = get_scale_val(p->loadcell, 50);
     
     char valstr[16];

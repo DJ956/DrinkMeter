@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.32 build 20210201212658 
-                                                                                               Sun Dec 12 21:45:22 2021
+                                                                                               Sun Dec 19 13:20:15 2021
 
 Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1 
      1                           	processor	16F1938
@@ -1611,8 +1611,8 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   1597  0007                     __pidataBANK2:
   1598                           
   1599                           ;initializer for main@F2800
-  1600  0007  3401               	retlw	1
-  1601  0008  3400               	retlw	0
+  1600  0007  3402               	retlw	2
+  1601  0008  3404               	retlw	4
   1602  0009  3400               	retlw	0
   1603  000A  3400               	retlw	0
   1604  000B  3400               	retlw	0
@@ -2695,54 +2695,54 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2676                           ; Regs used in _main: [wreg-fsr1h+status,2+status,0+pclath+cstack]
   2677                           
   2678                           
-  2679                           ;main.c: 11:     SYSTEM_Initialize();
+  2679                           ;main.c: 10:     SYSTEM_Initialize();
   2680  09FF  3195  2526  3189   	fcall	_SYSTEM_Initialize
   2681  0A02                     l3365:
   2682                           
-  2683                           ;main.c: 15:     ANSELA = 0x00;
+  2683                           ;main.c: 13:     ANSELA = 0x00;
   2684  0A02  0023               	movlb	3	; select bank3
   2685  0A03  018C               	clrf	12	;volatile
   2686  0A04                     l3367:
   2687                           
-  2688                           ;main.c: 16:     ANSELB = 0x00;
+  2688                           ;main.c: 14:     ANSELB = 0x00;
   2689  0A04  018D               	clrf	13	;volatile
   2690  0A05                     l3369:
   2691                           
-  2692                           ;main.c: 20:     TRISB = 0x01;
-  2693  0A05  3001               	movlw	1
+  2692                           ;main.c: 18:     TRISB = 0x04;
+  2693  0A05  3004               	movlw	4
   2694  0A06  0021               	movlb	1	; select bank1
   2695  0A07  008D               	movwf	13	;volatile
   2696  0A08                     l3371:
   2697                           
-  2698                           ;main.c: 22:     LATA = 0x00;
+  2698                           ;main.c: 20:     LATA = 0x00;
   2699  0A08  0022               	movlb	2	; select bank2
   2700  0A09  018C               	clrf	12	;volatile
   2701  0A0A                     l3373:
   2702                           
-  2703                           ;main.c: 23:     LATB = 0x00;
+  2703                           ;main.c: 21:     LATB = 0x00;
   2704  0A0A  018D               	clrf	13	;volatile
   2705  0A0B                     l3375:
   2706                           
-  2707                           ;main.c: 26:     SSPADD = 0x13;
+  2707                           ;main.c: 24:     SSPADD = 0x13;
   2708  0A0B  3013               	movlw	19
   2709  0A0C  0024               	movlb	4	; select bank4
   2710  0A0D  0092               	movwf	18	;volatile
   2711  0A0E                     l3377:
   2712                           
-  2713                           ;main.c: 27:     SSPCON1 = 0x28;
+  2713                           ;main.c: 25:     SSPCON1 = 0x28;
   2714  0A0E  3028               	movlw	40
   2715  0A0F  0095               	movwf	21	;volatile
   2716  0A10                     l3379:
   2717                           
-  2718                           ;main.c: 28:     SSPCON2 = 0x0;
+  2718                           ;main.c: 26:     SSPCON2 = 0x0;
   2719  0A10  0196               	clrf	22	;volatile
   2720  0A11                     l3381:
   2721                           
-  2722                           ;main.c: 29:     SSPSTAT = 0;
+  2722                           ;main.c: 27:     SSPSTAT = 0;
   2723  0A11  0194               	clrf	20	;volatile
   2724  0A12                     l3383:
   2725                           
-  2726                           ;main.c: 31:     LoadCell loadcell = {0x01, 0x00,0, 0, 500};
+  2726                           ;main.c: 30:     LoadCell loadcell = {0x02, 0x04, 0, 0, 500};
   2727  0A12  304F               	movlw	low main@F2800
   2728  0A13  0086               	movwf	6
   2729  0A14  3001               	movlw	high main@F2800
@@ -2761,7 +2761,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2742  0A20  2A1D               	goto	u3640
   2743  0A21                     l3385:
   2744                           
-  2745                           ;main.c: 32:     Lcd lcd = {0x27, 16, 2, 0};
+  2745                           ;main.c: 31:     Lcd lcd = {0x27, 16, 2, 0};
   2746  0A21  0022               	movlb	2	; select bank2
   2747  0A22  086C               	movf	(main@F2802+3)^(0+256),w
   2748  0A23  0021               	movlb	1	; select bank1
@@ -2780,7 +2780,7 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2761  0A30  00D8               	movwf	main@lcd^(0+128)
   2762  0A31                     l3387:
   2763                           
-  2764                           ;main.c: 34:     DrinkMeter drink = {&loadcell, &lcd, 500, 0};
+  2764                           ;main.c: 33:     DrinkMeter drink = {&loadcell, &lcd, 500, 0};
   2765  0A31  3020               	movlw	low main@F2804
   2766  0A32  0086               	movwf	6
   2767  0A33  3001               	movlw	high main@F2804
@@ -2815,22 +2815,22 @@ Microchip MPLAB XC8 C Compiler v2.32 (Free license) build 20210201212658 Og1
   2796  0A4B  01EC               	clrf	(main@drink^(0+128)+4)
   2797  0A4C                     l3397:
   2798                           
-  2799                           ;main.c: 36:     initialize(&drink);
+  2799                           ;main.c: 35:     initialize(&drink);
   2800  0A4C  30E8               	movlw	(low (main@drink| 0))& (0+255)
   2801  0A4D  318B  234D  3189   	fcall	_initialize
   2802  0A50                     l3399:
   2803                           
-  2804                           ;main.c: 39:         calc_percentage(&drink);
+  2804                           ;main.c: 49:         calc_percentage(&drink);
   2805  0A50  30E8               	movlw	(low (main@drink| 0))& (0+255)
   2806  0A51  3189  21A0  3189   	fcall	_calc_percentage
   2807  0A54                     l3401:
   2808                           
-  2809                           ;main.c: 40:         print_gram(&drink);
+  2809                           ;main.c: 50:         print_gram(&drink);
   2810  0A54  30E8               	movlw	(low (main@drink| 0))& (0+255)
   2811  0A55  3188  2091  3189   	fcall	_print_gram
   2812  0A58                     l3403:
   2813                           
-  2814                           ;main.c: 42:         _delay((unsigned long)((500)*(8000000/4000.0)));
+  2814                           ;main.c: 52:         _delay((unsigned long)((500)*(8000000/4000.0)));
   2815  0A58  3006               	movlw	6
   2816  0A59  0021               	movlb	1	; select bank1
   2817  0A5A  00D7               	movwf	(??_main^(0+128)+1)
@@ -11851,7 +11851,7 @@ SFR31                0      0       0      32        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.32 build 20210201212658 
-Symbol Table                                                                                   Sun Dec 12 21:45:22 2021
+Symbol Table                                                                                   Sun Dec 19 13:20:15 2021
 
                    ___fldiv@aexp 002C                     ___fldiv@bexp 002B                     ___fldiv@sign 0024  
                  ___bmul@product 007A                      _SSPSTATbits 0214                               l31 1606  
