@@ -5013,7 +5013,48 @@ static void write4bits(Lcd *p, uint8_t val);
 static void command(Lcd *p, uint8_t val, uint8_t mode);
 # 3 "main.c" 2
 
+# 1 "./tm1637.h" 1
+# 10 "./tm1637.h"
+typedef struct{
+    uint8_t clk_pin;
+    uint8_t dat_pin;
+} TM1637;
+
+
+static void CLK_SET_OUTPUT(TM1637 *p);
+static void CLK_SET_HIGH(TM1637 *p);
+static void CLK_SET_LOW(TM1637 *p);
+
+static void DIO_SET_OUTPUT(TM1637 *p);
+static void DIO_SET_INPUT(TM1637 *p);
+static void DIO_SET_HIGH(TM1637 *p);
+static void DIO_SET_LOW(TM1637 *p);
+
+static uint8_t get_DIO_PIN_value(TM1637 *p);
+static void start_segment(TM1637 *p);
+static void stop_segment(TM1637 *p);
+static void set_brigthness(TM1637 *p, uint8_t brightness, uint8_t on);
+static uint8_t write_byte(TM1637 *p, uint8_t b);
+static void set_segments(TM1637 *p, const uint8_t segments[], uint8_t length, uint8_t pos);
+static void clear_segment(TM1637 *p);
+static uint8_t encode_digit(TM1637 *p, uint8_t digit);
+
+
+
+
+
+void initialize_digit(TM1637 *p);
+
+
+
+
+
+
+void print_digit(TM1637 *p, uint8_t number);
+# 4 "main.c" 2
+
 # 1 "./drink_meter.h" 1
+
 
 
 
@@ -5028,6 +5069,12 @@ typedef struct{
 
 
     Lcd *lcd;
+
+
+
+
+    TM1637 *tm1637;
+
 
 
 
@@ -5062,7 +5109,7 @@ void print_gram(DrinkMeter *p);
 
 
 void set_max_gram(DrinkMeter *p, uint16_t max_gram);
-# 4 "main.c" 2
+# 5 "main.c" 2
 
 # 1 "./mcc_generated_files/mcc.h" 1
 # 50 "./mcc_generated_files/mcc.h"
@@ -5118,7 +5165,7 @@ void SYSTEM_Initialize(void);
 void OSCILLATOR_Initialize(void);
 # 94 "./mcc_generated_files/mcc.h"
 void WDT_Initialize(void);
-# 5 "main.c" 2
+# 6 "main.c" 2
 
 
 
@@ -5145,12 +5192,15 @@ void main(void)
 
 
     LoadCell loadcell = {0x02, 0x04, 0, 0, 500};
+
     Lcd lcd = {0x27, 16, 2, 0};
 
-    DrinkMeter drink = {&loadcell, &lcd, 500, 0};
+    TM1637 tm1637 = {0x08, 0x10};
+
+    DrinkMeter drink = {&loadcell, &lcd, &tm1637, 500, 0};
 
     initialize(&drink);
-# 48 "main.c"
+
     while(1){
         calc_percentage(&drink);
         print_gram(&drink);

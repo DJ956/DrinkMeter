@@ -11,6 +11,10 @@
 [v ___aodiv __aodiv `(o  1 e 8 0 ]
 "7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\aomod.c
 [v ___aomod __aomod `(o  1 e 8 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
 "72 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
 [v _pad pad `(i  1 s 2 pad ]
 "287
@@ -55,9 +59,9 @@
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
 "5 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\drink_meter.c
 [v _initialize initialize `(v  1 e 1 0 ]
-"22
+"24
 [v _calc_percentage calc_percentage `(v  1 e 1 0 ]
-"36
+"38
 [v _print_gram print_gram `(v  1 e 1 0 ]
 "4 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\i2c.c
 [v _i2c_wait i2c_wait `(v  1 e 1 0 ]
@@ -95,7 +99,7 @@
 [v _get_scale_val get_scale_val `(ul  1 e 4 0 ]
 "75
 [v _scale_convert_gram scale_convert_gram `(v  1 e 1 0 ]
-"8 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\main.c
+"9 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\main.c
 [v _main main `(v  1 e 1 0 ]
 "50 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -105,43 +109,39 @@
 [v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
 "55 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
-"31 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\tm1637.c
-[v _CLK_SET_OUTPUT CLK_SET_OUTPUT `(v  1 e 1 0 ]
+"22 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\tm1637.c
+[v _CLK_SET_OUTPUT CLK_SET_OUTPUT `(v  1 s 1 CLK_SET_OUTPUT ]
+"25
+[v _CLK_SET_HIGH CLK_SET_HIGH `(v  1 s 1 CLK_SET_HIGH ]
+"27
+[v _CLK_SET_LOW CLK_SET_LOW `(v  1 s 1 CLK_SET_LOW ]
+"30
+[v _DIO_SET_OUTPUT DIO_SET_OUTPUT `(v  1 s 1 DIO_SET_OUTPUT ]
+"32
+[v _DIO_SET_INPUT DIO_SET_INPUT `(v  1 s 1 DIO_SET_INPUT ]
 "34
-[v _CLK_SET_HIGH CLK_SET_HIGH `(v  1 e 1 0 ]
+[v _DIO_SET_HIGH DIO_SET_HIGH `(v  1 s 1 DIO_SET_HIGH ]
 "36
-[v _CLK_SET_LOW CLK_SET_LOW `(v  1 e 1 0 ]
+[v _DIO_SET_LOW DIO_SET_LOW `(v  1 s 1 DIO_SET_LOW ]
 "39
-[v _DIO_SET_OUTPUT DIO_SET_OUTPUT `(v  1 e 1 0 ]
-"41
-[v _DIO_SET_INPUT DIO_SET_INPUT `(v  1 e 1 0 ]
-"43
-[v _DIO_SET_HIGH DIO_SET_HIGH `(v  1 e 1 0 ]
-"45
-[v _DIO_SET_LOW DIO_SET_LOW `(v  1 e 1 0 ]
-"47
-[v _start_segment start_segment `(v  1 e 1 0 ]
-"61
-[v _stop_segment stop_segment `(v  1 e 1 0 ]
-"75
-[v _get_DIO_PIN_value get_DIO_PIN_value `(uc  1 e 1 0 ]
-"86
-[v _write_byte write_byte `(uc  1 e 1 0 ]
-"155
-[v _set_segments set_segments `(v  1 e 1 0 ]
-[s S305 . 1 `uc 1 RA0 1 0 :1:0 
-`uc 1 RA1 1 0 :1:1 
-`uc 1 RA2 1 0 :1:2 
-`uc 1 RA3 1 0 :1:3 
-`uc 1 RA4 1 0 :1:4 
-`uc 1 RA5 1 0 :1:5 
-`uc 1 RA6 1 0 :1:6 
-`uc 1 RA7 1 0 :1:7 
-]
-"447 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1938.h
-[u S314 . 1 `S305 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES314  1 e 1 @12 ]
-[s S383 . 1 `uc 1 RB0 1 0 :1:0 
+[v _start_segment start_segment `(v  1 s 1 start_segment ]
+"53
+[v _stop_segment stop_segment `(v  1 s 1 stop_segment ]
+"67
+[v _get_DIO_PIN_value get_DIO_PIN_value `(uc  1 s 1 get_DIO_PIN_value ]
+"78
+[v _write_byte write_byte `(uc  1 s 1 write_byte ]
+"133
+[v _set_brigthness set_brigthness `(v  1 s 1 set_brigthness ]
+"147
+[v _set_segments set_segments `(v  1 s 1 set_segments ]
+"183
+[v _encode_digit encode_digit `(uc  1 s 1 encode_digit ]
+"187
+[v _initialize_digit initialize_digit `(v  1 e 1 0 ]
+"192
+[v _print_digit print_digit `(v  1 e 1 0 ]
+[s S324 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -150,9 +150,9 @@
 `uc 1 RB6 1 0 :1:6 
 `uc 1 RB7 1 0 :1:7 
 ]
-"509
-[u S392 . 1 `S383 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES392  1 e 1 @13 ]
+"509 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1938.h
+[u S333 . 1 `S324 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES333  1 e 1 @13 ]
 "1229
 [v _TRISA TRISA `VEuc  1 e 1 @140 ]
 "1291
@@ -260,67 +260,76 @@
 [v _dbuf dbuf `[32]uc  1 s 32 dbuf ]
 "69
 [v _nout nout `i  1 s 2 nout ]
-"15 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\tm1637.c
-[v _m_brightness m_brightness `uc  1 e 1 0 ]
-"8 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\main.c
+"6 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\tm1637.c
+[v _m_brightness m_brightness `uc  1 s 1 m_brightness ]
+"8
+[v _segdata segdata `[10]uc  1 s 10 segdata ]
+"9 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
 [s S209 . 12 `uc 1 cell_clk 1 0 `uc 1 cell_dat 1 1 `ul 1 weight_zero 4 2 `ul 1 weight_dat 4 6 `us 1 gram 2 10 ]
-"30
-[v main@loadcell loadcell `S209  1 a 12 60 ]
-"33
+"31
+[v main@loadcell loadcell `S209  1 a 12 62 ]
+"37
 [s S215 . 4 `uc 1 lcd_address 1 0 `uc 1 COL 1 1 `uc 1 ROW 1 2 `uc 1 _backlightval 1 3 ]
-[s S220 . 5 `*.4S209 1 loadcell 1 0 `*.4S215 1 lcd 1 1 `us 1 max_gram 2 2 `uc 1 percentage 1 4 ]
-[v main@drink drink `S220  1 a 5 72 ]
-"31
+[s S220 . 2 `uc 1 clk_pin 1 0 `uc 1 dat_pin 1 1 ]
+[s S223 . 6 `*.4S209 1 loadcell 1 0 `*.4S215 1 lcd 1 1 `*.4S220 1 tm1637 1 2 `us 1 max_gram 2 3 `uc 1 percentage 1 5 ]
+[v main@drink drink `S223  1 a 6 74 ]
+"33
 [v main@lcd lcd `S215  1 a 4 56 ]
-"27
-[v main@F2800 F2800 `S209  1 s 12 F2800 ]
-"30
-[v main@F2802 F2802 `S215  1 s 4 F2802 ]
+"35
+[v main@tm1637 tm1637 `S220  1 a 2 60 ]
+"28
+[v main@F2847 F2847 `S209  1 s 12 F2847 ]
 "31
-[v main@F2804 F2804 `S220  1 s 5 F2804 ]
-"54
+[v main@F2849 F2849 `S215  1 s 4 F2849 ]
+"33
+[v main@F2851 F2851 `S220  1 s 2 F2851 ]
+"35
+[v main@F2853 F2853 `S223  1 s 6 F2853 ]
+"47
 } 0
-"36 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\drink_meter.c
+"38 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\drink_meter.c
 [v _print_gram print_gram `(v  1 e 1 0 ]
 {
 [s S209 . 12 `uc 1 cell_clk 1 0 `uc 1 cell_dat 1 1 `ul 1 weight_zero 4 2 `ul 1 weight_dat 4 6 `us 1 gram 2 10 ]
 [s S215 . 4 `uc 1 lcd_address 1 0 `uc 1 COL 1 1 `uc 1 ROW 1 2 `uc 1 _backlightval 1 3 ]
-[s S220 . 5 `*.4S209 1 loadcell 1 0 `*.4S215 1 lcd 1 1 `us 1 max_gram 2 2 `uc 1 percentage 1 4 ]
-[v print_gram@p p `*.4S220  1 a 1 wreg ]
-"38
-[v print_gram@row2 row2 `[16]uc  1 a 16 37 ]
-"37
-[v print_gram@row1 row1 `[16]uc  1 a 16 21 ]
-"36
-[v print_gram@p p `*.4S220  1 a 1 wreg ]
+[s S220 . 2 `uc 1 clk_pin 1 0 `uc 1 dat_pin 1 1 ]
+[s S223 . 6 `*.4S209 1 loadcell 1 0 `*.4S215 1 lcd 1 1 `*.4S220 1 tm1637 1 2 `us 1 max_gram 2 3 `uc 1 percentage 1 5 ]
+[v print_gram@p p `*.4S223  1 a 1 wreg ]
 "40
-"36
-[v print_gram@p p `*.4S220  1 a 1 53 ]
-"47
+[v print_gram@row2 row2 `[16]uc  1 a 16 37 ]
+"39
+[v print_gram@row1 row1 `[16]uc  1 a 16 21 ]
+"38
+[v print_gram@p p `*.4S223  1 a 1 wreg ]
+"42
+"38
+[v print_gram@p p `*.4S223  1 a 1 53 ]
+"51
 } 0
 "5
 [v _initialize initialize `(v  1 e 1 0 ]
 {
 [s S209 . 12 `uc 1 cell_clk 1 0 `uc 1 cell_dat 1 1 `ul 1 weight_zero 4 2 `ul 1 weight_dat 4 6 `us 1 gram 2 10 ]
 [s S215 . 4 `uc 1 lcd_address 1 0 `uc 1 COL 1 1 `uc 1 ROW 1 2 `uc 1 _backlightval 1 3 ]
-[s S220 . 5 `*.4S209 1 loadcell 1 0 `*.4S215 1 lcd 1 1 `us 1 max_gram 2 2 `uc 1 percentage 1 4 ]
-[v initialize@p p `*.4S220  1 a 1 wreg ]
-"15
+[s S220 . 2 `uc 1 clk_pin 1 0 `uc 1 dat_pin 1 1 ]
+[s S223 . 6 `*.4S209 1 loadcell 1 0 `*.4S215 1 lcd 1 1 `*.4S220 1 tm1637 1 2 `us 1 max_gram 2 3 `uc 1 percentage 1 5 ]
+[v initialize@p p `*.4S223  1 a 1 wreg ]
+"17
 [v initialize@valstr valstr `[16]uc  1 a 16 20 ]
 "5
-[v initialize@p p `*.4S220  1 a 1 wreg ]
-[v initialize@p p `*.4S220  1 a 1 36 ]
-"20
+[v initialize@p p `*.4S223  1 a 1 wreg ]
+[v initialize@p p `*.4S223  1 a 1 36 ]
+"22
 } 0
 "9 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_sprintf.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
 [v sprintf@s s `*.4uc  1 a 1 wreg ]
-[s S1099 _IO_FILE 5 `*.4uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
+[s S1159 _IO_FILE 5 `*.4uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
 "13
-[v sprintf@f f `S1099  1 a 5 14 ]
+[v sprintf@f f `S1159  1 a 5 14 ]
 "12
 [v sprintf@ap ap `[1]*.4v  1 a 1 13 ]
 "9
@@ -333,42 +342,42 @@
 "1390 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
 [v _vfprintf vfprintf `(i  1 e 2 0 ]
 {
-[s S1125 _IO_FILE 0 ]
-[v vfprintf@fp fp `*.4S1125  1 a 1 wreg ]
+[s S1185 _IO_FILE 0 ]
+[v vfprintf@fp fp `*.4S1185  1 a 1 wreg ]
 "1393
 [v vfprintf@cfmt cfmt `*.25uc  1 a 2 3 ]
 "1390
-[v vfprintf@fp fp `*.4S1125  1 a 1 wreg ]
+[v vfprintf@fp fp `*.4S1185  1 a 1 wreg ]
 [v vfprintf@fmt fmt `*.25DCuc  1 p 2 77 ]
 [v vfprintf@ap ap `*.4*.4v  1 p 1 79 ]
 "1395
 "1390
-[v vfprintf@fp fp `*.4S1125  1 a 1 2 ]
+[v vfprintf@fp fp `*.4S1185  1 a 1 2 ]
 "1404
 } 0
 "692
 [v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
 {
-[s S1125 _IO_FILE 0 ]
-[v vfpfcnvrt@fp fp `*.4S1125  1 a 1 wreg ]
+[s S1185 _IO_FILE 0 ]
+[v vfpfcnvrt@fp fp `*.4S1185  1 a 1 wreg ]
 "697
 [v vfpfcnvrt@llu llu `uo  1 a 8 68 ]
 "696
 [v vfpfcnvrt@ll ll `o  1 a 8 60 ]
 "692
-[v vfpfcnvrt@fp fp `*.4S1125  1 a 1 wreg ]
+[v vfpfcnvrt@fp fp `*.4S1185  1 a 1 wreg ]
 [v vfpfcnvrt@fmt fmt `*.4*.25uc  1 p 1 46 ]
 [v vfpfcnvrt@ap ap `*.4*.4v  1 p 1 47 ]
 "702
 "692
-[v vfpfcnvrt@fp fp `*.4S1125  1 a 1 76 ]
+[v vfpfcnvrt@fp fp `*.4S1185  1 a 1 76 ]
 "1387
 } 0
 "615
 [v _utoa utoa `(i  1 s 2 utoa ]
 {
-[s S1125 _IO_FILE 0 ]
-[v utoa@fp fp `*.4S1125  1 a 1 wreg ]
+[s S1185 _IO_FILE 0 ]
+[v utoa@fp fp `*.4S1185  1 a 1 wreg ]
 "618
 [v utoa@n n `uo  1 a 8 29 ]
 "617
@@ -376,11 +385,11 @@
 [v utoa@w w `i  1 a 2 27 ]
 [v utoa@p p `i  1 a 2 24 ]
 "615
-[v utoa@fp fp `*.4S1125  1 a 1 wreg ]
+[v utoa@fp fp `*.4S1185  1 a 1 wreg ]
 [v utoa@d d `uo  1 p 8 16 ]
 "621
 "615
-[v utoa@fp fp `*.4S1125  1 a 1 26 ]
+[v utoa@fp fp `*.4S1185  1 a 1 26 ]
 "641
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\lomod.c
@@ -420,8 +429,8 @@
 "287 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
 [v _dtoa dtoa `(i  1 s 2 dtoa ]
 {
-[s S1125 _IO_FILE 0 ]
-[v dtoa@fp fp `*.4S1125  1 a 1 wreg ]
+[s S1185 _IO_FILE 0 ]
+[v dtoa@fp fp `*.4S1185  1 a 1 wreg ]
 "290
 [v dtoa@n n `o  1 a 8 36 ]
 "289
@@ -430,28 +439,28 @@
 [v dtoa@w w `i  1 a 2 32 ]
 [v dtoa@p p `i  1 a 2 29 ]
 "287
-[v dtoa@fp fp `*.4S1125  1 a 1 wreg ]
+[v dtoa@fp fp `*.4S1185  1 a 1 wreg ]
 [v dtoa@d d `o  1 p 8 16 ]
 "293
 "287
-[v dtoa@fp fp `*.4S1125  1 a 1 31 ]
+[v dtoa@fp fp `*.4S1185  1 a 1 31 ]
 "328
 } 0
 "72
 [v _pad pad `(i  1 s 2 pad ]
 {
-[s S1125 _IO_FILE 0 ]
-[v pad@fp fp `*.4S1125  1 a 1 wreg ]
+[s S1185 _IO_FILE 0 ]
+[v pad@fp fp `*.4S1185  1 a 1 wreg ]
 "74
 [v pad@w w `i  1 a 2 9 ]
 [v pad@i i `i  1 a 2 7 ]
 "72
-[v pad@fp fp `*.4S1125  1 a 1 wreg ]
+[v pad@fp fp `*.4S1185  1 a 1 wreg ]
 [v pad@buf buf `*.5uc  1 p 1 4 ]
 [v pad@p p `i  1 p 2 5 ]
 "77
 "72
-[v pad@fp fp `*.4S1125  1 a 1 11 ]
+[v pad@fp fp `*.4S1185  1 a 1 11 ]
 "95
 } 0
 "5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\strlen.c
@@ -476,8 +485,8 @@
 [v fputs@c c `uc  1 a 1 0 ]
 "8
 [v fputs@s s `*.5DCuc  1 a 1 wreg ]
-[s S1099 _IO_FILE 5 `*.4uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
-[v fputs@fp fp `*.4S1099  1 p 1 8 ]
+[s S1159 _IO_FILE 5 `*.4uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
+[v fputs@fp fp `*.4S1159  1 p 1 8 ]
 "13
 [v fputs@s s `*.5DCuc  1 a 1 3 ]
 "19
@@ -486,8 +495,8 @@
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 0 ]
-[s S1099 _IO_FILE 5 `*.4uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
-[v fputc@fp fp `*.4S1099  1 p 1 2 ]
+[s S1159 _IO_FILE 5 `*.4uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
+[v fputc@fp fp `*.4S1159  1 p 1 2 ]
 "24
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\putch.c
@@ -658,18 +667,208 @@
 {
 "6
 } 0
-"22 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\drink_meter.c
+"187 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\tm1637.c
+[v _initialize_digit initialize_digit `(v  1 e 1 0 ]
+{
+[s S220 . 2 `uc 1 clk_pin 1 0 `uc 1 dat_pin 1 1 ]
+[v initialize_digit@p p `*.4S220  1 a 1 wreg ]
+[v initialize_digit@p p `*.4S220  1 a 1 wreg ]
+[v initialize_digit@p p `*.4S220  1 a 1 13 ]
+"190
+} 0
+"133
+[v _set_brigthness set_brigthness `(v  1 s 1 set_brigthness ]
+{
+[s S220 . 2 `uc 1 clk_pin 1 0 `uc 1 dat_pin 1 1 ]
+[v set_brigthness@p p `*.4S220  1 a 1 wreg ]
+[v set_brigthness@p p `*.4S220  1 a 1 wreg ]
+[v set_brigthness@brightness brightness `uc  1 p 1 0 ]
+[v set_brigthness@on on `uc  1 p 1 1 ]
+"139
+} 0
+"192
+[v _print_digit print_digit `(v  1 e 1 0 ]
+{
+[s S220 . 2 `uc 1 clk_pin 1 0 `uc 1 dat_pin 1 1 ]
+[v print_digit@p p `*.4S220  1 a 1 wreg ]
+"193
+[v print_digit@data data `[4]uc  1 a 4 6 ]
+"196
+[v print_digit@tmp tmp `uc  1 a 1 11 ]
+"192
+[v print_digit@p p `*.4S220  1 a 1 wreg ]
+[v print_digit@number number `uc  1 p 1 13 ]
+[v print_digit@F2820 F2820 `[4]uc  1 s 4 F2820 ]
+[v print_digit@p p `*.4S220  1 a 1 10 ]
+"206
+} 0
+"147
+[v _set_segments set_segments `(v  1 s 1 set_segments ]
+{
+[s S220 . 2 `uc 1 clk_pin 1 0 `uc 1 dat_pin 1 1 ]
+[v set_segments@p p `*.4S220  1 a 1 wreg ]
+"158
+[v set_segments@k k `uc  1 a 1 0 ]
+"147
+[v set_segments@p p `*.4S220  1 a 1 wreg ]
+[v set_segments@segments segments `*.4DCuc  1 p 1 8 ]
+[v set_segments@length length `uc  1 p 1 9 ]
+[v set_segments@pos pos `uc  1 p 1 10 ]
+"149
+"147
+[v set_segments@p p `*.4S220  1 a 1 1 ]
+"168
+} 0
+"78
+[v _write_byte write_byte `(uc  1 s 1 write_byte ]
+{
+[s S220 . 2 `uc 1 clk_pin 1 0 `uc 1 dat_pin 1 1 ]
+[v write_byte@p p `*.4S220  1 a 1 wreg ]
+"83
+[v write_byte@i i `uc  1 a 1 6 ]
+"79
+[v write_byte@data data `uc  1 a 1 5 ]
+"113
+[v write_byte@ack ack `uc  1 a 1 4 ]
+"78
+[v write_byte@p p `*.4S220  1 a 1 wreg ]
+[v write_byte@b b `uc  1 p 1 2 ]
+[v write_byte@p p `*.4S220  1 a 1 7 ]
+"126
+} 0
+"67
+[v _get_DIO_PIN_value get_DIO_PIN_value `(uc  1 s 1 get_DIO_PIN_value ]
+{
+[s S220 . 2 `uc 1 clk_pin 1 0 `uc 1 dat_pin 1 1 ]
+[v get_DIO_PIN_value@p p `*.4S220  1 a 1 wreg ]
+[v get_DIO_PIN_value@p p `*.4S220  1 a 1 wreg ]
+[v get_DIO_PIN_value@p p `*.4S220  1 a 1 1 ]
+"76
+} 0
+"32
+[v _DIO_SET_INPUT DIO_SET_INPUT `(v  1 s 1 DIO_SET_INPUT ]
+{
+[s S220 . 2 `uc 1 clk_pin 1 0 `uc 1 dat_pin 1 1 ]
+[v DIO_SET_INPUT@p p `*.4S220  1 a 1 wreg ]
+[v DIO_SET_INPUT@p p `*.4S220  1 a 1 wreg ]
+[v DIO_SET_INPUT@p p `*.4S220  1 a 1 1 ]
+} 0
+"53
+[v _stop_segment stop_segment `(v  1 s 1 stop_segment ]
+{
+[s S220 . 2 `uc 1 clk_pin 1 0 `uc 1 dat_pin 1 1 ]
+[v stop_segment@p p `*.4S220  1 a 1 wreg ]
+[v stop_segment@p p `*.4S220  1 a 1 wreg ]
+"55
+"53
+[v stop_segment@p p `*.4S220  1 a 1 2 ]
+"65
+} 0
+"39
+[v _start_segment start_segment `(v  1 s 1 start_segment ]
+{
+[s S220 . 2 `uc 1 clk_pin 1 0 `uc 1 dat_pin 1 1 ]
+[v start_segment@p p `*.4S220  1 a 1 wreg ]
+[v start_segment@p p `*.4S220  1 a 1 wreg ]
+"41
+"39
+[v start_segment@p p `*.4S220  1 a 1 2 ]
+"51
+} 0
+"30
+[v _DIO_SET_OUTPUT DIO_SET_OUTPUT `(v  1 s 1 DIO_SET_OUTPUT ]
+{
+[s S220 . 2 `uc 1 clk_pin 1 0 `uc 1 dat_pin 1 1 ]
+[v DIO_SET_OUTPUT@p p `*.4S220  1 a 1 wreg ]
+[v DIO_SET_OUTPUT@p p `*.4S220  1 a 1 wreg ]
+[v DIO_SET_OUTPUT@p p `*.4S220  1 a 1 1 ]
+} 0
+"36
+[v _DIO_SET_LOW DIO_SET_LOW `(v  1 s 1 DIO_SET_LOW ]
+{
+[s S220 . 2 `uc 1 clk_pin 1 0 `uc 1 dat_pin 1 1 ]
+[v DIO_SET_LOW@p p `*.4S220  1 a 1 wreg ]
+[v DIO_SET_LOW@p p `*.4S220  1 a 1 wreg ]
+[v DIO_SET_LOW@p p `*.4S220  1 a 1 1 ]
+} 0
+"34
+[v _DIO_SET_HIGH DIO_SET_HIGH `(v  1 s 1 DIO_SET_HIGH ]
+{
+[s S220 . 2 `uc 1 clk_pin 1 0 `uc 1 dat_pin 1 1 ]
+[v DIO_SET_HIGH@p p `*.4S220  1 a 1 wreg ]
+[v DIO_SET_HIGH@p p `*.4S220  1 a 1 wreg ]
+[v DIO_SET_HIGH@p p `*.4S220  1 a 1 1 ]
+} 0
+"22
+[v _CLK_SET_OUTPUT CLK_SET_OUTPUT `(v  1 s 1 CLK_SET_OUTPUT ]
+{
+[s S220 . 2 `uc 1 clk_pin 1 0 `uc 1 dat_pin 1 1 ]
+[v CLK_SET_OUTPUT@p p `*.4S220  1 a 1 wreg ]
+[v CLK_SET_OUTPUT@p p `*.4S220  1 a 1 wreg ]
+[v CLK_SET_OUTPUT@p p `*.4S220  1 a 1 1 ]
+} 0
+"27
+[v _CLK_SET_LOW CLK_SET_LOW `(v  1 s 1 CLK_SET_LOW ]
+{
+[s S220 . 2 `uc 1 clk_pin 1 0 `uc 1 dat_pin 1 1 ]
+[v CLK_SET_LOW@p p `*.4S220  1 a 1 wreg ]
+[v CLK_SET_LOW@p p `*.4S220  1 a 1 wreg ]
+[v CLK_SET_LOW@p p `*.4S220  1 a 1 1 ]
+} 0
+"25
+[v _CLK_SET_HIGH CLK_SET_HIGH `(v  1 s 1 CLK_SET_HIGH ]
+{
+[s S220 . 2 `uc 1 clk_pin 1 0 `uc 1 dat_pin 1 1 ]
+[v CLK_SET_HIGH@p p `*.4S220  1 a 1 wreg ]
+[v CLK_SET_HIGH@p p `*.4S220  1 a 1 wreg ]
+[v CLK_SET_HIGH@p p `*.4S220  1 a 1 1 ]
+} 0
+"183
+[v _encode_digit encode_digit `(uc  1 s 1 encode_digit ]
+{
+[s S220 . 2 `uc 1 clk_pin 1 0 `uc 1 dat_pin 1 1 ]
+[v encode_digit@p p `*.4S220  1 a 1 wreg ]
+[v encode_digit@p p `*.4S220  1 a 1 wreg ]
+[v encode_digit@digit digit `uc  1 p 1 9 ]
+"185
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"10
+[v ___awmod@sign sign `uc  1 a 1 6 ]
+[v ___awmod@counter counter `uc  1 a 1 5 ]
+"5
+[v ___awmod@divisor divisor `i  1 p 2 0 ]
+[v ___awmod@dividend dividend `i  1 p 2 2 ]
+"34
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 7 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 6 ]
+[v ___awdiv@counter counter `uc  1 a 1 5 ]
+"5
+[v ___awdiv@divisor divisor `i  1 p 2 0 ]
+[v ___awdiv@dividend dividend `i  1 p 2 2 ]
+"41
+} 0
+"24 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\drink_meter.c
 [v _calc_percentage calc_percentage `(v  1 e 1 0 ]
 {
 [s S209 . 12 `uc 1 cell_clk 1 0 `uc 1 cell_dat 1 1 `ul 1 weight_zero 4 2 `ul 1 weight_dat 4 6 `us 1 gram 2 10 ]
 [s S215 . 4 `uc 1 lcd_address 1 0 `uc 1 COL 1 1 `uc 1 ROW 1 2 `uc 1 _backlightval 1 3 ]
-[s S220 . 5 `*.4S209 1 loadcell 1 0 `*.4S215 1 lcd 1 1 `us 1 max_gram 2 2 `uc 1 percentage 1 4 ]
-[v calc_percentage@p p `*.4S220  1 a 1 wreg ]
-[v calc_percentage@p p `*.4S220  1 a 1 wreg ]
+[s S220 . 2 `uc 1 clk_pin 1 0 `uc 1 dat_pin 1 1 ]
+[s S223 . 6 `*.4S209 1 loadcell 1 0 `*.4S215 1 lcd 1 1 `*.4S220 1 tm1637 1 2 `us 1 max_gram 2 3 `uc 1 percentage 1 5 ]
+[v calc_percentage@p p `*.4S223  1 a 1 wreg ]
+[v calc_percentage@p p `*.4S223  1 a 1 wreg ]
+"26
 "24
-"22
-[v calc_percentage@p p `*.4S220  1 a 1 76 ]
-"34
+[v calc_percentage@p p `*.4S223  1 a 1 76 ]
+"36
 } 0
 "75 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\loadcell.c
 [v _scale_convert_gram scale_convert_gram `(v  1 e 1 0 ]
@@ -789,17 +988,17 @@
 "8 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S952 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S1012 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S957 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
-[u S960 . 4 `l 1 i 4 0 `d 1 f 4 0 `S952 1 fAsBytes 4 0 `S957 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S960  1 a 4 46 ]
+[s S1017 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S1020 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1012 1 fAsBytes 4 0 `S1017 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S1020  1 a 4 46 ]
 "12
 [v ___flmul@grs grs `ul  1 a 4 40 ]
-[s S1029 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[s S1089 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S1032 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S1029 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S1032  1 a 2 50 ]
+[u S1092 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S1089 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S1092  1 a 2 50 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 45 ]
 "11

@@ -1,21 +1,28 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"10 ./tm1637.h
+[; ;./tm1637.h: 10: typedef struct{
+[s S356 `uc 1 `uc 1 ]
+[n S356 . clk_pin dat_pin ]
 "1229 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1938.h
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1938.h: 1229: extern volatile unsigned char TRISA __attribute__((address(0x08C)));
 [v _TRISA `Vuc ~T0 @X0 0 e@140 ]
 "2194
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1938.h: 2194: extern volatile unsigned char LATA __attribute__((address(0x10C)));
 [v _LATA `Vuc ~T0 @X0 0 e@268 ]
-"436
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1938.h: 436:     struct {
-[s S34 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S34 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
-"435
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1938.h: 435: typedef union {
-[u S33 `S34 1 ]
-[n S33 . . ]
-"447
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1938.h: 447: extern volatile PORTAbits_t PORTAbits __attribute__((address(0x00C)));
-[v _PORTAbits `VS33 ~T0 @X0 0 e@12 ]
+"498
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1938.h: 498:     struct {
+[s S36 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S36 . RB0 RB1 RB2 RB3 RB4 RB5 RB6 RB7 ]
+"497
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1938.h: 497: typedef union {
+[u S35 `S36 1 ]
+[n S35 . . ]
+"509
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1938.h: 509: extern volatile PORTBbits_t PORTBbits __attribute__((address(0x00D)));
+[v _PORTBbits `VS35 ~T0 @X0 0 e@13 ]
+"45 ./tm1637.h
+[; ;./tm1637.h: 45: void print_digit(TM1637 *p, uint8_t number);
+[v _print_digit `(v ~T0 @X0 0 ef2`*S356`uc ]
 "55 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1938.h
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1938.h: 55: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -511,12 +518,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "7122
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1938.h: 7122: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"15 tm1637.c
-[; ;tm1637.c: 15: uint8_t m_brightness;
-[v _m_brightness `uc ~T0 @X0 1 e ]
-"17
-[; ;tm1637.c: 17: uint8_t segdata[] = {
-[v _segdata `uc ~T0 @X0 -> 10 `i e ]
+"6 tm1637.c
+[; ;tm1637.c: 6: static uint8_t m_brightness;
+[v _m_brightness `uc ~T0 @X0 1 s ]
+"8
+[; ;tm1637.c: 8: static uint8_t segdata[] = {
+[v _segdata `uc ~T0 @X0 -> 10 `i s ]
 [i _segdata
 :U ..
 -> -> 63 `i `uc
@@ -531,401 +538,415 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 111 `i `uc
 ..
 ]
-"31
-[; ;tm1637.c: 31: void CLK_SET_OUTPUT(){ TRISA &= ~0x02; }
-[v _CLK_SET_OUTPUT `(v ~T0 @X0 1 ef ]
+"22
+[; ;tm1637.c: 22: static void CLK_SET_OUTPUT(TM1637 *p){ TRISA &= ~p->clk_pin; }
+[v _CLK_SET_OUTPUT `(v ~T0 @X0 1 sf1`*S356 ]
 {
 [e :U _CLK_SET_OUTPUT ]
+[v _p `*S356 ~T0 @X0 1 r1 ]
 [f ]
-[e =& _TRISA -> ~ -> 2 `i `Vuc ]
-[e :UE 356 ]
-}
-"34
-[; ;tm1637.c: 34: void CLK_SET_HIGH(){ LATA |= 0x02; }
-[v _CLK_SET_HIGH `(v ~T0 @X0 1 ef ]
-{
-[e :U _CLK_SET_HIGH ]
-[f ]
-[e =| _LATA -> -> 2 `i `Vuc ]
+[e =& _TRISA -> ~ -> . *U _p 0 `i `Vuc ]
 [e :UE 357 ]
 }
-"36
-[; ;tm1637.c: 36: void CLK_SET_LOW() { LATA &= ~0x02; }
-[v _CLK_SET_LOW `(v ~T0 @X0 1 ef ]
+"25
+[; ;tm1637.c: 25: static void CLK_SET_HIGH(TM1637 *p){ LATA |= p->clk_pin; }
+[v _CLK_SET_HIGH `(v ~T0 @X0 1 sf1`*S356 ]
 {
-[e :U _CLK_SET_LOW ]
+[e :U _CLK_SET_HIGH ]
+[v _p `*S356 ~T0 @X0 1 r1 ]
 [f ]
-[e =& _LATA -> ~ -> 2 `i `Vuc ]
+[e =| _LATA -> . *U _p 0 `Vuc ]
 [e :UE 358 ]
 }
-"39
-[; ;tm1637.c: 39: void DIO_SET_OUTPUT(){ TRISA &= ~0x04; }
-[v _DIO_SET_OUTPUT `(v ~T0 @X0 1 ef ]
+"27
+[; ;tm1637.c: 27: static void CLK_SET_LOW(TM1637 *p) { LATA &= ~p->clk_pin; }
+[v _CLK_SET_LOW `(v ~T0 @X0 1 sf1`*S356 ]
 {
-[e :U _DIO_SET_OUTPUT ]
+[e :U _CLK_SET_LOW ]
+[v _p `*S356 ~T0 @X0 1 r1 ]
 [f ]
-[e =& _TRISA -> ~ -> 4 `i `Vuc ]
+[e =& _LATA -> ~ -> . *U _p 0 `i `Vuc ]
 [e :UE 359 ]
 }
-"41
-[; ;tm1637.c: 41: void DIO_SET_INPUT(){ TRISA |= 0x04; }
-[v _DIO_SET_INPUT `(v ~T0 @X0 1 ef ]
+"30
+[; ;tm1637.c: 30: static void DIO_SET_OUTPUT(TM1637 *p){ TRISA &= ~p->dat_pin; }
+[v _DIO_SET_OUTPUT `(v ~T0 @X0 1 sf1`*S356 ]
 {
-[e :U _DIO_SET_INPUT ]
+[e :U _DIO_SET_OUTPUT ]
+[v _p `*S356 ~T0 @X0 1 r1 ]
 [f ]
-[e =| _TRISA -> -> 4 `i `Vuc ]
+[e =& _TRISA -> ~ -> . *U _p 1 `i `Vuc ]
 [e :UE 360 ]
 }
-"43
-[; ;tm1637.c: 43: void DIO_SET_HIGH(){ LATA |= 0x04; }
-[v _DIO_SET_HIGH `(v ~T0 @X0 1 ef ]
+"32
+[; ;tm1637.c: 32: static void DIO_SET_INPUT(TM1637 *p){ TRISA |= p->dat_pin; }
+[v _DIO_SET_INPUT `(v ~T0 @X0 1 sf1`*S356 ]
 {
-[e :U _DIO_SET_HIGH ]
+[e :U _DIO_SET_INPUT ]
+[v _p `*S356 ~T0 @X0 1 r1 ]
 [f ]
-[e =| _LATA -> -> 4 `i `Vuc ]
+[e =| _TRISA -> . *U _p 1 `Vuc ]
 [e :UE 361 ]
 }
-"45
-[; ;tm1637.c: 45: void DIO_SET_LOW(){ LATA &= ~0x04; }
-[v _DIO_SET_LOW `(v ~T0 @X0 1 ef ]
+"34
+[; ;tm1637.c: 34: static void DIO_SET_HIGH(TM1637 *p){ LATA |= p->dat_pin; }
+[v _DIO_SET_HIGH `(v ~T0 @X0 1 sf1`*S356 ]
 {
-[e :U _DIO_SET_LOW ]
+[e :U _DIO_SET_HIGH ]
+[v _p `*S356 ~T0 @X0 1 r1 ]
 [f ]
-[e =& _LATA -> ~ -> 4 `i `Vuc ]
+[e =| _LATA -> . *U _p 1 `Vuc ]
 [e :UE 362 ]
 }
-"47
-[; ;tm1637.c: 47: void start_segment(void){
-[v _start_segment `(v ~T0 @X0 1 ef ]
+"36
+[; ;tm1637.c: 36: static void DIO_SET_LOW(TM1637 *p){ LATA &= ~p->dat_pin; }
+[v _DIO_SET_LOW `(v ~T0 @X0 1 sf1`*S356 ]
 {
-[e :U _start_segment ]
+[e :U _DIO_SET_LOW ]
+[v _p `*S356 ~T0 @X0 1 r1 ]
 [f ]
-"49
-[; ;tm1637.c: 49:     DIO_SET_OUTPUT();
-[e ( _DIO_SET_OUTPUT ..  ]
-"50
-[; ;tm1637.c: 50:     CLK_SET_OUTPUT();
-[e ( _CLK_SET_OUTPUT ..  ]
-"53
-[; ;tm1637.c: 53:     DIO_SET_HIGH();
-[e ( _DIO_SET_HIGH ..  ]
-"54
-[; ;tm1637.c: 54:     CLK_SET_HIGH();
-[e ( _CLK_SET_HIGH ..  ]
-"57
-[; ;tm1637.c: 57:     DIO_SET_LOW();
-[e ( _DIO_SET_LOW ..  ]
-"58
-[; ;tm1637.c: 58:     CLK_SET_LOW();
-[e ( _CLK_SET_LOW ..  ]
-"59
-[; ;tm1637.c: 59: }
+[e =& _LATA -> ~ -> . *U _p 1 `i `Vuc ]
 [e :UE 363 ]
 }
-"61
-[; ;tm1637.c: 61: void stop_segment(void){
-[v _stop_segment `(v ~T0 @X0 1 ef ]
+"39
+[; ;tm1637.c: 39: static void start_segment(TM1637 *p){
+[v _start_segment `(v ~T0 @X0 1 sf1`*S356 ]
 {
-[e :U _stop_segment ]
+[e :U _start_segment ]
+[v _p `*S356 ~T0 @X0 1 r1 ]
 [f ]
-"63
-[; ;tm1637.c: 63:     DIO_SET_OUTPUT();
-[e ( _DIO_SET_OUTPUT ..  ]
-"64
-[; ;tm1637.c: 64:     CLK_SET_OUTPUT();
-[e ( _CLK_SET_OUTPUT ..  ]
-"67
-[; ;tm1637.c: 67:     CLK_SET_LOW();
-[e ( _CLK_SET_LOW ..  ]
-"68
-[; ;tm1637.c: 68:     DIO_SET_LOW();
-[e ( _DIO_SET_LOW ..  ]
-"71
-[; ;tm1637.c: 71:     CLK_SET_HIGH();
-[e ( _CLK_SET_HIGH ..  ]
-"72
-[; ;tm1637.c: 72:     DIO_SET_HIGH();
-[e ( _DIO_SET_HIGH ..  ]
-"73
-[; ;tm1637.c: 73: }
+"41
+[; ;tm1637.c: 41:     DIO_SET_OUTPUT(p);
+[e ( _DIO_SET_OUTPUT (1 _p ]
+"42
+[; ;tm1637.c: 42:     CLK_SET_OUTPUT(p);
+[e ( _CLK_SET_OUTPUT (1 _p ]
+"45
+[; ;tm1637.c: 45:     DIO_SET_HIGH(p);
+[e ( _DIO_SET_HIGH (1 _p ]
+"46
+[; ;tm1637.c: 46:     CLK_SET_HIGH(p);
+[e ( _CLK_SET_HIGH (1 _p ]
+"49
+[; ;tm1637.c: 49:     DIO_SET_LOW(p);
+[e ( _DIO_SET_LOW (1 _p ]
+"50
+[; ;tm1637.c: 50:     CLK_SET_LOW(p);
+[e ( _CLK_SET_LOW (1 _p ]
+"51
+[; ;tm1637.c: 51: }
 [e :UE 364 ]
 }
-"75
-[; ;tm1637.c: 75: uint8_t get_DIO_PIN_value(){
-[v _get_DIO_PIN_value `(uc ~T0 @X0 1 ef ]
+"53
+[; ;tm1637.c: 53: static void stop_segment(TM1637 *p){
+[v _stop_segment `(v ~T0 @X0 1 sf1`*S356 ]
 {
-[e :U _get_DIO_PIN_value ]
+[e :U _stop_segment ]
+[v _p `*S356 ~T0 @X0 1 r1 ]
 [f ]
-"76
-[; ;tm1637.c: 76:     if(0x04 == 0x01){ return PORTAbits.RA0; }
-[e $ ! == -> 4 `i -> 1 `i 366  ]
-{
-[e ) . . _PORTAbits 0 0 ]
-[e $UE 365  ]
-}
-[e :U 366 ]
-"77
-[; ;tm1637.c: 77:     if(0x04 == 0x02){ return PORTAbits.RA1; }
-[e $ ! == -> 4 `i -> 2 `i 367  ]
-{
-[e ) . . _PORTAbits 0 1 ]
-[e $UE 365  ]
-}
-[e :U 367 ]
-"78
-[; ;tm1637.c: 78:     if(0x04 == 0x04){ return PORTAbits.RA2; }
-[e $ ! == -> 4 `i -> 4 `i 368  ]
-{
-[e ) . . _PORTAbits 0 2 ]
-[e $UE 365  ]
-}
-[e :U 368 ]
-"79
-[; ;tm1637.c: 79:     if(0x04 == 0x08){ return PORTAbits.RA3; }
-[e $ ! == -> 4 `i -> 8 `i 369  ]
-{
-[e ) . . _PORTAbits 0 3 ]
-[e $UE 365  ]
-}
-[e :U 369 ]
-"80
-[; ;tm1637.c: 80:     if(0x04 == 0x10){ return PORTAbits.RA4; }
-[e $ ! == -> 4 `i -> 16 `i 370  ]
-{
-[e ) . . _PORTAbits 0 4 ]
-[e $UE 365  ]
-}
-[e :U 370 ]
-"81
-[; ;tm1637.c: 81:     if(0x04 == 0x20){ return PORTAbits.RA5; }
-[e $ ! == -> 4 `i -> 32 `i 371  ]
-{
-[e ) . . _PORTAbits 0 5 ]
-[e $UE 365  ]
-}
-[e :U 371 ]
-"82
-[; ;tm1637.c: 82:     if(0x04 == 0x40){ return PORTAbits.RA6; }
-[e $ ! == -> 4 `i -> 64 `i 372  ]
-{
-[e ) . . _PORTAbits 0 6 ]
-[e $UE 365  ]
-}
-[e :U 372 ]
-"83
-[; ;tm1637.c: 83:     if(0x04 == 0x80){ return PORTAbits.RA7; }
-[e $ ! == -> 4 `i -> 128 `i 373  ]
-{
-[e ) . . _PORTAbits 0 7 ]
-[e $UE 365  ]
-}
-[e :U 373 ]
-"84
-[; ;tm1637.c: 84: }
+"55
+[; ;tm1637.c: 55:     DIO_SET_OUTPUT(p);
+[e ( _DIO_SET_OUTPUT (1 _p ]
+"56
+[; ;tm1637.c: 56:     CLK_SET_OUTPUT(p);
+[e ( _CLK_SET_OUTPUT (1 _p ]
+"59
+[; ;tm1637.c: 59:     CLK_SET_LOW(p);
+[e ( _CLK_SET_LOW (1 _p ]
+"60
+[; ;tm1637.c: 60:     DIO_SET_LOW(p);
+[e ( _DIO_SET_LOW (1 _p ]
+"63
+[; ;tm1637.c: 63:     CLK_SET_HIGH(p);
+[e ( _CLK_SET_HIGH (1 _p ]
+"64
+[; ;tm1637.c: 64:     DIO_SET_HIGH(p);
+[e ( _DIO_SET_HIGH (1 _p ]
+"65
+[; ;tm1637.c: 65: }
 [e :UE 365 ]
 }
-"86
-[; ;tm1637.c: 86: uint8_t write_byte(uint8_t b){
-[v _write_byte `(uc ~T0 @X0 1 ef1`uc ]
+"67
+[; ;tm1637.c: 67: static uint8_t get_DIO_PIN_value(TM1637 *p){
+[v _get_DIO_PIN_value `(uc ~T0 @X0 1 sf1`*S356 ]
+{
+[e :U _get_DIO_PIN_value ]
+[v _p `*S356 ~T0 @X0 1 r1 ]
+[f ]
+"68
+[; ;tm1637.c: 68:     if(p->dat_pin == 0x01){ return PORTBbits.RB0; }
+[e $ ! == -> . *U _p 1 `i -> 1 `i 367  ]
+{
+[e ) . . _PORTBbits 0 0 ]
+[e $UE 366  ]
+}
+[e :U 367 ]
+"69
+[; ;tm1637.c: 69:     if(p->dat_pin == 0x02){ return PORTBbits.RB1; }
+[e $ ! == -> . *U _p 1 `i -> 2 `i 368  ]
+{
+[e ) . . _PORTBbits 0 1 ]
+[e $UE 366  ]
+}
+[e :U 368 ]
+"70
+[; ;tm1637.c: 70:     if(p->dat_pin == 0x04){ return PORTBbits.RB2; }
+[e $ ! == -> . *U _p 1 `i -> 4 `i 369  ]
+{
+[e ) . . _PORTBbits 0 2 ]
+[e $UE 366  ]
+}
+[e :U 369 ]
+"71
+[; ;tm1637.c: 71:     if(p->dat_pin == 0x08){ return PORTBbits.RB3; }
+[e $ ! == -> . *U _p 1 `i -> 8 `i 370  ]
+{
+[e ) . . _PORTBbits 0 3 ]
+[e $UE 366  ]
+}
+[e :U 370 ]
+"72
+[; ;tm1637.c: 72:     if(p->dat_pin == 0x10){ return PORTBbits.RB4; }
+[e $ ! == -> . *U _p 1 `i -> 16 `i 371  ]
+{
+[e ) . . _PORTBbits 0 4 ]
+[e $UE 366  ]
+}
+[e :U 371 ]
+"73
+[; ;tm1637.c: 73:     if(p->dat_pin == 0x20){ return PORTBbits.RB5; }
+[e $ ! == -> . *U _p 1 `i -> 32 `i 372  ]
+{
+[e ) . . _PORTBbits 0 5 ]
+[e $UE 366  ]
+}
+[e :U 372 ]
+"74
+[; ;tm1637.c: 74:     if(p->dat_pin == 0x40){ return PORTBbits.RB6; }
+[e $ ! == -> . *U _p 1 `i -> 64 `i 373  ]
+{
+[e ) . . _PORTBbits 0 6 ]
+[e $UE 366  ]
+}
+[e :U 373 ]
+"75
+[; ;tm1637.c: 75:     if(p->dat_pin == 0x80){ return PORTBbits.RB7; }
+[e $ ! == -> . *U _p 1 `i -> 128 `i 374  ]
+{
+[e ) . . _PORTBbits 0 7 ]
+[e $UE 366  ]
+}
+[e :U 374 ]
+"76
+[; ;tm1637.c: 76: }
+[e :UE 366 ]
+}
+"78
+[; ;tm1637.c: 78: static uint8_t write_byte(TM1637 *p, uint8_t b){
+[v _write_byte `(uc ~T0 @X0 1 sf2`*S356`uc ]
 {
 [e :U _write_byte ]
-[v _b `uc ~T0 @X0 1 r1 ]
+[v _p `*S356 ~T0 @X0 1 r1 ]
+[v _b `uc ~T0 @X0 1 r2 ]
 [f ]
-"87
-[; ;tm1637.c: 87:     uint8_t data = b;
+"79
+[; ;tm1637.c: 79:     uint8_t data = b;
 [v _data `uc ~T0 @X0 1 a ]
 [e = _data _b ]
-"90
-[; ;tm1637.c: 90:     CLK_SET_OUTPUT();
-[e ( _CLK_SET_OUTPUT ..  ]
-"91
-[; ;tm1637.c: 91:     for(uint8_t i = 0; i < 8; i++){
+"82
+[; ;tm1637.c: 82:     CLK_SET_OUTPUT(p);
+[e ( _CLK_SET_OUTPUT (1 _p ]
+"83
+[; ;tm1637.c: 83:     for(uint8_t i = 0; i < 8; i++){
 {
 [v _i `uc ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 8 `i 375  ]
-[e $U 376  ]
-[e :U 375 ]
-{
-"93
-[; ;tm1637.c: 93:         CLK_SET_LOW();
-[e ( _CLK_SET_LOW ..  ]
-"95
-[; ;tm1637.c: 95:         if(data & 0x01){
-[e $ ! != & -> _data `i -> 1 `i -> 0 `i 378  ]
-{
-"97
-[; ;tm1637.c: 97:             DIO_SET_HIGH();
-[e ( _DIO_SET_HIGH ..  ]
-"98
-[; ;tm1637.c: 98:         }else{
-}
-[e $U 379  ]
-[e :U 378 ]
-{
-"100
-[; ;tm1637.c: 100:             DIO_SET_LOW();
-[e ( _DIO_SET_LOW ..  ]
-"101
-[; ;tm1637.c: 101:         }
-}
-[e :U 379 ]
-"104
-[; ;tm1637.c: 104:         CLK_SET_HIGH();
-[e ( _CLK_SET_HIGH ..  ]
-"106
-[; ;tm1637.c: 106:         data = data >> 1;
-[e = _data -> >> -> _data `i -> 1 `i `uc ]
-"107
-[; ;tm1637.c: 107:     }
-}
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 8 `i 375  ]
+[e $ < -> _i `i -> 8 `i 376  ]
+[e $U 377  ]
 [e :U 376 ]
-}
-"112
-[; ;tm1637.c: 112:     CLK_SET_LOW();
-[e ( _CLK_SET_LOW ..  ]
-"113
-[; ;tm1637.c: 113:     DIO_SET_HIGH();
-[e ( _DIO_SET_HIGH ..  ]
-"116
-[; ;tm1637.c: 116:     CLK_SET_HIGH();
-[e ( _CLK_SET_HIGH ..  ]
-"119
-[; ;tm1637.c: 119:     DIO_SET_INPUT();
-[e ( _DIO_SET_INPUT ..  ]
-"121
-[; ;tm1637.c: 121:     uint8_t ack = get_DIO_PIN_value();
-[v _ack `uc ~T0 @X0 1 a ]
-[e = _ack ( _get_DIO_PIN_value ..  ]
-"122
-[; ;tm1637.c: 122:     if(ack == 0){
-[e $ ! == -> _ack `i -> 0 `i 380  ]
 {
-"124
-[; ;tm1637.c: 124:         DIO_SET_OUTPUT();
-[e ( _DIO_SET_OUTPUT ..  ]
-"127
-[; ;tm1637.c: 127:         DIO_SET_LOW();
-[e ( _DIO_SET_LOW ..  ]
-"128
-[; ;tm1637.c: 128:     }
+"85
+[; ;tm1637.c: 85:         CLK_SET_LOW(p);
+[e ( _CLK_SET_LOW (1 _p ]
+"87
+[; ;tm1637.c: 87:         if(data & 0x01){
+[e $ ! != & -> _data `i -> 1 `i -> 0 `i 379  ]
+{
+"89
+[; ;tm1637.c: 89:             DIO_SET_HIGH(p);
+[e ( _DIO_SET_HIGH (1 _p ]
+"90
+[; ;tm1637.c: 90:         }else{
+}
+[e $U 380  ]
+[e :U 379 ]
+{
+"92
+[; ;tm1637.c: 92:             DIO_SET_LOW(p);
+[e ( _DIO_SET_LOW (1 _p ]
+"93
+[; ;tm1637.c: 93:         }
 }
 [e :U 380 ]
-"131
-[; ;tm1637.c: 131:     DIO_SET_OUTPUT();
-[e ( _DIO_SET_OUTPUT ..  ]
-"133
-[; ;tm1637.c: 133:     return ack;
-[e ) _ack ]
-[e $UE 374  ]
-"134
-[; ;tm1637.c: 134: }
-[e :UE 374 ]
+"96
+[; ;tm1637.c: 96:         CLK_SET_HIGH(p);
+[e ( _CLK_SET_HIGH (1 _p ]
+"98
+[; ;tm1637.c: 98:         data = data >> 1;
+[e = _data -> >> -> _data `i -> 1 `i `uc ]
+"99
+[; ;tm1637.c: 99:     }
 }
-"141
-[; ;tm1637.c: 141: void set_brigthness(uint8_t brightness, uint8_t on){
-[v _set_brigthness `(v ~T0 @X0 1 ef2`uc`uc ]
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 8 `i 376  ]
+[e :U 377 ]
+}
+"104
+[; ;tm1637.c: 104:     CLK_SET_LOW(p);
+[e ( _CLK_SET_LOW (1 _p ]
+"105
+[; ;tm1637.c: 105:     DIO_SET_HIGH(p);
+[e ( _DIO_SET_HIGH (1 _p ]
+"108
+[; ;tm1637.c: 108:     CLK_SET_HIGH(p);
+[e ( _CLK_SET_HIGH (1 _p ]
+"111
+[; ;tm1637.c: 111:     DIO_SET_INPUT(p);
+[e ( _DIO_SET_INPUT (1 _p ]
+"113
+[; ;tm1637.c: 113:     uint8_t ack = get_DIO_PIN_value(p);
+[v _ack `uc ~T0 @X0 1 a ]
+[e = _ack ( _get_DIO_PIN_value (1 _p ]
+"114
+[; ;tm1637.c: 114:     if(ack == 0){
+[e $ ! == -> _ack `i -> 0 `i 381  ]
+{
+"116
+[; ;tm1637.c: 116:         DIO_SET_OUTPUT(p);
+[e ( _DIO_SET_OUTPUT (1 _p ]
+"119
+[; ;tm1637.c: 119:         DIO_SET_LOW(p);
+[e ( _DIO_SET_LOW (1 _p ]
+"120
+[; ;tm1637.c: 120:     }
+}
+[e :U 381 ]
+"123
+[; ;tm1637.c: 123:     DIO_SET_OUTPUT(p);
+[e ( _DIO_SET_OUTPUT (1 _p ]
+"125
+[; ;tm1637.c: 125:     return ack;
+[e ) _ack ]
+[e $UE 375  ]
+"126
+[; ;tm1637.c: 126: }
+[e :UE 375 ]
+}
+"133
+[; ;tm1637.c: 133: static void set_brigthness(TM1637 *p, uint8_t brightness, uint8_t on){
+[v _set_brigthness `(v ~T0 @X0 1 sf3`*S356`uc`uc ]
 {
 [e :U _set_brigthness ]
-[v _brightness `uc ~T0 @X0 1 r1 ]
-[v _on `uc ~T0 @X0 1 r2 ]
+[v _p `*S356 ~T0 @X0 1 r1 ]
+[v _brightness `uc ~T0 @X0 1 r2 ]
+[v _on `uc ~T0 @X0 1 r3 ]
 [f ]
-"142
-[; ;tm1637.c: 142:     if(on == 1){
-[e $ ! == -> _on `i -> 1 `i 382  ]
+"134
+[; ;tm1637.c: 134:     if(on == 1){
+[e $ ! == -> _on `i -> 1 `i 383  ]
 {
-"143
-[; ;tm1637.c: 143:         m_brightness = (brightness & 0x7 | 0x08);
+"135
+[; ;tm1637.c: 135:         m_brightness = (brightness & 0x7 | 0x08);
 [e = _m_brightness -> | & -> _brightness `i -> 7 `i -> 8 `i `uc ]
-"144
-[; ;tm1637.c: 144:     }else{
+"136
+[; ;tm1637.c: 136:     }else{
 }
-[e $U 383  ]
-[e :U 382 ]
-{
-"145
-[; ;tm1637.c: 145:         m_brightness = (brightness & 0x7 | 0x00);
-[e = _m_brightness -> | & -> _brightness `i -> 7 `i -> 0 `i `uc ]
-"146
-[; ;tm1637.c: 146:     }
-}
+[e $U 384  ]
 [e :U 383 ]
-"147
-[; ;tm1637.c: 147: }
-[e :UE 381 ]
+{
+"137
+[; ;tm1637.c: 137:         m_brightness = (brightness & 0x7 | 0x00);
+[e = _m_brightness -> | & -> _brightness `i -> 7 `i -> 0 `i `uc ]
+"138
+[; ;tm1637.c: 138:     }
 }
-"155
-[; ;tm1637.c: 155: void set_segments(const uint8_t segments[], uint8_t length, uint8_t pos){
-[v _set_segments `(v ~T0 @X0 1 ef3`*Cuc`uc`uc ]
+[e :U 384 ]
+"139
+[; ;tm1637.c: 139: }
+[e :UE 382 ]
+}
+"147
+[; ;tm1637.c: 147: static void set_segments(TM1637 *p, const uint8_t segments[], uint8_t length, uint8_t pos){
+[v _set_segments `(v ~T0 @X0 1 sf4`*S356`*Cuc`uc`uc ]
 {
 [e :U _set_segments ]
-[v _segments `*Cuc ~T0 @X0 1 r1 ]
-[v _length `uc ~T0 @X0 1 r2 ]
-[v _pos `uc ~T0 @X0 1 r3 ]
+[v _p `*S356 ~T0 @X0 1 r1 ]
+[v _segments `*Cuc ~T0 @X0 1 r2 ]
+[v _length `uc ~T0 @X0 1 r3 ]
+[v _pos `uc ~T0 @X0 1 r4 ]
 [f ]
-"157
-[; ;tm1637.c: 157:     start_segment();
-[e ( _start_segment ..  ]
+"149
+[; ;tm1637.c: 149:     start_segment(p);
+[e ( _start_segment (1 _p ]
+"150
+[; ;tm1637.c: 150:     write_byte(p, 0x40);
+[e ( _write_byte (2 , _p -> -> 64 `i `uc ]
+"151
+[; ;tm1637.c: 151:     stop_segment(p);
+[e ( _stop_segment (1 _p ]
+"154
+[; ;tm1637.c: 154:     start_segment(p);
+[e ( _start_segment (1 _p ]
+"155
+[; ;tm1637.c: 155:     write_byte(p, 0xC0 + (pos & 0x03));
+[e ( _write_byte (2 , _p -> + -> 192 `i & -> _pos `i -> 3 `i `uc ]
 "158
-[; ;tm1637.c: 158:     write_byte(0x40);
-[e ( _write_byte (1 -> -> 64 `i `uc ]
-"159
-[; ;tm1637.c: 159:     stop_segment();
-[e ( _stop_segment ..  ]
-"162
-[; ;tm1637.c: 162:     start_segment();
-[e ( _start_segment ..  ]
-"163
-[; ;tm1637.c: 163:     write_byte(0xC0 + (pos & 0x03));
-[e ( _write_byte (1 -> + -> 192 `i & -> _pos `i -> 3 `i `uc ]
-"166
-[; ;tm1637.c: 166:     for(uint8_t k = 0; k < length; k++){
+[; ;tm1637.c: 158:     for(uint8_t k = 0; k < length; k++){
 {
 [v _k `uc ~T0 @X0 1 a ]
 [e = _k -> -> 0 `i `uc ]
-[e $U 388  ]
-[e :U 385 ]
+[e $U 389  ]
+[e :U 386 ]
 {
-"167
-[; ;tm1637.c: 167:         write_byte(segments[k]);
-[e ( _write_byte (1 *U + _segments * -> _k `ux -> -> # *U _segments `ui `ux ]
-"168
-[; ;tm1637.c: 168:     }
+"159
+[; ;tm1637.c: 159:         write_byte(p, segments[k]);
+[e ( _write_byte (2 , _p *U + _segments * -> _k `ux -> -> # *U _segments `ui `ux ]
+"160
+[; ;tm1637.c: 160:     }
 }
 [e ++ _k -> -> 1 `i `uc ]
-[e :U 388 ]
-[e $ < -> _k `i -> _length `i 385  ]
-[e :U 386 ]
+[e :U 389 ]
+[e $ < -> _k `i -> _length `i 386  ]
+[e :U 387 ]
 }
-"170
-[; ;tm1637.c: 170:     stop_segment();
-[e ( _stop_segment ..  ]
+"162
+[; ;tm1637.c: 162:     stop_segment(p);
+[e ( _stop_segment (1 _p ]
+"165
+[; ;tm1637.c: 165:     start_segment(p);
+[e ( _start_segment (1 _p ]
+"166
+[; ;tm1637.c: 166:     write_byte(p, 0x80 + (m_brightness & 0x0f));
+[e ( _write_byte (2 , _p -> + -> 128 `i & -> _m_brightness `i -> 15 `i `uc ]
+"167
+[; ;tm1637.c: 167:     stop_segment(p);
+[e ( _stop_segment (1 _p ]
+"168
+[; ;tm1637.c: 168: }
+[e :UE 385 ]
+}
 "173
-[; ;tm1637.c: 173:     start_segment();
-[e ( _start_segment ..  ]
-"174
-[; ;tm1637.c: 174:     write_byte(0x80 + (m_brightness & 0x0f));
-[e ( _write_byte (1 -> + -> 128 `i & -> _m_brightness `i -> 15 `i `uc ]
-"175
-[; ;tm1637.c: 175:     stop_segment();
-[e ( _stop_segment ..  ]
-"176
-[; ;tm1637.c: 176: }
-[e :UE 384 ]
-}
-"181
-[; ;tm1637.c: 181: void clear_segment(){
-[v _clear_segment `(v ~T0 @X0 1 ef ]
+[; ;tm1637.c: 173: static void clear_segment(TM1637 *p){
+[v _clear_segment `(v ~T0 @X0 1 sf1`*S356 ]
 {
 [e :U _clear_segment ]
+[v _p `*S356 ~T0 @X0 1 r1 ]
 [f ]
-[v F2765 `uc ~T0 @X0 -> 4 `i s ]
-[i F2765
+[v F2810 `uc ~T0 @X0 -> 4 `i s ]
+[i F2810
 :U ..
-"182
-[; ;tm1637.c: 182:     uint8_t data[] = { 0, 0, 0, 0 };
+"174
+[; ;tm1637.c: 174:     uint8_t data[] = { 0, 0, 0, 0 };
 -> -> 0 `i `uc
 -> -> 0 `i `uc
 -> -> 0 `i `uc
@@ -933,26 +954,97 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _data `uc ~T0 @X0 -> 4 `i a ]
-[e = _data F2765 ]
-"183
-[; ;tm1637.c: 183:  set_segments(data, 4, 0);
-[e ( _set_segments (3 , , -> &U _data `*Cuc -> -> 4 `i `uc -> -> 0 `i `uc ]
-"184
-[; ;tm1637.c: 184: }
-[e :UE 389 ]
+[e = _data F2810 ]
+"175
+[; ;tm1637.c: 175:  set_segments(p, data, 4, 0);
+[e ( _set_segments (4 , , , _p -> &U _data `*Cuc -> -> 4 `i `uc -> -> 0 `i `uc ]
+"176
+[; ;tm1637.c: 176: }
+[e :UE 390 ]
 }
-"191
-[; ;tm1637.c: 191: uint8_t encode_digit(uint8_t digit){
-[v _encode_digit `(uc ~T0 @X0 1 ef1`uc ]
+"183
+[; ;tm1637.c: 183: static uint8_t encode_digit(TM1637 *p, uint8_t digit){
+[v _encode_digit `(uc ~T0 @X0 1 sf2`*S356`uc ]
 {
 [e :U _encode_digit ]
-[v _digit `uc ~T0 @X0 1 r1 ]
+[v _p `*S356 ~T0 @X0 1 r1 ]
+[v _digit `uc ~T0 @X0 1 r2 ]
 [f ]
-"192
-[; ;tm1637.c: 192:     return segdata[digit & 0x0f];
+"184
+[; ;tm1637.c: 184:     return segdata[digit & 0x0f];
 [e ) *U + &U _segdata * -> -> & -> _digit `i -> 15 `i `ui `ux -> -> # *U &U _segdata `ui `ux ]
-[e $UE 390  ]
+[e $UE 391  ]
+"185
+[; ;tm1637.c: 185: }
+[e :UE 391 ]
+}
+"187
+[; ;tm1637.c: 187: void initialize_digit(TM1637 *p){
+[v _initialize_digit `(v ~T0 @X0 1 ef1`*S356 ]
+{
+[e :U _initialize_digit ]
+[v _p `*S356 ~T0 @X0 1 r1 ]
+[f ]
+"188
+[; ;tm1637.c: 188:     set_brigthness(p, 0x0f, 1);
+[e ( _set_brigthness (3 , , _p -> -> 15 `i `uc -> -> 1 `i `uc ]
+"189
+[; ;tm1637.c: 189:     print_digit(p, 0);
+[e ( _print_digit (2 , _p -> -> 0 `i `uc ]
+"190
+[; ;tm1637.c: 190: }
+[e :UE 392 ]
+}
+"192
+[; ;tm1637.c: 192: void print_digit(TM1637 *p, uint8_t number){
+[v _print_digit `(v ~T0 @X0 1 ef2`*S356`uc ]
+{
+[e :U _print_digit ]
+[v _p `*S356 ~T0 @X0 1 r1 ]
+[v _number `uc ~T0 @X0 1 r2 ]
+[f ]
+[v F2820 `uc ~T0 @X0 -> 4 `i s ]
+[i F2820
+:U ..
 "193
-[; ;tm1637.c: 193: }
-[e :UE 390 ]
+[; ;tm1637.c: 193:     uint8_t data[] = {0xff, 0xff, 0xff, 0xff};
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+-> -> 255 `i `uc
+..
+]
+[v _data `uc ~T0 @X0 -> 4 `i a ]
+[e = _data F2820 ]
+"196
+[; ;tm1637.c: 196:     uint8_t tmp = number;
+[v _tmp `uc ~T0 @X0 1 a ]
+[e = _tmp _number ]
+"197
+[; ;tm1637.c: 197:     data[3] = encode_digit(p, tmp / 1000);
+[e = *U + &U _data * -> -> -> 3 `i `ui `ux -> -> # *U &U _data `ui `ux ( _encode_digit (2 , _p -> / -> _tmp `i -> 1000 `i `uc ]
+"198
+[; ;tm1637.c: 198:     tmp %= 1000;
+[e =% _tmp -> 1000 `i ]
+"199
+[; ;tm1637.c: 199:     data[2] = encode_digit(p, tmp / 100);
+[e = *U + &U _data * -> -> -> 2 `i `ui `ux -> -> # *U &U _data `ui `ux ( _encode_digit (2 , _p -> / -> _tmp `i -> 100 `i `uc ]
+"200
+[; ;tm1637.c: 200:     tmp %= 100;
+[e =% _tmp -> 100 `i ]
+"201
+[; ;tm1637.c: 201:     data[1] = encode_digit(p, tmp / 10);
+[e = *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux ( _encode_digit (2 , _p -> / -> _tmp `i -> 10 `i `uc ]
+"202
+[; ;tm1637.c: 202:     tmp %= 10;
+[e =% _tmp -> 10 `i ]
+"203
+[; ;tm1637.c: 203:     data[0] = encode_digit(p, tmp);
+[e = *U + &U _data * -> -> -> 0 `i `ui `ux -> -> # *U &U _data `ui `ux ( _encode_digit (2 , _p _tmp ]
+"205
+[; ;tm1637.c: 205:     set_segments(p, data, 4, 0);
+[e ( _set_segments (4 , , , _p -> &U _data `*Cuc -> -> 4 `i `uc -> -> 0 `i `uc ]
+"206
+[; ;tm1637.c: 206: }
+[e :UE 393 ]
 }

@@ -1,6 +1,7 @@
 #include "i2c.h"
 #include "loadcell.h"
 #include "lcd_lib.h"
+#include "tm1637.h"
 #include "drink_meter.h"
 #include "mcc_generated_files/mcc.h"
 
@@ -26,11 +27,14 @@ void main(void)
     SSPCON2 = 0x0;
     SSPSTAT = 0;
     
-    //clk, data
+    //clk, data, -, -, max_gram
     LoadCell loadcell = {0x02, 0x04, 0, 0, 500};
+    //add, col, row
     Lcd lcd = {0x27, 16, 2, 0};
+    //clk, dat
+    TM1637 tm1637 = {0x08, 0x10};
     
-    DrinkMeter drink = {&loadcell, &lcd, 500, 0};
+    DrinkMeter drink = {&loadcell, &lcd, &tm1637, 500, 0};
     
     initialize(&drink);
 

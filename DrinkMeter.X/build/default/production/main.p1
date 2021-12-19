@@ -38,19 +38,23 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./lcd_lib.h: 12: typedef struct{
 [s S357 `uc 1 `uc 1 `uc 1 `uc 1 ]
 [n S357 . lcd_address COL ROW _backlightval ]
-"6 ./drink_meter.h
-[; ;./drink_meter.h: 6: typedef struct{
-[s S358 `*S356 1 `*S357 1 `us 1 `uc 1 ]
-[n S358 . loadcell lcd max_gram percentage ]
-"29
-[; ;./drink_meter.h: 29: void initialize(DrinkMeter *p);
-[v _initialize `(v ~T0 @X0 0 ef1`*S358 ]
-"35
-[; ;./drink_meter.h: 35: void calc_percentage(DrinkMeter *p);
-[v _calc_percentage `(v ~T0 @X0 0 ef1`*S358 ]
-"41
-[; ;./drink_meter.h: 41: void print_gram(DrinkMeter *p);
-[v _print_gram `(v ~T0 @X0 0 ef1`*S358 ]
+"10 ./tm1637.h
+[; ;./tm1637.h: 10: typedef struct{
+[s S358 `uc 1 `uc 1 ]
+[n S358 . clk_pin dat_pin ]
+"7 ./drink_meter.h
+[; ;./drink_meter.h: 7: typedef struct{
+[s S359 `*S356 1 `*S357 1 `*S358 1 `us 1 `uc 1 ]
+[n S359 . loadcell lcd tm1637 max_gram percentage ]
+"36
+[; ;./drink_meter.h: 36: void initialize(DrinkMeter *p);
+[v _initialize `(v ~T0 @X0 0 ef1`*S359 ]
+"42
+[; ;./drink_meter.h: 42: void calc_percentage(DrinkMeter *p);
+[v _calc_percentage `(v ~T0 @X0 0 ef1`*S359 ]
+"48
+[; ;./drink_meter.h: 48: void print_gram(DrinkMeter *p);
+[v _print_gram `(v ~T0 @X0 0 ef1`*S359 ]
 [v F183 `(v ~T0 @X0 1 tf1`ul ]
 "12 C:\Program Files\Microchip\xc8\v2.32\pic\include\builtins.h
 [v __delay `JF183 ~T0 @X0 0 e ]
@@ -551,50 +555,50 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1938.h: 7122: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
 [v $root$_main `(v ~T0 @X0 0 e ]
-"8 main.c
-[; ;main.c: 8: void main(void)
+"9 main.c
+[; ;main.c: 9: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"9
-[; ;main.c: 9: {
+"10
+[; ;main.c: 10: {
 {
 [e :U _main ]
 [f ]
-"10
-[; ;main.c: 10:     SYSTEM_Initialize();
+"11
+[; ;main.c: 11:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"13
-[; ;main.c: 13:     ANSELA = 0x00;
-[e = _ANSELA -> -> 0 `i `uc ]
 "14
-[; ;main.c: 14:     ANSELB = 0x00;
+[; ;main.c: 14:     ANSELA = 0x00;
+[e = _ANSELA -> -> 0 `i `uc ]
+"15
+[; ;main.c: 15:     ANSELB = 0x00;
 [e = _ANSELB -> -> 0 `i `uc ]
-"18
-[; ;main.c: 18:     TRISB = 0x04;
+"19
+[; ;main.c: 19:     TRISB = 0x04;
 [e = _TRISB -> -> 4 `i `uc ]
-"20
-[; ;main.c: 20:     LATA = 0x00;
-[e = _LATA -> -> 0 `i `uc ]
 "21
-[; ;main.c: 21:     LATB = 0x00;
+[; ;main.c: 21:     LATA = 0x00;
+[e = _LATA -> -> 0 `i `uc ]
+"22
+[; ;main.c: 22:     LATB = 0x00;
 [e = _LATB -> -> 0 `i `uc ]
-"24
-[; ;main.c: 24:     SSPADD = 0x13;
-[e = _SSPADD -> -> 19 `i `uc ]
 "25
-[; ;main.c: 25:     SSPCON1 = 0x28;
-[e = _SSPCON1 -> -> 40 `i `uc ]
+[; ;main.c: 25:     SSPADD = 0x13;
+[e = _SSPADD -> -> 19 `i `uc ]
 "26
-[; ;main.c: 26:     SSPCON2 = 0x0;
-[e = _SSPCON2 -> -> 0 `i `uc ]
+[; ;main.c: 26:     SSPCON1 = 0x28;
+[e = _SSPCON1 -> -> 40 `i `uc ]
 "27
-[; ;main.c: 27:     SSPSTAT = 0;
+[; ;main.c: 27:     SSPCON2 = 0x0;
+[e = _SSPCON2 -> -> 0 `i `uc ]
+"28
+[; ;main.c: 28:     SSPSTAT = 0;
 [e = _SSPSTAT -> -> 0 `i `uc ]
-[v F2800 `S356 ~T0 @X0 1 s ]
-[i F2800
+[v F2847 `S356 ~T0 @X0 1 s ]
+[i F2847
 :U ..
 :U ..
-"30
-[; ;main.c: 30:     LoadCell loadcell = {0x02, 0x04, 0, 0, 500};
+"31
+[; ;main.c: 31:     LoadCell loadcell = {0x02, 0x04, 0, 0, 500};
 -> -> 2 `i `uc
 -> -> 4 `i `uc
 -> -> -> 0 `i `l `ul
@@ -604,13 +608,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _loadcell `S356 ~T0 @X0 1 a ]
-[e = _loadcell F2800 ]
-[v F2802 `S357 ~T0 @X0 1 s ]
-[i F2802
+[e = _loadcell F2847 ]
+[v F2849 `S357 ~T0 @X0 1 s ]
+[i F2849
 :U ..
 :U ..
-"31
-[; ;main.c: 31:     Lcd lcd = {0x27, 16, 2, 0};
+"33
+[; ;main.c: 33:     Lcd lcd = {0x27, 16, 2, 0};
 -> -> 39 `i `uc
 -> -> 16 `i `uc
 -> -> 2 `i `uc
@@ -619,46 +623,60 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _lcd `S357 ~T0 @X0 1 a ]
-[e = _lcd F2802 ]
-[v F2804 `S358 ~T0 @X0 1 s ]
-[i F2804
+[e = _lcd F2849 ]
+[v F2851 `S358 ~T0 @X0 1 s ]
+[i F2851
 :U ..
 :U ..
-"33
-[; ;main.c: 33:     DrinkMeter drink = {&loadcell, &lcd, 500, 0};
+"35
+[; ;main.c: 35:     TM1637 tm1637 = {0x08, 0x10};
+-> -> 8 `i `uc
+-> -> 16 `i `uc
+..
+..
+]
+[v _tm1637 `S358 ~T0 @X0 1 a ]
+[e = _tm1637 F2851 ]
+[v F2853 `S359 ~T0 @X0 1 s ]
+[i F2853
+:U ..
+:U ..
+"37
+[; ;main.c: 37:     DrinkMeter drink = {&loadcell, &lcd, &tm1637, 500, 0};
 -> -> 0 `i `*S356
 -> -> 0 `i `*S357
+-> -> 0 `i `*S358
 -> -> 0 `i `us
 -> -> 0 `i `uc
 ..
 ..
 ]
-[v _drink `S358 ~T0 @X0 1 a ]
-[e = _drink F2804 ]
-[e ; = . _drink 0 &U _loadcell ; = . _drink 1 &U _lcd ; = . _drink 2 -> -> 500 `i `us = . _drink 3 -> -> 0 `i `uc ]
-"35
-[; ;main.c: 35:     initialize(&drink);
+[v _drink `S359 ~T0 @X0 1 a ]
+[e = _drink F2853 ]
+[e ; = . _drink 0 &U _loadcell ; = . _drink 1 &U _lcd ; = . _drink 2 &U _tm1637 ; = . _drink 3 -> -> 500 `i `us = . _drink 4 -> -> 0 `i `uc ]
+"39
+[; ;main.c: 39:     initialize(&drink);
 [e ( _initialize (1 &U _drink ]
-"48
-[; ;main.c: 48:     while(1){
-[e :U 361 ]
-{
-"49
-[; ;main.c: 49:         calc_percentage(&drink);
-[e ( _calc_percentage (1 &U _drink ]
-"50
-[; ;main.c: 50:         print_gram(&drink);
-[e ( _print_gram (1 &U _drink ]
-"52
-[; ;main.c: 52:         _delay((unsigned long)((500)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"53
-[; ;main.c: 53:     }
-}
-[e :U 360 ]
-[e $U 361  ]
+"41
+[; ;main.c: 41:     while(1){
 [e :U 362 ]
-"54
-[; ;main.c: 54: }
-[e :UE 359 ]
+{
+"42
+[; ;main.c: 42:         calc_percentage(&drink);
+[e ( _calc_percentage (1 &U _drink ]
+"43
+[; ;main.c: 43:         print_gram(&drink);
+[e ( _print_gram (1 &U _drink ]
+"45
+[; ;main.c: 45:         _delay((unsigned long)((500)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"46
+[; ;main.c: 46:     }
+}
+[e :U 361 ]
+[e $U 362  ]
+[e :U 363 ]
+"47
+[; ;main.c: 47: }
+[e :UE 360 ]
 }

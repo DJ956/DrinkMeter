@@ -9,6 +9,8 @@ void initialize(DrinkMeter *p){
     lcd_print_with(p->lcd, "Initialize", 0, 0);     
     lcd_print_with(p->lcd, "Load cell Unit", 0, 1);
     
+    initialize_digit(p->tm1637);
+    
     /** 0グラムを計測 */                                           
     p->loadcell->weight_zero = get_scale_val(p->loadcell, 50);
     
@@ -16,7 +18,7 @@ void initialize(DrinkMeter *p){
     sprintf(valstr, "%lu val", p->loadcell->weight_dat);
     
     lcd_clear(p->lcd);
-    lcd_print(p->lcd, valstr);    
+    lcd_print(p->lcd, valstr);
 }
 
 void calc_percentage(DrinkMeter *p){
@@ -44,6 +46,8 @@ void print_gram(DrinkMeter *p){
     
     lcd_print_with(p->lcd, row1, 0, 0);
     lcd_print_with(p->lcd, row2, 0, 1);
+    
+    print_digit(p->tm1637, p->percentage);
 }
 
 void set_max_gram(DrinkMeter *p, uint16_t max_gram){

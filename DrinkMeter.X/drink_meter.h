@@ -2,6 +2,7 @@
 
 #include "loadcell.h"
 #include "lcd_lib.h"
+#include "tm1637.h"
 
 typedef struct{
     /**
@@ -12,6 +13,12 @@ typedef struct{
      * LCDの構造体
      */
     Lcd *lcd;
+    
+    /**
+     * TM1637
+     */
+    TM1637 *tm1637;
+    
     /**
      * 設定してい最大グラム
      */

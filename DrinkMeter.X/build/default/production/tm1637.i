@@ -9,6 +9,8 @@
 # 1 "tm1637.c" 2
 
 # 1 "./tm1637.h" 1
+
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4918,19 +4920,50 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:\\Program Files\\Microchip\\xc8\\v2.32\\pic\\include\\xc.h" 2 3
-# 1 "./tm1637.h" 2
+# 3 "./tm1637.h" 2
 
 
 
 
-void bit_delay();
-void start_segment();
-void stop_segment();
-void set_brigthness(uint8_t brightness, uint8_t on);
-uint8_t write_byte(uint8_t b);
-void set_segments(const uint8_t segments[], uint8_t length, uint8_t pos);
-void clear_segment();
-uint8_t encode_digit(uint8_t digit);
+
+
+
+typedef struct{
+    uint8_t clk_pin;
+    uint8_t dat_pin;
+} TM1637;
+
+
+static void CLK_SET_OUTPUT(TM1637 *p);
+static void CLK_SET_HIGH(TM1637 *p);
+static void CLK_SET_LOW(TM1637 *p);
+
+static void DIO_SET_OUTPUT(TM1637 *p);
+static void DIO_SET_INPUT(TM1637 *p);
+static void DIO_SET_HIGH(TM1637 *p);
+static void DIO_SET_LOW(TM1637 *p);
+
+static uint8_t get_DIO_PIN_value(TM1637 *p);
+static void start_segment(TM1637 *p);
+static void stop_segment(TM1637 *p);
+static void set_brigthness(TM1637 *p, uint8_t brightness, uint8_t on);
+static uint8_t write_byte(TM1637 *p, uint8_t b);
+static void set_segments(TM1637 *p, const uint8_t segments[], uint8_t length, uint8_t pos);
+static void clear_segment(TM1637 *p);
+static uint8_t encode_digit(TM1637 *p, uint8_t digit);
+
+
+
+
+
+void initialize_digit(TM1637 *p);
+
+
+
+
+
+
+void print_digit(TM1637 *p, uint8_t number);
 # 2 "tm1637.c" 2
 
 
@@ -4989,10 +5022,11 @@ void OSCILLATOR_Initialize(void);
 # 94 "./mcc_generated_files/mcc.h"
 void WDT_Initialize(void);
 # 4 "tm1637.c" 2
-# 15 "tm1637.c"
-uint8_t m_brightness;
 
-uint8_t segdata[] = {
+
+static uint8_t m_brightness;
+
+static uint8_t segdata[] = {
    0x3F,
    0x06,
    0x5B,
@@ -5006,80 +5040,81 @@ uint8_t segdata[] = {
 };
 
 
-void CLK_SET_OUTPUT(){ TRISA &= ~0x02; }
+static void CLK_SET_OUTPUT(TM1637 *p){ TRISA &= ~p->clk_pin; }
 
 
-void CLK_SET_HIGH(){ LATA |= 0x02; }
+static void CLK_SET_HIGH(TM1637 *p){ LATA |= p->clk_pin; }
 
-void CLK_SET_LOW() { LATA &= ~0x02; }
-
-
-void DIO_SET_OUTPUT(){ TRISA &= ~0x04; }
-
-void DIO_SET_INPUT(){ TRISA |= 0x04; }
-
-void DIO_SET_HIGH(){ LATA |= 0x04; }
-
-void DIO_SET_LOW(){ LATA &= ~0x04; }
-
-void start_segment(void){
-
-    DIO_SET_OUTPUT();
-    CLK_SET_OUTPUT();
+static void CLK_SET_LOW(TM1637 *p) { LATA &= ~p->clk_pin; }
 
 
-    DIO_SET_HIGH();
-    CLK_SET_HIGH();
+static void DIO_SET_OUTPUT(TM1637 *p){ TRISA &= ~p->dat_pin; }
+
+static void DIO_SET_INPUT(TM1637 *p){ TRISA |= p->dat_pin; }
+
+static void DIO_SET_HIGH(TM1637 *p){ LATA |= p->dat_pin; }
+
+static void DIO_SET_LOW(TM1637 *p){ LATA &= ~p->dat_pin; }
 
 
-    DIO_SET_LOW();
-    CLK_SET_LOW();
+static void start_segment(TM1637 *p){
+
+    DIO_SET_OUTPUT(p);
+    CLK_SET_OUTPUT(p);
+
+
+    DIO_SET_HIGH(p);
+    CLK_SET_HIGH(p);
+
+
+    DIO_SET_LOW(p);
+    CLK_SET_LOW(p);
 }
 
-void stop_segment(void){
+static void stop_segment(TM1637 *p){
 
-    DIO_SET_OUTPUT();
-    CLK_SET_OUTPUT();
-
-
-    CLK_SET_LOW();
-    DIO_SET_LOW();
+    DIO_SET_OUTPUT(p);
+    CLK_SET_OUTPUT(p);
 
 
-    CLK_SET_HIGH();
-    DIO_SET_HIGH();
+    CLK_SET_LOW(p);
+    DIO_SET_LOW(p);
+
+
+    CLK_SET_HIGH(p);
+    DIO_SET_HIGH(p);
 }
 
-uint8_t get_DIO_PIN_value(){
-    if(0x04 == 0x01){ return PORTAbits.RA0; }
-    if(0x04 == 0x02){ return PORTAbits.RA1; }
-    if(0x04 == 0x04){ return PORTAbits.RA2; }
-    if(0x04 == 0x08){ return PORTAbits.RA3; }
-    if(0x04 == 0x10){ return PORTAbits.RA4; }
-    if(0x04 == 0x20){ return PORTAbits.RA5; }
-    if(0x04 == 0x40){ return PORTAbits.RA6; }
-    if(0x04 == 0x80){ return PORTAbits.RA7; }
+static uint8_t get_DIO_PIN_value(TM1637 *p){
+    if(p->dat_pin == 0x01){ return PORTBbits.RB0; }
+    if(p->dat_pin == 0x02){ return PORTBbits.RB1; }
+    if(p->dat_pin == 0x04){ return PORTBbits.RB2; }
+    if(p->dat_pin == 0x08){ return PORTBbits.RB3; }
+    if(p->dat_pin == 0x10){ return PORTBbits.RB4; }
+    if(p->dat_pin == 0x20){ return PORTBbits.RB5; }
+    if(p->dat_pin == 0x40){ return PORTBbits.RB6; }
+    if(p->dat_pin == 0x80){ return PORTBbits.RB7; }
 }
 
-uint8_t write_byte(uint8_t b){
+static uint8_t write_byte(TM1637 *p, uint8_t b){
     uint8_t data = b;
 
 
-    CLK_SET_OUTPUT();
+    CLK_SET_OUTPUT(p);
     for(uint8_t i = 0; i < 8; i++){
 
-        CLK_SET_LOW();
+        CLK_SET_LOW(p);
 
         if(data & 0x01){
 
-            DIO_SET_HIGH();
+            DIO_SET_HIGH(p);
         }else{
 
-            DIO_SET_LOW();
+            DIO_SET_LOW(p);
         }
 
 
-        CLK_SET_HIGH();
+        CLK_SET_HIGH(p);
 
         data = data >> 1;
     }
@@ -5087,26 +5122,26 @@ uint8_t write_byte(uint8_t b){
 
 
 
-    CLK_SET_LOW();
-    DIO_SET_HIGH();
+    CLK_SET_LOW(p);
+    DIO_SET_HIGH(p);
 
 
-    CLK_SET_HIGH();
+    CLK_SET_HIGH(p);
 
 
-    DIO_SET_INPUT();
+    DIO_SET_INPUT(p);
 
-    uint8_t ack = get_DIO_PIN_value();
+    uint8_t ack = get_DIO_PIN_value(p);
     if(ack == 0){
 
-        DIO_SET_OUTPUT();
+        DIO_SET_OUTPUT(p);
 
 
-        DIO_SET_LOW();
+        DIO_SET_LOW(p);
     }
 
 
-    DIO_SET_OUTPUT();
+    DIO_SET_OUTPUT(p);
 
     return ack;
 }
@@ -5116,7 +5151,7 @@ uint8_t write_byte(uint8_t b){
 
 
 
-void set_brigthness(uint8_t brightness, uint8_t on){
+static void set_brigthness(TM1637 *p, uint8_t brightness, uint8_t on){
     if(on == 1){
         m_brightness = (brightness & 0x7 | 0x08);
     }else{
@@ -5130,35 +5165,35 @@ void set_brigthness(uint8_t brightness, uint8_t on){
 
 
 
-void set_segments(const uint8_t segments[], uint8_t length, uint8_t pos){
+static void set_segments(TM1637 *p, const uint8_t segments[], uint8_t length, uint8_t pos){
 
-    start_segment();
-    write_byte(0x40);
-    stop_segment();
+    start_segment(p);
+    write_byte(p, 0x40);
+    stop_segment(p);
 
 
-    start_segment();
-    write_byte(0xC0 + (pos & 0x03));
+    start_segment(p);
+    write_byte(p, 0xC0 + (pos & 0x03));
 
 
     for(uint8_t k = 0; k < length; k++){
-        write_byte(segments[k]);
+        write_byte(p, segments[k]);
     }
 
-    stop_segment();
+    stop_segment(p);
 
 
-    start_segment();
-    write_byte(0x80 + (m_brightness & 0x0f));
-    stop_segment();
+    start_segment(p);
+    write_byte(p, 0x80 + (m_brightness & 0x0f));
+    stop_segment(p);
 }
 
 
 
 
-void clear_segment(){
+static void clear_segment(TM1637 *p){
     uint8_t data[] = { 0, 0, 0, 0 };
- set_segments(data, 4, 0);
+ set_segments(p, data, 4, 0);
 }
 
 
@@ -5166,6 +5201,27 @@ void clear_segment(){
 
 
 
-uint8_t encode_digit(uint8_t digit){
+static uint8_t encode_digit(TM1637 *p, uint8_t digit){
     return segdata[digit & 0x0f];
+}
+
+void initialize_digit(TM1637 *p){
+    set_brigthness(p, 0x0f, 1);
+    print_digit(p, 0);
+}
+
+void print_digit(TM1637 *p, uint8_t number){
+    uint8_t data[] = {0xff, 0xff, 0xff, 0xff};
+
+
+    uint8_t tmp = number;
+    data[3] = encode_digit(p, tmp / 1000);
+    tmp %= 1000;
+    data[2] = encode_digit(p, tmp / 100);
+    tmp %= 100;
+    data[1] = encode_digit(p, tmp / 10);
+    tmp %= 10;
+    data[0] = encode_digit(p, tmp);
+
+    set_segments(p, data, 4, 0);
 }
