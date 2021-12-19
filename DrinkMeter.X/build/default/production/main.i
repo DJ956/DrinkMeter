@@ -5168,7 +5168,6 @@ void WDT_Initialize(void);
 # 6 "main.c" 2
 
 
-
 void main(void)
 {
     SYSTEM_Initialize();
@@ -5181,8 +5180,13 @@ void main(void)
 
     TRISB = 0x04;
 
+
+    TRISC = 0xF8;
+
+
     LATA = 0x00;
     LATB = 0x00;
+    LATC = 0x00;
 
 
     SSPADD = 0x13;
@@ -5205,6 +5209,19 @@ void main(void)
         calc_percentage(&drink);
         print_gram(&drink);
 
-        _delay((unsigned long)((500)*(8000000/4000.0)));
+        if(RC7 == 0){
+            set_max_gram(&drink, 500);
+            _delay((unsigned long)((1000)*(8000000/4000.0)));
+        }
+
+        if(RC6 == 0){
+            set_max_gram(&drink, 350);
+            _delay((unsigned long)((1000)*(8000000/4000.0)));
+        }
+
+        if(RC5 == 0){
+            set_max_gram(&drink, 355);
+            _delay((unsigned long)((1000)*(8000000/4000.0)));
+        }
     }
 }

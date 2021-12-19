@@ -53,5 +53,12 @@ void print_gram(DrinkMeter *p){
 
 void set_max_gram(DrinkMeter *p, uint16_t max_gram){
     p->max_gram = max_gram;
+    
+    char valstr[16];
+    sprintf(valstr, "max gram %d", max_gram);
+    
+    lcd_clear(p->lcd);
+    lcd_print(p->lcd, valstr);
+    
     calc_percentage(p);
 }

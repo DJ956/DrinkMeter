@@ -5,7 +5,6 @@
 #include "drink_meter.h"
 #include "mcc_generated_files/mcc.h"
 
-
 void main(void)
 {
     SYSTEM_Initialize();
@@ -17,9 +16,14 @@ void main(void)
     //RB1 cell clock is output
     //RB2 cell data is input
     TRISB = 0x04;
+    
+    //RC7, RC6, RC5, RC4, RC3 is input
+    TRISC = 0xF8;
+    
     //init LATA
     LATA = 0x00;
     LATB = 0x00;
+    LATC = 0x00;
     
     //init i2c
     SSPADD = 0x13;    
@@ -37,11 +41,24 @@ void main(void)
     DrinkMeter drink = {&loadcell, &lcd, &tm1637, 500, 0};
     
     initialize(&drink);
-
+    
     while(1){
         calc_percentage(&drink);
         print_gram(&drink);
         
-        __delay_ms(500);
+        if(RC7 == 0){
+            set_max_gram(&drink, 500);
+            __delay_ms(1000);
+        }
+        
+        if(RC6 == 0){
+            set_max_gram(&drink, 350);
+            __delay_ms(1000);
+        }
+        
+        if(RC5 == 0){
+            set_max_gram(&drink, 355);
+            __delay_ms(1000);
+        }
     }
 }

@@ -666,11 +666,23 @@ Version 4.0 HI-TECH Software Intermediate Code
 "55
 [; ;drink_meter.c: 55:     p->max_gram = max_gram;
 [e = . *U _p 3 _max_gram ]
-"56
-[; ;drink_meter.c: 56:     calc_percentage(p);
-[e ( _calc_percentage (1 _p ]
 "57
-[; ;drink_meter.c: 57: }
+[; ;drink_meter.c: 57:     char valstr[16];
+[v _valstr `uc ~T0 @X0 -> 16 `i a ]
+"58
+[; ;drink_meter.c: 58:     sprintf(valstr, "max gram %d", max_gram);
+[e ( _sprintf (1 , (. , &U _valstr :s 6C -> _max_gram `ui ]
+"60
+[; ;drink_meter.c: 60:     lcd_clear(p->lcd);
+[e ( _lcd_clear (1 . *U _p 1 ]
+"61
+[; ;drink_meter.c: 61:     lcd_print(p->lcd, valstr);
+[e ( _lcd_print (2 , . *U _p 1 &U _valstr ]
+"63
+[; ;drink_meter.c: 63:     calc_percentage(p);
+[e ( _calc_percentage (1 _p ]
+"64
+[; ;drink_meter.c: 64: }
 [e :UE 367 ]
 }
 [p f _sprintf 9438352 ]
@@ -678,4 +690,5 @@ Version 4.0 HI-TECH Software Intermediate Code
 [a 3C 37 108 117 32 118 97 108 0 ]
 [a 4C 37 100 103 32 47 32 37 100 103 0 ]
 [a 1C 73 110 105 116 105 97 108 105 122 101 0 ]
+[a 6C 109 97 120 32 103 114 97 109 32 37 100 0 ]
 [a 5C 37 100 32 37 37 0 ]

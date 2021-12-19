@@ -12,12 +12,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1291
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1938.h: 1291: extern volatile unsigned char TRISB __attribute__((address(0x08D)));
 [v _TRISB `Vuc ~T0 @X0 0 e@141 ]
+"1353
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1938.h: 1353: extern volatile unsigned char TRISC __attribute__((address(0x08E)));
+[v _TRISC `Vuc ~T0 @X0 0 e@142 ]
 "2194
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1938.h: 2194: extern volatile unsigned char LATA __attribute__((address(0x10C)));
 [v _LATA `Vuc ~T0 @X0 0 e@268 ]
 "2256
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1938.h: 2256: extern volatile unsigned char LATB __attribute__((address(0x10D)));
 [v _LATB `Vuc ~T0 @X0 0 e@269 ]
+"2318
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1938.h: 2318: extern volatile unsigned char LATC __attribute__((address(0x10E)));
+[v _LATC `Vuc ~T0 @X0 0 e@270 ]
 "3814
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1938.h: 3814: extern volatile unsigned char SSPADD __attribute__((address(0x212)));
 [v _SSPADD `Vuc ~T0 @X0 0 e@530 ]
@@ -55,10 +61,22 @@ Version 4.0 HI-TECH Software Intermediate Code
 "48
 [; ;./drink_meter.h: 48: void print_gram(DrinkMeter *p);
 [v _print_gram `(v ~T0 @X0 0 ef1`*S359 ]
+"8220 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1938.h
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1938.h: 8220: extern volatile __bit RC7 __attribute__((address(0x77)));
+[v _RC7 `Vb ~T0 @X0 0 e@119 ]
+"55 ./drink_meter.h
+[; ;./drink_meter.h: 55: void set_max_gram(DrinkMeter *p, uint16_t max_gram);
+[v _set_max_gram `(v ~T0 @X0 0 ef2`*S359`us ]
 [v F183 `(v ~T0 @X0 1 tf1`ul ]
 "12 C:\Program Files\Microchip\xc8\v2.32\pic\include\builtins.h
 [v __delay `JF183 ~T0 @X0 0 e ]
 [p i __delay ]
+"8217 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1938.h
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1938.h: 8217: extern volatile __bit RC6 __attribute__((address(0x76)));
+[v _RC6 `Vb ~T0 @X0 0 e@118 ]
+"8214
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1938.h: 8214: extern volatile __bit RC5 __attribute__((address(0x75)));
+[v _RC5 `Vb ~T0 @X0 0 e@117 ]
 "55 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1938.h
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1938.h: 55: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -555,50 +573,56 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1938.h: 7122: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
 [v $root$_main `(v ~T0 @X0 0 e ]
-"9 main.c
-[; ;main.c: 9: void main(void)
+"8 main.c
+[; ;main.c: 8: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"10
-[; ;main.c: 10: {
+"9
+[; ;main.c: 9: {
 {
 [e :U _main ]
 [f ]
-"11
-[; ;main.c: 11:     SYSTEM_Initialize();
+"10
+[; ;main.c: 10:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"14
-[; ;main.c: 14:     ANSELA = 0x00;
+"13
+[; ;main.c: 13:     ANSELA = 0x00;
 [e = _ANSELA -> -> 0 `i `uc ]
-"15
-[; ;main.c: 15:     ANSELB = 0x00;
+"14
+[; ;main.c: 14:     ANSELB = 0x00;
 [e = _ANSELB -> -> 0 `i `uc ]
-"19
-[; ;main.c: 19:     TRISB = 0x04;
+"18
+[; ;main.c: 18:     TRISB = 0x04;
 [e = _TRISB -> -> 4 `i `uc ]
 "21
-[; ;main.c: 21:     LATA = 0x00;
+[; ;main.c: 21:     TRISC = 0xF8;
+[e = _TRISC -> -> 248 `i `uc ]
+"24
+[; ;main.c: 24:     LATA = 0x00;
 [e = _LATA -> -> 0 `i `uc ]
-"22
-[; ;main.c: 22:     LATB = 0x00;
-[e = _LATB -> -> 0 `i `uc ]
 "25
-[; ;main.c: 25:     SSPADD = 0x13;
-[e = _SSPADD -> -> 19 `i `uc ]
+[; ;main.c: 25:     LATB = 0x00;
+[e = _LATB -> -> 0 `i `uc ]
 "26
-[; ;main.c: 26:     SSPCON1 = 0x28;
+[; ;main.c: 26:     LATC = 0x00;
+[e = _LATC -> -> 0 `i `uc ]
+"29
+[; ;main.c: 29:     SSPADD = 0x13;
+[e = _SSPADD -> -> 19 `i `uc ]
+"30
+[; ;main.c: 30:     SSPCON1 = 0x28;
 [e = _SSPCON1 -> -> 40 `i `uc ]
-"27
-[; ;main.c: 27:     SSPCON2 = 0x0;
+"31
+[; ;main.c: 31:     SSPCON2 = 0x0;
 [e = _SSPCON2 -> -> 0 `i `uc ]
-"28
-[; ;main.c: 28:     SSPSTAT = 0;
+"32
+[; ;main.c: 32:     SSPSTAT = 0;
 [e = _SSPSTAT -> -> 0 `i `uc ]
 [v F2847 `S356 ~T0 @X0 1 s ]
 [i F2847
 :U ..
 :U ..
-"31
-[; ;main.c: 31:     LoadCell loadcell = {0x02, 0x04, 0, 0, 500};
+"35
+[; ;main.c: 35:     LoadCell loadcell = {0x02, 0x04, 0, 0, 500};
 -> -> 2 `i `uc
 -> -> 4 `i `uc
 -> -> -> 0 `i `l `ul
@@ -613,8 +637,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i F2849
 :U ..
 :U ..
-"33
-[; ;main.c: 33:     Lcd lcd = {0x27, 16, 2, 0};
+"37
+[; ;main.c: 37:     Lcd lcd = {0x27, 16, 2, 0};
 -> -> 39 `i `uc
 -> -> 16 `i `uc
 -> -> 2 `i `uc
@@ -628,8 +652,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i F2851
 :U ..
 :U ..
-"35
-[; ;main.c: 35:     TM1637 tm1637 = {0x08, 0x10};
+"39
+[; ;main.c: 39:     TM1637 tm1637 = {0x08, 0x10};
 -> -> 8 `i `uc
 -> -> 16 `i `uc
 ..
@@ -641,8 +665,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i F2853
 :U ..
 :U ..
-"37
-[; ;main.c: 37:     DrinkMeter drink = {&loadcell, &lcd, &tm1637, 500, 0};
+"41
+[; ;main.c: 41:     DrinkMeter drink = {&loadcell, &lcd, &tm1637, 500, 0};
 -> -> 0 `i `*S356
 -> -> 0 `i `*S357
 -> -> 0 `i `*S358
@@ -654,29 +678,68 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _drink `S359 ~T0 @X0 1 a ]
 [e = _drink F2853 ]
 [e ; = . _drink 0 &U _loadcell ; = . _drink 1 &U _lcd ; = . _drink 2 &U _tm1637 ; = . _drink 3 -> -> 500 `i `us = . _drink 4 -> -> 0 `i `uc ]
-"39
-[; ;main.c: 39:     initialize(&drink);
+"43
+[; ;main.c: 43:     initialize(&drink);
 [e ( _initialize (1 &U _drink ]
-"41
-[; ;main.c: 41:     while(1){
+"45
+[; ;main.c: 45:     while(1){
 [e :U 362 ]
 {
-"42
-[; ;main.c: 42:         calc_percentage(&drink);
-[e ( _calc_percentage (1 &U _drink ]
-"43
-[; ;main.c: 43:         print_gram(&drink);
-[e ( _print_gram (1 &U _drink ]
-"45
-[; ;main.c: 45:         _delay((unsigned long)((500)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
 "46
-[; ;main.c: 46:     }
+[; ;main.c: 46:         calc_percentage(&drink);
+[e ( _calc_percentage (1 &U _drink ]
+"47
+[; ;main.c: 47:         print_gram(&drink);
+[e ( _print_gram (1 &U _drink ]
+"49
+[; ;main.c: 49:         if(RC7 == 0){
+[e $ ! == -> _RC7 `i -> 0 `i 364  ]
+{
+"50
+[; ;main.c: 50:             set_max_gram(&drink, 500);
+[e ( _set_max_gram (2 , &U _drink -> -> 500 `i `us ]
+"51
+[; ;main.c: 51:             _delay((unsigned long)((1000)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"52
+[; ;main.c: 52:         }
+}
+[e :U 364 ]
+"54
+[; ;main.c: 54:         if(RC6 == 0){
+[e $ ! == -> _RC6 `i -> 0 `i 365  ]
+{
+"55
+[; ;main.c: 55:             set_max_gram(&drink, 350);
+[e ( _set_max_gram (2 , &U _drink -> -> 350 `i `us ]
+"56
+[; ;main.c: 56:             _delay((unsigned long)((1000)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"57
+[; ;main.c: 57:         }
+}
+[e :U 365 ]
+"59
+[; ;main.c: 59:         if(RC5 == 0){
+[e $ ! == -> _RC5 `i -> 0 `i 366  ]
+{
+"60
+[; ;main.c: 60:             set_max_gram(&drink, 355);
+[e ( _set_max_gram (2 , &U _drink -> -> 355 `i `us ]
+"61
+[; ;main.c: 61:             _delay((unsigned long)((1000)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"62
+[; ;main.c: 62:         }
+}
+[e :U 366 ]
+"63
+[; ;main.c: 63:     }
 }
 [e :U 361 ]
 [e $U 362  ]
 [e :U 363 ]
-"47
-[; ;main.c: 47: }
+"64
+[; ;main.c: 64: }
 [e :UE 360 ]
 }
