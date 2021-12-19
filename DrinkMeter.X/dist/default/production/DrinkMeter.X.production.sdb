@@ -59,9 +59,9 @@
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
 "5 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\drink_meter.c
 [v _initialize initialize `(v  1 e 1 0 ]
-"24
+"25
 [v _calc_percentage calc_percentage `(v  1 e 1 0 ]
-"38
+"39
 [v _print_gram print_gram `(v  1 e 1 0 ]
 "4 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\i2c.c
 [v _i2c_wait i2c_wait `(v  1 e 1 0 ]
@@ -289,7 +289,7 @@
 [v main@F2853 F2853 `S223  1 s 6 F2853 ]
 "47
 } 0
-"38 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\drink_meter.c
+"39 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\drink_meter.c
 [v _print_gram print_gram `(v  1 e 1 0 ]
 {
 [s S209 . 12 `uc 1 cell_clk 1 0 `uc 1 cell_dat 1 1 `ul 1 weight_zero 4 2 `ul 1 weight_dat 4 6 `us 1 gram 2 10 ]
@@ -297,16 +297,16 @@
 [s S220 . 2 `uc 1 clk_pin 1 0 `uc 1 dat_pin 1 1 ]
 [s S223 . 6 `*.4S209 1 loadcell 1 0 `*.4S215 1 lcd 1 1 `*.4S220 1 tm1637 1 2 `us 1 max_gram 2 3 `uc 1 percentage 1 5 ]
 [v print_gram@p p `*.4S223  1 a 1 wreg ]
-"40
+"41
 [v print_gram@row2 row2 `[16]uc  1 a 16 37 ]
-"39
+"40
 [v print_gram@row1 row1 `[16]uc  1 a 16 21 ]
-"38
+"39
 [v print_gram@p p `*.4S223  1 a 1 wreg ]
-"42
-"38
+"43
+"39
 [v print_gram@p p `*.4S223  1 a 1 53 ]
-"51
+"52
 } 0
 "5
 [v _initialize initialize `(v  1 e 1 0 ]
@@ -316,12 +316,12 @@
 [s S220 . 2 `uc 1 clk_pin 1 0 `uc 1 dat_pin 1 1 ]
 [s S223 . 6 `*.4S209 1 loadcell 1 0 `*.4S215 1 lcd 1 1 `*.4S220 1 tm1637 1 2 `us 1 max_gram 2 3 `uc 1 percentage 1 5 ]
 [v initialize@p p `*.4S223  1 a 1 wreg ]
-"17
+"18
 [v initialize@valstr valstr `[16]uc  1 a 16 20 ]
 "5
 [v initialize@p p `*.4S223  1 a 1 wreg ]
 [v initialize@p p `*.4S223  1 a 1 36 ]
-"22
+"23
 } 0
 "9 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\nf_sprintf.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
@@ -856,7 +856,7 @@
 [v ___awdiv@dividend dividend `i  1 p 2 2 ]
 "41
 } 0
-"24 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\drink_meter.c
+"25 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\drink_meter.c
 [v _calc_percentage calc_percentage `(v  1 e 1 0 ]
 {
 [s S209 . 12 `uc 1 cell_clk 1 0 `uc 1 cell_dat 1 1 `ul 1 weight_zero 4 2 `ul 1 weight_dat 4 6 `us 1 gram 2 10 ]
@@ -865,10 +865,10 @@
 [s S223 . 6 `*.4S209 1 loadcell 1 0 `*.4S215 1 lcd 1 1 `*.4S220 1 tm1637 1 2 `us 1 max_gram 2 3 `uc 1 percentage 1 5 ]
 [v calc_percentage@p p `*.4S223  1 a 1 wreg ]
 [v calc_percentage@p p `*.4S223  1 a 1 wreg ]
-"26
-"24
+"27
+"25
 [v calc_percentage@p p `*.4S223  1 a 1 76 ]
-"36
+"37
 } 0
 "75 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\loadcell.c
 [v _scale_convert_gram scale_convert_gram `(v  1 e 1 0 ]

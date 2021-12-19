@@ -19,21 +19,21 @@ static uint8_t segdata[] = {
 };
 
 /** CLK_PIN set output mode*/
-static void CLK_SET_OUTPUT(TM1637 *p){ TRISA &= ~p->clk_pin; }
+static void CLK_SET_OUTPUT(TM1637 *p){ TRISB &= ~p->clk_pin; }
 
 /** CLK_PIN set high */
-static void CLK_SET_HIGH(TM1637 *p){ LATA |=  p->clk_pin; }
+static void CLK_SET_HIGH(TM1637 *p){ LATB |=  p->clk_pin; }
 /** CLK_PIN set low */
-static void CLK_SET_LOW(TM1637 *p) { LATA &= ~p->clk_pin; }
+static void CLK_SET_LOW(TM1637 *p) { LATB &= ~p->clk_pin; }
 
 /** DIO_PIN set output mode */
-static void DIO_SET_OUTPUT(TM1637 *p){ TRISA &= ~p->dat_pin; }
+static void DIO_SET_OUTPUT(TM1637 *p){ TRISB &= ~p->dat_pin; }
 /** DIO_PIN set input mode */
-static void DIO_SET_INPUT(TM1637 *p){ TRISA |= p->dat_pin; }
+static void DIO_SET_INPUT(TM1637 *p){ TRISB |= p->dat_pin; }
 /** DIO_PIN set high */
-static void DIO_SET_HIGH(TM1637 *p){ LATA |= p->dat_pin; }
+static void DIO_SET_HIGH(TM1637 *p){ LATB |= p->dat_pin; }
 /** DIO_PIN set low*/
-static void DIO_SET_LOW(TM1637 *p){ LATA &= ~p->dat_pin; }
+static void DIO_SET_LOW(TM1637 *p){ LATB &= ~p->dat_pin; }
 
 
 static void start_segment(TM1637 *p){    
@@ -194,13 +194,13 @@ void print_digit(TM1637 *p, uint8_t number){
     
     //convert
     uint8_t tmp = number;
-    data[3] = encode_digit(p, tmp / 1000);
+    data[0] = encode_digit(p, tmp / 1000);
     tmp %= 1000;
-    data[2] = encode_digit(p, tmp / 100);
+    data[1] = encode_digit(p, tmp / 100);
     tmp %= 100;
-    data[1] = encode_digit(p, tmp / 10);
+    data[2] = encode_digit(p, tmp / 10);
     tmp %= 10;
-    data[0] = encode_digit(p, tmp);
+    data[3] = encode_digit(p, tmp);
     
     set_segments(p, data, 4, 0);
 }

@@ -5249,6 +5249,7 @@ void initialize(DrinkMeter *p){
     lcd_print_with(p->lcd, "Load cell Unit", 0, 1);
 
     initialize_digit(p->tm1637);
+    print_digit(p->tm1637, 0);
 
 
     p->loadcell->weight_zero = get_scale_val(p->loadcell, 50);

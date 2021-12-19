@@ -3,12 +3,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;./tm1637.h: 10: typedef struct{
 [s S356 `uc 1 `uc 1 ]
 [n S356 . clk_pin dat_pin ]
-"1229 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1938.h
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1938.h: 1229: extern volatile unsigned char TRISA __attribute__((address(0x08C)));
-[v _TRISA `Vuc ~T0 @X0 0 e@140 ]
-"2194
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1938.h: 2194: extern volatile unsigned char LATA __attribute__((address(0x10C)));
-[v _LATA `Vuc ~T0 @X0 0 e@268 ]
+"1291 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1938.h
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1938.h: 1291: extern volatile unsigned char TRISB __attribute__((address(0x08D)));
+[v _TRISB `Vuc ~T0 @X0 0 e@141 ]
+"2256
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1938.h: 2256: extern volatile unsigned char LATB __attribute__((address(0x10D)));
+[v _LATB `Vuc ~T0 @X0 0 e@269 ]
 "498
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1938.h: 498:     struct {
 [s S36 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -539,73 +539,73 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 "22
-[; ;tm1637.c: 22: static void CLK_SET_OUTPUT(TM1637 *p){ TRISA &= ~p->clk_pin; }
+[; ;tm1637.c: 22: static void CLK_SET_OUTPUT(TM1637 *p){ TRISB &= ~p->clk_pin; }
 [v _CLK_SET_OUTPUT `(v ~T0 @X0 1 sf1`*S356 ]
 {
 [e :U _CLK_SET_OUTPUT ]
 [v _p `*S356 ~T0 @X0 1 r1 ]
 [f ]
-[e =& _TRISA -> ~ -> . *U _p 0 `i `Vuc ]
+[e =& _TRISB -> ~ -> . *U _p 0 `i `Vuc ]
 [e :UE 357 ]
 }
 "25
-[; ;tm1637.c: 25: static void CLK_SET_HIGH(TM1637 *p){ LATA |= p->clk_pin; }
+[; ;tm1637.c: 25: static void CLK_SET_HIGH(TM1637 *p){ LATB |= p->clk_pin; }
 [v _CLK_SET_HIGH `(v ~T0 @X0 1 sf1`*S356 ]
 {
 [e :U _CLK_SET_HIGH ]
 [v _p `*S356 ~T0 @X0 1 r1 ]
 [f ]
-[e =| _LATA -> . *U _p 0 `Vuc ]
+[e =| _LATB -> . *U _p 0 `Vuc ]
 [e :UE 358 ]
 }
 "27
-[; ;tm1637.c: 27: static void CLK_SET_LOW(TM1637 *p) { LATA &= ~p->clk_pin; }
+[; ;tm1637.c: 27: static void CLK_SET_LOW(TM1637 *p) { LATB &= ~p->clk_pin; }
 [v _CLK_SET_LOW `(v ~T0 @X0 1 sf1`*S356 ]
 {
 [e :U _CLK_SET_LOW ]
 [v _p `*S356 ~T0 @X0 1 r1 ]
 [f ]
-[e =& _LATA -> ~ -> . *U _p 0 `i `Vuc ]
+[e =& _LATB -> ~ -> . *U _p 0 `i `Vuc ]
 [e :UE 359 ]
 }
 "30
-[; ;tm1637.c: 30: static void DIO_SET_OUTPUT(TM1637 *p){ TRISA &= ~p->dat_pin; }
+[; ;tm1637.c: 30: static void DIO_SET_OUTPUT(TM1637 *p){ TRISB &= ~p->dat_pin; }
 [v _DIO_SET_OUTPUT `(v ~T0 @X0 1 sf1`*S356 ]
 {
 [e :U _DIO_SET_OUTPUT ]
 [v _p `*S356 ~T0 @X0 1 r1 ]
 [f ]
-[e =& _TRISA -> ~ -> . *U _p 1 `i `Vuc ]
+[e =& _TRISB -> ~ -> . *U _p 1 `i `Vuc ]
 [e :UE 360 ]
 }
 "32
-[; ;tm1637.c: 32: static void DIO_SET_INPUT(TM1637 *p){ TRISA |= p->dat_pin; }
+[; ;tm1637.c: 32: static void DIO_SET_INPUT(TM1637 *p){ TRISB |= p->dat_pin; }
 [v _DIO_SET_INPUT `(v ~T0 @X0 1 sf1`*S356 ]
 {
 [e :U _DIO_SET_INPUT ]
 [v _p `*S356 ~T0 @X0 1 r1 ]
 [f ]
-[e =| _TRISA -> . *U _p 1 `Vuc ]
+[e =| _TRISB -> . *U _p 1 `Vuc ]
 [e :UE 361 ]
 }
 "34
-[; ;tm1637.c: 34: static void DIO_SET_HIGH(TM1637 *p){ LATA |= p->dat_pin; }
+[; ;tm1637.c: 34: static void DIO_SET_HIGH(TM1637 *p){ LATB |= p->dat_pin; }
 [v _DIO_SET_HIGH `(v ~T0 @X0 1 sf1`*S356 ]
 {
 [e :U _DIO_SET_HIGH ]
 [v _p `*S356 ~T0 @X0 1 r1 ]
 [f ]
-[e =| _LATA -> . *U _p 1 `Vuc ]
+[e =| _LATB -> . *U _p 1 `Vuc ]
 [e :UE 362 ]
 }
 "36
-[; ;tm1637.c: 36: static void DIO_SET_LOW(TM1637 *p){ LATA &= ~p->dat_pin; }
+[; ;tm1637.c: 36: static void DIO_SET_LOW(TM1637 *p){ LATB &= ~p->dat_pin; }
 [v _DIO_SET_LOW `(v ~T0 @X0 1 sf1`*S356 ]
 {
 [e :U _DIO_SET_LOW ]
 [v _p `*S356 ~T0 @X0 1 r1 ]
 [f ]
-[e =& _LATA -> ~ -> . *U _p 1 `i `Vuc ]
+[e =& _LATB -> ~ -> . *U _p 1 `i `Vuc ]
 [e :UE 363 ]
 }
 "39
@@ -1021,26 +1021,26 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _tmp `uc ~T0 @X0 1 a ]
 [e = _tmp _number ]
 "197
-[; ;tm1637.c: 197:     data[3] = encode_digit(p, tmp / 1000);
-[e = *U + &U _data * -> -> -> 3 `i `ui `ux -> -> # *U &U _data `ui `ux ( _encode_digit (2 , _p -> / -> _tmp `i -> 1000 `i `uc ]
+[; ;tm1637.c: 197:     data[0] = encode_digit(p, tmp / 1000);
+[e = *U + &U _data * -> -> -> 0 `i `ui `ux -> -> # *U &U _data `ui `ux ( _encode_digit (2 , _p -> / -> _tmp `i -> 1000 `i `uc ]
 "198
 [; ;tm1637.c: 198:     tmp %= 1000;
 [e =% _tmp -> 1000 `i ]
 "199
-[; ;tm1637.c: 199:     data[2] = encode_digit(p, tmp / 100);
-[e = *U + &U _data * -> -> -> 2 `i `ui `ux -> -> # *U &U _data `ui `ux ( _encode_digit (2 , _p -> / -> _tmp `i -> 100 `i `uc ]
+[; ;tm1637.c: 199:     data[1] = encode_digit(p, tmp / 100);
+[e = *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux ( _encode_digit (2 , _p -> / -> _tmp `i -> 100 `i `uc ]
 "200
 [; ;tm1637.c: 200:     tmp %= 100;
 [e =% _tmp -> 100 `i ]
 "201
-[; ;tm1637.c: 201:     data[1] = encode_digit(p, tmp / 10);
-[e = *U + &U _data * -> -> -> 1 `i `ui `ux -> -> # *U &U _data `ui `ux ( _encode_digit (2 , _p -> / -> _tmp `i -> 10 `i `uc ]
+[; ;tm1637.c: 201:     data[2] = encode_digit(p, tmp / 10);
+[e = *U + &U _data * -> -> -> 2 `i `ui `ux -> -> # *U &U _data `ui `ux ( _encode_digit (2 , _p -> / -> _tmp `i -> 10 `i `uc ]
 "202
 [; ;tm1637.c: 202:     tmp %= 10;
 [e =% _tmp -> 10 `i ]
 "203
-[; ;tm1637.c: 203:     data[0] = encode_digit(p, tmp);
-[e = *U + &U _data * -> -> -> 0 `i `ui `ux -> -> # *U &U _data `ui `ux ( _encode_digit (2 , _p _tmp ]
+[; ;tm1637.c: 203:     data[3] = encode_digit(p, tmp);
+[e = *U + &U _data * -> -> -> 3 `i `ui `ux -> -> # *U &U _data `ui `ux ( _encode_digit (2 , _p _tmp ]
 "205
 [; ;tm1637.c: 205:     set_segments(p, data, 4, 0);
 [e ( _set_segments (4 , , , _p -> &U _data `*Cuc -> -> 4 `i `uc -> -> 0 `i `uc ]
