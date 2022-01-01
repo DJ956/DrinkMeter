@@ -5082,6 +5082,12 @@ typedef struct{
 
 
 
+
+    uint16_t empty_gram;
+
+
+
+
     uint8_t percentage;
 } DrinkMeter;
 
@@ -5108,7 +5114,8 @@ void print_gram(DrinkMeter *p);
 
 
 
-void set_max_gram(DrinkMeter *p, uint16_t max_gram);
+
+void set_max_gram(DrinkMeter *p, uint16_t max_gram, uint16_t empty_gram);
 # 5 "main.c" 2
 
 # 1 "./mcc_generated_files/mcc.h" 1
@@ -5195,13 +5202,13 @@ void main(void)
     SSPSTAT = 0;
 
 
-    LoadCell loadcell = {0x02, 0x04, 0, 0, 500};
+    LoadCell loadcell = {0x02, 0x04, 0, 0, 530};
 
     Lcd lcd = {0x27, 16, 2, 0};
 
     TM1637 tm1637 = {0x08, 0x10};
 
-    DrinkMeter drink = {&loadcell, &lcd, &tm1637, 500, 0};
+    DrinkMeter drink = {&loadcell, &lcd, &tm1637, 500, 30, 0};
 
     initialize(&drink);
 
@@ -5210,17 +5217,17 @@ void main(void)
         print_gram(&drink);
 
         if(RC7 == 0){
-            set_max_gram(&drink, 500);
+            set_max_gram(&drink, 500, 30);
             _delay((unsigned long)((1000)*(8000000/4000.0)));
         }
 
         if(RC6 == 0){
-            set_max_gram(&drink, 350);
+            set_max_gram(&drink, 350, 15);
             _delay((unsigned long)((1000)*(8000000/4000.0)));
         }
 
         if(RC5 == 0){
-            set_max_gram(&drink, 355);
+            set_max_gram(&drink, 355, 35);
             _delay((unsigned long)((1000)*(8000000/4000.0)));
         }
     }

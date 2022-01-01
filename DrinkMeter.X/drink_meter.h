@@ -23,6 +23,12 @@ typedef struct{
      * 設定してい最大グラム
      */
     uint16_t max_gram;
+    
+    /**
+     * 空容器のグラム
+     */
+    uint16_t empty_gram;
+    
     /**
      * 最大グラム値と、現在計測しているグラム値のパーセント
      */
@@ -51,5 +57,6 @@ void print_gram(DrinkMeter *p);
  * 最大グラム数を設定する。
  * @param p
  * @param max_gram 最大グラム数
+ * @param empty_gram 空容量
  */
-void set_max_gram(DrinkMeter *p, uint16_t max_gram);
+void set_max_gram(DrinkMeter *p, uint16_t max_gram, uint16_t empty_gram);

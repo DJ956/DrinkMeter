@@ -5070,6 +5070,12 @@ typedef struct{
 
 
 
+
+    uint16_t empty_gram;
+
+
+
+
     uint8_t percentage;
 } DrinkMeter;
 
@@ -5096,7 +5102,8 @@ void print_gram(DrinkMeter *p);
 
 
 
-void set_max_gram(DrinkMeter *p, uint16_t max_gram);
+
+void set_max_gram(DrinkMeter *p, uint16_t max_gram, uint16_t empty_gram);
 # 1 "drink_meter.c" 2
 
 
@@ -5269,17 +5276,25 @@ void calc_percentage(DrinkMeter *p){
 
     if(p->loadcell->gram == 0){
         p->percentage = 0;
-    }else{
-
-        p->percentage = ((float)p->loadcell->gram / (float)p->max_gram) * 100;
+        return;
     }
+
+    if(p->loadcell->gram < p->empty_gram){
+        p->percentage = 0;
+        return;
+    }
+
+
+    float gram = (float)(p->loadcell->gram - p->empty_gram);
+    float max_gram = (float)p->max_gram;
+    p->percentage = (gram / max_gram) * 100;
 }
 
 void print_gram(DrinkMeter *p){
     char row1[16];
     char row2[16];
 
-    sprintf(row1, "%dg / %dg", p->loadcell->gram, p->max_gram);
+    sprintf(row1, "%dg / %dml", p->loadcell->gram, p->max_gram);
     sprintf(row2, "%d %%", p->percentage);
 
     lcd_clear(p->lcd);
@@ -5290,11 +5305,12 @@ void print_gram(DrinkMeter *p){
     print_digit(p->tm1637, p->percentage);
 }
 
-void set_max_gram(DrinkMeter *p, uint16_t max_gram){
+void set_max_gram(DrinkMeter *p, uint16_t max_gram, uint16_t empty_gram){
     p->max_gram = max_gram;
+    p->empty_gram = empty_gram;
 
     char valstr[16];
-    sprintf(valstr, "max gram %d", max_gram);
+    sprintf(valstr, "set max ml %d", max_gram);
 
     lcd_clear(p->lcd);
     lcd_print(p->lcd, valstr);

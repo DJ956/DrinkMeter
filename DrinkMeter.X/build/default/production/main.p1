@@ -50,23 +50,23 @@ Version 4.0 HI-TECH Software Intermediate Code
 [n S358 . clk_pin dat_pin ]
 "7 ./drink_meter.h
 [; ;./drink_meter.h: 7: typedef struct{
-[s S359 `*S356 1 `*S357 1 `*S358 1 `us 1 `uc 1 ]
-[n S359 . loadcell lcd tm1637 max_gram percentage ]
-"36
-[; ;./drink_meter.h: 36: void initialize(DrinkMeter *p);
-[v _initialize `(v ~T0 @X0 0 ef1`*S359 ]
+[s S359 `*S356 1 `*S357 1 `*S358 1 `us 1 `us 1 `uc 1 ]
+[n S359 . loadcell lcd tm1637 max_gram empty_gram percentage ]
 "42
-[; ;./drink_meter.h: 42: void calc_percentage(DrinkMeter *p);
-[v _calc_percentage `(v ~T0 @X0 0 ef1`*S359 ]
+[; ;./drink_meter.h: 42: void initialize(DrinkMeter *p);
+[v _initialize `(v ~T0 @X0 0 ef1`*S359 ]
 "48
-[; ;./drink_meter.h: 48: void print_gram(DrinkMeter *p);
+[; ;./drink_meter.h: 48: void calc_percentage(DrinkMeter *p);
+[v _calc_percentage `(v ~T0 @X0 0 ef1`*S359 ]
+"54
+[; ;./drink_meter.h: 54: void print_gram(DrinkMeter *p);
 [v _print_gram `(v ~T0 @X0 0 ef1`*S359 ]
 "8220 C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1938.h
 [; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\proc\pic16f1938.h: 8220: extern volatile __bit RC7 __attribute__((address(0x77)));
 [v _RC7 `Vb ~T0 @X0 0 e@119 ]
-"55 ./drink_meter.h
-[; ;./drink_meter.h: 55: void set_max_gram(DrinkMeter *p, uint16_t max_gram);
-[v _set_max_gram `(v ~T0 @X0 0 ef2`*S359`us ]
+"62 ./drink_meter.h
+[; ;./drink_meter.h: 62: void set_max_gram(DrinkMeter *p, uint16_t max_gram, uint16_t empty_gram);
+[v _set_max_gram `(v ~T0 @X0 0 ef3`*S359`us`us ]
 [v F183 `(v ~T0 @X0 1 tf1`ul ]
 "12 C:\Program Files\Microchip\xc8\v2.32\pic\include\builtins.h
 [v __delay `JF183 ~T0 @X0 0 e ]
@@ -617,24 +617,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 "32
 [; ;main.c: 32:     SSPSTAT = 0;
 [e = _SSPSTAT -> -> 0 `i `uc ]
-[v F2847 `S356 ~T0 @X0 1 s ]
-[i F2847
+[v F2849 `S356 ~T0 @X0 1 s ]
+[i F2849
 :U ..
 :U ..
 "35
-[; ;main.c: 35:     LoadCell loadcell = {0x02, 0x04, 0, 0, 500};
+[; ;main.c: 35:     LoadCell loadcell = {0x02, 0x04, 0, 0, 530};
 -> -> 2 `i `uc
 -> -> 4 `i `uc
 -> -> -> 0 `i `l `ul
 -> -> -> 0 `i `l `ul
--> -> 500 `i `us
+-> -> 530 `i `us
 ..
 ..
 ]
 [v _loadcell `S356 ~T0 @X0 1 a ]
-[e = _loadcell F2847 ]
-[v F2849 `S357 ~T0 @X0 1 s ]
-[i F2849
+[e = _loadcell F2849 ]
+[v F2851 `S357 ~T0 @X0 1 s ]
+[i F2851
 :U ..
 :U ..
 "37
@@ -647,9 +647,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _lcd `S357 ~T0 @X0 1 a ]
-[e = _lcd F2849 ]
-[v F2851 `S358 ~T0 @X0 1 s ]
-[i F2851
+[e = _lcd F2851 ]
+[v F2853 `S358 ~T0 @X0 1 s ]
+[i F2853
 :U ..
 :U ..
 "39
@@ -660,24 +660,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _tm1637 `S358 ~T0 @X0 1 a ]
-[e = _tm1637 F2851 ]
-[v F2853 `S359 ~T0 @X0 1 s ]
-[i F2853
+[e = _tm1637 F2853 ]
+[v F2855 `S359 ~T0 @X0 1 s ]
+[i F2855
 :U ..
 :U ..
 "41
-[; ;main.c: 41:     DrinkMeter drink = {&loadcell, &lcd, &tm1637, 500, 0};
+[; ;main.c: 41:     DrinkMeter drink = {&loadcell, &lcd, &tm1637, 500, 30, 0};
 -> -> 0 `i `*S356
 -> -> 0 `i `*S357
 -> -> 0 `i `*S358
+-> -> 0 `i `us
 -> -> 0 `i `us
 -> -> 0 `i `uc
 ..
 ..
 ]
 [v _drink `S359 ~T0 @X0 1 a ]
-[e = _drink F2853 ]
-[e ; = . _drink 0 &U _loadcell ; = . _drink 1 &U _lcd ; = . _drink 2 &U _tm1637 ; = . _drink 3 -> -> 500 `i `us = . _drink 4 -> -> 0 `i `uc ]
+[e = _drink F2855 ]
+[e ; = . _drink 0 &U _loadcell ; = . _drink 1 &U _lcd ; = . _drink 2 &U _tm1637 ; = . _drink 3 -> -> 500 `i `us ; = . _drink 4 -> -> 30 `i `us = . _drink 5 -> -> 0 `i `uc ]
 "43
 [; ;main.c: 43:     initialize(&drink);
 [e ( _initialize (1 &U _drink ]
@@ -696,8 +697,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! == -> _RC7 `i -> 0 `i 364  ]
 {
 "50
-[; ;main.c: 50:             set_max_gram(&drink, 500);
-[e ( _set_max_gram (2 , &U _drink -> -> 500 `i `us ]
+[; ;main.c: 50:             set_max_gram(&drink, 500, 30);
+[e ( _set_max_gram (3 , , &U _drink -> -> 500 `i `us -> -> 30 `i `us ]
 "51
 [; ;main.c: 51:             _delay((unsigned long)((1000)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
@@ -710,8 +711,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! == -> _RC6 `i -> 0 `i 365  ]
 {
 "55
-[; ;main.c: 55:             set_max_gram(&drink, 350);
-[e ( _set_max_gram (2 , &U _drink -> -> 350 `i `us ]
+[; ;main.c: 55:             set_max_gram(&drink, 350, 15);
+[e ( _set_max_gram (3 , , &U _drink -> -> 350 `i `us -> -> 15 `i `us ]
 "56
 [; ;main.c: 56:             _delay((unsigned long)((1000)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
@@ -724,8 +725,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! == -> _RC5 `i -> 0 `i 366  ]
 {
 "60
-[; ;main.c: 60:             set_max_gram(&drink, 355);
-[e ( _set_max_gram (2 , &U _drink -> -> 355 `i `us ]
+[; ;main.c: 60:             set_max_gram(&drink, 355, 35);
+[e ( _set_max_gram (3 , , &U _drink -> -> 355 `i `us -> -> 35 `i `us ]
 "61
 [; ;main.c: 61:             _delay((unsigned long)((1000)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
