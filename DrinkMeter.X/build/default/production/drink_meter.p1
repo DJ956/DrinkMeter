@@ -625,57 +625,49 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 365 ]
 "42
-[; ;drink_meter.c: 42:     float gram = (float)(p->loadcell->gram - p->empty_gram);
-[v _gram `f ~T0 @X0 1 a ]
-[e = _gram -> - -> . *U . *U _p 0 4 `ui -> . *U _p 4 `ui `f ]
+[; ;drink_meter.c: 42:     p->percentage = ((float)(p->loadcell->gram - p->empty_gram) / (float)p->max_gram) * 100;
+[e = . *U _p 5 -> * / -> - -> . *U . *U _p 0 4 `ui -> . *U _p 4 `ui `f -> . *U _p 3 `f -> -> 100 `i `f `uc ]
 "43
-[; ;drink_meter.c: 43:     float max_gram = (float)p->max_gram;
-[v _max_gram `f ~T0 @X0 1 a ]
-[e = _max_gram -> . *U _p 3 `f ]
-"44
-[; ;drink_meter.c: 44:     p->percentage = (gram / max_gram) * 100;
-[e = . *U _p 5 -> * / _gram _max_gram -> -> 100 `i `f `uc ]
-"45
-[; ;drink_meter.c: 45: }
+[; ;drink_meter.c: 43: }
 [e :UE 363 ]
 }
-"47
-[; ;drink_meter.c: 47: void print_gram(DrinkMeter *p){
+"45
+[; ;drink_meter.c: 45: void print_gram(DrinkMeter *p){
 [v _print_gram `(v ~T0 @X0 1 ef1`*S359 ]
 {
 [e :U _print_gram ]
 [v _p `*S359 ~T0 @X0 1 r1 ]
 [f ]
-"48
-[; ;drink_meter.c: 48:     char row1[16];
+"46
+[; ;drink_meter.c: 46:     char row1[16];
 [v _row1 `uc ~T0 @X0 -> 16 `i a ]
-"49
-[; ;drink_meter.c: 49:     char row2[16];
+"47
+[; ;drink_meter.c: 47:     char row2[16];
 [v _row2 `uc ~T0 @X0 -> 16 `i a ]
-"51
-[; ;drink_meter.c: 51:     sprintf(row1, "%dg / %dml", p->loadcell->gram, p->max_gram);
+"49
+[; ;drink_meter.c: 49:     sprintf(row1, "%dml max=%dml", p->loadcell->gram, p->max_gram);
 [e ( _sprintf (1 , , (. , &U _row1 :s 4C -> . *U . *U _p 0 4 `ui -> . *U _p 3 `ui ]
-"52
-[; ;drink_meter.c: 52:     sprintf(row2, "%d %%", p->percentage);
+"50
+[; ;drink_meter.c: 50:     sprintf(row2, "%d %%", p->percentage);
 [e ( _sprintf (1 , (. , &U _row2 :s 5C -> . *U _p 5 `i ]
-"54
-[; ;drink_meter.c: 54:     lcd_clear(p->lcd);
+"52
+[; ;drink_meter.c: 52:     lcd_clear(p->lcd);
 [e ( _lcd_clear (1 . *U _p 1 ]
-"56
-[; ;drink_meter.c: 56:     lcd_print_with(p->lcd, row1, 0, 0);
+"54
+[; ;drink_meter.c: 54:     lcd_print_with(p->lcd, row1, 0, 0);
 [e ( _lcd_print_with (4 , , , . *U _p 1 &U _row1 -> -> 0 `i `uc -> -> 0 `i `uc ]
-"57
-[; ;drink_meter.c: 57:     lcd_print_with(p->lcd, row2, 0, 1);
+"55
+[; ;drink_meter.c: 55:     lcd_print_with(p->lcd, row2, 0, 1);
 [e ( _lcd_print_with (4 , , , . *U _p 1 &U _row2 -> -> 0 `i `uc -> -> 1 `i `uc ]
-"59
-[; ;drink_meter.c: 59:     print_digit(p->tm1637, p->percentage);
+"57
+[; ;drink_meter.c: 57:     print_digit(p->tm1637, p->percentage);
 [e ( _print_digit (2 , . *U _p 2 . *U _p 5 ]
-"60
-[; ;drink_meter.c: 60: }
+"58
+[; ;drink_meter.c: 58: }
 [e :UE 366 ]
 }
-"62
-[; ;drink_meter.c: 62: void set_max_gram(DrinkMeter *p, uint16_t max_gram, uint16_t empty_gram){
+"60
+[; ;drink_meter.c: 60: void set_max_gram(DrinkMeter *p, uint16_t max_gram, uint16_t empty_gram){
 [v _set_max_gram `(v ~T0 @X0 1 ef3`*S359`us`us ]
 {
 [e :U _set_max_gram ]
@@ -683,34 +675,34 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _max_gram `us ~T0 @X0 1 r2 ]
 [v _empty_gram `us ~T0 @X0 1 r3 ]
 [f ]
-"63
-[; ;drink_meter.c: 63:     p->max_gram = max_gram;
+"61
+[; ;drink_meter.c: 61:     p->max_gram = max_gram;
 [e = . *U _p 3 _max_gram ]
-"64
-[; ;drink_meter.c: 64:     p->empty_gram = empty_gram;
+"62
+[; ;drink_meter.c: 62:     p->empty_gram = empty_gram;
 [e = . *U _p 4 _empty_gram ]
-"66
-[; ;drink_meter.c: 66:     char valstr[16];
+"64
+[; ;drink_meter.c: 64:     char valstr[16];
 [v _valstr `uc ~T0 @X0 -> 16 `i a ]
-"67
-[; ;drink_meter.c: 67:     sprintf(valstr, "set max ml %d", max_gram);
+"65
+[; ;drink_meter.c: 65:     sprintf(valstr, "set max ml %d", max_gram);
 [e ( _sprintf (1 , (. , &U _valstr :s 6C -> _max_gram `ui ]
-"69
-[; ;drink_meter.c: 69:     lcd_clear(p->lcd);
+"67
+[; ;drink_meter.c: 67:     lcd_clear(p->lcd);
 [e ( _lcd_clear (1 . *U _p 1 ]
-"70
-[; ;drink_meter.c: 70:     lcd_print(p->lcd, valstr);
+"68
+[; ;drink_meter.c: 68:     lcd_print(p->lcd, valstr);
 [e ( _lcd_print (2 , . *U _p 1 &U _valstr ]
-"72
-[; ;drink_meter.c: 72:     calc_percentage(p);
+"70
+[; ;drink_meter.c: 70:     calc_percentage(p);
 [e ( _calc_percentage (1 _p ]
-"73
-[; ;drink_meter.c: 73: }
+"71
+[; ;drink_meter.c: 71: }
 [e :UE 367 ]
 }
 [p f _sprintf 9438352 ]
 [a 2C 76 111 97 100 32 99 101 108 108 32 85 110 105 116 0 ]
-[a 4C 37 100 103 32 47 32 37 100 109 108 0 ]
+[a 4C 37 100 109 108 32 109 97 120 61 37 100 109 108 0 ]
 [a 3C 37 108 117 32 118 97 108 0 ]
 [a 1C 73 110 105 116 105 97 108 105 122 101 0 ]
 [a 6C 115 101 116 32 109 97 120 32 109 108 32 37 100 0 ]

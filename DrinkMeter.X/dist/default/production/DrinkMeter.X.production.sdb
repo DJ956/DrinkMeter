@@ -61,9 +61,9 @@
 [v _initialize initialize `(v  1 e 1 0 ]
 "25
 [v _calc_percentage calc_percentage `(v  1 e 1 0 ]
-"47
+"45
 [v _print_gram print_gram `(v  1 e 1 0 ]
-"62
+"60
 [v _set_max_gram set_max_gram `(v  1 e 1 0 ]
 "4 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\i2c.c
 [v _i2c_wait i2c_wait `(v  1 e 1 0 ]
@@ -297,7 +297,7 @@
 [v main@F2855 F2855 `S225  1 s 8 F2855 ]
 "64
 } 0
-"62 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\drink_meter.c
+"60 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\drink_meter.c
 [v _set_max_gram set_max_gram `(v  1 e 1 0 ]
 {
 [s S211 . 12 `uc 1 cell_clk 1 0 `uc 1 cell_dat 1 1 `ul 1 weight_zero 4 2 `ul 1 weight_dat 4 6 `us 1 gram 2 10 ]
@@ -305,14 +305,14 @@
 [s S222 . 2 `uc 1 clk_pin 1 0 `uc 1 dat_pin 1 1 ]
 [s S225 . 8 `*.5S211 1 loadcell 1 0 `*.5S217 1 lcd 1 1 `*.5S222 1 tm1637 1 2 `us 1 max_gram 2 3 `us 1 empty_gram 2 5 `uc 1 percentage 1 7 ]
 [v set_max_gram@p p `*.5S225  1 a 1 wreg ]
-"66
+"64
 [v set_max_gram@valstr valstr `[16]uc  1 a 16 23 ]
-"62
+"60
 [v set_max_gram@p p `*.5S225  1 a 1 wreg ]
 [v set_max_gram@max_gram max_gram `us  1 p 2 19 ]
 [v set_max_gram@empty_gram empty_gram `us  1 p 2 21 ]
 [v set_max_gram@p p `*.5S225  1 a 1 39 ]
-"73
+"71
 } 0
 "25
 [v _calc_percentage calc_percentage `(v  1 e 1 0 ]
@@ -322,16 +322,11 @@
 [s S222 . 2 `uc 1 clk_pin 1 0 `uc 1 dat_pin 1 1 ]
 [s S225 . 8 `*.5S211 1 loadcell 1 0 `*.5S217 1 lcd 1 1 `*.5S222 1 tm1637 1 2 `us 1 max_gram 2 3 `us 1 empty_gram 2 5 `uc 1 percentage 1 7 ]
 [v calc_percentage@p p `*.5S225  1 a 1 wreg ]
-"43
-[v calc_percentage@max_gram max_gram `f  1 a 4 71 ]
-"42
-[v calc_percentage@gram gram `f  1 a 4 67 ]
-"25
 [v calc_percentage@p p `*.5S225  1 a 1 wreg ]
 "27
 "25
-[v calc_percentage@p p `*.5S225  1 a 1 75 ]
-"45
+[v calc_percentage@p p `*.5S225  1 a 1 0 ]
+"43
 } 0
 "75 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\loadcell.c
 [v _scale_convert_gram scale_convert_gram `(v  1 e 1 0 ]
@@ -339,12 +334,12 @@
 [s S211 . 12 `uc 1 cell_clk 1 0 `uc 1 cell_dat 1 1 `ul 1 weight_zero 4 2 `ul 1 weight_dat 4 6 `us 1 gram 2 10 ]
 [v scale_convert_gram@p p `*.5S211  1 a 1 wreg ]
 "82
-[v scale_convert_gram@temp temp `f  1 a 4 58 ]
+[v scale_convert_gram@temp temp `f  1 a 4 71 ]
 "75
 [v scale_convert_gram@p p `*.5S211  1 a 1 wreg ]
 "77
 "75
-[v scale_convert_gram@p p `*.5S211  1 a 1 62 ]
+[v scale_convert_gram@p p `*.5S211  1 a 1 75 ]
 "85
 } 0
 "10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\xxtofl.c
@@ -366,27 +361,27 @@
 [v ___fltol __fltol `(l  1 e 4 0 ]
 {
 "45
-[v ___fltol@exp1 exp1 `uc  1 a 1 49 ]
-[v ___fltol@sign1 sign1 `uc  1 a 1 48 ]
+[v ___fltol@exp1 exp1 `uc  1 a 1 62 ]
+[v ___fltol@sign1 sign1 `uc  1 a 1 61 ]
 "43
-[v ___fltol@f1 f1 `d  1 p 4 39 ]
+[v ___fltol@f1 f1 `d  1 p 4 52 ]
 "70
 } 0
 "8 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcdiv.c
 [v ___fldiv __fldiv `(d  1 e 4 0 ]
 {
 "21
-[v ___fldiv@grs grs `ul  1 a 4 7 ]
+[v ___fldiv@grs grs `ul  1 a 4 20 ]
 "22
-[v ___fldiv@rem rem `ul  1 a 4 0 ]
+[v ___fldiv@rem rem `ul  1 a 4 13 ]
 "20
-[v ___fldiv@new_exp new_exp `i  1 a 2 5 ]
+[v ___fldiv@new_exp new_exp `i  1 a 2 18 ]
 "19
-[v ___fldiv@aexp aexp `uc  1 a 1 12 ]
+[v ___fldiv@aexp aexp `uc  1 a 1 25 ]
 "18
-[v ___fldiv@bexp bexp `uc  1 a 1 11 ]
+[v ___fldiv@bexp bexp `uc  1 a 1 24 ]
 "16
-[v ___fldiv@sign sign `uc  1 a 1 4 ]
+[v ___fldiv@sign sign `uc  1 a 1 17 ]
 "8
 [v ___fldiv@a a `d  1 p 4 0 ]
 [v ___fldiv@b b `d  1 p 4 4 ]
@@ -395,26 +390,26 @@
 "8 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S1037 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S1035 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S1042 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
-[u S1045 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1037 1 fAsBytes 4 0 `S1042 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S1045  1 a 4 33 ]
+[s S1040 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S1043 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1035 1 fAsBytes 4 0 `S1040 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S1043  1 a 4 46 ]
 "12
-[v ___flmul@grs grs `ul  1 a 4 27 ]
-[s S1114 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[v ___flmul@grs grs `ul  1 a 4 40 ]
+[s S1112 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S1117 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S1114 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S1117  1 a 2 37 ]
+[u S1115 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S1112 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S1115  1 a 2 50 ]
 "10
-[v ___flmul@bexp bexp `uc  1 a 1 32 ]
+[v ___flmul@bexp bexp `uc  1 a 1 45 ]
 "11
-[v ___flmul@aexp aexp `uc  1 a 1 31 ]
+[v ___flmul@aexp aexp `uc  1 a 1 44 ]
 "9
-[v ___flmul@sign sign `uc  1 a 1 26 ]
+[v ___flmul@sign sign `uc  1 a 1 39 ]
 "8
-[v ___flmul@b b `d  1 p 4 13 ]
-[v ___flmul@a a `d  1 p 4 17 ]
+[v ___flmul@b b `d  1 p 4 26 ]
+[v ___flmul@a a `d  1 p 4 30 ]
 "205
 } 0
 "4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul8_16.c
@@ -431,7 +426,7 @@
 [v __Umul8_16@multiplier multiplier `uc  1 a 1 8 ]
 "60
 } 0
-"47 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\drink_meter.c
+"45 C:\Users\dexte\Documents\GitHub\DrinkMeter\DrinkMeter.X\drink_meter.c
 [v _print_gram print_gram `(v  1 e 1 0 ]
 {
 [s S211 . 12 `uc 1 cell_clk 1 0 `uc 1 cell_dat 1 1 `ul 1 weight_zero 4 2 `ul 1 weight_dat 4 6 `us 1 gram 2 10 ]
@@ -439,16 +434,16 @@
 [s S222 . 2 `uc 1 clk_pin 1 0 `uc 1 dat_pin 1 1 ]
 [s S225 . 8 `*.5S211 1 loadcell 1 0 `*.5S217 1 lcd 1 1 `*.5S222 1 tm1637 1 2 `us 1 max_gram 2 3 `us 1 empty_gram 2 5 `uc 1 percentage 1 7 ]
 [v print_gram@p p `*.5S225  1 a 1 wreg ]
-"49
+"47
 [v print_gram@row2 row2 `[16]uc  1 a 16 37 ]
-"48
+"46
 [v print_gram@row1 row1 `[16]uc  1 a 16 21 ]
-"47
+"45
 [v print_gram@p p `*.5S225  1 a 1 wreg ]
-"51
-"47
+"49
+"45
 [v print_gram@p p `*.5S225  1 a 1 53 ]
-"60
+"58
 } 0
 "5
 [v _initialize initialize `(v  1 e 1 0 ]
@@ -469,9 +464,9 @@
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
 [v sprintf@s s `*.4uc  1 a 1 wreg ]
-[s S1184 _IO_FILE 5 `*.4uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
+[s S1182 _IO_FILE 5 `*.4uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
 "13
-[v sprintf@f f `S1184  1 a 5 14 ]
+[v sprintf@f f `S1182  1 a 5 14 ]
 "12
 [v sprintf@ap ap `[1]*.4v  1 a 1 12 ]
 "9
@@ -484,42 +479,42 @@
 "1390 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
 [v _vfprintf vfprintf `(i  1 e 2 0 ]
 {
-[s S1210 _IO_FILE 0 ]
-[v vfprintf@fp fp `*.4S1210  1 a 1 wreg ]
+[s S1208 _IO_FILE 0 ]
+[v vfprintf@fp fp `*.4S1208  1 a 1 wreg ]
 "1393
 [v vfprintf@cfmt cfmt `*.25uc  1 a 2 3 ]
 "1390
-[v vfprintf@fp fp `*.4S1210  1 a 1 wreg ]
+[v vfprintf@fp fp `*.4S1208  1 a 1 wreg ]
 [v vfprintf@fmt fmt `*.25DCuc  1 p 2 77 ]
 [v vfprintf@ap ap `*.4*.4v  1 p 1 79 ]
 "1395
 "1390
-[v vfprintf@fp fp `*.4S1210  1 a 1 2 ]
+[v vfprintf@fp fp `*.4S1208  1 a 1 2 ]
 "1404
 } 0
 "692
 [v _vfpfcnvrt vfpfcnvrt `(i  1 s 2 vfpfcnvrt ]
 {
-[s S1210 _IO_FILE 0 ]
-[v vfpfcnvrt@fp fp `*.4S1210  1 a 1 wreg ]
+[s S1208 _IO_FILE 0 ]
+[v vfpfcnvrt@fp fp `*.4S1208  1 a 1 wreg ]
 "697
 [v vfpfcnvrt@llu llu `uo  1 a 8 68 ]
 "696
 [v vfpfcnvrt@ll ll `o  1 a 8 60 ]
 "692
-[v vfpfcnvrt@fp fp `*.4S1210  1 a 1 wreg ]
+[v vfpfcnvrt@fp fp `*.4S1208  1 a 1 wreg ]
 [v vfpfcnvrt@fmt fmt `*.4*.25uc  1 p 1 46 ]
 [v vfpfcnvrt@ap ap `*.4*.4v  1 p 1 47 ]
 "702
 "692
-[v vfpfcnvrt@fp fp `*.4S1210  1 a 1 76 ]
+[v vfpfcnvrt@fp fp `*.4S1208  1 a 1 76 ]
 "1387
 } 0
 "615
 [v _utoa utoa `(i  1 s 2 utoa ]
 {
-[s S1210 _IO_FILE 0 ]
-[v utoa@fp fp `*.4S1210  1 a 1 wreg ]
+[s S1208 _IO_FILE 0 ]
+[v utoa@fp fp `*.4S1208  1 a 1 wreg ]
 "618
 [v utoa@n n `uo  1 a 8 29 ]
 "617
@@ -527,11 +522,11 @@
 [v utoa@w w `i  1 a 2 27 ]
 [v utoa@p p `i  1 a 2 24 ]
 "615
-[v utoa@fp fp `*.4S1210  1 a 1 wreg ]
+[v utoa@fp fp `*.4S1208  1 a 1 wreg ]
 [v utoa@d d `uo  1 p 8 16 ]
 "621
 "615
-[v utoa@fp fp `*.4S1210  1 a 1 26 ]
+[v utoa@fp fp `*.4S1208  1 a 1 26 ]
 "641
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\lomod.c
@@ -571,8 +566,8 @@
 "287 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\doprnt.c
 [v _dtoa dtoa `(i  1 s 2 dtoa ]
 {
-[s S1210 _IO_FILE 0 ]
-[v dtoa@fp fp `*.4S1210  1 a 1 wreg ]
+[s S1208 _IO_FILE 0 ]
+[v dtoa@fp fp `*.4S1208  1 a 1 wreg ]
 "290
 [v dtoa@n n `o  1 a 8 36 ]
 "289
@@ -581,28 +576,28 @@
 [v dtoa@w w `i  1 a 2 32 ]
 [v dtoa@p p `i  1 a 2 29 ]
 "287
-[v dtoa@fp fp `*.4S1210  1 a 1 wreg ]
+[v dtoa@fp fp `*.4S1208  1 a 1 wreg ]
 [v dtoa@d d `o  1 p 8 16 ]
 "293
 "287
-[v dtoa@fp fp `*.4S1210  1 a 1 31 ]
+[v dtoa@fp fp `*.4S1208  1 a 1 31 ]
 "328
 } 0
 "72
 [v _pad pad `(i  1 s 2 pad ]
 {
-[s S1210 _IO_FILE 0 ]
-[v pad@fp fp `*.4S1210  1 a 1 wreg ]
+[s S1208 _IO_FILE 0 ]
+[v pad@fp fp `*.4S1208  1 a 1 wreg ]
 "74
 [v pad@w w `i  1 a 2 9 ]
 [v pad@i i `i  1 a 2 7 ]
 "72
-[v pad@fp fp `*.4S1210  1 a 1 wreg ]
+[v pad@fp fp `*.4S1208  1 a 1 wreg ]
 [v pad@buf buf `*.5uc  1 p 1 4 ]
 [v pad@p p `i  1 p 2 5 ]
 "77
 "72
-[v pad@fp fp `*.4S1210  1 a 1 11 ]
+[v pad@fp fp `*.4S1208  1 a 1 11 ]
 "95
 } 0
 "5 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\strlen.c
@@ -627,8 +622,8 @@
 [v fputs@c c `uc  1 a 1 0 ]
 "8
 [v fputs@s s `*.5DCuc  1 a 1 wreg ]
-[s S1184 _IO_FILE 5 `*.4uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
-[v fputs@fp fp `*.4S1184  1 p 1 8 ]
+[s S1182 _IO_FILE 5 `*.4uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
+[v fputs@fp fp `*.4S1182  1 p 1 8 ]
 "13
 [v fputs@s s `*.5DCuc  1 a 1 3 ]
 "19
@@ -637,8 +632,8 @@
 [v _fputc fputc `(i  1 e 2 0 ]
 {
 [v fputc@c c `i  1 p 2 0 ]
-[s S1184 _IO_FILE 5 `*.4uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
-[v fputc@fp fp `*.4S1184  1 p 1 2 ]
+[s S1182 _IO_FILE 5 `*.4uc 1 buffer 1 0 `i 1 count 2 1 `i 1 limit 2 3 ]
+[v fputc@fp fp `*.4S1182  1 p 1 2 ]
 "24
 } 0
 "7 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\putch.c

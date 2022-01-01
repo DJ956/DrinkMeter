@@ -666,7 +666,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 :U ..
 :U ..
 "41
-[; ;main.c: 41:     DrinkMeter drink = {&loadcell, &lcd, &tm1637, 500, 30, 0};
+[; ;main.c: 41:     DrinkMeter drink = {&loadcell, &lcd, &tm1637, 500, 24, 0};
 -> -> 0 `i `*S356
 -> -> 0 `i `*S357
 -> -> 0 `i `*S358
@@ -678,7 +678,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 ]
 [v _drink `S359 ~T0 @X0 1 a ]
 [e = _drink F2855 ]
-[e ; = . _drink 0 &U _loadcell ; = . _drink 1 &U _lcd ; = . _drink 2 &U _tm1637 ; = . _drink 3 -> -> 500 `i `us ; = . _drink 4 -> -> 30 `i `us = . _drink 5 -> -> 0 `i `uc ]
+[e ; = . _drink 0 &U _loadcell ; = . _drink 1 &U _lcd ; = . _drink 2 &U _tm1637 ; = . _drink 3 -> -> 500 `i `us ; = . _drink 4 -> -> 24 `i `us = . _drink 5 -> -> 0 `i `uc ]
 "43
 [; ;main.c: 43:     initialize(&drink);
 [e ( _initialize (1 &U _drink ]
@@ -697,8 +697,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! == -> _RC7 `i -> 0 `i 364  ]
 {
 "50
-[; ;main.c: 50:             set_max_gram(&drink, 500, 30);
-[e ( _set_max_gram (3 , , &U _drink -> -> 500 `i `us -> -> 30 `i `us ]
+[; ;main.c: 50:             set_max_gram(&drink, 500, 24);
+[e ( _set_max_gram (3 , , &U _drink -> -> 500 `i `us -> -> 24 `i `us ]
 "51
 [; ;main.c: 51:             _delay((unsigned long)((1000)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
@@ -711,8 +711,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! == -> _RC6 `i -> 0 `i 365  ]
 {
 "55
-[; ;main.c: 55:             set_max_gram(&drink, 350, 15);
-[e ( _set_max_gram (3 , , &U _drink -> -> 350 `i `us -> -> 15 `i `us ]
+[; ;main.c: 55:             set_max_gram(&drink, 355, 20);
+[e ( _set_max_gram (3 , , &U _drink -> -> 355 `i `us -> -> 20 `i `us ]
 "56
 [; ;main.c: 56:             _delay((unsigned long)((1000)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
@@ -725,8 +725,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! == -> _RC5 `i -> 0 `i 366  ]
 {
 "60
-[; ;main.c: 60:             set_max_gram(&drink, 355, 35);
-[e ( _set_max_gram (3 , , &U _drink -> -> 355 `i `us -> -> 35 `i `us ]
+[; ;main.c: 60:             set_max_gram(&drink, 350, 15);
+[e ( _set_max_gram (3 , , &U _drink -> -> 350 `i `us -> -> 15 `i `us ]
 "61
 [; ;main.c: 61:             _delay((unsigned long)((1000)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]

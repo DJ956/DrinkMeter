@@ -5208,7 +5208,7 @@ void main(void)
 
     TM1637 tm1637 = {0x08, 0x10};
 
-    DrinkMeter drink = {&loadcell, &lcd, &tm1637, 500, 30, 0};
+    DrinkMeter drink = {&loadcell, &lcd, &tm1637, 500, 24, 0};
 
     initialize(&drink);
 
@@ -5217,17 +5217,17 @@ void main(void)
         print_gram(&drink);
 
         if(RC7 == 0){
-            set_max_gram(&drink, 500, 30);
+            set_max_gram(&drink, 500, 24);
             _delay((unsigned long)((1000)*(8000000/4000.0)));
         }
 
         if(RC6 == 0){
-            set_max_gram(&drink, 350, 15);
+            set_max_gram(&drink, 355, 20);
             _delay((unsigned long)((1000)*(8000000/4000.0)));
         }
 
         if(RC5 == 0){
-            set_max_gram(&drink, 355, 35);
+            set_max_gram(&drink, 350, 15);
             _delay((unsigned long)((1000)*(8000000/4000.0)));
         }
     }
